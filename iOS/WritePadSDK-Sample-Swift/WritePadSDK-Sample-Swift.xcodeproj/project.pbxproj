@@ -1,0 +1,712 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		360802C01AECAB6500612018 /* EditWordItemViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 360802BF1AECAB6500612018 /* EditWordItemViewController.swift */; };
+		361206A31AEB54EE00BF17CC /* WordListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 361206A21AEB54EE00BF17CC /* WordListViewController.swift */; };
+		3621054C1AFDB44C00E906F9 /* LanguageManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 3643A9291AE8D1EA003DCC57 /* LanguageManager.m */; };
+		3621054D1AFDB44F00E906F9 /* RecognizerManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 3643A93D1AE8D1EA003DCC57 /* RecognizerManager.m */; };
+		362543DD1AEAC8E400083F72 /* UserDictViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 362543DC1AEAC8E400083F72 /* UserDictViewController.swift */; };
+		3643A9261AE8D07B003DCC57 /* OptionsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3643A9251AE8D07B003DCC57 /* OptionsViewController.swift */; };
+		3643A94F1AE8D1EA003DCC57 /* LanguageManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 3643A9291AE8D1EA003DCC57 /* LanguageManager.m */; };
+		3643A9501AE8D1EA003DCC57 /* letimg.c in Sources */ = {isa = PBXBuildFile; fileRef = 3643A92B1AE8D1EA003DCC57 /* letimg.c */; };
+		3643A9511AE8D1EA003DCC57 /* LetterGroupView.m in Sources */ = {isa = PBXBuildFile; fileRef = 3643A92E1AE8D1EA003DCC57 /* LetterGroupView.m */; };
+		3643A9521AE8D1EA003DCC57 /* LetterShapesController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3643A9301AE8D1EA003DCC57 /* LetterShapesController.m */; };
+		3643A9531AE8D1EA003DCC57 /* lidata.c in Sources */ = {isa = PBXBuildFile; fileRef = 3643A9311AE8D1EA003DCC57 /* lidata.c */; };
+		3643A9541AE8D1EA003DCC57 /* ThumbImageView.m in Sources */ = {isa = PBXBuildFile; fileRef = 3643A93A1AE8D1EA003DCC57 /* ThumbImageView.m */; };
+		3643A9551AE8D1EA003DCC57 /* RecognizerManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 3643A93D1AE8D1EA003DCC57 /* RecognizerManager.m */; };
+		3643A9561AE8D1EA003DCC57 /* SuggestionsView.m in Sources */ = {isa = PBXBuildFile; fileRef = 3643A93F1AE8D1EA003DCC57 /* SuggestionsView.m */; };
+		3643A9571AE8D1EA003DCC57 /* utils.m in Sources */ = {isa = PBXBuildFile; fileRef = 3643A9421AE8D1EA003DCC57 /* utils.m */; };
+		3643A9581AE8D1EA003DCC57 /* WPTextView.m in Sources */ = {isa = PBXBuildFile; fileRef = 3643A9441AE8D1EA003DCC57 /* WPTextView.m */; };
+		3643A9591AE8D1EA003DCC57 /* InkCollectorView.m in Sources */ = {isa = PBXBuildFile; fileRef = 3643A9471AE8D1EA003DCC57 /* InkCollectorView.m */; };
+		3643A95A1AE8D1EA003DCC57 /* AsyncResultView.m in Sources */ = {isa = PBXBuildFile; fileRef = 3643A94A1AE8D1EA003DCC57 /* AsyncResultView.m */; };
+		3643A95B1AE8D1EA003DCC57 /* WritePadInputPanel.m in Sources */ = {isa = PBXBuildFile; fileRef = 3643A94C1AE8D1EA003DCC57 /* WritePadInputPanel.m */; };
+		3643A95C1AE8D1EA003DCC57 /* WritePadInputView.m in Sources */ = {isa = PBXBuildFile; fileRef = 3643A94E1AE8D1EA003DCC57 /* WritePadInputView.m */; };
+		3694AA4E1AE43830001E8BE3 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3694AA4D1AE43830001E8BE3 /* AppDelegate.swift */; };
+		3694AA501AE43830001E8BE3 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3694AA4F1AE43830001E8BE3 /* ViewController.swift */; };
+		3694AA531AE43830001E8BE3 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3694AA511AE43830001E8BE3 /* Main.storyboard */; };
+		3694AA581AE43830001E8BE3 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3694AA561AE43830001E8BE3 /* LaunchScreen.xib */; };
+		3694AA641AE43830001E8BE3 /* WritePadSDK_Sample_SwiftTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3694AA631AE43830001E8BE3 /* WritePadSDK_Sample_SwiftTests.swift */; };
+		3694AA8E1AE44B12001E8BE3 /* libWritePadRecoUniversal.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 3694AA8D1AE44B12001E8BE3 /* libWritePadRecoUniversal.a */; };
+		3694AAA31AE6D38A001E8BE3 /* LanguageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3694AAA21AE6D38A001E8BE3 /* LanguageViewController.swift */; };
+		3694AAA51AE77062001E8BE3 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 3694AAA41AE77062001E8BE3 /* Images.xcassets */; };
+		3694AAA71AE7718F001E8BE3 /* ReleaseNotes.txt in Resources */ = {isa = PBXBuildFile; fileRef = 3694AAA61AE7718F001E8BE3 /* ReleaseNotes.txt */; };
+		3694AAB71AE771E5001E8BE3 /* Indonesian.dct in Resources */ = {isa = PBXBuildFile; fileRef = 3694AAA91AE771E5001E8BE3 /* Indonesian.dct */; };
+		3694AAB81AE771E5001E8BE3 /* Brazilian.dct in Resources */ = {isa = PBXBuildFile; fileRef = 3694AAAA1AE771E5001E8BE3 /* Brazilian.dct */; };
+		3694AAB91AE771E5001E8BE3 /* Danish.dct in Resources */ = {isa = PBXBuildFile; fileRef = 3694AAAB1AE771E5001E8BE3 /* Danish.dct */; };
+		3694AABA1AE771E5001E8BE3 /* Dutch.dct in Resources */ = {isa = PBXBuildFile; fileRef = 3694AAAC1AE771E5001E8BE3 /* Dutch.dct */; };
+		3694AABB1AE771E5001E8BE3 /* English.dct in Resources */ = {isa = PBXBuildFile; fileRef = 3694AAAD1AE771E5001E8BE3 /* English.dct */; };
+		3694AABC1AE771E5001E8BE3 /* EnglishUK.dct in Resources */ = {isa = PBXBuildFile; fileRef = 3694AAAE1AE771E5001E8BE3 /* EnglishUK.dct */; };
+		3694AABD1AE771E5001E8BE3 /* Finnish.dct in Resources */ = {isa = PBXBuildFile; fileRef = 3694AAAF1AE771E5001E8BE3 /* Finnish.dct */; };
+		3694AABE1AE771E5001E8BE3 /* French.dct in Resources */ = {isa = PBXBuildFile; fileRef = 3694AAB01AE771E5001E8BE3 /* French.dct */; };
+		3694AABF1AE771E5001E8BE3 /* German.dct in Resources */ = {isa = PBXBuildFile; fileRef = 3694AAB11AE771E5001E8BE3 /* German.dct */; };
+		3694AAC01AE771E5001E8BE3 /* Italian.dct in Resources */ = {isa = PBXBuildFile; fileRef = 3694AAB21AE771E5001E8BE3 /* Italian.dct */; };
+		3694AAC11AE771E5001E8BE3 /* Norwegian.dct in Resources */ = {isa = PBXBuildFile; fileRef = 3694AAB31AE771E5001E8BE3 /* Norwegian.dct */; };
+		3694AAC21AE771E5001E8BE3 /* Portuguese.dct in Resources */ = {isa = PBXBuildFile; fileRef = 3694AAB41AE771E5001E8BE3 /* Portuguese.dct */; };
+		3694AAC31AE771E5001E8BE3 /* Spanish.dct in Resources */ = {isa = PBXBuildFile; fileRef = 3694AAB51AE771E5001E8BE3 /* Spanish.dct */; };
+		3694AAC41AE771E5001E8BE3 /* Swedish.dct in Resources */ = {isa = PBXBuildFile; fileRef = 3694AAB61AE771E5001E8BE3 /* Swedish.dct */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		3694AA5E1AE43830001E8BE3 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 3694AA401AE43830001E8BE3 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 3694AA471AE43830001E8BE3;
+			remoteInfo = "WritePadSDK-Sample-Swift";
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		360802BF1AECAB6500612018 /* EditWordItemViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EditWordItemViewController.swift; sourceTree = "<group>"; };
+		361206A21AEB54EE00BF17CC /* WordListViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WordListViewController.swift; sourceTree = "<group>"; };
+		362543DC1AEAC8E400083F72 /* UserDictViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserDictViewController.swift; sourceTree = "<group>"; };
+		3643A9251AE8D07B003DCC57 /* OptionsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OptionsViewController.swift; sourceTree = "<group>"; };
+		3643A9281AE8D1EA003DCC57 /* LanguageManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LanguageManager.h; sourceTree = "<group>"; };
+		3643A9291AE8D1EA003DCC57 /* LanguageManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LanguageManager.m; sourceTree = "<group>"; };
+		3643A92B1AE8D1EA003DCC57 /* letimg.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = letimg.c; sourceTree = "<group>"; };
+		3643A92C1AE8D1EA003DCC57 /* letimg.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = letimg.h; sourceTree = "<group>"; };
+		3643A92D1AE8D1EA003DCC57 /* LetterGroupView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LetterGroupView.h; sourceTree = "<group>"; };
+		3643A92E1AE8D1EA003DCC57 /* LetterGroupView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LetterGroupView.m; sourceTree = "<group>"; };
+		3643A92F1AE8D1EA003DCC57 /* LetterShapesController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LetterShapesController.h; sourceTree = "<group>"; };
+		3643A9301AE8D1EA003DCC57 /* LetterShapesController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LetterShapesController.m; sourceTree = "<group>"; };
+		3643A9311AE8D1EA003DCC57 /* lidata.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = lidata.c; sourceTree = "<group>"; };
+		3643A9321AE8D1EA003DCC57 /* lidatadf.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = lidatadf.h; sourceTree = "<group>"; };
+		3643A9331AE8D1EA003DCC57 /* lidt_eng.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = lidt_eng.h; sourceTree = "<group>"; };
+		3643A9341AE8D1EA003DCC57 /* lidt_fre.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = lidt_fre.h; sourceTree = "<group>"; };
+		3643A9351AE8D1EA003DCC57 /* lidt_ger.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = lidt_ger.h; sourceTree = "<group>"; };
+		3643A9361AE8D1EA003DCC57 /* ligstate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ligstate.h; sourceTree = "<group>"; };
+		3643A9371AE8D1EA003DCC57 /* liintern.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = liintern.h; sourceTree = "<group>"; };
+		3643A9381AE8D1EA003DCC57 /* ShapeAPI.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ShapeAPI.h; sourceTree = "<group>"; };
+		3643A9391AE8D1EA003DCC57 /* ThumbImageView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ThumbImageView.h; sourceTree = "<group>"; };
+		3643A93A1AE8D1EA003DCC57 /* ThumbImageView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ThumbImageView.m; sourceTree = "<group>"; };
+		3643A93B1AE8D1EA003DCC57 /* OptionKeys.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OptionKeys.h; sourceTree = "<group>"; };
+		3643A93C1AE8D1EA003DCC57 /* RecognizerManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RecognizerManager.h; sourceTree = "<group>"; };
+		3643A93D1AE8D1EA003DCC57 /* RecognizerManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RecognizerManager.m; sourceTree = "<group>"; };
+		3643A93E1AE8D1EA003DCC57 /* SuggestionsView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SuggestionsView.h; sourceTree = "<group>"; };
+		3643A93F1AE8D1EA003DCC57 /* SuggestionsView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SuggestionsView.m; sourceTree = "<group>"; };
+		3643A9401AE8D1EA003DCC57 /* UIConst.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UIConst.h; sourceTree = "<group>"; };
+		3643A9411AE8D1EA003DCC57 /* utils.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = utils.h; sourceTree = "<group>"; };
+		3643A9421AE8D1EA003DCC57 /* utils.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = utils.m; sourceTree = "<group>"; };
+		3643A9431AE8D1EA003DCC57 /* WPTextView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WPTextView.h; sourceTree = "<group>"; };
+		3643A9441AE8D1EA003DCC57 /* WPTextView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WPTextView.m; sourceTree = "<group>"; };
+		3643A9461AE8D1EA003DCC57 /* InkCollectorView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = InkCollectorView.h; sourceTree = "<group>"; };
+		3643A9471AE8D1EA003DCC57 /* InkCollectorView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = InkCollectorView.m; sourceTree = "<group>"; };
+		3643A9491AE8D1EA003DCC57 /* AsyncResultView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AsyncResultView.h; sourceTree = "<group>"; };
+		3643A94A1AE8D1EA003DCC57 /* AsyncResultView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AsyncResultView.m; sourceTree = "<group>"; };
+		3643A94B1AE8D1EA003DCC57 /* WritePadInputPanel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WritePadInputPanel.h; sourceTree = "<group>"; };
+		3643A94C1AE8D1EA003DCC57 /* WritePadInputPanel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WritePadInputPanel.m; sourceTree = "<group>"; };
+		3643A94D1AE8D1EA003DCC57 /* WritePadInputView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WritePadInputView.h; sourceTree = "<group>"; };
+		3643A94E1AE8D1EA003DCC57 /* WritePadInputView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WritePadInputView.m; sourceTree = "<group>"; };
+		3694AA481AE43830001E8BE3 /* WritePadSDK-Sample-Swift.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "WritePadSDK-Sample-Swift.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		3694AA4C1AE43830001E8BE3 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		3694AA4D1AE43830001E8BE3 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		3694AA4F1AE43830001E8BE3 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		3694AA521AE43830001E8BE3 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		3694AA571AE43830001E8BE3 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/LaunchScreen.xib; sourceTree = "<group>"; };
+		3694AA5D1AE43830001E8BE3 /* WritePadSDK-Sample-SwiftTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "WritePadSDK-Sample-SwiftTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
+		3694AA621AE43830001E8BE3 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		3694AA631AE43830001E8BE3 /* WritePadSDK_Sample_SwiftTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WritePadSDK_Sample_SwiftTests.swift; sourceTree = "<group>"; };
+		3694AA701AE43C68001E8BE3 /* WritePadSDK-Sample-Swift-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "WritePadSDK-Sample-Swift-Bridging-Header.h"; sourceTree = "<group>"; };
+		3694AA831AE44A1B001E8BE3 /* langid.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = langid.h; path = ../../include/langid.h; sourceTree = "<group>"; };
+		3694AA841AE44A38001E8BE3 /* gestures.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = gestures.h; path = ../../include/gestures.h; sourceTree = "<group>"; };
+		3694AA851AE44A38001E8BE3 /* InkWrapper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = InkWrapper.h; path = ../../include/InkWrapper.h; sourceTree = "<group>"; };
+		3694AA861AE44A38001E8BE3 /* recodefs.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = recodefs.h; path = ../../include/recodefs.h; sourceTree = "<group>"; };
+		3694AA871AE44A38001E8BE3 /* RecognizerAPI.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = RecognizerAPI.h; path = ../../include/RecognizerAPI.h; sourceTree = "<group>"; };
+		3694AA881AE44A38001E8BE3 /* RecognizerWrapper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = RecognizerWrapper.h; path = ../../include/RecognizerWrapper.h; sourceTree = "<group>"; };
+		3694AA891AE44A38001E8BE3 /* RecoTypes.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = RecoTypes.h; path = ../../include/RecoTypes.h; sourceTree = "<group>"; };
+		3694AA8D1AE44B12001E8BE3 /* libWritePadRecoUniversal.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = libWritePadRecoUniversal.a; path = ../../Library/libWritePadRecoUniversal.a; sourceTree = "<group>"; };
+		3694AAA21AE6D38A001E8BE3 /* LanguageViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LanguageViewController.swift; sourceTree = "<group>"; };
+		3694AAA41AE77062001E8BE3 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
+		3694AAA61AE7718F001E8BE3 /* ReleaseNotes.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = ReleaseNotes.txt; sourceTree = "<group>"; };
+		3694AAA91AE771E5001E8BE3 /* Indonesian.dct */ = {isa = PBXFileReference; lastKnownFileType = file; name = Indonesian.dct; path = ../../Dictionaries/Indonesian.dct; sourceTree = "<group>"; };
+		3694AAAA1AE771E5001E8BE3 /* Brazilian.dct */ = {isa = PBXFileReference; lastKnownFileType = file; name = Brazilian.dct; path = ../../Dictionaries/Brazilian.dct; sourceTree = "<group>"; };
+		3694AAAB1AE771E5001E8BE3 /* Danish.dct */ = {isa = PBXFileReference; lastKnownFileType = file; name = Danish.dct; path = ../../Dictionaries/Danish.dct; sourceTree = "<group>"; };
+		3694AAAC1AE771E5001E8BE3 /* Dutch.dct */ = {isa = PBXFileReference; lastKnownFileType = file; name = Dutch.dct; path = ../../Dictionaries/Dutch.dct; sourceTree = "<group>"; };
+		3694AAAD1AE771E5001E8BE3 /* English.dct */ = {isa = PBXFileReference; lastKnownFileType = file; name = English.dct; path = ../../Dictionaries/English.dct; sourceTree = "<group>"; };
+		3694AAAE1AE771E5001E8BE3 /* EnglishUK.dct */ = {isa = PBXFileReference; lastKnownFileType = file; name = EnglishUK.dct; path = ../../Dictionaries/EnglishUK.dct; sourceTree = "<group>"; };
+		3694AAAF1AE771E5001E8BE3 /* Finnish.dct */ = {isa = PBXFileReference; lastKnownFileType = file; name = Finnish.dct; path = ../../Dictionaries/Finnish.dct; sourceTree = "<group>"; };
+		3694AAB01AE771E5001E8BE3 /* French.dct */ = {isa = PBXFileReference; lastKnownFileType = file; name = French.dct; path = ../../Dictionaries/French.dct; sourceTree = "<group>"; };
+		3694AAB11AE771E5001E8BE3 /* German.dct */ = {isa = PBXFileReference; lastKnownFileType = file; name = German.dct; path = ../../Dictionaries/German.dct; sourceTree = "<group>"; };
+		3694AAB21AE771E5001E8BE3 /* Italian.dct */ = {isa = PBXFileReference; lastKnownFileType = file; name = Italian.dct; path = ../../Dictionaries/Italian.dct; sourceTree = "<group>"; };
+		3694AAB31AE771E5001E8BE3 /* Norwegian.dct */ = {isa = PBXFileReference; lastKnownFileType = file; name = Norwegian.dct; path = ../../Dictionaries/Norwegian.dct; sourceTree = "<group>"; };
+		3694AAB41AE771E5001E8BE3 /* Portuguese.dct */ = {isa = PBXFileReference; lastKnownFileType = file; name = Portuguese.dct; path = ../../Dictionaries/Portuguese.dct; sourceTree = "<group>"; };
+		3694AAB51AE771E5001E8BE3 /* Spanish.dct */ = {isa = PBXFileReference; lastKnownFileType = file; name = Spanish.dct; path = ../../Dictionaries/Spanish.dct; sourceTree = "<group>"; };
+		3694AAB61AE771E5001E8BE3 /* Swedish.dct */ = {isa = PBXFileReference; lastKnownFileType = file; name = Swedish.dct; path = ../../Dictionaries/Swedish.dct; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		3694AA451AE43830001E8BE3 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				3694AA8E1AE44B12001E8BE3 /* libWritePadRecoUniversal.a in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		3694AA5A1AE43830001E8BE3 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		3643A9271AE8D1EA003DCC57 /* RecognizerSupport */ = {
+			isa = PBXGroup;
+			children = (
+				3694AA7C1AE448E1001E8BE3 /* Include */,
+				3643A9481AE8D1EA003DCC57 /* WritePanel */,
+				3643A9451AE8D1EA003DCC57 /* WriteAnywhere */,
+				3643A92A1AE8D1EA003DCC57 /* LetterShapes */,
+				3643A9281AE8D1EA003DCC57 /* LanguageManager.h */,
+				3643A9291AE8D1EA003DCC57 /* LanguageManager.m */,
+				3643A9401AE8D1EA003DCC57 /* UIConst.h */,
+				3643A93B1AE8D1EA003DCC57 /* OptionKeys.h */,
+				3643A93C1AE8D1EA003DCC57 /* RecognizerManager.h */,
+				3643A93D1AE8D1EA003DCC57 /* RecognizerManager.m */,
+				3643A93E1AE8D1EA003DCC57 /* SuggestionsView.h */,
+				3643A93F1AE8D1EA003DCC57 /* SuggestionsView.m */,
+				3643A9411AE8D1EA003DCC57 /* utils.h */,
+				3643A9421AE8D1EA003DCC57 /* utils.m */,
+				3643A9431AE8D1EA003DCC57 /* WPTextView.h */,
+				3643A9441AE8D1EA003DCC57 /* WPTextView.m */,
+			);
+			path = RecognizerSupport;
+			sourceTree = "<group>";
+		};
+		3643A92A1AE8D1EA003DCC57 /* LetterShapes */ = {
+			isa = PBXGroup;
+			children = (
+				3643A92B1AE8D1EA003DCC57 /* letimg.c */,
+				3643A92C1AE8D1EA003DCC57 /* letimg.h */,
+				3643A92D1AE8D1EA003DCC57 /* LetterGroupView.h */,
+				3643A92E1AE8D1EA003DCC57 /* LetterGroupView.m */,
+				3643A92F1AE8D1EA003DCC57 /* LetterShapesController.h */,
+				3643A9301AE8D1EA003DCC57 /* LetterShapesController.m */,
+				3643A9311AE8D1EA003DCC57 /* lidata.c */,
+				3643A9321AE8D1EA003DCC57 /* lidatadf.h */,
+				3643A9331AE8D1EA003DCC57 /* lidt_eng.h */,
+				3643A9341AE8D1EA003DCC57 /* lidt_fre.h */,
+				3643A9351AE8D1EA003DCC57 /* lidt_ger.h */,
+				3643A9361AE8D1EA003DCC57 /* ligstate.h */,
+				3643A9371AE8D1EA003DCC57 /* liintern.h */,
+				3643A9381AE8D1EA003DCC57 /* ShapeAPI.h */,
+				3643A9391AE8D1EA003DCC57 /* ThumbImageView.h */,
+				3643A93A1AE8D1EA003DCC57 /* ThumbImageView.m */,
+			);
+			path = LetterShapes;
+			sourceTree = "<group>";
+		};
+		3643A9451AE8D1EA003DCC57 /* WriteAnywhere */ = {
+			isa = PBXGroup;
+			children = (
+				3643A9461AE8D1EA003DCC57 /* InkCollectorView.h */,
+				3643A9471AE8D1EA003DCC57 /* InkCollectorView.m */,
+			);
+			path = WriteAnywhere;
+			sourceTree = "<group>";
+		};
+		3643A9481AE8D1EA003DCC57 /* WritePanel */ = {
+			isa = PBXGroup;
+			children = (
+				3643A9491AE8D1EA003DCC57 /* AsyncResultView.h */,
+				3643A94A1AE8D1EA003DCC57 /* AsyncResultView.m */,
+				3643A94B1AE8D1EA003DCC57 /* WritePadInputPanel.h */,
+				3643A94C1AE8D1EA003DCC57 /* WritePadInputPanel.m */,
+				3643A94D1AE8D1EA003DCC57 /* WritePadInputView.h */,
+				3643A94E1AE8D1EA003DCC57 /* WritePadInputView.m */,
+			);
+			path = WritePanel;
+			sourceTree = "<group>";
+		};
+		3694AA3F1AE43830001E8BE3 = {
+			isa = PBXGroup;
+			children = (
+				3694AA4A1AE43830001E8BE3 /* WritePadSDK-Sample-Swift */,
+				3694AA601AE43830001E8BE3 /* WritePadSDK-Sample-SwiftTests */,
+				3694AA491AE43830001E8BE3 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		3694AA491AE43830001E8BE3 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				3694AA481AE43830001E8BE3 /* WritePadSDK-Sample-Swift.app */,
+				3694AA5D1AE43830001E8BE3 /* WritePadSDK-Sample-SwiftTests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		3694AA4A1AE43830001E8BE3 /* WritePadSDK-Sample-Swift */ = {
+			isa = PBXGroup;
+			children = (
+				3643A9271AE8D1EA003DCC57 /* RecognizerSupport */,
+				3694AA4D1AE43830001E8BE3 /* AppDelegate.swift */,
+				3694AA4F1AE43830001E8BE3 /* ViewController.swift */,
+				3643A9251AE8D07B003DCC57 /* OptionsViewController.swift */,
+				360802BF1AECAB6500612018 /* EditWordItemViewController.swift */,
+				362543DC1AEAC8E400083F72 /* UserDictViewController.swift */,
+				361206A21AEB54EE00BF17CC /* WordListViewController.swift */,
+				3694AAA21AE6D38A001E8BE3 /* LanguageViewController.swift */,
+				3694AA511AE43830001E8BE3 /* Main.storyboard */,
+				3694AAA41AE77062001E8BE3 /* Images.xcassets */,
+				3694AA561AE43830001E8BE3 /* LaunchScreen.xib */,
+				3694AAA61AE7718F001E8BE3 /* ReleaseNotes.txt */,
+				3694AA4B1AE43830001E8BE3 /* Supporting Files */,
+				3694AA701AE43C68001E8BE3 /* WritePadSDK-Sample-Swift-Bridging-Header.h */,
+			);
+			path = "WritePadSDK-Sample-Swift";
+			sourceTree = "<group>";
+		};
+		3694AA4B1AE43830001E8BE3 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				3694AAA81AE771D5001E8BE3 /* Dictionaries */,
+				3694AA8D1AE44B12001E8BE3 /* libWritePadRecoUniversal.a */,
+				3694AA4C1AE43830001E8BE3 /* Info.plist */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		3694AA601AE43830001E8BE3 /* WritePadSDK-Sample-SwiftTests */ = {
+			isa = PBXGroup;
+			children = (
+				3694AA631AE43830001E8BE3 /* WritePadSDK_Sample_SwiftTests.swift */,
+				3694AA611AE43830001E8BE3 /* Supporting Files */,
+			);
+			path = "WritePadSDK-Sample-SwiftTests";
+			sourceTree = "<group>";
+		};
+		3694AA611AE43830001E8BE3 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				3694AA621AE43830001E8BE3 /* Info.plist */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		3694AA7C1AE448E1001E8BE3 /* Include */ = {
+			isa = PBXGroup;
+			children = (
+				3694AA841AE44A38001E8BE3 /* gestures.h */,
+				3694AA851AE44A38001E8BE3 /* InkWrapper.h */,
+				3694AA861AE44A38001E8BE3 /* recodefs.h */,
+				3694AA871AE44A38001E8BE3 /* RecognizerAPI.h */,
+				3694AA881AE44A38001E8BE3 /* RecognizerWrapper.h */,
+				3694AA891AE44A38001E8BE3 /* RecoTypes.h */,
+				3694AA831AE44A1B001E8BE3 /* langid.h */,
+			);
+			name = Include;
+			path = ..;
+			sourceTree = "<group>";
+		};
+		3694AAA81AE771D5001E8BE3 /* Dictionaries */ = {
+			isa = PBXGroup;
+			children = (
+				3694AAA91AE771E5001E8BE3 /* Indonesian.dct */,
+				3694AAAA1AE771E5001E8BE3 /* Brazilian.dct */,
+				3694AAAB1AE771E5001E8BE3 /* Danish.dct */,
+				3694AAAC1AE771E5001E8BE3 /* Dutch.dct */,
+				3694AAAD1AE771E5001E8BE3 /* English.dct */,
+				3694AAAE1AE771E5001E8BE3 /* EnglishUK.dct */,
+				3694AAAF1AE771E5001E8BE3 /* Finnish.dct */,
+				3694AAB01AE771E5001E8BE3 /* French.dct */,
+				3694AAB11AE771E5001E8BE3 /* German.dct */,
+				3694AAB21AE771E5001E8BE3 /* Italian.dct */,
+				3694AAB31AE771E5001E8BE3 /* Norwegian.dct */,
+				3694AAB41AE771E5001E8BE3 /* Portuguese.dct */,
+				3694AAB51AE771E5001E8BE3 /* Spanish.dct */,
+				3694AAB61AE771E5001E8BE3 /* Swedish.dct */,
+			);
+			name = Dictionaries;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		3694AA471AE43830001E8BE3 /* WritePadSDK-Sample-Swift */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 3694AA671AE43830001E8BE3 /* Build configuration list for PBXNativeTarget "WritePadSDK-Sample-Swift" */;
+			buildPhases = (
+				3694AA441AE43830001E8BE3 /* Sources */,
+				3694AA451AE43830001E8BE3 /* Frameworks */,
+				3694AA461AE43830001E8BE3 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "WritePadSDK-Sample-Swift";
+			productName = "WritePadSDK-Sample-Swift";
+			productReference = 3694AA481AE43830001E8BE3 /* WritePadSDK-Sample-Swift.app */;
+			productType = "com.apple.product-type.application";
+		};
+		3694AA5C1AE43830001E8BE3 /* WritePadSDK-Sample-SwiftTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 3694AA6A1AE43830001E8BE3 /* Build configuration list for PBXNativeTarget "WritePadSDK-Sample-SwiftTests" */;
+			buildPhases = (
+				3694AA591AE43830001E8BE3 /* Sources */,
+				3694AA5A1AE43830001E8BE3 /* Frameworks */,
+				3694AA5B1AE43830001E8BE3 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				3694AA5F1AE43830001E8BE3 /* PBXTargetDependency */,
+			);
+			name = "WritePadSDK-Sample-SwiftTests";
+			productName = "WritePadSDK-Sample-SwiftTests";
+			productReference = 3694AA5D1AE43830001E8BE3 /* WritePadSDK-Sample-SwiftTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		3694AA401AE43830001E8BE3 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftMigration = 0700;
+				LastSwiftUpdateCheck = 0700;
+				LastUpgradeCheck = 0700;
+				ORGANIZATIONNAME = "PhatWare Corp.";
+				TargetAttributes = {
+					3694AA471AE43830001E8BE3 = {
+						CreatedOnToolsVersion = 6.3;
+						DevelopmentTeam = U97D34BCNV;
+					};
+					3694AA5C1AE43830001E8BE3 = {
+						CreatedOnToolsVersion = 6.3;
+						TestTargetID = 3694AA471AE43830001E8BE3;
+					};
+				};
+			};
+			buildConfigurationList = 3694AA431AE43830001E8BE3 /* Build configuration list for PBXProject "WritePadSDK-Sample-Swift" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 3694AA3F1AE43830001E8BE3;
+			productRefGroup = 3694AA491AE43830001E8BE3 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				3694AA471AE43830001E8BE3 /* WritePadSDK-Sample-Swift */,
+				3694AA5C1AE43830001E8BE3 /* WritePadSDK-Sample-SwiftTests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		3694AA461AE43830001E8BE3 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				3694AAB81AE771E5001E8BE3 /* Brazilian.dct in Resources */,
+				3694AABE1AE771E5001E8BE3 /* French.dct in Resources */,
+				3694AABF1AE771E5001E8BE3 /* German.dct in Resources */,
+				3694AAC41AE771E5001E8BE3 /* Swedish.dct in Resources */,
+				3694AAC11AE771E5001E8BE3 /* Norwegian.dct in Resources */,
+				3694AAA71AE7718F001E8BE3 /* ReleaseNotes.txt in Resources */,
+				3694AABC1AE771E5001E8BE3 /* EnglishUK.dct in Resources */,
+				3694AABA1AE771E5001E8BE3 /* Dutch.dct in Resources */,
+				3694AABB1AE771E5001E8BE3 /* English.dct in Resources */,
+				3694AAC31AE771E5001E8BE3 /* Spanish.dct in Resources */,
+				3694AAB91AE771E5001E8BE3 /* Danish.dct in Resources */,
+				3694AABD1AE771E5001E8BE3 /* Finnish.dct in Resources */,
+				3694AAC21AE771E5001E8BE3 /* Portuguese.dct in Resources */,
+				3694AAA51AE77062001E8BE3 /* Images.xcassets in Resources */,
+				3694AAC01AE771E5001E8BE3 /* Italian.dct in Resources */,
+				3694AAB71AE771E5001E8BE3 /* Indonesian.dct in Resources */,
+				3694AA531AE43830001E8BE3 /* Main.storyboard in Resources */,
+				3694AA581AE43830001E8BE3 /* LaunchScreen.xib in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		3694AA5B1AE43830001E8BE3 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		3694AA441AE43830001E8BE3 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				3643A9531AE8D1EA003DCC57 /* lidata.c in Sources */,
+				3643A94F1AE8D1EA003DCC57 /* LanguageManager.m in Sources */,
+				361206A31AEB54EE00BF17CC /* WordListViewController.swift in Sources */,
+				3643A9261AE8D07B003DCC57 /* OptionsViewController.swift in Sources */,
+				3643A95C1AE8D1EA003DCC57 /* WritePadInputView.m in Sources */,
+				3694AAA31AE6D38A001E8BE3 /* LanguageViewController.swift in Sources */,
+				3643A95A1AE8D1EA003DCC57 /* AsyncResultView.m in Sources */,
+				3643A9551AE8D1EA003DCC57 /* RecognizerManager.m in Sources */,
+				362543DD1AEAC8E400083F72 /* UserDictViewController.swift in Sources */,
+				3643A9521AE8D1EA003DCC57 /* LetterShapesController.m in Sources */,
+				3643A9581AE8D1EA003DCC57 /* WPTextView.m in Sources */,
+				3643A9561AE8D1EA003DCC57 /* SuggestionsView.m in Sources */,
+				3694AA501AE43830001E8BE3 /* ViewController.swift in Sources */,
+				3643A95B1AE8D1EA003DCC57 /* WritePadInputPanel.m in Sources */,
+				360802C01AECAB6500612018 /* EditWordItemViewController.swift in Sources */,
+				3643A9511AE8D1EA003DCC57 /* LetterGroupView.m in Sources */,
+				3643A9591AE8D1EA003DCC57 /* InkCollectorView.m in Sources */,
+				3694AA4E1AE43830001E8BE3 /* AppDelegate.swift in Sources */,
+				3643A9571AE8D1EA003DCC57 /* utils.m in Sources */,
+				3643A9501AE8D1EA003DCC57 /* letimg.c in Sources */,
+				3643A9541AE8D1EA003DCC57 /* ThumbImageView.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		3694AA591AE43830001E8BE3 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				3621054D1AFDB44F00E906F9 /* RecognizerManager.m in Sources */,
+				3694AA641AE43830001E8BE3 /* WritePadSDK_Sample_SwiftTests.swift in Sources */,
+				3621054C1AFDB44C00E906F9 /* LanguageManager.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		3694AA5F1AE43830001E8BE3 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 3694AA471AE43830001E8BE3 /* WritePadSDK-Sample-Swift */;
+			targetProxy = 3694AA5E1AE43830001E8BE3 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		3694AA511AE43830001E8BE3 /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				3694AA521AE43830001E8BE3 /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		3694AA561AE43830001E8BE3 /* LaunchScreen.xib */ = {
+			isa = PBXVariantGroup;
+			children = (
+				3694AA571AE43830001E8BE3 /* Base */,
+			);
+			name = LaunchScreen.xib;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		3694AA651AE43830001E8BE3 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		3694AA661AE43830001E8BE3 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		3694AA681AE43830001E8BE3 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				INFOPLIST_FILE = "WritePadSDK-Sample-Swift/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(SRCROOT)/../Library",
+				);
+				OTHER_LDFLAGS = "-lstdc++";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.phatware.$(PRODUCT_NAME:rfc1034identifier)";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
+				SWIFT_OBJC_BRIDGING_HEADER = "WritePadSDK-Sample-Swift/WritePadSDK-Sample-Swift-Bridging-Header.h";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		3694AA691AE43830001E8BE3 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				INFOPLIST_FILE = "WritePadSDK-Sample-Swift/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(SRCROOT)/../Library",
+				);
+				OTHER_LDFLAGS = "-lstdc++";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.phatware.$(PRODUCT_NAME:rfc1034identifier)";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
+				SWIFT_OBJC_BRIDGING_HEADER = "WritePadSDK-Sample-Swift/WritePadSDK-Sample-Swift-Bridging-Header.h";
+			};
+			name = Release;
+		};
+		3694AA6B1AE43830001E8BE3 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(SDKROOT)/Developer/Library/Frameworks",
+					"$(inherited)",
+				);
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				INFOPLIST_FILE = "WritePadSDK-Sample-SwiftTests/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.phatware.$(PRODUCT_NAME:rfc1034identifier)";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/WritePadSDK-Sample-Swift.app/WritePadSDK-Sample-Swift";
+			};
+			name = Debug;
+		};
+		3694AA6C1AE43830001E8BE3 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(SDKROOT)/Developer/Library/Frameworks",
+					"$(inherited)",
+				);
+				INFOPLIST_FILE = "WritePadSDK-Sample-SwiftTests/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.phatware.$(PRODUCT_NAME:rfc1034identifier)";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/WritePadSDK-Sample-Swift.app/WritePadSDK-Sample-Swift";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		3694AA431AE43830001E8BE3 /* Build configuration list for PBXProject "WritePadSDK-Sample-Swift" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				3694AA651AE43830001E8BE3 /* Debug */,
+				3694AA661AE43830001E8BE3 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		3694AA671AE43830001E8BE3 /* Build configuration list for PBXNativeTarget "WritePadSDK-Sample-Swift" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				3694AA681AE43830001E8BE3 /* Debug */,
+				3694AA691AE43830001E8BE3 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		3694AA6A1AE43830001E8BE3 /* Build configuration list for PBXNativeTarget "WritePadSDK-Sample-SwiftTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				3694AA6B1AE43830001E8BE3 /* Debug */,
+				3694AA6C1AE43830001E8BE3 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 3694AA401AE43830001E8BE3 /* Project object */;
+}

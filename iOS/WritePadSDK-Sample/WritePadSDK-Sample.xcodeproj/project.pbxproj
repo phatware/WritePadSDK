@@ -1,0 +1,639 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		3691918319F0AFFF002A09E3 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 3691917D19F0AFFF002A09E3 /* Images.xcassets */; };
+		3691918419F0AFFF002A09E3 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3691917E19F0AFFF002A09E3 /* LaunchScreen.xib */; };
+		3691918519F0AFFF002A09E3 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3691917F19F0AFFF002A09E3 /* Main.storyboard */; };
+		3691918619F0AFFF002A09E3 /* ReleaseNotes.txt in Resources */ = {isa = PBXBuildFile; fileRef = 3691918019F0AFFF002A09E3 /* ReleaseNotes.txt */; };
+		3691918819F0AFFF002A09E3 /* usershortcuts.csv in Resources */ = {isa = PBXBuildFile; fileRef = 3691918219F0AFFF002A09E3 /* usershortcuts.csv */; };
+		369191A619F0B132002A09E3 /* AsyncResultView.m in Sources */ = {isa = PBXBuildFile; fileRef = 369191A119F0B132002A09E3 /* AsyncResultView.m */; };
+		369191A719F0B132002A09E3 /* WritePadInputPanel.m in Sources */ = {isa = PBXBuildFile; fileRef = 369191A319F0B132002A09E3 /* WritePadInputPanel.m */; };
+		369191A819F0B132002A09E3 /* WritePadInputView.m in Sources */ = {isa = PBXBuildFile; fileRef = 369191A519F0B132002A09E3 /* WritePadInputView.m */; };
+		369191AE19F0B159002A09E3 /* InkCollectorView.m in Sources */ = {isa = PBXBuildFile; fileRef = 369191AB19F0B159002A09E3 /* InkCollectorView.m */; };
+		369191C119F0B243002A09E3 /* LanguageManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 369191B219F0B243002A09E3 /* LanguageManager.m */; };
+		369191C219F0B243002A09E3 /* RecognizerManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 369191B519F0B243002A09E3 /* RecognizerManager.m */; };
+		369191C319F0B243002A09E3 /* RectObject.m in Sources */ = {isa = PBXBuildFile; fileRef = 369191B719F0B243002A09E3 /* RectObject.m */; };
+		369191C419F0B243002A09E3 /* SuggestionsView.m in Sources */ = {isa = PBXBuildFile; fileRef = 369191B919F0B243002A09E3 /* SuggestionsView.m */; };
+		369191C519F0B243002A09E3 /* utils.m in Sources */ = {isa = PBXBuildFile; fileRef = 369191BC19F0B243002A09E3 /* utils.m */; };
+		369191C619F0B243002A09E3 /* WPTextView.m in Sources */ = {isa = PBXBuildFile; fileRef = 369191BE19F0B243002A09E3 /* WPTextView.m */; };
+		369191EE19F0B27C002A09E3 /* CellTextField.m in Sources */ = {isa = PBXBuildFile; fileRef = 369191CA19F0B27C002A09E3 /* CellTextField.m */; };
+		369191EF19F0B27C002A09E3 /* CellTextView.m in Sources */ = {isa = PBXBuildFile; fileRef = 369191CC19F0B27C002A09E3 /* CellTextView.m */; };
+		369191F019F0B27C002A09E3 /* DictEditViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 369191CE19F0B27C002A09E3 /* DictEditViewController.m */; };
+		369191F119F0B27C002A09E3 /* EditableTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 369191D019F0B27C002A09E3 /* EditableTableViewCell.m */; };
+		369191F219F0B27C002A09E3 /* EditOptionsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 369191D219F0B27C002A09E3 /* EditOptionsViewController.m */; };
+		369191F319F0B27C002A09E3 /* EditWordViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 369191D419F0B27C002A09E3 /* EditWordViewController.m */; };
+		369191F419F0B27C002A09E3 /* LanguageViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 369191D619F0B27C002A09E3 /* LanguageViewController.m */; };
+		369191F519F0B27C002A09E3 /* letimg.c in Sources */ = {isa = PBXBuildFile; fileRef = 369191D819F0B27C002A09E3 /* letimg.c */; };
+		369191F619F0B27C002A09E3 /* LetterGroupView.m in Sources */ = {isa = PBXBuildFile; fileRef = 369191DB19F0B27C002A09E3 /* LetterGroupView.m */; };
+		369191F719F0B27C002A09E3 /* LetterShapesController.m in Sources */ = {isa = PBXBuildFile; fileRef = 369191DD19F0B27C002A09E3 /* LetterShapesController.m */; };
+		369191F819F0B27C002A09E3 /* lidata.c in Sources */ = {isa = PBXBuildFile; fileRef = 369191DE19F0B27C002A09E3 /* lidata.c */; };
+		369191F919F0B27C002A09E3 /* ThumbImageView.m in Sources */ = {isa = PBXBuildFile; fileRef = 369191E719F0B27C002A09E3 /* ThumbImageView.m */; };
+		369191FA19F0B27C002A09E3 /* LanguageSelectorController.m in Sources */ = {isa = PBXBuildFile; fileRef = 369191E919F0B27C002A09E3 /* LanguageSelectorController.m */; };
+		369191FB19F0B27C002A09E3 /* SourceCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 369191EB19F0B27C002A09E3 /* SourceCell.m */; };
+		369191FC19F0B27C002A09E3 /* WordListEditViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 369191ED19F0B27C002A09E3 /* WordListEditViewController.m */; };
+		3691920219F0B2A9002A09E3 /* Shortcut.m in Sources */ = {isa = PBXBuildFile; fileRef = 369191FF19F0B2A9002A09E3 /* Shortcut.m */; };
+		3691920319F0B2A9002A09E3 /* Shortcuts.m in Sources */ = {isa = PBXBuildFile; fileRef = 3691920119F0B2A9002A09E3 /* Shortcuts.m */; };
+		3691920619F0BFC0002A09E3 /* libWritePadRecoUniversal.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 3691920519F0BFC0002A09E3 /* libWritePadRecoUniversal.a */; };
+		36BBBCEC19E32FD700E63C5C /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 36BBBCEB19E32FD700E63C5C /* main.m */; };
+		36BBBCEF19E32FD700E63C5C /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 36BBBCEE19E32FD700E63C5C /* AppDelegate.m */; };
+		36BBBCF219E32FD700E63C5C /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 36BBBCF119E32FD700E63C5C /* ViewController.m */; };
+		36BBBD6019E3B5FC00E63C5C /* Brazilian.dct in Resources */ = {isa = PBXBuildFile; fileRef = 36BBBD5219E3B5FC00E63C5C /* Brazilian.dct */; };
+		36BBBD6119E3B5FC00E63C5C /* Danish.dct in Resources */ = {isa = PBXBuildFile; fileRef = 36BBBD5319E3B5FC00E63C5C /* Danish.dct */; };
+		36BBBD6219E3B5FC00E63C5C /* Dutch.dct in Resources */ = {isa = PBXBuildFile; fileRef = 36BBBD5419E3B5FC00E63C5C /* Dutch.dct */; };
+		36BBBD6319E3B5FC00E63C5C /* English.dct in Resources */ = {isa = PBXBuildFile; fileRef = 36BBBD5519E3B5FC00E63C5C /* English.dct */; };
+		36BBBD6419E3B5FC00E63C5C /* EnglishUK.dct in Resources */ = {isa = PBXBuildFile; fileRef = 36BBBD5619E3B5FC00E63C5C /* EnglishUK.dct */; };
+		36BBBD6519E3B5FC00E63C5C /* Finnish.dct in Resources */ = {isa = PBXBuildFile; fileRef = 36BBBD5719E3B5FC00E63C5C /* Finnish.dct */; };
+		36BBBD6619E3B5FC00E63C5C /* French.dct in Resources */ = {isa = PBXBuildFile; fileRef = 36BBBD5819E3B5FC00E63C5C /* French.dct */; };
+		36BBBD6719E3B5FC00E63C5C /* German.dct in Resources */ = {isa = PBXBuildFile; fileRef = 36BBBD5919E3B5FC00E63C5C /* German.dct */; };
+		36BBBD6819E3B5FC00E63C5C /* Italian.dct in Resources */ = {isa = PBXBuildFile; fileRef = 36BBBD5A19E3B5FC00E63C5C /* Italian.dct */; };
+		36BBBD6A19E3B5FC00E63C5C /* Norwegian.dct in Resources */ = {isa = PBXBuildFile; fileRef = 36BBBD5C19E3B5FC00E63C5C /* Norwegian.dct */; };
+		36BBBD6B19E3B5FC00E63C5C /* Portuguese.dct in Resources */ = {isa = PBXBuildFile; fileRef = 36BBBD5D19E3B5FC00E63C5C /* Portuguese.dct */; };
+		36BBBD6C19E3B5FC00E63C5C /* Spanish.dct in Resources */ = {isa = PBXBuildFile; fileRef = 36BBBD5E19E3B5FC00E63C5C /* Spanish.dct */; };
+		36BBBD6D19E3B5FC00E63C5C /* Swedish.dct in Resources */ = {isa = PBXBuildFile; fileRef = 36BBBD5F19E3B5FC00E63C5C /* Swedish.dct */; };
+		36EEA1251AA43EB40033E8C0 /* Indonesian.dct in Resources */ = {isa = PBXBuildFile; fileRef = 36EEA1241AA43EB40033E8C0 /* Indonesian.dct */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		3691917D19F0AFFF002A09E3 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
+		3691917E19F0AFFF002A09E3 /* LaunchScreen.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = LaunchScreen.xib; sourceTree = "<group>"; };
+		3691917F19F0AFFF002A09E3 /* Main.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Main.storyboard; sourceTree = "<group>"; };
+		3691918019F0AFFF002A09E3 /* ReleaseNotes.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = ReleaseNotes.txt; sourceTree = "<group>"; };
+		3691918219F0AFFF002A09E3 /* usershortcuts.csv */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = usershortcuts.csv; sourceTree = "<group>"; };
+		369191A019F0B132002A09E3 /* AsyncResultView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AsyncResultView.h; sourceTree = "<group>"; };
+		369191A119F0B132002A09E3 /* AsyncResultView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AsyncResultView.m; sourceTree = "<group>"; };
+		369191A219F0B132002A09E3 /* WritePadInputPanel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WritePadInputPanel.h; sourceTree = "<group>"; };
+		369191A319F0B132002A09E3 /* WritePadInputPanel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WritePadInputPanel.m; sourceTree = "<group>"; };
+		369191A419F0B132002A09E3 /* WritePadInputView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WritePadInputView.h; sourceTree = "<group>"; };
+		369191A519F0B132002A09E3 /* WritePadInputView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WritePadInputView.m; sourceTree = "<group>"; };
+		369191AA19F0B159002A09E3 /* InkCollectorView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = InkCollectorView.h; sourceTree = "<group>"; };
+		369191AB19F0B159002A09E3 /* InkCollectorView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = InkCollectorView.m; sourceTree = "<group>"; };
+		369191B119F0B243002A09E3 /* LanguageManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LanguageManager.h; sourceTree = "<group>"; };
+		369191B219F0B243002A09E3 /* LanguageManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LanguageManager.m; sourceTree = "<group>"; };
+		369191B319F0B243002A09E3 /* OptionKeys.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OptionKeys.h; sourceTree = "<group>"; };
+		369191B419F0B243002A09E3 /* RecognizerManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RecognizerManager.h; sourceTree = "<group>"; };
+		369191B519F0B243002A09E3 /* RecognizerManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RecognizerManager.m; sourceTree = "<group>"; };
+		369191B619F0B243002A09E3 /* RectObject.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RectObject.h; sourceTree = "<group>"; };
+		369191B719F0B243002A09E3 /* RectObject.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RectObject.m; sourceTree = "<group>"; };
+		369191B819F0B243002A09E3 /* SuggestionsView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SuggestionsView.h; sourceTree = "<group>"; };
+		369191B919F0B243002A09E3 /* SuggestionsView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SuggestionsView.m; sourceTree = "<group>"; };
+		369191BB19F0B243002A09E3 /* utils.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = utils.h; sourceTree = "<group>"; };
+		369191BC19F0B243002A09E3 /* utils.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = utils.m; sourceTree = "<group>"; };
+		369191BD19F0B243002A09E3 /* WPTextView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WPTextView.h; sourceTree = "<group>"; };
+		369191BE19F0B243002A09E3 /* WPTextView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WPTextView.m; sourceTree = "<group>"; };
+		369191C919F0B27C002A09E3 /* CellTextField.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CellTextField.h; sourceTree = "<group>"; };
+		369191CA19F0B27C002A09E3 /* CellTextField.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CellTextField.m; sourceTree = "<group>"; };
+		369191CB19F0B27C002A09E3 /* CellTextView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CellTextView.h; sourceTree = "<group>"; };
+		369191CC19F0B27C002A09E3 /* CellTextView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CellTextView.m; sourceTree = "<group>"; };
+		369191CD19F0B27C002A09E3 /* DictEditViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DictEditViewController.h; sourceTree = "<group>"; };
+		369191CE19F0B27C002A09E3 /* DictEditViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DictEditViewController.m; sourceTree = "<group>"; };
+		369191CF19F0B27C002A09E3 /* EditableTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EditableTableViewCell.h; sourceTree = "<group>"; };
+		369191D019F0B27C002A09E3 /* EditableTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EditableTableViewCell.m; sourceTree = "<group>"; };
+		369191D119F0B27C002A09E3 /* EditOptionsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EditOptionsViewController.h; sourceTree = "<group>"; };
+		369191D219F0B27C002A09E3 /* EditOptionsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EditOptionsViewController.m; sourceTree = "<group>"; };
+		369191D319F0B27C002A09E3 /* EditWordViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EditWordViewController.h; sourceTree = "<group>"; };
+		369191D419F0B27C002A09E3 /* EditWordViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EditWordViewController.m; sourceTree = "<group>"; };
+		369191D519F0B27C002A09E3 /* LanguageViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LanguageViewController.h; sourceTree = "<group>"; };
+		369191D619F0B27C002A09E3 /* LanguageViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LanguageViewController.m; sourceTree = "<group>"; };
+		369191D819F0B27C002A09E3 /* letimg.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = letimg.c; sourceTree = "<group>"; };
+		369191D919F0B27C002A09E3 /* letimg.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = letimg.h; sourceTree = "<group>"; };
+		369191DA19F0B27C002A09E3 /* LetterGroupView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LetterGroupView.h; sourceTree = "<group>"; };
+		369191DB19F0B27C002A09E3 /* LetterGroupView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LetterGroupView.m; sourceTree = "<group>"; };
+		369191DC19F0B27C002A09E3 /* LetterShapesController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LetterShapesController.h; sourceTree = "<group>"; };
+		369191DD19F0B27C002A09E3 /* LetterShapesController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LetterShapesController.m; sourceTree = "<group>"; };
+		369191DE19F0B27C002A09E3 /* lidata.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = lidata.c; sourceTree = "<group>"; };
+		369191DF19F0B27C002A09E3 /* lidatadf.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = lidatadf.h; sourceTree = "<group>"; };
+		369191E019F0B27C002A09E3 /* lidt_eng.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = lidt_eng.h; sourceTree = "<group>"; };
+		369191E119F0B27C002A09E3 /* lidt_fre.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = lidt_fre.h; sourceTree = "<group>"; };
+		369191E219F0B27C002A09E3 /* lidt_ger.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = lidt_ger.h; sourceTree = "<group>"; };
+		369191E319F0B27C002A09E3 /* ligstate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ligstate.h; sourceTree = "<group>"; };
+		369191E419F0B27C002A09E3 /* liintern.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = liintern.h; sourceTree = "<group>"; };
+		369191E519F0B27C002A09E3 /* ShapeAPI.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ShapeAPI.h; sourceTree = "<group>"; };
+		369191E619F0B27C002A09E3 /* ThumbImageView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ThumbImageView.h; sourceTree = "<group>"; };
+		369191E719F0B27C002A09E3 /* ThumbImageView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ThumbImageView.m; sourceTree = "<group>"; };
+		369191E819F0B27C002A09E3 /* LanguageSelectorController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LanguageSelectorController.h; sourceTree = "<group>"; };
+		369191E919F0B27C002A09E3 /* LanguageSelectorController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LanguageSelectorController.m; sourceTree = "<group>"; };
+		369191EA19F0B27C002A09E3 /* SourceCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SourceCell.h; sourceTree = "<group>"; };
+		369191EB19F0B27C002A09E3 /* SourceCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SourceCell.m; sourceTree = "<group>"; };
+		369191EC19F0B27C002A09E3 /* WordListEditViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WordListEditViewController.h; sourceTree = "<group>"; };
+		369191ED19F0B27C002A09E3 /* WordListEditViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WordListEditViewController.m; sourceTree = "<group>"; };
+		369191FE19F0B2A9002A09E3 /* Shortcut.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Shortcut.h; sourceTree = "<group>"; };
+		369191FF19F0B2A9002A09E3 /* Shortcut.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Shortcut.m; sourceTree = "<group>"; };
+		3691920019F0B2A9002A09E3 /* Shortcuts.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Shortcuts.h; sourceTree = "<group>"; };
+		3691920119F0B2A9002A09E3 /* Shortcuts.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Shortcuts.m; sourceTree = "<group>"; };
+		3691920519F0BFC0002A09E3 /* libWritePadRecoUniversal.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = libWritePadRecoUniversal.a; path = ../../Library/libWritePadRecoUniversal.a; sourceTree = "<group>"; };
+		36BBBCE619E32FD700E63C5C /* WritePadSDK-Sample.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "WritePadSDK-Sample.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		36BBBCEA19E32FD700E63C5C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		36BBBCEB19E32FD700E63C5C /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		36BBBCED19E32FD700E63C5C /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
+		36BBBCEE19E32FD700E63C5C /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
+		36BBBCF019E32FD700E63C5C /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
+		36BBBCF119E32FD700E63C5C /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
+		36BBBD2219E333CD00E63C5C /* gestures.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = gestures.h; path = ../../include/gestures.h; sourceTree = "<group>"; };
+		36BBBD2319E333CD00E63C5C /* InkWrapper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = InkWrapper.h; path = ../../include/InkWrapper.h; sourceTree = "<group>"; };
+		36BBBD2419E333CD00E63C5C /* recodefs.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = recodefs.h; path = ../../include/recodefs.h; sourceTree = "<group>"; };
+		36BBBD2519E333CD00E63C5C /* RecognizerAPI.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = RecognizerAPI.h; path = ../../include/RecognizerAPI.h; sourceTree = "<group>"; };
+		36BBBD2619E333CD00E63C5C /* RecognizerWrapper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = RecognizerWrapper.h; path = ../../include/RecognizerWrapper.h; sourceTree = "<group>"; };
+		36BBBD2719E333CD00E63C5C /* RecoTypes.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = RecoTypes.h; path = ../../include/RecoTypes.h; sourceTree = "<group>"; };
+		36BBBD5219E3B5FC00E63C5C /* Brazilian.dct */ = {isa = PBXFileReference; lastKnownFileType = file; name = Brazilian.dct; path = ../../Dictionaries/Brazilian.dct; sourceTree = "<group>"; };
+		36BBBD5319E3B5FC00E63C5C /* Danish.dct */ = {isa = PBXFileReference; lastKnownFileType = file; name = Danish.dct; path = ../../Dictionaries/Danish.dct; sourceTree = "<group>"; };
+		36BBBD5419E3B5FC00E63C5C /* Dutch.dct */ = {isa = PBXFileReference; lastKnownFileType = file; name = Dutch.dct; path = ../../Dictionaries/Dutch.dct; sourceTree = "<group>"; };
+		36BBBD5519E3B5FC00E63C5C /* English.dct */ = {isa = PBXFileReference; lastKnownFileType = file; name = English.dct; path = ../../Dictionaries/English.dct; sourceTree = "<group>"; };
+		36BBBD5619E3B5FC00E63C5C /* EnglishUK.dct */ = {isa = PBXFileReference; lastKnownFileType = file; name = EnglishUK.dct; path = ../../Dictionaries/EnglishUK.dct; sourceTree = "<group>"; };
+		36BBBD5719E3B5FC00E63C5C /* Finnish.dct */ = {isa = PBXFileReference; lastKnownFileType = file; name = Finnish.dct; path = ../../Dictionaries/Finnish.dct; sourceTree = "<group>"; };
+		36BBBD5819E3B5FC00E63C5C /* French.dct */ = {isa = PBXFileReference; lastKnownFileType = file; name = French.dct; path = ../../Dictionaries/French.dct; sourceTree = "<group>"; };
+		36BBBD5919E3B5FC00E63C5C /* German.dct */ = {isa = PBXFileReference; lastKnownFileType = file; name = German.dct; path = ../../Dictionaries/German.dct; sourceTree = "<group>"; };
+		36BBBD5A19E3B5FC00E63C5C /* Italian.dct */ = {isa = PBXFileReference; lastKnownFileType = file; name = Italian.dct; path = ../../Dictionaries/Italian.dct; sourceTree = "<group>"; };
+		36BBBD5C19E3B5FC00E63C5C /* Norwegian.dct */ = {isa = PBXFileReference; lastKnownFileType = file; name = Norwegian.dct; path = ../../Dictionaries/Norwegian.dct; sourceTree = "<group>"; };
+		36BBBD5D19E3B5FC00E63C5C /* Portuguese.dct */ = {isa = PBXFileReference; lastKnownFileType = file; name = Portuguese.dct; path = ../../Dictionaries/Portuguese.dct; sourceTree = "<group>"; };
+		36BBBD5E19E3B5FC00E63C5C /* Spanish.dct */ = {isa = PBXFileReference; lastKnownFileType = file; name = Spanish.dct; path = ../../Dictionaries/Spanish.dct; sourceTree = "<group>"; };
+		36BBBD5F19E3B5FC00E63C5C /* Swedish.dct */ = {isa = PBXFileReference; lastKnownFileType = file; name = Swedish.dct; path = ../../Dictionaries/Swedish.dct; sourceTree = "<group>"; };
+		36C1553019F1CD4600ACBB71 /* UIConst.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UIConst.h; sourceTree = "<group>"; };
+		36EEA1241AA43EB40033E8C0 /* Indonesian.dct */ = {isa = PBXFileReference; lastKnownFileType = file; name = Indonesian.dct; path = ../../Dictionaries/Indonesian.dct; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		36BBBCE319E32FD700E63C5C /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				3691920619F0BFC0002A09E3 /* libWritePadRecoUniversal.a in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		3691917C19F0AFFF002A09E3 /* Resource */ = {
+			isa = PBXGroup;
+			children = (
+				3691917D19F0AFFF002A09E3 /* Images.xcassets */,
+				3691917E19F0AFFF002A09E3 /* LaunchScreen.xib */,
+				3691917F19F0AFFF002A09E3 /* Main.storyboard */,
+				3691918019F0AFFF002A09E3 /* ReleaseNotes.txt */,
+				3691918219F0AFFF002A09E3 /* usershortcuts.csv */,
+			);
+			path = Resource;
+			sourceTree = "<group>";
+		};
+		3691919F19F0B132002A09E3 /* WritePanel */ = {
+			isa = PBXGroup;
+			children = (
+				369191A019F0B132002A09E3 /* AsyncResultView.h */,
+				369191A119F0B132002A09E3 /* AsyncResultView.m */,
+				369191A219F0B132002A09E3 /* WritePadInputPanel.h */,
+				369191A319F0B132002A09E3 /* WritePadInputPanel.m */,
+				369191A419F0B132002A09E3 /* WritePadInputView.h */,
+				369191A519F0B132002A09E3 /* WritePadInputView.m */,
+			);
+			path = WritePanel;
+			sourceTree = "<group>";
+		};
+		369191A919F0B159002A09E3 /* WriteAnywhere */ = {
+			isa = PBXGroup;
+			children = (
+				369191AA19F0B159002A09E3 /* InkCollectorView.h */,
+				369191AB19F0B159002A09E3 /* InkCollectorView.m */,
+			);
+			path = WriteAnywhere;
+			sourceTree = "<group>";
+		};
+		369191B019F0B243002A09E3 /* Utilities */ = {
+			isa = PBXGroup;
+			children = (
+				369191B119F0B243002A09E3 /* LanguageManager.h */,
+				369191B219F0B243002A09E3 /* LanguageManager.m */,
+				369191B419F0B243002A09E3 /* RecognizerManager.h */,
+				369191B519F0B243002A09E3 /* RecognizerManager.m */,
+				369191B819F0B243002A09E3 /* SuggestionsView.h */,
+				369191B919F0B243002A09E3 /* SuggestionsView.m */,
+				369191B619F0B243002A09E3 /* RectObject.h */,
+				369191B719F0B243002A09E3 /* RectObject.m */,
+				369191BB19F0B243002A09E3 /* utils.h */,
+				369191BC19F0B243002A09E3 /* utils.m */,
+				369191B319F0B243002A09E3 /* OptionKeys.h */,
+				36C1553019F1CD4600ACBB71 /* UIConst.h */,
+				369191BD19F0B243002A09E3 /* WPTextView.h */,
+				369191BE19F0B243002A09E3 /* WPTextView.m */,
+			);
+			path = Utilities;
+			sourceTree = "<group>";
+		};
+		369191C819F0B27C002A09E3 /* Options */ = {
+			isa = PBXGroup;
+			children = (
+				369191D719F0B27C002A09E3 /* ShapeSelector */,
+				369191C919F0B27C002A09E3 /* CellTextField.h */,
+				369191CA19F0B27C002A09E3 /* CellTextField.m */,
+				369191CB19F0B27C002A09E3 /* CellTextView.h */,
+				369191CC19F0B27C002A09E3 /* CellTextView.m */,
+				369191CD19F0B27C002A09E3 /* DictEditViewController.h */,
+				369191CE19F0B27C002A09E3 /* DictEditViewController.m */,
+				369191CF19F0B27C002A09E3 /* EditableTableViewCell.h */,
+				369191D019F0B27C002A09E3 /* EditableTableViewCell.m */,
+				369191D119F0B27C002A09E3 /* EditOptionsViewController.h */,
+				369191D219F0B27C002A09E3 /* EditOptionsViewController.m */,
+				369191D319F0B27C002A09E3 /* EditWordViewController.h */,
+				369191D419F0B27C002A09E3 /* EditWordViewController.m */,
+				369191D519F0B27C002A09E3 /* LanguageViewController.h */,
+				369191D619F0B27C002A09E3 /* LanguageViewController.m */,
+				369191E819F0B27C002A09E3 /* LanguageSelectorController.h */,
+				369191E919F0B27C002A09E3 /* LanguageSelectorController.m */,
+				369191EA19F0B27C002A09E3 /* SourceCell.h */,
+				369191EB19F0B27C002A09E3 /* SourceCell.m */,
+				369191EC19F0B27C002A09E3 /* WordListEditViewController.h */,
+				369191ED19F0B27C002A09E3 /* WordListEditViewController.m */,
+			);
+			path = Options;
+			sourceTree = "<group>";
+		};
+		369191D719F0B27C002A09E3 /* ShapeSelector */ = {
+			isa = PBXGroup;
+			children = (
+				369191D819F0B27C002A09E3 /* letimg.c */,
+				369191D919F0B27C002A09E3 /* letimg.h */,
+				369191DA19F0B27C002A09E3 /* LetterGroupView.h */,
+				369191DB19F0B27C002A09E3 /* LetterGroupView.m */,
+				369191DC19F0B27C002A09E3 /* LetterShapesController.h */,
+				369191DD19F0B27C002A09E3 /* LetterShapesController.m */,
+				369191DE19F0B27C002A09E3 /* lidata.c */,
+				369191DF19F0B27C002A09E3 /* lidatadf.h */,
+				369191E019F0B27C002A09E3 /* lidt_eng.h */,
+				369191E119F0B27C002A09E3 /* lidt_fre.h */,
+				369191E219F0B27C002A09E3 /* lidt_ger.h */,
+				369191E319F0B27C002A09E3 /* ligstate.h */,
+				369191E419F0B27C002A09E3 /* liintern.h */,
+				369191E519F0B27C002A09E3 /* ShapeAPI.h */,
+				369191E619F0B27C002A09E3 /* ThumbImageView.h */,
+				369191E719F0B27C002A09E3 /* ThumbImageView.m */,
+			);
+			path = ShapeSelector;
+			sourceTree = "<group>";
+		};
+		369191FD19F0B2A9002A09E3 /* Shortcuts */ = {
+			isa = PBXGroup;
+			children = (
+				369191FE19F0B2A9002A09E3 /* Shortcut.h */,
+				369191FF19F0B2A9002A09E3 /* Shortcut.m */,
+				3691920019F0B2A9002A09E3 /* Shortcuts.h */,
+				3691920119F0B2A9002A09E3 /* Shortcuts.m */,
+			);
+			path = Shortcuts;
+			sourceTree = "<group>";
+		};
+		36BBBCDD19E32FD700E63C5C = {
+			isa = PBXGroup;
+			children = (
+				36BBBCE819E32FD700E63C5C /* WritePadSDK-Sample */,
+				36BBBCE719E32FD700E63C5C /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		36BBBCE719E32FD700E63C5C /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				36BBBCE619E32FD700E63C5C /* WritePadSDK-Sample.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		36BBBCE819E32FD700E63C5C /* WritePadSDK-Sample */ = {
+			isa = PBXGroup;
+			children = (
+				369191FD19F0B2A9002A09E3 /* Shortcuts */,
+				369191C819F0B27C002A09E3 /* Options */,
+				369191B019F0B243002A09E3 /* Utilities */,
+				369191A919F0B159002A09E3 /* WriteAnywhere */,
+				3691919F19F0B132002A09E3 /* WritePanel */,
+				36BBBD2119E333BB00E63C5C /* Include */,
+				36BBBCED19E32FD700E63C5C /* AppDelegate.h */,
+				36BBBCEE19E32FD700E63C5C /* AppDelegate.m */,
+				36BBBCF019E32FD700E63C5C /* ViewController.h */,
+				36BBBCF119E32FD700E63C5C /* ViewController.m */,
+				36BBBCE919E32FD700E63C5C /* Supporting Files */,
+			);
+			path = "WritePadSDK-Sample";
+			sourceTree = "<group>";
+		};
+		36BBBCE919E32FD700E63C5C /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				3691920519F0BFC0002A09E3 /* libWritePadRecoUniversal.a */,
+				3691917C19F0AFFF002A09E3 /* Resource */,
+				36BBBD5119E3B5EF00E63C5C /* Dictionaries */,
+				36BBBCEA19E32FD700E63C5C /* Info.plist */,
+				36BBBCEB19E32FD700E63C5C /* main.m */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		36BBBD2119E333BB00E63C5C /* Include */ = {
+			isa = PBXGroup;
+			children = (
+				36BBBD2219E333CD00E63C5C /* gestures.h */,
+				36BBBD2319E333CD00E63C5C /* InkWrapper.h */,
+				36BBBD2419E333CD00E63C5C /* recodefs.h */,
+				36BBBD2519E333CD00E63C5C /* RecognizerAPI.h */,
+				36BBBD2619E333CD00E63C5C /* RecognizerWrapper.h */,
+				36BBBD2719E333CD00E63C5C /* RecoTypes.h */,
+			);
+			name = Include;
+			sourceTree = "<group>";
+		};
+		36BBBD5119E3B5EF00E63C5C /* Dictionaries */ = {
+			isa = PBXGroup;
+			children = (
+				36EEA1241AA43EB40033E8C0 /* Indonesian.dct */,
+				36BBBD5219E3B5FC00E63C5C /* Brazilian.dct */,
+				36BBBD5319E3B5FC00E63C5C /* Danish.dct */,
+				36BBBD5419E3B5FC00E63C5C /* Dutch.dct */,
+				36BBBD5519E3B5FC00E63C5C /* English.dct */,
+				36BBBD5619E3B5FC00E63C5C /* EnglishUK.dct */,
+				36BBBD5719E3B5FC00E63C5C /* Finnish.dct */,
+				36BBBD5819E3B5FC00E63C5C /* French.dct */,
+				36BBBD5919E3B5FC00E63C5C /* German.dct */,
+				36BBBD5A19E3B5FC00E63C5C /* Italian.dct */,
+				36BBBD5C19E3B5FC00E63C5C /* Norwegian.dct */,
+				36BBBD5D19E3B5FC00E63C5C /* Portuguese.dct */,
+				36BBBD5E19E3B5FC00E63C5C /* Spanish.dct */,
+				36BBBD5F19E3B5FC00E63C5C /* Swedish.dct */,
+			);
+			name = Dictionaries;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		36BBBCE519E32FD700E63C5C /* WritePadSDK-Sample */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 36BBBD0919E32FD700E63C5C /* Build configuration list for PBXNativeTarget "WritePadSDK-Sample" */;
+			buildPhases = (
+				36BBBCE219E32FD700E63C5C /* Sources */,
+				36BBBCE319E32FD700E63C5C /* Frameworks */,
+				36BBBCE419E32FD700E63C5C /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "WritePadSDK-Sample";
+			productName = "WritePadSDK-Sample";
+			productReference = 36BBBCE619E32FD700E63C5C /* WritePadSDK-Sample.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		36BBBCDE19E32FD700E63C5C /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 0700;
+				ORGANIZATIONNAME = "PhatWare Corp.";
+				TargetAttributes = {
+					36BBBCE519E32FD700E63C5C = {
+						CreatedOnToolsVersion = 6.0.1;
+						DevelopmentTeam = U97D34BCNV;
+					};
+				};
+			};
+			buildConfigurationList = 36BBBCE119E32FD700E63C5C /* Build configuration list for PBXProject "WritePadSDK-Sample" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 36BBBCDD19E32FD700E63C5C;
+			productRefGroup = 36BBBCE719E32FD700E63C5C /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				36BBBCE519E32FD700E63C5C /* WritePadSDK-Sample */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		36BBBCE419E32FD700E63C5C /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				36BBBD6419E3B5FC00E63C5C /* EnglishUK.dct in Resources */,
+				3691918819F0AFFF002A09E3 /* usershortcuts.csv in Resources */,
+				36BBBD6D19E3B5FC00E63C5C /* Swedish.dct in Resources */,
+				36BBBD6319E3B5FC00E63C5C /* English.dct in Resources */,
+				36BBBD6719E3B5FC00E63C5C /* German.dct in Resources */,
+				36BBBD6519E3B5FC00E63C5C /* Finnish.dct in Resources */,
+				36BBBD6219E3B5FC00E63C5C /* Dutch.dct in Resources */,
+				3691918519F0AFFF002A09E3 /* Main.storyboard in Resources */,
+				3691918319F0AFFF002A09E3 /* Images.xcassets in Resources */,
+				36BBBD6B19E3B5FC00E63C5C /* Portuguese.dct in Resources */,
+				36BBBD6119E3B5FC00E63C5C /* Danish.dct in Resources */,
+				36BBBD6A19E3B5FC00E63C5C /* Norwegian.dct in Resources */,
+				36EEA1251AA43EB40033E8C0 /* Indonesian.dct in Resources */,
+				36BBBD6C19E3B5FC00E63C5C /* Spanish.dct in Resources */,
+				3691918619F0AFFF002A09E3 /* ReleaseNotes.txt in Resources */,
+				36BBBD6019E3B5FC00E63C5C /* Brazilian.dct in Resources */,
+				3691918419F0AFFF002A09E3 /* LaunchScreen.xib in Resources */,
+				36BBBD6819E3B5FC00E63C5C /* Italian.dct in Resources */,
+				36BBBD6619E3B5FC00E63C5C /* French.dct in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		36BBBCE219E32FD700E63C5C /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				369191C519F0B243002A09E3 /* utils.m in Sources */,
+				369191C419F0B243002A09E3 /* SuggestionsView.m in Sources */,
+				369191EE19F0B27C002A09E3 /* CellTextField.m in Sources */,
+				369191F719F0B27C002A09E3 /* LetterShapesController.m in Sources */,
+				369191F919F0B27C002A09E3 /* ThumbImageView.m in Sources */,
+				369191FC19F0B27C002A09E3 /* WordListEditViewController.m in Sources */,
+				369191F419F0B27C002A09E3 /* LanguageViewController.m in Sources */,
+				369191C319F0B243002A09E3 /* RectObject.m in Sources */,
+				369191FA19F0B27C002A09E3 /* LanguageSelectorController.m in Sources */,
+				369191F119F0B27C002A09E3 /* EditableTableViewCell.m in Sources */,
+				36BBBCF219E32FD700E63C5C /* ViewController.m in Sources */,
+				369191F219F0B27C002A09E3 /* EditOptionsViewController.m in Sources */,
+				369191C119F0B243002A09E3 /* LanguageManager.m in Sources */,
+				369191F519F0B27C002A09E3 /* letimg.c in Sources */,
+				36BBBCEF19E32FD700E63C5C /* AppDelegate.m in Sources */,
+				369191F619F0B27C002A09E3 /* LetterGroupView.m in Sources */,
+				369191F019F0B27C002A09E3 /* DictEditViewController.m in Sources */,
+				369191FB19F0B27C002A09E3 /* SourceCell.m in Sources */,
+				369191C219F0B243002A09E3 /* RecognizerManager.m in Sources */,
+				369191F819F0B27C002A09E3 /* lidata.c in Sources */,
+				3691920319F0B2A9002A09E3 /* Shortcuts.m in Sources */,
+				369191EF19F0B27C002A09E3 /* CellTextView.m in Sources */,
+				369191A619F0B132002A09E3 /* AsyncResultView.m in Sources */,
+				369191F319F0B27C002A09E3 /* EditWordViewController.m in Sources */,
+				369191A719F0B132002A09E3 /* WritePadInputPanel.m in Sources */,
+				369191A819F0B132002A09E3 /* WritePadInputView.m in Sources */,
+				3691920219F0B2A9002A09E3 /* Shortcut.m in Sources */,
+				369191AE19F0B159002A09E3 /* InkCollectorView.m in Sources */,
+				36BBBCEC19E32FD700E63C5C /* main.m in Sources */,
+				369191C619F0B243002A09E3 /* WPTextView.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin XCBuildConfiguration section */
+		36BBBD0719E32FD700E63C5C /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		36BBBD0819E32FD700E63C5C /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = YES;
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		36BBBD0A19E32FD700E63C5C /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				GCC_PREPROCESSOR_DEFINITIONS = "$(inherited) ";
+				INFOPLIST_FILE = "WritePadSDK-Sample/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(SRCROOT)/../Library",
+				);
+				OTHER_LDFLAGS = "-lstdc++";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.phatware.$(PRODUCT_NAME:rfc1034identifier)";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		36BBBD0B19E32FD700E63C5C /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				GCC_PREPROCESSOR_DEFINITIONS = "";
+				INFOPLIST_FILE = "WritePadSDK-Sample/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(SRCROOT)/../Library",
+				);
+				OTHER_LDFLAGS = "-lstdc++";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.phatware.$(PRODUCT_NAME:rfc1034identifier)";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		36BBBCE119E32FD700E63C5C /* Build configuration list for PBXProject "WritePadSDK-Sample" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				36BBBD0719E32FD700E63C5C /* Debug */,
+				36BBBD0819E32FD700E63C5C /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		36BBBD0919E32FD700E63C5C /* Build configuration list for PBXNativeTarget "WritePadSDK-Sample" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				36BBBD0A19E32FD700E63C5C /* Debug */,
+				36BBBD0B19E32FD700E63C5C /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 36BBBCDE19E32FD700E63C5C /* Project object */;
+}

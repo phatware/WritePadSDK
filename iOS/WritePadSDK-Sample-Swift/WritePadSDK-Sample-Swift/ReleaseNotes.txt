@@ -1,0 +1,60 @@
+WritePad® SDK 5.2 for iOS 9
+Release Notes
+Copyright © 2008-2015 PhatWare® Corp. All rights reserved.
+
+Overview
+=======
+
+WritePad® is a natural, style, writer and lexicon independent multilingual handwriting recognition technology. WritePad SDK enables natural handwriting input in third party applications on pen and/or touch enabled mobile devices. The SDK includes:
+
+•	WritePad recognition engine in object code and dictionaries for English, French, German, Dutch, Danish, Italian, Portuguese, Norwegian, Finish, Swedish, and Spanish languages. Engine is compatible with the user-specified platform. This SDK can supports iOS 7.0 or later.
+•	C/C++ header files with definition of API calls and structures
+•	Developer's Guide in Microsoft Word format
+•	Sample source code that demonstrates how to use the WritePad SDK in an iOS application.
+
+Quick Write Anywhere Tutorial
+=======================
+
+1.  To enter text, simply write horizontally anywhere on the screen in your preferred handwriting style. You can write one or more words per recognition session, but always complete the entire word in each session because the dictionary is used to find best results. When you stop writing for longer than the Recognition Delay time, handwriting will be converted to the digital text, which will appear at the current cursor location. You can use the Return gesture instead of waiting for the recognition delay to speed up text entry. If you make a mistake use the long Backspace gesture to delete the last stroke or the Cut gesture to cancel the current recognition session. 
+2.  To position the cursor, touch once at the desired location. 
+3.  To scroll up, use the long up stroke (the Scroll Up gesture).
+4.  To scroll down, use the long down stroke (the Scroll Down gesture).
+5.  To use cut, copy, paste, and select commands, touch and hold at the starting location. After the Edit menu appears select the desired command. You can also use corresponding gestures.
+6.  To delete a character before the current cursor location or the last stroke while writing, use the long left gesture (the Backspace gesture)
+7.  To delete all handwritten text before recognition in case of an error, use the horizontal left-right gesture (the Backspace gesture)
+8.  To undo the last recognition results, use an up-down gesture (the Undo gesture).
+9.  To insert the return character, use the short down-long left gesture (the Return gesture)
+10. To insert the space character, use the short down-long right gesture (the Space gesture).
+11. To insert often-repeated text and perform standard editing commands using the Shorthand feature, write the desired Shorthand name and draw a circle around it.
+12. To use the built-in calculator, write something like 23.4+11.3=. The = symbol at the end of the equation is required to invoke the calculator.
+
+
+
+WritePad SDK features
+==================
+
+•	Recognizes natural handwritten text in a variety of handwriting styles: cursive (script), PRINT, and MIXed (cursive/print).
+•	Recognizes dictionary words from its main or user-defined dictionary, as well as non-dictionary words, such as names, numbers and mixed alphanumeric combinations.
+•	Provides automatic segmentation of handwritten text into words and automatically differentiates between vocabulary and non-vocabulary words, and between words and arbitrary alphanumeric strings
+•	Does not require a user to train the software and allows for most users to achieve high accuracy right "out of the box".
+•	Reliably recognizes handwriting in 11 languages, including English (US, UK), French, Finnish, German, Italian, Dutch, Danish, Norwegian, Portuguese (Brazil and Portugal), Swedish, and Spanish languages.
+
+Directory structure
+==============
+
+•	Dictionaries – contains WritePad dictionaries for all supported languages
+•	Documentation – contains WritePad SDK documentation and licensing agreements
+•	include – contain SDK header files
+•	lib-iphoneos – contains WritePad static libraries compiled for the device (iPad, iPhone, iPod Touch, iOS 8.0+)
+•	lib-iphoesimulator – contains WritePad static libraries compiled for the simulator (iOS simulator, i386, iOS 8.0+)
+•	WritePadSDK-Sample – sample project in Objective-C that demonstrates usage of the WritePad SDK. This project uses iOS SDK 8.0, however it can be compiled for older or newer versions of iOS. It has been also tested on iOS 8.1
+•	WritePadSDK-Sample-Swift – sample project that demonstrates usage of the WritePad SDK in swift application. This project supports iOS SDK 8.0 or later. The projct contains combination of Swift (font-end) and Objective-C (recognizer support) code.
+
+Compiling the sample project
+============================
+
+WritePadSDK-Sample and WritePadSDK-Sample-Swift sample projects are included with the SDK. This is a universal app, which targets iPad and iPhone devices. When creating your own project using the WritePad SDK which does not contain any C or C++ files you may need to specify the additional linker flags in the project settings (Other Linker Flags filed): -cclib -lstdc++
+You can use the sample source code in your project when integrating with WritePad SDK. The sample source code is provided “AS-IS” without any warranties. For more information, see the license and warranty disclaimer at the beginning of each source file.
+The sample code also demonstrates how to implement in-app purchase for all supported languages. In-app purchase dialog appears when switching between languages in the Options view. Note that when implementing in-app purchase in your application you must provide the correct application bundle ID in the WritePadStoreManager.m file. You also must configure the in-app purchase section for your app on iTunes Connect web site. 
+Please note that a use the SDK sample code, or any portion of it, in an application that is not integrated with the WritePad SDK is stickily prohibited and will constitute violation of the WritePad SDK License Agreement. 
+

@@ -15,9 +15,9 @@ hereunder to market, license or distribute in any manner applications
 developed with the Software or that contain any portion of the Software
 without a separate written agreement with PhatWare.
 
-**LICENSE**
+### LICENSE
 
--   Grant of License. Subject to the terms and conditions of this
+-   **Grant of License.** Subject to the terms and conditions of this
     Agreement, PhatWare hereby grants to Licensee a royalty-free,
     non-exclusive, non-transferable and revocable license to use the
     Software only for development and testing of software applications
@@ -29,7 +29,7 @@ without a separate written agreement with PhatWare.
     as distributed components solely for internal application testing
     purposes or for direct demonstration of the application to
     prospective customers.
--   Limitations. Licensee shall not offer for sale, sell, license,
+-   **Limitations.** Licensee shall not offer for sale, sell, license,
     sublicense, distribute or transmit such applications, the Software,
     or any portion thereof incorporated into such applications without
     obtaining the appropriate distribution license from PhatWare.
@@ -38,9 +38,9 @@ without a separate written agreement with PhatWare.
     any copies of the Software except as necessary to use the Software
     in accordance with this Agreement.
 
-**NONDISCLOSURE**
+### NONDISCLOSURE
 
--   Confidential Obligations. Licensee agrees to hold the Software and
+-   **Confidential Obligations.** Licensee agrees to hold the Software and
     any features, output produced by, and other information in writing
     relating to the Software which is marked as confidential
     (collectively referred to as the "Confidential Information") in
@@ -56,7 +56,7 @@ without a separate written agreement with PhatWare.
     or unauthorized use, including but not limited to all steps that it
     takes to protect its own information that it considers proprietary
     and trade secret.
--   Exceptions. Licensee shall have no obligation to maintain
+-   **Exceptions.** Licensee shall have no obligation to maintain
     confidentiality of any information which (a) is or becomes part of
     the public domain through no act or omission of Licensee; (b) was in
     Licensee's lawful possession prior to the disclosure and had not
@@ -65,9 +65,9 @@ without a separate written agreement with PhatWare.
     without restriction on disclosure; or (d) is independently developed
     by Licensee without use of any Confidential Information.
 
-**WARRANTY, LIMITATION OF LIABILITY AND INDEMNIFICATION**
+### WARRANTY, LIMITATION OF LIABILITY AND INDEMNIFICATION
 
--   Limited Software Warranty. PhatWare warrants only to Licensee the
+-   **Limited Software Warranty.** PhatWare warrants only to Licensee the
     following for a period of thirty (30) days after shipment: (i) the
     media on which the Software is furnished will be free of defects in
     materials and workmanship; (ii) that the Software will perform
@@ -76,7 +76,7 @@ without a separate written agreement with PhatWare.
     PhatWare’s entire liability under this limited warranty, shall be,
     at PhatWare’s option, to repair or replace the Software as
     appropriate.
--   Disclaimer. THE EXPRESS WARRANTY SET FORTH ABOVE CONSTITUTES THE
+-   **Disclaimer.** THE EXPRESS WARRANTY SET FORTH ABOVE CONSTITUTES THE
     ONLY WARRANTY WITH RESPECT TO THE SOFTWARE. PHATWARE MAKES AND
     LICENSEE RECEIVES NO OTHER REPRESENTATION OR WARRANTY OF ANY KIND
     WHETHER EXPRESS OR IMPLIED (EITHER IN FACT OR BY OPERATION OF LAW)
@@ -89,7 +89,7 @@ without a separate written agreement with PhatWare.
     BASED UPON VALUE OR CONTENT OF INFORMATION TRANSMITTED, OR THE
     RESULTS OR EFFECT OF SUCH TRANSMISSION, BY ANY PARTY USING THE
     SOFTWARE.
--   Limitation of Liability. IN NO EVENT SHALL PHATWARE BE LIABLE TO
+-   **Limitation of Liability.** IN NO EVENT SHALL PHATWARE BE LIABLE TO
     LICENSEE OR ANY OTHER PARTY FOR DAMAGES OF ANY KIND ARISING FROM USE
     OF THE SOFTWARE, WHETHER RESULTING FROM A TORT (INCLUDING
     NEGLIGENCE) BREACH OF CONTRACT OR OTHER FORM OF ACTION, INCLUDING
@@ -101,7 +101,7 @@ without a separate written agreement with PhatWare.
     data, lost profits and other consequential damages that may result
     in any way related to this Agreement, including without limitation,
     use of the Software.
--   Indemnification. PhatWare shall, at its expense, indemnify and hold
+-   **Indemnification.** PhatWare shall, at its expense, indemnify and hold
     Licensee harmless from and against any award of damages or
     PhatWare-approved settlement arising from a claim based on an
     allegation that the Software infringes a third party’s US patent or
@@ -120,13 +120,13 @@ without a separate written agreement with PhatWare.
     an infringement claim if the use of the Software alone would not
     give rise to such infringing situation; or (iii) is other than the
     most current version if use of such current version would have
-    avoided the infringing situation. THE FOREGOING SECTION SETS FORTH
+    avoided the infringing situation. **THE FOREGOING SECTION SETS FORTH
     THE ENTIRE LIABILITY OF PHATWARE AND LICENSEE’S SOLE REMEDIES FOR
-    INFRINGEMENT AND ALLEGATIONS OF INFRINGEMENT.
+    INFRINGEMENT AND ALLEGATIONS OF INFRINGEMENT.**
 
-**OWNERSHIP OF SOFTWARE**
+### OWNERSHIP OF SOFTWARE
 
--   Ownership. Licensee acknowledges and agrees that all right, title,
+-   **Ownership.** Licensee acknowledges and agrees that all right, title,
     and interest in and to the Software, including without limitation
     any and all copyrights, patents, patent applications, trade secrets,
     and other intellectual property rights embodied therein, are and
@@ -136,7 +136,7 @@ without a separate written agreement with PhatWare.
     patents, trade secrets, trademarks or other intellectual property on
     account of this Agreement or Licensee's performance Exhibit
     hereunder.
--   Assignment. Licensee is under no obligation to make suggestions for
+-   **Assignment.** Licensee is under no obligation to make suggestions for
     change and improvement; however, if Licensee does make any such
     suggestions, Licensee agrees to promptly disclose and hereby assigns
     to PhatWare any such suggestions for change and improvement to any
@@ -144,19 +144,16 @@ without a separate written agreement with PhatWare.
     obtaining intellectual property protection relating to such
     suggestions as PhatWare may reasonably require.
 
-**FEES AND ENGINEERING SUPPORT**
+### FEES AND ENGINEERING SUPPORT
 
--   The fee for the license provided hereunder is specified in Exhibit
-    B. Exhibit B also specifies how many hours, if any, of engineering
-    support are included with this fee. If the support option is
-    included, the specified amount of hours of telephone or email
-    engineering support on a best efforts basis will be provided during
-    effective time of this Agreement or if the purchased support limit
-    is reached. Telephone and email contact information will be provided
-    to you. Additional engineering support is available at the
+-   There is no fee for the license provided hereunder. There is no engineering
+    support included with this license. The support option can be purchased separately
+    at then-current rate and will be provided for the specified amount of hours of telephone or email
+    engineering support on a best efforts basis. Telephone and email contact information will be provided
+    to you when you purchase the support option. Additional engineering support is available at the
     then-current rate, subject to availability.
 
-**TERM AND TERMINATION**
+### TERM AND TERMINATION
 
 -   The term of this Agreement is one (1) year unless extended by mutual
     agreement. PhatWare may terminate this Agreement at any time if
@@ -164,7 +161,7 @@ without a separate written agreement with PhatWare.
     and fails to cure such breach within ten (10) days upon receipt of
     written notice of breach.
 
-**RETURN OF PRODUCTS**
+### RETURN OF PRODUCTS
 
 -   Upon expiration or termination, or unless Licensee otherwise
     licenses the Software for distribution, the rights and licenses
@@ -177,9 +174,9 @@ without a separate written agreement with PhatWare.
     all copies of the Software and Confidential Information relating
     thereto have been returned to PhatWare or destroyed.
 
-**GENERAL**
+### GENERAL
 
--   Injunctive Relief. Licensee acknowledges that any unauthorized
+-   **Injunctive Relief.** Licensee acknowledges that any unauthorized
     disclosure or use of the Software and/or Confidential Information
     would cause irreparable harm and significant injury to PhatWare
     which could not be adequately compensated by monetary damages.
@@ -188,25 +185,25 @@ without a separate written agreement with PhatWare.
     respect to the intellectual property rights or the Confidential
     Information of PhatWare, in addition to any other remedies that may
     be available to PhatWare at law or in equity.
--   Survival. The provisions of Sections 2, 4, 5, and 7 shall survive
+-   **Survival.** The provisions of Sections 2, 4, 5, and 7 shall survive
     the expiration or termination of this Agreement.
 -   Governing Law. This Agreement shall be governed by and construed in
     accordance with the laws of California, excluding that body of law
     known as choice of law. Licensee hereby consents to the personal and
-    exclusive jurisdiction and venue of the northern district of
-    California federal and state courts, as applicable.
--   Severability. If any provision of this Agreement shall be held
+    exclusive jurisdiction and venue of the *northern district of
+    California federal and state courts*, as applicable.
+-   **Severability.** If any provision of this Agreement shall be held
     invalid or unenforceable by a court of competent jurisdiction, the
     remaining provisions of the Agreement shall remain in full force and
     effect, and the provision or portion thereof affected shall be
     construed so as to be enforceable to the maximum extent permissible
     by law.
--   Entire Agreement. This Agreement and the attached exhibits
+-   **Entire Agreement.** This Agreement and the attached exhibits
     constitute the entire agreement and understanding of the parties
     regarding the subject matter hereof and may not be modified except
     by written instrument signed by an authorized representative of each
     party.
--   No Assignment. This Agreement may not be assigned by Licensee
+-   **No Assignment.** This Agreement may not be assigned by Licensee
     without the prior written consent of PhatWare, and any attempt to
     assign without such consent shall be null and void.
 

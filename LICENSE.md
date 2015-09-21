@@ -187,7 +187,7 @@ without a separate written agreement with PhatWare.
     be available to PhatWare at law or in equity.
 -   **Survival.** The provisions of Sections 2, 4, 5, and 7 shall survive
     the expiration or termination of this Agreement.
--   Governing Law. This Agreement shall be governed by and construed in
+-   **Governing Law.** This Agreement shall be governed by and construed in
     accordance with the laws of California, excluding that body of law
     known as choice of law. Licensee hereby consents to the personal and
     exclusive jurisdiction and venue of the *northern district of

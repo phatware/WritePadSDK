@@ -61,7 +61,7 @@ touch enabled mobile devices. The SDK includes:
     Danish, Norwegian, Portuguese (Brazil and Portugal), Swedish, and
     Spanish languages.
 
-# Directory structure
+# Directory structure (iOS)
 
 -   **Dictionaries** – contains WritePad dictionaries for all
     supported languages
@@ -79,7 +79,7 @@ touch enabled mobile devices. The SDK includes:
     recognition manager in Objective-C provides bridge between WritePad
     C-language API and front end written in Swift.
 
-# Compiling the sample project
+# Compiling the sample project (iOS)
 
 **WritePadSDK-Sample** and **WritePadSDK-Sample-Swift** sample projects
 are included with the SDK targeting both iPad and iPhone devices. 

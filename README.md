@@ -1,4 +1,3 @@
-# WritePad SDK
 # WritePad Handwriting Recognition SDK
 
 # License Overview

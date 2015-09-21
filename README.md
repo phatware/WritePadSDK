@@ -2,7 +2,7 @@
 
 **Copyright 1997-2015 PhatWare(r) Corp. All rights reserved.**
 
-# License Overview
+## License Overview
 
 **You can:**
 
@@ -25,7 +25,7 @@ For additional information, please read the [WritePad SDK developer license agre
 To obtain commercial license, please contact PhatWare Corp. by sending
 your request to [developer@phatware.com](mailto:developer@phatware.com)
 
-# SDK Overview
+## SDK Overview
 
 WritePad® is a natural, style, writer and lexicon independent
 multilingual handwriting recognition technology. WritePad SDK enables
@@ -45,7 +45,7 @@ touch enabled mobile devices. The SDK includes:
 -   Sample source code that demonstrates how to use the WritePad SDK
     in an iOS application.
 
-# WritePad SDK features
+## WritePad SDK features
 
 -   Recognizes natural handwritten text in a variety of handwriting
     styles: *cursive (script),* **PRINT**, and MIX*ed*
@@ -63,7 +63,7 @@ touch enabled mobile devices. The SDK includes:
     Danish, Norwegian, Portuguese (Brazil and Portugal), Swedish, and
     Spanish languages.
 
-# Directory structure (iOS)
+## Directory structure (iOS)
 
 -   **Dictionaries** – contains WritePad dictionaries for all
     supported languages
@@ -79,7 +79,7 @@ touch enabled mobile devices. The SDK includes:
     recognition manager in Objective-C provides bridge between WritePad
     C-language API and front end written in Swift.
 
-# Directory structure (Android)
+## Directory structure (Android)
 
 -   **dictionaries** – contains WritePad dictionaries for all
     supported languages
@@ -88,7 +88,7 @@ touch enabled mobile devices. The SDK includes:
     arm64-v8a, armeabi, armeabi-v7a, mips, mips64, x86, and x86_64 CPUs
 -   **sample_astudio** – WritePad SDK sample project for Android Studio 1.1+.
 
-# Compiling the sample project (iOS)
+## Compiling the sample project (iOS)
 
 **WritePadSDK-Sample** and **WritePadSDK-Sample-Swift** sample projects
 are included with the SDK targeting both iPad and iPhone devices. 
@@ -103,7 +103,7 @@ WritePad SDK. The sample source code is provided “AS-IS” without any
 warranties. For more information, see the license and warranty
 disclaimer at the beginning of each source file.
 
-# Compiling the sample project (Android)
+## Compiling the sample project (Android)
 
 -   Start Android Studio 1.1 or later
 -   Choose *Open an existing Android Studio project* and naviage to **<sdk_path>/Android/sample_astudio** folder

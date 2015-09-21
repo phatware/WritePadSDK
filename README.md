@@ -11,13 +11,13 @@
 
 **You cannot:**
 
--   Use WritePad SDK for commercial purposes without obtaining the
+-   Use WritePad SDK for any commercial purposes without obtaining the
     commercial license from [PhatWare Corp](http://www.phatware.com).
--   Redistribute your apps or any derivative works containing any
+-   Redistribute your apps and/or any derivative works containing any
     portion of WritePad SDK without obtaining the commercial license
     from [PhatWare Corp](http://www.phatware.com).
 -   Modify or reverse engineer WritePad SDK binary code (static
-    library) and dictionaries without written authorization from
+    library) and dictionaries without a written authorization from
     [PhatWare Corp](http://www.phatware.com).
 
 For additional information, please read the [WritePad SDK developer license agreement](LICENSE.md).

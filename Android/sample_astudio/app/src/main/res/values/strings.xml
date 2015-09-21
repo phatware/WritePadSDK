@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="hello">Hello World, RecoTest!</string>
+    <string name="app_name">RecoTest</string>
+    <string name="preference_main_settings_language_summary">Select Language</string>
+    <string name="alternatives">Alternatives</string>
+    <string name="preference_main_settings_language_key">preference_main_settings_language_key</string>
+
+    <string name="preference_main_settings_group">Main Settings</string>
+    <string name="ime_settings">Sample Settings</string>
+    <string name="preference_main_settings_language_title">Language</string>
+    <string name="preference_main_settings_language_default">en</string>
+    <string name="preference_main_settings_language_dialog_title">Language</string>
+    <string name="preference_main_settings_autosuggestion_key">preference_main_settings_autosuggestion_key</string>
+    <string name="preference_main_settings_autosuggestion_on">Show Suggestions</string>
+    <string name="preference_main_settings_autosuggestion_summary">If ON, suggestions list will automatically appear.</string>
+    <string name="preference_recognizer_separate_letters_key">preference_recognizer_separate_letters_key</string>
+    <string name="preference_recognizer_single_word_only_key">preference_recognizer_single_word_only_key</string>
+    <string name="preference_recognizer_separate_letters_on">Separate Letters</string>
+    <string name="preference_recognizer_separate_letters_summary">If ON, do not connect individual letters.</string>
+    <string name="preference_recognizer_single_word_only_on">Single Word Only</string>
+    <string name="preference_recognizer_single_word_only_summary">If ON, write only one word per recognition session.</string>
+
+
+    <string-array name="preference_main_settings_language_list">
+        <item>Dansk</item>
+        <item>Deutsch</item>
+        <item>English (Great Britain)</item>
+        <item>English (United States)</item>
+        <item>Español</item>
+        <item>Français</item>
+        <item>Italiano</item>
+        <item>Nederlands</item>
+        <item>Norsk</item>
+        <item>Português (Brasil)</item>
+        <item>Português (Portugal)</item>
+        <item>Svenska</item>
+        <item>Suomi</item>
+        <item>Bahasa Indonesia</item>
+        </string-array>
+
+    <string-array name="preference_main_settings_language_list_values">
+        <item>da</item>
+        <item>de</item>
+        <item>en_uk</item>
+        <item>en</item>
+        <item>es</item>
+        <item>fr</item>
+        <item>it</item>
+        <item>nl</item>
+        <item>nb</item>
+        <item>pt_BR</item>
+        <item>pt_PT</item>
+        <item>sv</item>
+        <item>fi</item>
+        <item>id</item>
+        </string-array>
+
+</resources>
+
+

@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<com.phatware.writepad.widget.CandidateViewContainer
+        xmlns:android="http://schemas.android.com/apk/res/android"
+        android:orientation="horizontal"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:background="@drawable/keyboard_suggest_strip"
+        >
+
+
+    <com.phatware.writepad.widget.CandidateView
+            android:id="@+id/candidates"
+            android:layout_width="wrap_content"
+            android:layout_height="38dp"
+            android:layout_weight="1"
+            />
+
+
+</com.phatware.writepad.widget.CandidateViewContainer>

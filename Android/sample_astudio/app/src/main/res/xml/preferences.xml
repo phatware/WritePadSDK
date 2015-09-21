@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8"?>
+<PreferenceScreen xmlns:android="http://schemas.android.com/apk/res/android"
+                  android:title="@string/ime_settings"
+                  android:key="ime_settings">
+
+  <PreferenceCategory android:title="@string/preference_main_settings_group">
+        <Preference
+                android:key="@string/preference_main_settings_language_key"
+                android:title="@string/preference_main_settings_language_title"
+                android:summary="@string/preference_main_settings_language_summary"
+                android:defaultValue="@string/preference_main_settings_language_default"
+                android:dialogTitle="@string/preference_main_settings_language_dialog_title"/>
+
+        <CheckBoxPreference
+                android:key="@string/preference_recognizer_separate_letters_key"
+                android:title="@string/preference_recognizer_separate_letters_on"
+                android:defaultValue="false"
+                android:persistent="true"
+                android:summaryOn="@string/preference_recognizer_separate_letters_summary"
+                android:summaryOff="@string/preference_recognizer_separate_letters_summary"/>
+
+        <CheckBoxPreference
+                android:key="@string/preference_recognizer_single_word_only_key"
+                android:title="@string/preference_recognizer_single_word_only_on"
+                android:defaultValue="false"
+                android:persistent="true"
+                android:summaryOn="@string/preference_recognizer_single_word_only_summary"
+                android:summaryOff="@string/preference_recognizer_single_word_only_summary"/>
+
+    </PreferenceCategory>
+</PreferenceScreen>

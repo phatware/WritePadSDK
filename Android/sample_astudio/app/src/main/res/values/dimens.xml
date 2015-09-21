@@ -1,0 +1,4 @@
+<resources>
+    <dimen name="keyboard_bottom_padding">0.06in</dimen>
+    <dimen name="candidate_vertical_padding">15sp</dimen>
+</resources>

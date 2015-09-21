@@ -1,0 +1,51 @@
+apply plugin: 'com.android.application'
+
+android {
+    compileSdkVersion 19
+    buildToolsVersion "21.1.2"
+    sourceSets.main.jni.srcDirs = []
+    sourceSets.main.jniLibs.srcDirs = []
+
+    defaultConfig {
+        applicationId "com.phatware.android.recotest"
+        minSdkVersion 14
+        targetSdkVersion 21
+
+        ndk {
+            moduleName "libWritePadRecos"
+        }
+    }
+
+    buildTypes {
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.txt'
+        }
+    }
+
+    tasks.withType(JavaCompile) {
+        compileTask -> compileTask.dependsOn ndkLibsToJar
+    }
+
+
+    task ndkLibsToJar(type: Zip, dependsOn: 'ndkBuild', description: 'Create a JAR of the native libs') {
+        destinationDir new File(buildDir, 'libs')
+        baseName 'ndk-libs'
+        extension 'jar'
+        from(new File(buildDir, 'libs')) { include '**/*.so' }
+        into 'lib/'
+    }
+
+    // TODO: to reduce jar size, replace APP_ABI=all with list list of CPUs you want to support
+
+    task ndkBuild(type: Exec, description: 'Compile JNI source via NDK') {
+        def ndkDir = plugins.getPlugin('com.android.application').sdkHandler.getNdkFolder() // '/Android/android-ndk'
+        commandLine "$ndkDir/ndk-build", 'APP_ABI=all', 'APP_OPTIM=release',
+                'NDK_PROJECT_PATH=build',
+                'APP_BUILD_SCRIPT=src/main/jni/Android.mk'
+    }
+
+    dependencies {
+        compile fileTree(dir: new File(buildDir, 'libs'), include: '*.jar')
+    }
+}

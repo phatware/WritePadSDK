@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+      package="com.phatware.android.recotest"
+          android:versionName="5.0.0"
+          android:installLocation="auto"
+          android:versionCode="35">
+    <uses-sdk android:targetSdkVersion="21" android:minSdkVersion="14"/>
+    <supports-screens
+            android:largeScreens="true"
+            android:xlargeScreens="true"
+            android:normalScreens="true"
+            android:anyDensity="false"
+            />
+    
+    <application android:icon="@drawable/icon" android:label="@string/app_name" android:allowBackup="false">
+
+        <activity
+                    android:name="com.phatware.android.MainSettings"
+                    />
+
+            <activity android:name="RecoTest"
+                  android:label="@string/app_name">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+
+		<service android:name="RecognizerService" />
+    
+</application>
+
+</manifest> 

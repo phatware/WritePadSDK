@@ -1,6 +1,6 @@
 # WritePad Handwriting Recognition SDK
 
-** Copyright 1997-2015 PhatWare(r) Corp. All rights reserved. **
+**Copyright 1997-2015 PhatWare(r) Corp. All rights reserved.**
 
 # License Overview
 

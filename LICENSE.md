@@ -1,13 +1,11 @@
-WritePad SDK License Agreement (Non-commercial Use)
+# WritePad SDK License Agreement (Non-commercial Use)
 
-\
+**Copyright (c) 1997-2015 PhatWare Corp. All rights reserved.**
 
 This WritePad SDK License Agreement (“Agreement”) is made and entered
-into on Sep 20, 2015 ("Effective Date"), by and between PhatWare Corp.,
+into on (today) ("Effective Date"), by and between PhatWare Corp.,
 a Delaware company located at 1314 S. Grand Blvd, Ste. 2-175 Spokane, WA
 99202 ("PhatWare"), and Licensee.
-
-\
 
 PhatWare has developed certain computer software more fully described in
 Exhibit A attached hereto (the "Software") and provides such Software to
@@ -17,9 +15,7 @@ hereunder to market, license or distribute in any manner applications
 developed with the Software or that contain any portion of the Software
 without a separate written agreement with PhatWare.
 
-\
-
-LICENSE
+**LICENSE**
 
 -   Grant of License. Subject to the terms and conditions of this
     Agreement, PhatWare hereby grants to Licensee a royalty-free,
@@ -42,7 +38,7 @@ LICENSE
     any copies of the Software except as necessary to use the Software
     in accordance with this Agreement.
 
-NONDISCLOSURE
+**NONDISCLOSURE**
 
 -   Confidential Obligations. Licensee agrees to hold the Software and
     any features, output produced by, and other information in writing
@@ -69,7 +65,7 @@ NONDISCLOSURE
     without restriction on disclosure; or (d) is independently developed
     by Licensee without use of any Confidential Information.
 
-WARRANTY, LIMITATION OF LIABILITY AND INDEMNIFICATION
+**WARRANTY, LIMITATION OF LIABILITY AND INDEMNIFICATION**
 
 -   Limited Software Warranty. PhatWare warrants only to Licensee the
     following for a period of thirty (30) days after shipment: (i) the
@@ -128,7 +124,7 @@ WARRANTY, LIMITATION OF LIABILITY AND INDEMNIFICATION
     THE ENTIRE LIABILITY OF PHATWARE AND LICENSEE’S SOLE REMEDIES FOR
     INFRINGEMENT AND ALLEGATIONS OF INFRINGEMENT.
 
-OWNERSHIP OF SOFTWARE
+**OWNERSHIP OF SOFTWARE**
 
 -   Ownership. Licensee acknowledges and agrees that all right, title,
     and interest in and to the Software, including without limitation
@@ -148,7 +144,7 @@ OWNERSHIP OF SOFTWARE
     obtaining intellectual property protection relating to such
     suggestions as PhatWare may reasonably require.
 
-FEES AND ENGINEERING SUPPORT
+**FEES AND ENGINEERING SUPPORT**
 
 -   The fee for the license provided hereunder is specified in Exhibit
     B. Exhibit B also specifies how many hours, if any, of engineering
@@ -160,7 +156,7 @@ FEES AND ENGINEERING SUPPORT
     to you. Additional engineering support is available at the
     then-current rate, subject to availability.
 
-TERM AND TERMINATION
+**TERM AND TERMINATION**
 
 -   The term of this Agreement is one (1) year unless extended by mutual
     agreement. PhatWare may terminate this Agreement at any time if
@@ -168,7 +164,7 @@ TERM AND TERMINATION
     and fails to cure such breach within ten (10) days upon receipt of
     written notice of breach.
 
-RETURN OF PRODUCTS
+**RETURN OF PRODUCTS**
 
 -   Upon expiration or termination, or unless Licensee otherwise
     licenses the Software for distribution, the rights and licenses
@@ -181,7 +177,7 @@ RETURN OF PRODUCTS
     all copies of the Software and Confidential Information relating
     thereto have been returned to PhatWare or destroyed.
 
-GENERAL
+**GENERAL**
 
 -   Injunctive Relief. Licensee acknowledges that any unauthorized
     disclosure or use of the Software and/or Confidential Information

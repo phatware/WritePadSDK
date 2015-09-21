@@ -1,6 +1,6 @@
 /* ************************************************************************************* */
 /* *    PhatWare WritePad SDK                                                          * */
-/* *    Copyright (c) 2008-2014 PhatWare(r) Corp. All rights reserved.                 * */
+/* *    Copyright (c) 2008-2015 PhatWare(r) Corp. All rights reserved.                 * */
 /* ************************************************************************************* */
 
 /* ************************************************************************************* *
@@ -115,7 +115,7 @@
 #define IS_MEM_STREAM( dwFlags )                ( (dwFlags) & MEM_STREAM_FLAG )
 #define IS_FILE_STREAM( dwFlags )               ( ((dwFlags) & MEM_STREAM_FLAG) == 0 )
 
-#endif 
+#endif
 
 
 

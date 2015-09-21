@@ -1,6 +1,6 @@
 /* ************************************************************************************* */
 /* *    PhatWare WritePad SDK                                                          * */
-/* *    Copyright (c) 2008-2014 PhatWare(r) Corp. All rights reserved.                 * */
+/* *    Copyright (c) 2008-2015 PhatWare(r) Corp. All rights reserved.                 * */
 /* ************************************************************************************* */
 
 /* ************************************************************************************* *
@@ -74,7 +74,7 @@ enum {
 typedef double			CGFloat;
 #else
 typedef float			CGFloat;
-#endif 
+#endif
 
 struct CGPoint {
     CGFloat x;

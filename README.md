@@ -33,11 +33,13 @@ natural handwriting input in third party applications on pen and/or
 touch enabled mobile devices. The SDK includes:
 
 -   WritePad handwriting recognition engine in object code and
-    dictionaries for English, French, German, Dutch, Danish, Italian,
+    dictionaries for English, French, German, Dutch, Danish, Indonesian, Italian,
     Portuguese, Norwegian, Finish, Swedish, and Spanish languages.
-    Engine is compatible with the user-specified platform. WritePad SDK
-    static library supports iOS 6.0 or later (the sample code is for iOS
+    Engine is compatible with the user-specified platform. 
+-   **iOS**: WritePad SDK static library supports iOS 6.0 or later (the sample code is for iOS
     9 or later and requires Xcode 7.0 or later).
+-   **Android**: WritePad SDK static libraries support Android 4.0 or later for arm64-v8a, armeabi, armeabi-v7a, 
+    mips, mips64, x86, and x86_64 CPUs. 
 -   Header files with definition of API calls and structures
 -   Developer's Guide in PDF
 -   Sample source code that demonstrates how to use the WritePad SDK
@@ -65,8 +67,6 @@ touch enabled mobile devices. The SDK includes:
 
 -   **Dictionaries** – contains WritePad dictionaries for all
     supported languages
--   **Documentation** – contains WritePad SDK documentation and
-    licensing agreements
 -   **include** – contain SDK header files (C API)
 -   **Library**– contains WritePad universal static libraries compiled
     for the device and emulator, including support for 32- and 64-bit.
@@ -78,6 +78,15 @@ touch enabled mobile devices. The SDK includes:
     use WritePad SDK in iOS application written in Swift. Handwriting
     recognition manager in Objective-C provides bridge between WritePad
     C-language API and front end written in Swift.
+
+# Directory structure (Android)
+
+-   **dictionaries** – contains WritePad dictionaries for all
+    supported languages
+-   **include** – contain SDK header files (C API)
+-   **libs**– contains WritePad static native Android libraries compiled for 
+    arm64-v8a, armeabi, armeabi-v7a, mips, mips64, x86, and x86_64 CPUs
+-   **sample_astudio** – WritePad SDK sample project for Android Studio 1.1+.
 
 # Compiling the sample project (iOS)
 
@@ -94,7 +103,15 @@ WritePad SDK. The sample source code is provided “AS-IS” without any
 warranties. For more information, see the license and warranty
 disclaimer at the beginning of each source file.
 
+# Compiling the sample project (Android)
+
+-   Start Android Studio 1.1 or later
+-   Choose *Open an existing Android Studio project* and naviage to **<sdk_path>/Android/sample_astudio** folder
+-   Choose Build/Make Project menu command
+-   Run sample app on device or emulator
+
+
 **Please note that a use the SDK sample code, or any portion of it, in
-an application that is not integrated with the WritePad SDK is stickily
+an application that is not integrated with the WritePad SDK is 
 prohibited and will constitute violation of the WritePad SDK License
 Agreement**. 

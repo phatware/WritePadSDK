@@ -18,8 +18,8 @@
     library) and dictionaries without written authorization from
     PhatWare Corp.
 
-For additional information, please read the WritePad SDK developer
-license agreement.
+For additional information, please read the [https://github.com/phatware/WritePadSDK/blob/master/LICENSE.md](WritePad SDK developer
+license agreement).
 
 To obtain commercial license, please contact PhatWare Corp. by sending
 your request to [developer@phatware.com](mailto:developer@phatware.com)

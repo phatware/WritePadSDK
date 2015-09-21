@@ -1,16 +1,14 @@
 # WritePadSDK
-**WritePad Handwriting Recognition SDK
-**
+**WritePad Handwriting Recognition SDK**
 
-**License Overview
-**
+**License Overview**
 
-**You can:**
+*You can:*
 
 -   Install WritePad SDK on your computer and use it for personal and
     evaluation purposes only
 
-**You cannot:**
+*You cannot:*
 
 -   Use WritePad SDK for commercial purposes without obtaining the
     commercial license from PhatWare Corp.
@@ -27,8 +25,7 @@ license agreement.
 To obtain commercial license, please contact PhatWare Corp. by sending
 your request to [developer@phatware.com](mailto:developer@phatware.com)
 
-**Overview
-**
+**Overview**
 
 WritePad® is a natural, style, writer and lexicon independent
 multilingual handwriting recognition technology. WritePad SDK enables
@@ -46,8 +43,7 @@ touch enabled mobile devices. The SDK includes:
 -   Sample source code that demonstrates how to use the WritePad SDK
     in an iOS application.
 
-**WritePad SDK features
-**
+**WritePad SDK features**
 
 -   Recognizes natural handwritten text in a variety of handwriting
     styles: *cursive (script),* **PRINT**, and MIX*ed*
@@ -65,8 +61,7 @@ touch enabled mobile devices. The SDK includes:
     Danish, Norwegian, Portuguese (Brazil and Portugal), Swedish, and
     Spanish languages.
 
-**Directory structure
-**
+**Directory structure**
 
 -   **Dictionaries** – contains WritePad dictionaries for all
     supported languages
@@ -84,8 +79,7 @@ touch enabled mobile devices. The SDK includes:
     recognition manager in Objective-C provides bridge between WritePad
     C-language API and front end written in Swift.
 
-**Compiling the sample project
-**
+**Compiling the sample project**
 
 **WritePadSDK-Sample** and **WritePadSDK-Sample-Swift** sample projects
 are included with the SDK targeting both iPad and iPhone devices. 
@@ -104,6 +98,3 @@ disclaimer at the beginning of each source file.
 an application that is not integrated with the WritePad SDK is stickily
 prohibited and will constitute violation of the WritePad SDK License
 Agreement**. 
-
-
-

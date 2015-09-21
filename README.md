@@ -1,5 +1,7 @@
 # WritePad Handwriting Recognition SDK
 
+** Copyright 1997-2015 PhatWare(r) Corp. All rights reserved. **
+
 # License Overview
 
 **You can:**
@@ -10,16 +12,15 @@
 **You cannot:**
 
 -   Use WritePad SDK for commercial purposes without obtaining the
-    commercial license from PhatWare Corp.
+    commercial license from [PhatWare Corp](http://www.phatware.com).
 -   Redistribute your apps or any derivative works containing any
     portion of WritePad SDK without obtaining the commercial license
-    from PhatWare Corp.
+    from [PhatWare Corp](http://www.phatware.com).
 -   Modify or reverse engineer WritePad SDK binary code (static
     library) and dictionaries without written authorization from
-    PhatWare Corp.
+    [PhatWare Corp](http://www.phatware.com).
 
-For additional information, please read the [https://github.com/phatware/WritePadSDK/blob/master/LICENSE.md](WritePad SDK developer
-license agreement).
+For additional information, please read the [WritePad SDK developer license agreement](LICENSE.md).
 
 To obtain commercial license, please contact PhatWare Corp. by sending
 your request to [developer@phatware.com](mailto:developer@phatware.com)

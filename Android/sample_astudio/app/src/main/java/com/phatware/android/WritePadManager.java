@@ -60,7 +60,7 @@ public class WritePadManager {
         da(9),
         de(3),
         nl(8),
-        en_uk(1),
+        en_uk(15),
         en(1),
         es(4),
         fr(2),

@@ -33,7 +33,8 @@
 #define LANGUAGE_MEDICAL        12
 #define LANGUAGE_FINNISH		13
 #define LANGUAGE_INDONESIAN		14
-#define LANGUAGE_SIZE           15
+#define LANGUAGE_ENGLISHUK		15
+#define LANGUAGE_SIZE           16
 
 #define LANG_MEDICAL            0x71        // special entry for medical dictionary
 

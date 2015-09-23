@@ -122,6 +122,7 @@ public class WritePadAPI {
     public static final int LANGUAGE_MEDICAL = 12;
     public static final int LANGUAGE_FINNISH = 13;
     public static final int LANGUAGE_INDONESIAN = 14;
+    public static final int LANGUAGE_ENGLISHUK = 15;
 
     public static final int HW_MAXWORDLEN = 50;
 

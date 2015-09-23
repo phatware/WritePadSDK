@@ -71,23 +71,23 @@ typedef  enum  {
     GEST_TAB       = 0x00002000,
     GEST_MENU      = 0x00004000,
     GEST_LOOP      = 0x00008000,
-    GEST_REDO	   = 0x00010000,
-    GEST_SCROLLDN  = 0x00020000,
-    GEST_SAVE	   = 0x00040000,
-    GEST_SENDMAIL  = 0x00080000,
-    GEST_OPTIONS   = 0x00100000,
-    GEST_SENDTODEVICE = 0x00200000,
-    GEST_BACK_LONG = 0x00400000,
-
-    GEST_LEFTARC   = 0x10000000,
-    GEST_RIGHTARC  = 0x20000000,
-    GEST_ARCS	   = 0x30000000,
-
+	GEST_REDO	   = 0x00010000,
+	GEST_SCROLLDN  = 0x00020000,
+	GEST_SAVE	   = 0x00040000,
+	GEST_SENDMAIL  = 0x00080000,
+	GEST_OPTIONS   = 0x00100000,
+	GEST_SENDTODEVICE = 0x00200000,
+	GEST_BACK_LONG = 0x00400000,
+	
+	GEST_LEFTARC   = 0x10000000,
+	GEST_RIGHTARC  = 0x20000000,
+	GEST_ARCS	   = 0x30000000,
+    
     GEST_TIMEOUT   = 0x40000000,
     GEST_CUSTOIM   = 0x80000000,
-
+	
     GEST_ALL       = 0x0FFFFFFF
-}
+}	
 GESTURE_TYPE, *pGESTURE_TYPE;
 
 
@@ -98,7 +98,7 @@ GESTURE_TYPE, *pGESTURE_TYPE;
 /************************************************/
 
 GESTURE_TYPE HWR_CheckGesture( GESTURE_TYPE gtCheck, CGStroke stroke, int nPoints, int nScale, int nMinLen );
-    
+
 #if defined(__cplusplus)
 }
 #endif

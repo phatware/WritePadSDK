@@ -513,18 +513,6 @@ static NSString * kEditCell_ID = @"WMEditSectionEditSettingsID";
                             if ( currentLanguage == lang )
                                 viewController.selectedIndex = index;
                             index++;
-                            if ( lang == WPLanguageEnglishUS )
-                            {
-                                // add UK language
-                                lang = WPLanguageEnglishUK;
-                                language = @{ @"name" : [langman languageName:lang], @"ID" : [NSNumber numberWithInt:lang],
-                                              @"image" : [langman languageImageForLanguageID:lang] };
-                                [arrayLang addObject:language];
-                                if ( currentLanguage == lang )
-                                    viewController.selectedIndex = index;
-                                index++;
-                                // add US Medical language
-                             }
                         }
                         
                         viewController.choices = arrayLang;

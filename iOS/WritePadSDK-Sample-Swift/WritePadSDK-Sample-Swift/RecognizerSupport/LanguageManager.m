@@ -181,10 +181,6 @@ static LanguageManager *	gManager;
     {
         WPLanguage language = [self languageFromLanguageID:languages[i]];
         [array addObject:[NSNumber numberWithInt:language]];
-        if ( languages[i] == LANGUAGE_ENGLISH )
-        {
-            [array addObject:[NSNumber numberWithInt:WPLanguageEnglishUK]];
-        }
     }
     return [NSArray arrayWithArray:array];
 }
@@ -199,6 +195,10 @@ static LanguageManager *	gManager;
 			language = WPLanguageGerman;
 			break;
 			
+        case LANGUAGE_ENGLISHUK :
+            language = WPLanguageEnglishUK;
+            break;
+            
 		case  LANGUAGE_FRENCH:
 			language = WPLanguageFrench;
 			break;
@@ -732,6 +732,10 @@ static LanguageManager *	gManager;
             language = WPLanguageGerman;
             break;
             
+        case LANGUAGE_ENGLISHUK :
+            language = WPLanguageEnglishUK;
+            break;
+
         case  LANGUAGE_FRENCH:
             language = WPLanguageFrench;
             break;
@@ -791,6 +795,10 @@ static LanguageManager *	gManager;
 			language = LANGUAGE_GERMAN;
 			break;
 			
+        case WPLanguageEnglishUK :
+            language = LANGUAGE_ENGLISHUK;
+            break;
+            
 		case WPLanguageFrench :
 			language = LANGUAGE_FRENCH;
 			break;

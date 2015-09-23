@@ -120,7 +120,7 @@ static NSString *kCellIdentifier = @"MyCellIdentifier";
     if ( row < [languages count] )
     {
         cell.textLabel.text = [[languages objectAtIndex:row] objectForKey:@"name"];
-        cell.imageView.image = [UIImage imageNamed:[[languages objectAtIndex:row] objectForKey:@"image"]];	
+        cell.imageView.image = [[languages objectAtIndex:row] objectForKey:@"image"];
     }	
 	if ( [indexPath row] == selectedIndex )
 		cell.accessoryType = UITableViewCellAccessoryCheckmark;

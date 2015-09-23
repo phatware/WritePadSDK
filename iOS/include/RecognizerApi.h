@@ -49,13 +49,16 @@
 #include "gestures.h"
 #include "recotypes.h"
 
+#ifndef WIN32
 #define GetRValue(rgb)      ((float)((rgb)&0xFF)/255.0)
 #define GetGValue(rgb)      ((float)(((rgb)>>8)&0xFF)/255.0)
 #define GetBValue(rgb)      ((float)(((rgb)>>16)&0xFF)/255.0)
-#define GetAValue(rgb)      ((float)(((rgb)>>24)&0xFF)/255.0)
+#endif // WIN32
 
+#define GetAValue(rgb)      ((float)(((rgb)>>24)&0xFF)/255.0)
 #define RGBA(r,g,b,a)       ((COLORREF)(((unsigned char)(r)|((unsigned int)((unsigned char)(g))<<8))|(((unsigned int)(unsigned char)(b))<<16)|(((unsigned int)(unsigned char)(a))<<24)))
 #define CCTB(cc)			((unsigned char)(cc * (float)0xFF))
+
 
 #define RECMODE_GENERAL			0          // Normal recognition -- all sybols allowed
 #define RECMODE_CAPS			1          // All recognized text converted to capitals
@@ -115,7 +118,7 @@
 #define IS_MEM_STREAM( dwFlags )                ( (dwFlags) & MEM_STREAM_FLAG )
 #define IS_FILE_STREAM( dwFlags )               ( ((dwFlags) & MEM_STREAM_FLAG) == 0 )
 
-#endif
+#endif 
 
 
 

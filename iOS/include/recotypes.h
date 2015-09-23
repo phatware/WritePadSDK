@@ -1,6 +1,6 @@
 /* ************************************************************************************* */
 /* *    PhatWare WritePad SDK                                                          * */
-/* *    Copyright (c) 2008-2015 PhatWare(r) Corp. All rights reserved.                 * */
+/* *    Copyright (c) 2008-2014 PhatWare(r) Corp. All rights reserved.                 * */
 /* ************************************************************************************* */
 
 /* ************************************************************************************* *
@@ -74,7 +74,7 @@ enum {
 typedef double			CGFloat;
 #else
 typedef float			CGFloat;
-#endif
+#endif 
 
 struct CGPoint {
     CGFloat x;
@@ -137,8 +137,9 @@ typedef unsigned char	UCHAR;
 typedef unsigned short	UNCHAR;
 typedef UNCHAR *		LPUSTR;
 typedef const UNCHAR *	LPCUSTR;
-typedef UInt32			COLORREF;
 
+#ifndef WIN32
+typedef UInt32			COLORREF;
 
 /// Type to represent a boolean value.
 #if !defined(OBJC_HIDE_64) && TARGET_OS_IPHONE && __LP64__
@@ -148,7 +149,7 @@ typedef signed char BOOL;
 // BOOL is explicitly signed so @encode(BOOL) == "c" rather than "C"
 // even if -funsigned-char is used.
 #endif
-
+#endif // WIN32
 
 #define IMAGE_SUPPORT	1		// support image storage
 

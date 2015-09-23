@@ -250,8 +250,9 @@
 
 - (void) selectDefaultLanguage:(NSObject *)param
 {
+    LanguageManager * langman = [LanguageManager sharedManager];
     LanguageViewController *viewController = [[LanguageViewController alloc] initWithStyle:UITableViewStyleGrouped];
-    NSArray * langs = [[LanguageManager sharedManager] supportedLanguages];
+    NSArray * langs = [langman supportedLanguages];
     NSMutableArray * languages = [NSMutableArray arrayWithCapacity:[langs count]];
     NSInteger index = 0;
     viewController.selectedIndex = index;
@@ -259,133 +260,12 @@
     NSDictionary * language;
     for ( NSNumber * l in langs )
     {
-        switch ( [l intValue] )
-        {
-            case LANGUAGE_ENGLISH :
-                language = [NSDictionary dictionaryWithObjectsAndKeys:@"English (United States)", @"name",
-                            [NSNumber numberWithInt:WPLanguageEnglishUS], @"ID", @"flag_usa.png", @"image", nil];
-                [languages addObject:language];
-                if ( [LanguageManager sharedManager].currentLanguage == WPLanguageEnglishUS )
-                    viewController.selectedIndex = index;
-                index++;
-                language = [NSDictionary dictionaryWithObjectsAndKeys:@"English (Great Britain)", @"name",
-                            [NSNumber numberWithInt:WPLanguageEnglishUK], @"ID", @"flag_uk.png", @"image", nil];
-                [languages addObject:language];
-                if ( [LanguageManager sharedManager].currentLanguage == WPLanguageEnglishUK )
-                    viewController.selectedIndex = index;
-                index++;
-                break;
-                
-            case LANGUAGE_PORTUGUESE :
-                language = [NSDictionary dictionaryWithObjectsAndKeys:@"Português (Portugal)", @"name",
-                            [NSNumber numberWithInt:WPLanguagePortuguese], @"ID", @"flag_portugal.png", @"image", nil];
-                [languages addObject:language];
-                if ( [LanguageManager sharedManager].currentLanguage == WPLanguagePortuguese )
-                    viewController.selectedIndex = index;
-                index++;
-                break;
-                
-            case LANGUAGE_PORTUGUESEB :
-                language = [NSDictionary dictionaryWithObjectsAndKeys:@"Português (Brasil)", @"name",
-                            [NSNumber numberWithInt:WPLanguageBrazilian], @"ID", @"flag_brazil.png", @"image", nil];
-                [languages addObject:language];
-                if ( [LanguageManager sharedManager].currentLanguage == WPLanguageBrazilian )
-                    viewController.selectedIndex = index;
-                index++;
-                break;
-                
-            case LANGUAGE_GERMAN :
-                language = [NSDictionary dictionaryWithObjectsAndKeys:@"Deutsch", @"name",
-                            [NSNumber numberWithInt:WPLanguageGerman], @"ID", @"flag_germany.png", @"image", nil];
-                [languages addObject:language];
-                if ( [LanguageManager sharedManager].currentLanguage == WPLanguageGerman )
-                    viewController.selectedIndex = index;
-                index++;
-                break;
-                
-            case LANGUAGE_INDONESIAN :
-                language = [NSDictionary dictionaryWithObjectsAndKeys:@"Bahasa Indonesia", @"name",
-                            [NSNumber numberWithInt:WPLanguageIndonesian], @"ID", @"flag_indonesia.png", @"image", nil];
-                [languages addObject:language];
-                if ( [LanguageManager sharedManager].currentLanguage == WPLanguageIndonesian )
-                    viewController.selectedIndex = index;
-                index++;
-                break;
-                
-            case LANGUAGE_FRENCH :
-                language = [NSDictionary dictionaryWithObjectsAndKeys:@"Français", @"name",
-                            [NSNumber numberWithInt:WPLanguageFrench], @"ID", @"flag_france.png", @"image", nil];
-                [languages addObject:language];
-                if ( [LanguageManager sharedManager].currentLanguage == WPLanguageFrench )
-                    viewController.selectedIndex = index;
-                index++;
-                break;
-                
-            case LANGUAGE_ITALIAN :
-                language = [NSDictionary dictionaryWithObjectsAndKeys:@"Italiano", @"name",
-                            [NSNumber numberWithInt:WPLanguageItalian], @"ID", @"flag_italy.png", @"image", nil];
-                [languages addObject:language];
-                if ( [LanguageManager sharedManager].currentLanguage == WPLanguageItalian )
-                    viewController.selectedIndex = index;
-                index++;
-                break;
-                
-            case LANGUAGE_DUTCH :
-                language = [NSDictionary dictionaryWithObjectsAndKeys:@"Nederlands", @"name",
-                            [NSNumber numberWithInt:WPLanguageDutch], @"ID", @"flag_netherlands.png", @"image", nil];
-                [languages addObject:language];
-                if ( [LanguageManager sharedManager].currentLanguage == WPLanguageDutch )
-                    viewController.selectedIndex = index;
-                index++;
-                break;
-                
-            case LANGUAGE_SPANISH :
-                language = [NSDictionary dictionaryWithObjectsAndKeys:@"Español", @"name",
-                            [NSNumber numberWithInt:WPLanguageSpanish], @"ID", @"flag_spain.png", @"image", nil];
-                [languages addObject:language];
-                if ( [LanguageManager sharedManager].currentLanguage == WPLanguageSpanish )
-                    viewController.selectedIndex = index;
-                index++;
-                break;
-                
-                
-            case LANGUAGE_SWEDISH :
-                language = [NSDictionary dictionaryWithObjectsAndKeys:@"Svenska", @"name",
-                            [NSNumber numberWithInt:WPLanguageSwedish], @"ID", @"flag_sweden.png", @"image", nil];
-                [languages addObject:language];
-                if ( [LanguageManager sharedManager].currentLanguage == WPLanguageSwedish )
-                    viewController.selectedIndex = index;
-                index++;
-                break;
-                
-            case LANGUAGE_FINNISH :
-                language = [NSDictionary dictionaryWithObjectsAndKeys:@"Suomi", @"name",
-                            [NSNumber numberWithInt:WPLanguageFinnish], @"ID", @"flag_finland.png", @"image", nil];
-                [languages addObject:language];
-                if ( [LanguageManager sharedManager].currentLanguage == WPLanguageFinnish )
-                    viewController.selectedIndex = index;
-                index++;
-                break;
-                
-            case LANGUAGE_NORWEGIAN :
-                language = [NSDictionary dictionaryWithObjectsAndKeys:@"Norsk", @"name",
-                            [NSNumber numberWithInt:WPLanguageNorwegian], @"ID", @"flag_norway.png", @"image", nil];
-                [languages addObject:language];
-                if ( [LanguageManager sharedManager].currentLanguage == WPLanguageNorwegian )
-                    viewController.selectedIndex = index;
-                index++;
-                break;
-                
-            case LANGUAGE_DANISH :
-                language = [NSDictionary dictionaryWithObjectsAndKeys:@"Dansk", @"name",
-                            [NSNumber numberWithInt:WPLanguageDanish], @"ID", @"flag_denmark.png", @"image", nil];
-                [languages addObject:language];
-                if ( [LanguageManager sharedManager].currentLanguage == WPLanguageDanish )
-                    viewController.selectedIndex = index;
-                index++;
-                break;
-        }
-        
+        WPLanguage lang = [langman languageFromLanguageID:[l intValue]];
+        UIImage * image = [langman languageImageForLanguageID:lang];
+        NSString * name = [langman languageName:lang];
+        language = @{ @"name" : name, @"ID" : [NSNumber numberWithInt:lang], @"image" : image };
+        [languages addObject:language];
+        index++;
     }
     viewController.languages = [NSArray arrayWithArray:languages];
     viewController.delegate = self;

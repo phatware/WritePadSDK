@@ -1,0 +1,34 @@
+<?xml version="1.0"?>
+<package xmlns="http://schemas.microsoft.com/packaging/2011/08/nuspec.xsd">
+  <metadata>
+    <id>winrtxamltoolkit</id>
+    <version>1.5.2.0</version>
+    <title>WinRT XAML Toolkit</title>
+    <authors>Filip Skakun,  Thomas Martinsen,  Mahmoud Moussa,  Joost van Schaik</authors>
+    <owners>Filip Skakun,  Thomas Martinsen,  Mahmoud Moussa,  Joost van Schaik</owners>
+    <licenseUrl>http://winrtxamltoolkit.codeplex.com/license</licenseUrl>
+    <projectUrl>http://winrtxamltoolkit.codeplex.com/</projectUrl>
+    <requireLicenseAcceptance>false</requireLicenseAcceptance>
+    <description>A set of controls, extensions and helper classes for Windows Runtime XAML applications.</description>
+    <releaseNotes>WinRT XAML Toolkit for Windows 8.0 and 8.1.
+
+      Features
+      - Attachable behaviors
+      - Controls
+      - Converters
+      - Extension methods
+      - Imaging helpers
+      - IO helpers
+      - VisualTree helpers
+      - AwaitableUI
+
+      See also
+      - WinRTXamlToolkit.Composition for helpers for rendering the XAML UI into a bitmap
+      - WinRTXamlToolkit.Controls.Calendar for a calendar control
+      - WinRTXamlToolkit.Controls.DataVisualization for data visualization controls/charts
+      - WinRTXamlToolkit.Debugging for debugging helpers</releaseNotes>
+    <copyright />
+    <language>en-US</language>
+    <tags>winrt xaml toolkit winrtxamltoolkit xyzzer</tags>
+  </metadata>
+</package>

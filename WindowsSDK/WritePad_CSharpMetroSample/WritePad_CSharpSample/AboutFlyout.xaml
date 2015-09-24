@@ -1,0 +1,46 @@
+﻿<Page
+    x:Class="WritePad_CSharpSample.AboutFlyout"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    mc:Ignorable="d"
+    d:DesignHeight="768"
+    d:DesignWidth="646"
+    >
+
+
+    <Border BorderBrush="#00b2f0" BorderThickness="1,0,0,0">
+        <Grid HorizontalAlignment="Right" Width="300" Background="White" VerticalAlignment="Stretch">
+           
+            <Grid.RowDefinitions>
+                <RowDefinition Height="80"/>
+                <RowDefinition Height="*" />
+            </Grid.RowDefinitions>
+
+            <!-- Header area for panel -->
+            <Grid Background="#FF1C55B0" Grid.Row="0">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="*" />
+                </Grid.ColumnDefinitions>
+
+                <StackPanel Orientation="Horizontal" Grid.Column="0" Margin="40, 32, 17, 13">
+                    <Button Click="MySettingsBackClicked" Margin="0,3,0,0"  Style="{StaticResource BackButtonStyle}"/>
+                    <TextBlock Margin="10,0,0,0" FontFamily="Segoe UI" FontWeight="SemiLight" FontSize="24.6667" Text="About" Foreground="White"/>
+
+                </StackPanel>
+            </Grid>
+
+                <Grid Margin="40,33,40,39" VerticalAlignment="Top" Grid.Row="1" Grid.RowSpan="3">
+
+                    <StackPanel>
+                        <Image Source="Assets/phatware.png" />
+                    <TextBlock Text="WritePad® SDK C# Sample" Margin="0, 0, 0, 0" FontSize="18" HorizontalAlignment="Left" Foreground="Black" />
+                        <TextBlock Text="Copyright © 2003-2013 PhatWare® Corporation." TextWrapping="Wrap" FontSize="10" HorizontalAlignment="Left" Foreground="Black" />
+                        <TextBlock Text="All rights Reserved." FontSize="10" HorizontalAlignment="Left" Foreground="Black" />
+                        <HyperlinkButton Content="http://www.phatware.com/developer" Margin="-15,0,-12,10" FontSize="12" HorizontalAlignment="Left" Width="247" NavigateUri="http://www.phatware.com/developer" />
+                    </StackPanel>
+                </Grid> 
+        </Grid>
+    </Border>
+</Page>

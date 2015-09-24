@@ -1,0 +1,40 @@
+﻿<Page
+    x:Class="WritePad_CSharpSample.MainPage"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="using:WritePad_CSharpSample"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    mc:Ignorable="d"
+        Loaded="MainPage_OnLoaded"
+
+    Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
+
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"></RowDefinition>
+            <RowDefinition Height="*"></RowDefinition>
+            <RowDefinition Height="Auto"></RowDefinition>
+        </Grid.RowDefinitions>
+        <StackPanel Grid.Row="0">
+            <TextBlock FontSize="20">Recognized text:</TextBlock>
+            <TextBox AcceptsReturn="True" IsReadOnly="True" FontFamily="Segoe UI Mono" Name="RecognizedTextBox" Height="140"></TextBox>
+
+        </StackPanel>
+        <Canvas Grid.Row="1" Background="#F0F088" Name="InkCanvas" PointerPressed="OnCanvasPointerPressed"  HorizontalAlignment="Stretch" VerticalAlignment="Stretch" PointerReleased="OnCanvasPointerReleased" PointerCaptureLost="OnCanvasPointerCaptureLost" PointerExited="InkCanvas_OnPointerExited" PointerMoved="OnCanvasPointerMoved"></Canvas>
+        <StackPanel Grid.Row="2" HorizontalAlignment="Center">
+            <Button Width="200" Click="RecognizeAllClick">Recognize text</Button>
+            <Button Width="200" Click="ClearAllClick">Clear</Button>
+        </StackPanel>
+    </Grid>
+    <Page.BottomAppBar>
+        <CommandBar>
+            <CommandBar.SecondaryCommands>
+                <!-- These commands appear on the left -->
+                <AppBarButton Label="Options" Click="ButtonBase_OnClick">
+                </AppBarButton>
+                
+            </CommandBar.SecondaryCommands>
+        </CommandBar>
+    </Page.BottomAppBar>
+</Page>

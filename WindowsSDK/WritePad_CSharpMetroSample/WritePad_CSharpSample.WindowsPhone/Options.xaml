@@ -1,0 +1,57 @@
+<Page
+    x:Class="WritePad_CSharpSample.Options"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="using:WritePad_CSharpSample"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    mc:Ignorable="d"
+    Loaded="Options_OnLoaded"
+    Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
+
+    <Grid x:Name="LayoutRoot">
+
+        <Grid.ChildrenTransitions>
+            <TransitionCollection>
+                <EntranceThemeTransition/>
+            </TransitionCollection>
+        </Grid.ChildrenTransitions>
+
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="*"/>
+        </Grid.RowDefinitions>
+
+        <!-- Title Panel -->
+        <StackPanel Grid.Row="0" Margin="19,0,0,0">
+            <TextBlock Text="options" Margin="0,-6.5,0,26.5" Style="{ThemeResource HeaderTextBlockStyle}" CharacterSpacing="{ThemeResource PivotHeaderItemCharacterSpacing}"/>
+        </StackPanel>
+
+        <!--TODO: Content should be placed within the following grid-->
+        <Grid Grid.Row="1" x:Name="ContentRoot" Margin="19,9.5,19,0">
+            <StackPanel Orientation="Vertical">
+                <CheckBox x:Name="separate_letters" Click="Separate_letters_OnClick">Separate letters mode (PRINT)</CheckBox>
+                <CheckBox x:Name="single_word" Click="Single_word_OnClick">Disable word segmentation (single word)</CheckBox>
+                <CheckBox x:Name="autolearner" Click="Autolearner_OnClick">Enable Automatic learner</CheckBox>
+                <CheckBox  x:Name="autocorrector" Click="Autocorrector_OnClick">Enable Autocorrector</CheckBox>
+                <CheckBox x:Name="user_dictionary" Click="User_dictionary_OnClick">Enable User Dictionary</CheckBox>
+                <CheckBox x:Name="dict_words" Click="Dict_words_OnClick">Recognize Dictionary Words Only</CheckBox>
+                <ComboBox x:Name="LanguagesCombo" SelectionChanged="LanguagesCombo_OnSelectionChanged">
+                    <x:String>English</x:String>
+                    <x:String>English (UK)</x:String>
+                    <x:String>German</x:String>
+                    <x:String>French</x:String>
+                    <x:String>Spanish</x:String>
+                    <x:String>Portuguese</x:String>
+                    <x:String>Brazilian</x:String>
+                    <x:String>Dutch</x:String>
+                    <x:String>Italian</x:String>
+                    <x:String>Finnish</x:String>
+                    <x:String>Sweddish</x:String>
+                    <x:String>Norwegian</x:String>
+                    <x:String>Danish</x:String>
+                </ComboBox>
+            </StackPanel>
+        </Grid>
+    </Grid>
+</Page>

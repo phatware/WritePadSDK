@@ -1,0 +1,50 @@
+﻿<Window x:Class="WritePadSDK_WPFSample.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        Title="WritePad SDK WPF Sample" Height="800" Width="1000"
+        WindowStartupLocation="CenterScreen"
+        Closing="MainWindow_OnClosing"
+        Loaded="MainWindow_OnLoaded">
+    <Grid Background="LightGray">
+        <Grid Name="ContentRoot" Margin="0,0,0,0" x:FieldModifier="public">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="*"></RowDefinition>
+                <RowDefinition Height="Auto"></RowDefinition>
+            </Grid.RowDefinitions>
+
+            
+            <Grid>
+                <Grid Grid.Row="0">
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="Auto"></RowDefinition>
+                        <RowDefinition Height="*"></RowDefinition>
+                    </Grid.RowDefinitions>
+                    <Grid>
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="Auto"></ColumnDefinition>
+                            <ColumnDefinition Width="*"></ColumnDefinition>
+                            <ColumnDefinition Width="Auto"></ColumnDefinition>
+
+                        </Grid.ColumnDefinitions>
+                        <TextBlock Grid.Column="0" Margin="20 0 0 0" Foreground="Black" FontSize="22" VerticalAlignment="Center">Recognized text:</TextBlock>
+                        <ScrollViewer VerticalScrollBarVisibility="Visible" Height="150" Grid.Column="1" Margin="20 10 20 10">
+                            <TextBox FontFamily="Fonts/cour.ttf#Courier New" Name="RecognizedTextBox" HorizontalScrollBarVisibility="Auto" AcceptsReturn="True" IsReadOnly="True" FontSize="20" Foreground="Black" Background="LightGray" Height="Auto" TextWrapping="NoWrap" ></TextBox>
+                        </ScrollViewer>
+                        <StackPanel Orientation="Vertical" Grid.Column="2" Margin="0 10 10 0">
+                            <Button Foreground="Black" FontSize="20" Click="RecognizeAllClick">Recognize text</Button>
+                            <Button Foreground="Black" FontSize="20" Margin="0 10 0 0" Click="ClearAllClick" Content="Clear"/>
+                            <Button Foreground="Black" FontSize="20" Margin="0 10 0 0" Click="OptionsClick" Content="Options"/>
+                            <Label Margin="0 10 0 0" FontSize="18">Language:</Label>
+                            <ComboBox x:Name="LanguagesCombo" FontSize="18" SelectionChanged="LanguagesCombo_OnSelectionChanged">
+                            </ComboBox>
+                        </StackPanel>
+                    </Grid>
+
+                    <Grid Grid.Row="1">
+                        <Canvas x:Name="InkCanvas" Margin="20 20 30 30" MouseLeftButtonDown="OnCanvasPointerPressed" Background="#F0F088" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" MouseLeftButtonUp="OnCanvasPointerReleased" MouseMove="OnCanvasPointerMoved" MouseLeave="InkCanvas_OnMouseLeave" />
+                    </Grid>
+                </Grid>
+            </Grid>
+        </Grid>
+    </Grid>
+</Window>

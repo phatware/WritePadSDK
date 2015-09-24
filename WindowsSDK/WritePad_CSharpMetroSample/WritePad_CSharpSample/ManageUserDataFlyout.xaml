@@ -1,0 +1,54 @@
+﻿<Page
+    x:Class="WritePad_CSharpSample.ManageUserDataFlyout"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    mc:Ignorable="d"
+    d:DesignHeight="768"
+    d:DesignWidth="646"
+    DataContext="{Binding HandwritingSettings, Source={StaticResource Locator}}">
+    
+    <Border BorderBrush="#00b2f0" BorderThickness="1,0,0,0">
+        <Grid HorizontalAlignment="Right" Width="300" Background="White" VerticalAlignment="Stretch">
+           
+            <!-- Root grid definition -->
+            <Grid.RowDefinitions>
+                <RowDefinition Height="80"/>
+                <RowDefinition Height="*" />
+            </Grid.RowDefinitions>
+
+            <!-- Header area for panel -->
+            <Grid Background="#FF1C55B0" Grid.Row="0">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="*" />
+                </Grid.ColumnDefinitions>
+
+                <StackPanel Orientation="Horizontal" Grid.Column="0" Margin="40, 32, 17, 13">
+                    <Button Click="MySettingsBackClicked" Margin="0,3,0,0"  Style="{StaticResource BackButtonStyle}"/>
+                    <TextBlock Margin="10,0,0,0" FontFamily="Segoe UI" FontWeight="SemiLight" FontSize="24.6667" Text="User dictionary"/>
+
+                </StackPanel>
+            </Grid>
+
+            <!-- Settings Panel Content -->
+            <ScrollViewer Background="White" VerticalScrollBarVisibility="Auto" Grid.Row="1">
+                
+                    <StackPanel x:Name="FlyoutContent" Margin="35 0 0 0">
+                    <TextBlock Text="User dictionary" FontSize="20" Margin="-10 10 0 0"></TextBlock>
+                    <Button Width="206" Content="Export user dictionary" Click="ExportDictionaryButtonClick" MinWidth="200" />
+                    <Button Width="206" Content="Import user dictionary" Click="ImportDictionaryButtonClick" MinWidth="200" />
+                    <TextBlock Text="Autocorrector" FontSize="20" Margin="-10 10 0 0"></TextBlock>
+                    <Button Width="206" Content="Export word list" Click="ExportWordLisButtonClick"  MinWidth="200"/>
+                    <Button Width="206" Content="Import from file" Click="ImportWordListButtonClick"  MinWidth="200"/>
+                    <TextBlock Text="Reset recognizer settings" FontSize="20" Margin="-10 10 0 0"></TextBlock>
+                    <Button Width="206" Content="Reset user dictionary" Click="ResetUserDictionaryButtonClick"  MinWidth="200"/>
+                    <Button Width="206" Content="Reset autocorrector list" Click="ResetAutocorrectorListButtonClick"  MinWidth="200"/>
+                    </StackPanel>
+                
+                
+            </ScrollViewer>
+        </Grid>
+            
+    </Border>
+</Page>

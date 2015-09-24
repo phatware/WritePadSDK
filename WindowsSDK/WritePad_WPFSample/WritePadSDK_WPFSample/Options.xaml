@@ -1,0 +1,22 @@
+﻿<Window x:Class="WritePadSDK_WPFSample.Options"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        WindowStartupLocation="CenterOwner"
+        Loaded="Options_OnLoaded"
+        
+        Title="Options" Height="325" Width="552" ShowInTaskbar="False" ResizeMode="NoResize">
+    <Grid Margin="10">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="*"></RowDefinition>
+            <RowDefinition Height="Auto"></RowDefinition>
+        </Grid.RowDefinitions>
+        <StackPanel Orientation="Vertical" Grid.Row="0">
+            <CheckBox x:Name="SeparateLetters" Click="SeparateLetters_OnClick">Separate letters mode (PRINT)</CheckBox>
+            <CheckBox Margin="0 10 0 0" x:Name="DisableSegmentation" Click="DisableSegmentation_OnClick">Disable word segmentation (single word)</CheckBox>
+            <CheckBox Margin="0 10 0 0" x:Name="AutoLearner" Click="AutoLearner_OnClick">Enable Automatic learner</CheckBox>
+            <CheckBox Margin="0 10 0 0" x:Name="AutoCorrector" Click="AutoCorrector_OnClick">Enable Autocorrector</CheckBox>
+            <CheckBox Margin="0 10 0 0" x:Name="UserDictionary" Click="UserDictionary_OnClick">Enable User Dictionary</CheckBox>
+            <CheckBox Margin="0 10 0 0" x:Name="DictionaryOnly" Click="DictionaryOnly_OnClick">Recognize Dictionary Words Only</CheckBox>
+        </StackPanel>
+    </Grid>
+</Window>

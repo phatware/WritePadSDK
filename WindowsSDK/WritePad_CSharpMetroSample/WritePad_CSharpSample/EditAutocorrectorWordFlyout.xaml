@@ -1,0 +1,46 @@
+﻿<Page
+    x:Class="WritePad_CSharpSample.EditAutoCorrectorWordFlyout"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    xmlns:controls="using:WinRTXamlToolkit.Controls"
+    mc:Ignorable="d"
+    d:DesignHeight="768"
+    d:DesignWidth="646"
+    DataContext="{Binding HandwritingSettings, Source={StaticResource Locator}}">
+
+    <Border BorderBrush="#00b2f0" BorderThickness="1,0,0,0">
+        <Grid HorizontalAlignment="Right" Width="300" Background="White" VerticalAlignment="Stretch">
+
+            <Grid.RowDefinitions>
+                <RowDefinition Height="80"/>
+                <RowDefinition Height="*" />
+            </Grid.RowDefinitions>
+
+            <Grid Grid.Row="0" Background="#FF1C55B0">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="*" />
+                </Grid.ColumnDefinitions>
+
+                <StackPanel Orientation="Horizontal" Grid.Column="0" Margin="40, 32, 17, 13">
+                    <Button Click="MySettingsBackClicked" Margin="0,3,0,0"  Style="{StaticResource BackButtonStyle}"/>
+                    <TextBlock Foreground="White" Margin="10,0,0,0" FontFamily="Segoe UI" FontWeight="SemiLight" FontSize="24.6667" Name="EditWordCorrectionTitle"
+                               x:FieldModifier="public" />
+
+                </StackPanel>
+            </Grid>
+            <StackPanel Grid.Row="1" Margin="40, 32, 17, 13">
+                <controls:WatermarkTextBox HorizontalAlignment="Left" Name="AutoCorrectionFirstWord" BorderBrush="Gray" BorderThickness="1" Width="240" WatermarkText="enter misspelled word" x:FieldModifier="public" />
+                <controls:WatermarkTextBox HorizontalAlignment="Left" BorderBrush="Gray" BorderThickness="1" Width="240" Margin="0 10 0 0" Name="AutoCorrectionSecondWord" WatermarkText="enter correct word" x:FieldModifier="public" />
+                <ToggleSwitch Name="AutoCorrectionAlwaysReplace" Header="Always Replace" x:FieldModifier="public" />
+                <ToggleSwitch Name="AutoCorrectionIgnoreCase" Header="Ignore Case" x:FieldModifier="public" />
+                <ToggleSwitch Name="AutoCorrectionDisabled" Header="Disabled" x:FieldModifier="public" />
+                <StackPanel Orientation="Horizontal" HorizontalAlignment="Center">
+                    <Button Visibility="Collapsed" HorizontalContentAlignment="Center" Name="AutocorrectDeleteButton" Width="245" Margin="-3 0 0 0" Content="Delete" Click="DeleteAutoCorrectionWordClick"
+                            x:FieldModifier="public" />
+                </StackPanel>
+            </StackPanel>
+        </Grid>
+    </Border>
+</Page>

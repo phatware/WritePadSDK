@@ -1,0 +1,56 @@
+﻿<Page
+    x:Class="WritePad_CSharpSample.HandwritingSettingsFlyout"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    mc:Ignorable="d"
+    d:DesignHeight="768"
+    d:DesignWidth="646"
+    DataContext="{Binding HandwritingSettings, Source={StaticResource Locator}}">
+    
+    <Border BorderBrush="#00b2f0" BorderThickness="1,0,0,0">
+        <Grid HorizontalAlignment="Right" Width="300" VerticalAlignment="Stretch">
+           
+            <!-- Root grid definition -->
+            <Grid.RowDefinitions>
+                <RowDefinition Height="80"/>
+                <RowDefinition Height="*" />
+            </Grid.RowDefinitions>
+
+            <!-- Header area for panel -->
+            <Grid Background="#FF1C55B0" Grid.Row="0">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="*" />
+                </Grid.ColumnDefinitions>
+
+                <StackPanel Orientation="Horizontal" Grid.Column="0" Margin="40, 32, 17, 13">
+                    <Button Click="MySettingsBackClicked" Margin="0,3,0,0"  Style="{StaticResource BackButtonStyle}"/>
+                    <TextBlock Margin="10,0,0,0" FontFamily="Segoe UI" FontWeight="SemiLight" FontSize="22" Text="Handwriting options" Foreground="White"/>
+
+                </StackPanel>
+            </Grid>
+
+            <ScrollViewer Background="White" VerticalScrollBarVisibility="Auto" Grid.Row="1">
+                    <StackPanel Margin="15,0,0,0">
+                    <TextBlock Text="Recognizer options" FontSize="20" Margin="-10 10 0 0"></TextBlock>
+                    <ToggleSwitch IsOn="{Binding SettingsModel.AutoCorrector, Mode=TwoWay}" Header="Auto corrector" HorizontalAlignment="Left" HorizontalContentAlignment="Left" />
+                        <TextBlock Margin="3 0 0 0" FontSize="15">Language</TextBlock>
+                        <ComboBox Width="200" HorizontalAlignment="Left" Margin="3 0 0 0" ItemsSource="{Binding SettingsModel.Dictionaries}" SelectedItem="{Binding SettingsModel.CurrentDictionary, Mode=TwoWay}" />
+                    <Button Width="206" Content="Edit autocorrector words" Click="EditAutoCorrectorListButtonClick" />
+                        <ToggleSwitch IsOn="{Binding SettingsModel.SeparateLetters, Mode=TwoWay}" Header="Separate letters mode (PRINT)"  />
+                        <ToggleSwitch IsOn="{Binding SettingsModel.SingleWordOnly, Mode=TwoWay}" Header="Disable word segmentation (single word)"/>
+
+                    <ToggleSwitch IsOn="{Binding SettingsModel.AutomaticLearner, Mode=TwoWay}" Header="Enable Automatic learner"/>
+                    <ToggleSwitch IsOn="{Binding SettingsModel.EnableAutocorrector, Mode=TwoWay}" Header="Enable Autocorrector"/>
+                    <TextBlock Text="Dictionary options" FontSize="20" Margin="-10 10 0 0"></TextBlock>
+                    <ToggleSwitch IsOn="{Binding SettingsModel.OnlyKnownWords, Mode=TwoWay}" Header="Recognize Dictionary Words Only"  />
+                    <ToggleSwitch IsOn="{Binding SettingsModel.UserDictionary, Mode=TwoWay}" Header="Enable User Dictionary" />
+                        <Button Width="206" Content="Edit user dictionary" Click="EditUserDictionaryClick" />
+                    <TextBlock Text="Manage user data" FontSize="20" Margin="-10 10 0 0"></TextBlock>
+                        <Button Width="206" Content="Manage user data" Click="ManageUserDataClick" />
+                    </StackPanel>
+            </ScrollViewer>
+        </Grid>
+    </Border>
+</Page>

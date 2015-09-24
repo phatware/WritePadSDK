@@ -1,0 +1,53 @@
+﻿<Page
+    x:Class="WritePad_CSharpSample.EditDictionaryListFlyout"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    mc:Ignorable="d"
+    d:DesignHeight="768"
+    d:DesignWidth="646"
+    DataContext="{Binding HandwritingSettings, Source={StaticResource Locator}}"
+    Loaded="EditDictionaryListFlyout_OnLoaded"
+    >
+    
+    <Border BorderBrush="#00b2f0" BorderThickness="1,0,0,0">
+        <Grid HorizontalAlignment="Right" Width="300" Background="White" VerticalAlignment="Stretch">
+           
+            <!-- Root grid definition -->
+            <Grid.RowDefinitions>
+                <RowDefinition Height="80"/>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="*" />
+            </Grid.RowDefinitions>
+
+            <!-- Header area for panel -->
+            <Grid Background="#FF1C55B0" Grid.Row="0">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="*" />
+                </Grid.ColumnDefinitions>
+
+                <StackPanel Orientation="Horizontal" Grid.Column="0" Margin="40, 32, 17, 13">
+                    <Button Click="MySettingsBackClicked" Margin="0,3,0,0"  Style="{StaticResource BackButtonStyle}"/>
+                    <TextBlock Margin="10,0,0,0" FontFamily="Segoe UI" FontWeight="SemiLight" FontSize="24.6667" Text="User dictionary" Foreground="White"/>
+
+                </StackPanel>
+            </Grid>
+
+
+            <Button Margin="33 10 15 0" HorizontalAlignment="Stretch" Width="255" Content="New word" Grid.Row="2" Click="AddNewWordButtonClick" />
+            <ScrollViewer Margin="35 10 15 10" Name="UserWordsScrollViewer" Background="White" VerticalScrollBarVisibility="Auto" Grid.Row="3">
+                <ListBox Name="UserWordsList"  ItemsSource="{Binding SettingsModel.DictionaryList, Mode=TwoWay}" SelectionChanged="DictionaryListSelectionChanged" >
+                        <ListBox.ItemTemplate>
+                            <DataTemplate>
+                                <StackPanel Orientation="Horizontal">
+                                    <TextBlock Text="{Binding}" />
+                                </StackPanel>
+                            </DataTemplate>
+                        </ListBox.ItemTemplate>
+                    </ListBox>
+                </ScrollViewer>
+        </Grid>
+    </Border>
+</Page>

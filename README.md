@@ -3,7 +3,7 @@
 
 **Accurate, fast, compact, easy to use, multilingual, multiplatform handwriting recognition technology for mobile and desktop commuters**
 
-##### Copyright 1997-2015 PhatWare(r) Corp. All rights reserved.
+#### Copyright 1997-2015 PhatWare(r) Corp. All rights reserved.
 
 ## License Overview
 

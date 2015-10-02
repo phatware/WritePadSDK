@@ -46,7 +46,7 @@ touch enabled mobile devices. The SDK includes:
 -   **Windows**: WritePad SDK DLLs for Windows and Windows Phone (x86, x64, and ARM CPUs), metro-style 
     (Windows/Windows Phone 8.1+), and desktop C# WPF sample (Windows 10+, .NET framework 4.6). Sample
     code requires Visual Studio 2015 Community Edition or higher.
--   **Xamarin**: WritePad SDK static libraries support Android 4.0 or later for arm64-v8a, armeabi, armeabi-v7a, 
+-   **Xamarin (Android and iOS)**: WritePad SDK static libraries support Android 4.0 or later for arm64-v8a, armeabi, armeabi-v7a, 
     mips, mips64, x86, and x86_64 CPUs and static library supports iOS 6.0 or later. Samples for Android and iOS.
     Requires Xamarin Studio 5.0 or later Indie or Business edition.
 -   Header files with definition of API calls and structures

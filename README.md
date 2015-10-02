@@ -1,7 +1,7 @@
 # WritePad Handwriting Recognition SDK
 ### For Android, iOS, Windows, Windows Phone, Xamarin
 
-**Accurate, fast, compact, easy to use, multilingual, multiplatform handwriting recognition technology for mobile and desktop commuters**
+**Accurate, fast, compact, easy to use, multilingual, multiplatform handwriting recognition technology for mobile and desktop computers**
 
 #### Copyright 1997-2015 PhatWare(r) Corp. All rights reserved.
 

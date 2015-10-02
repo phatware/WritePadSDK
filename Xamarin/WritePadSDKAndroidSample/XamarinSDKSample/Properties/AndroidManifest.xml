@@ -1,0 +1,6 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android" android:installLocation="auto" package="com.phatware.writepad_sample_xamarin" android:versionName="5.2" android:versionCode="5">
+	<uses-sdk android:minSdkVersion="14" android:targetSdkVersion="22" />
+	<application android:label="WritePad SDK Xamarin Sample">
+	</application>
+</manifest>

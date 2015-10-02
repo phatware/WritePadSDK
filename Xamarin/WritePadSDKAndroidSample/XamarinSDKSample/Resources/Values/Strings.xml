@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="Recognize">Recognize</string>
+    <string name="Clear">Clear</string>
+  <string name="Language">Language</string>
+  <string name="Options">Options</string>
+  <string name="SeparateLetters">Recognize separate letters</string>
+  <string name="SingleWord">Disable Segmentation (Single Word)</string>
+  <string name="Autocorrector">Enable Autocorrector</string>
+  <string name="UserDictionary">Enable User Dictionary</string>
+  <string name="Learner">Enable Automatic Learner</string>
+  <string name="Title">Recognized text:</string>
+  <string name="DictWordsOnly">Recognize Only Dictionary Words</string>
+  <string name="ApplicationName">WritePad SDK Xamarin Sample</string>
+</resources>

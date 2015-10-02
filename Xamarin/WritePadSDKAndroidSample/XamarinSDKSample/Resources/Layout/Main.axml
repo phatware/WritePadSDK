@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical"
+    android:layout_width="fill_parent"
+    android:layout_margin="10dp"
+    android:layout_height="fill_parent">
+    <TextView
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/Title"
+        android:id="@+id/ready_text_title" />
+    <TextView
+        android:id="@+id/ready_text"
+        android:text=""
+        android:layout_width="fill_parent"
+        android:layout_height="160dp"
+        android:background="@android:color/darker_gray"
+        android:textColor="@android:color/white"
+        android:paddingLeft="2dp"
+        android:textSize="12dp"
+        android:layout_weight="0.3"
+        android:layout_marginBottom="7.3dp"
+        android:scrollbars="vertical"
+        android:typeface="monospace"
+        android:maxLines="500"
+        android:inputType="textMultiLine|textNoSuggestions" />
+    <WritePadXamarinSample.InkView
+        android:id="@+id/ink_view"
+        android:background="#F0F088"
+        android:layout_width="fill_parent"
+        android:layout_weight="0.7"
+        android:layout_marginBottom="4.7dp"
+        android:layout_height="wrap_content" />
+    <LinearLayout
+        android:orientation="horizontal"
+        android:minWidth="25px"
+        android:minHeight="25px"
+        android:layout_gravity="center"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/linearLayout1">
+        <Button
+            android:id="@+id/RecognizeButton"
+            android:text="@string/Recognize"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_marginRight="0.0dp" />
+        <Button
+            android:text="@string/Clear"
+            android:id="@+id/ClearButton"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent" />
+        <Button
+            android:text="@string/Language"
+            android:id="@+id/LanguageButton"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent" />
+        <Button
+            android:text="@string/Options"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:id="@+id/OptionsButton" />
+    </LinearLayout>
+</LinearLayout>

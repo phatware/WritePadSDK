@@ -175,6 +175,7 @@ license and warranty disclaimer at the beginning of each source file.
 **Note:** the handwriting recognition library is a native library with standard C APIs. You can access any of C function from the library directly from C# very similarly on either platform. For example:  
 
 -   **on iOS:**
+    
     `[DllImport("__Internal", EntryPoint = "HWR_GetResultWord")]
     private static extern IntPtr HWR_GetResultWord( IntPtr reco, int nWord, int nAlternative ); 
 
@@ -183,6 +184,7 @@ license and warranty disclaimer at the beginning of each source file.
     }`
     
 -   **on Android:** 
+    
     `[DllImport("libWritePadReco.so", EntryPoint = "HWR_GetResultWord")] 
     private static extern IntPtr HWR_GetResultWord(IntPtr reco, int nWord, int nAlternative);
 

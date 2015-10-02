@@ -1,7 +1,9 @@
 # WritePad Handwriting Recognition SDK
-## For Android, iOS, Windows, Windows Phone
+### For Android, iOS, Windows, Windows Phone, Xamarin
 
-**Copyright 1997-2015 PhatWare(r) Corp. All rights reserved.**
+**Accurate, fast, compact, easy to use, multilingual, multiplatform handwriting recognition technology for mobile and desktop commuters**
+
+### Copyright 1997-2015 PhatWare(r) Corp. All rights reserved.
 
 ## License Overview
 
@@ -44,7 +46,9 @@ touch enabled mobile devices. The SDK includes:
 -   **Windows**: WritePad SDK DLLs for Windows and Windows Phone (x86, x64, and ARM CPUs), metro-style 
     (Windows/Windows Phone 8.1+), and desktop C# WPF sample (Windows 10+, .NET framework 4.6). Sample
     code requires Visual Studio 2015 Community Edition or higher.
-    sample C#/XAML 
+-   **Xamarin**: WritePad SDK static libraries support Android 4.0 or later for arm64-v8a, armeabi, armeabi-v7a, 
+    mips, mips64, x86, and x86_64 CPUs and static library supports iOS 6.0 or later. Samples for Android and iOS.
+    Requires Xamarin Studio 5.0 or later Indie or Business edition.
 -   Header files with definition of API calls and structures
 -   Developer's Guide in PDF
 -   Sample source code that demonstrates how to use the WritePad SDK
@@ -105,6 +109,13 @@ touch enabled mobile devices. The SDK includes:
 -   **WritePad_WPFSample** - sample WPF desktop application that demonstrates usage of the SDK.
 -   **WritePad_WinFormsSample** – sample Windows Forms application that demonstrates usage of the SDK.
 
+## Directory structure (Xamarin)
+
+-   **Dictionaries** – contains WritePad dictionaries for all supported languages.
+-   **include** – contain SDK C/C++ header files (not required for Xamarin, but useful as API reference).
+-   **WritePadSDKiOSSample** – C# sample project that demonstrates how to use WritePad SDK on iOS platform.
+-   **WritePadSDKAndroidSample** – C# sample project that demonstrates how to use WritePad SDK on Android platform.
+
 ## Compiling the sample project (iOS)
 
 **WritePadSDK-Sample** and **WritePadSDK-Sample-Swift** sample projects
@@ -140,6 +151,44 @@ You need **Visual Studio 2015** (any edition) to compile and run the included sa
 You can use the sample source code in your project when integrating with WritePad SDK. 
 The sample source code is provided "AS-IS" without any warranties. For more information, see the 
 license and warranty disclaimer at the beginning of each source file.
+
+## Compiling the sample project (Xamarin)
+
+-   **WritePadSDKiOSSample** sample project is included with the SDK. This is a universal app, which 
+    targets iPad and iPhone devices, however for handwriting recognition demonstration purposes, 
+    we recommend to try it on iPad due to the larger screen size. 
+
+    1.	Locate the WritePadSDKiOSSample.sln file in the WritePadSDKiOSSample folder and open with Xamarin Studio.
+    2.	Build the project and execute on the device or emulator.
+    3.	When application starts, write one or more words in the selected language (English is set by default) 
+        horizontally on the yellow pad, and then press the Recognize button to convert to text. You can also 
+        use the Return gesture (see documentation for description of gestures).  
+
+-   **WritePadSDKAndroidSample** sample project for Android OS is also included with the SDK.
+ 
+    1.	Locate the XamarinSDKSample.sln file in the WritePadSDKAndroidSample folder and open with Xamarin Studio.
+    2.	Build the project and execute on the device or emulator.
+    3.	When application starts, write one or more words in the selected language 
+        (English is set by default) horizontally on the yellow pad, and then press the Recognize 
+        button to convert to text. You can also use the Return gesture (see documentation for description of gestures).
+
+**Note:** the handwriting recognition library is a native library with standard C APIs. You can access any of C function from the library directly from C# very similarly on either platform. For example:  
+
+-   **on iOS:**
+    `[DllImport("__Internal", EntryPoint = "HWR_GetResultWord")]
+    private static extern IntPtr HWR_GetResultWord( IntPtr reco, int nWord, int nAlternative ); 
+
+    public static String recoResultWord(int column, int row) { 
+        return Marshal.PtrToStringUni(HWR_GetResultWord(recoHandle, column, row)); 
+    }`
+    
+-   **on Android:** 
+    `[DllImport("libWritePadReco.so", EntryPoint = "HWR_GetResultWord")] 
+    private static extern IntPtr HWR_GetResultWord(IntPtr reco, int nWord, int nAlternative);
+
+    public static String recoResultWord(int column, int row) { 
+        return Marshal.PtrToStringUni(HWR_GetResultWord(recoHandle, column, row)); 
+    }`
 
 
 **Please note that a use the SDK sample code, or any portion of it, in

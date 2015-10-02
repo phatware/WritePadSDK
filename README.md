@@ -1,4 +1,5 @@
 # WritePad Handwriting Recognition SDK
+## For Android, iOS, Windows, Windows Phone
 
 **Copyright 1997-2015 PhatWare(r) Corp. All rights reserved.**
 
@@ -36,10 +37,14 @@ touch enabled mobile devices. The SDK includes:
     dictionaries for English, French, German, Dutch, Danish, Indonesian, Italian,
     Portuguese, Norwegian, Finish, Swedish, and Spanish languages.
     Engine is compatible with the user-specified platform. 
--   **iOS**: WritePad SDK static library supports iOS 6.0 or later (the sample code is for iOS
-    9 or later and requires Xcode 7.0 or later).
+-   **iOS**: WritePad SDK static library supports iOS 6.0 or later. The sample code is for iOS
+    9 or later and requires Xcode 7.0 or later.
 -   **Android**: WritePad SDK static libraries support Android 4.0 or later for arm64-v8a, armeabi, armeabi-v7a, 
     mips, mips64, x86, and x86_64 CPUs. 
+-   **Windows**: WritePad SDK DLLs for Windows and Windows Phone (x86, x64, and ARM CPUs), metro-style 
+    (Windows/Windows Phone 8.1+), and desktop C# WPF sample (Windows 10+, .NET framework 4.6). Sample
+    code requires Visual Studio 2015 Community Edition or higher.
+    sample C#/XAML 
 -   Header files with definition of API calls and structures
 -   Developer's Guide in PDF
 -   Sample source code that demonstrates how to use the WritePad SDK
@@ -88,6 +93,18 @@ touch enabled mobile devices. The SDK includes:
     arm64-v8a, armeabi, armeabi-v7a, mips, mips64, x86, and x86_64 CPUs
 -   **sample_astudio** – WritePad SDK sample project for Android Studio 1.1+.
 
+## Directory structure (Windows)
+
+-   **Dictionaries** – contains WritePad dictionaries for all supported languages
+-   **WinRT_CPPLayer** - contains the intermediate C++ library that should be used by managed applications.
+-   **Windows_CPPLayer** - contains the intermediate C++ library that should be used by desktop applications.
+-   **lib-windows-metro** - contains WritePad static libraries compiled for ARM, x86 and x64 CPU's, 
+    for use by metro-style applications.
+-   **lib-windows** - contains WritePad static libraries compiled for x86 and x64 CPU's, for use by desktop applications.
+-   **WritePad_CSharpSample** - sample C#/XAML metro-style project that demonstrates usage of the SDK.
+-   **WritePad_WPFSample** - sample WPF desktop application that demonstrates usage of the SDK.
+-   **WritePad_WinFormsSample** – sample Windows Forms application that demonstrates usage of the SDK.
+
 ## Compiling the sample project (iOS)
 
 **WritePadSDK-Sample** and **WritePadSDK-Sample-Swift** sample projects
@@ -106,9 +123,23 @@ disclaimer at the beginning of each source file.
 ## Compiling the sample project (Android)
 
 -   Start Android Studio 1.1 or later
--   Choose *Open an existing Android Studio project* and naviage to **<sdk_path>/Android/sample_astudio** folder
+-   Choose *Open an existing Android Studio project* and naviage to **\<sdk_path\>/Android/sample_astudio** folder
 -   Choose Build/Make Project menu command
 -   Run sample app on device or emulator
+
+## Compiling the sample project (Windows)
+
+You should first compile the included *WinRT\_CPPLayer* project for the chosen CPU in Release mode. Then 
+you can compile the WritePad\_CSharpSample project on the same CPU architecture in Release mode and run it.
+
+To compile the WPF sample or Windows Forms sample, you should first compile the included *Windows\_CPPLayer* 
+project for the chosen CPU in Release mode. Then you can compile the *WritePad\_WPFSample* or 
+*WritePad\_WinFormsSample* project on the same CPU architecture in Release mode and run it.
+
+You need **Visual Studio 2015** (any edition) to compile and run the included samples.
+You can use the sample source code in your project when integrating with WritePad SDK. 
+The sample source code is provided "AS-IS" without any warranties. For more information, see the 
+license and warranty disclaimer at the beginning of each source file.
 
 
 **Please note that a use the SDK sample code, or any portion of it, in

@@ -176,21 +176,25 @@ license and warranty disclaimer at the beginning of each source file.
 
 -   **on iOS:**
     
-    `[DllImport("__Internal", EntryPoint = "HWR_GetResultWord")]
+    ```C#
+    [DllImport("__Internal", EntryPoint = "HWR_GetResultWord")]
     private static extern IntPtr HWR_GetResultWord( IntPtr reco, int nWord, int nAlternative ); 
 
     public static String recoResultWord(int column, int row) { 
         return Marshal.PtrToStringUni(HWR_GetResultWord(recoHandle, column, row)); 
-    }`
+    }
+    ```
     
 -   **on Android:** 
     
-    `[DllImport("libWritePadReco.so", EntryPoint = "HWR_GetResultWord")] 
+    ```C#
+    [DllImport("libWritePadReco.so", EntryPoint = "HWR_GetResultWord")] 
     private static extern IntPtr HWR_GetResultWord(IntPtr reco, int nWord, int nAlternative);
 
     public static String recoResultWord(int column, int row) { 
         return Marshal.PtrToStringUni(HWR_GetResultWord(recoHandle, column, row)); 
-    }`
+    }
+    ```
 
 
 **Please note that a use the SDK sample code, or any portion of it, in

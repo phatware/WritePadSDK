@@ -7,35 +7,39 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		360802C01AECAB6500612018 /* EditWordItemViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 360802BF1AECAB6500612018 /* EditWordItemViewController.swift */; };
-		361206A31AEB54EE00BF17CC /* WordListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 361206A21AEB54EE00BF17CC /* WordListViewController.swift */; };
-		3621054C1AFDB44C00E906F9 /* LanguageManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 3643A9291AE8D1EA003DCC57 /* LanguageManager.m */; };
-		3621054D1AFDB44F00E906F9 /* RecognizerManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 3643A93D1AE8D1EA003DCC57 /* RecognizerManager.m */; };
-		362543DD1AEAC8E400083F72 /* UserDictViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 362543DC1AEAC8E400083F72 /* UserDictViewController.swift */; };
-		3643A9261AE8D07B003DCC57 /* OptionsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3643A9251AE8D07B003DCC57 /* OptionsViewController.swift */; };
-		3643A94F1AE8D1EA003DCC57 /* LanguageManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 3643A9291AE8D1EA003DCC57 /* LanguageManager.m */; };
-		3643A9501AE8D1EA003DCC57 /* letimg.c in Sources */ = {isa = PBXBuildFile; fileRef = 3643A92B1AE8D1EA003DCC57 /* letimg.c */; };
-		3643A9511AE8D1EA003DCC57 /* LetterGroupView.m in Sources */ = {isa = PBXBuildFile; fileRef = 3643A92E1AE8D1EA003DCC57 /* LetterGroupView.m */; };
-		3643A9521AE8D1EA003DCC57 /* LetterShapesController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3643A9301AE8D1EA003DCC57 /* LetterShapesController.m */; };
-		3643A9531AE8D1EA003DCC57 /* lidata.c in Sources */ = {isa = PBXBuildFile; fileRef = 3643A9311AE8D1EA003DCC57 /* lidata.c */; };
-		3643A9541AE8D1EA003DCC57 /* ThumbImageView.m in Sources */ = {isa = PBXBuildFile; fileRef = 3643A93A1AE8D1EA003DCC57 /* ThumbImageView.m */; };
-		3643A9551AE8D1EA003DCC57 /* RecognizerManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 3643A93D1AE8D1EA003DCC57 /* RecognizerManager.m */; };
-		3643A9561AE8D1EA003DCC57 /* SuggestionsView.m in Sources */ = {isa = PBXBuildFile; fileRef = 3643A93F1AE8D1EA003DCC57 /* SuggestionsView.m */; };
-		3643A9571AE8D1EA003DCC57 /* utils.m in Sources */ = {isa = PBXBuildFile; fileRef = 3643A9421AE8D1EA003DCC57 /* utils.m */; };
-		3643A9581AE8D1EA003DCC57 /* WPTextView.m in Sources */ = {isa = PBXBuildFile; fileRef = 3643A9441AE8D1EA003DCC57 /* WPTextView.m */; };
-		3643A9591AE8D1EA003DCC57 /* InkCollectorView.m in Sources */ = {isa = PBXBuildFile; fileRef = 3643A9471AE8D1EA003DCC57 /* InkCollectorView.m */; };
-		3643A95A1AE8D1EA003DCC57 /* AsyncResultView.m in Sources */ = {isa = PBXBuildFile; fileRef = 3643A94A1AE8D1EA003DCC57 /* AsyncResultView.m */; };
-		3643A95B1AE8D1EA003DCC57 /* WritePadInputPanel.m in Sources */ = {isa = PBXBuildFile; fileRef = 3643A94C1AE8D1EA003DCC57 /* WritePadInputPanel.m */; };
-		3643A95C1AE8D1EA003DCC57 /* WritePadInputView.m in Sources */ = {isa = PBXBuildFile; fileRef = 3643A94E1AE8D1EA003DCC57 /* WritePadInputView.m */; };
+		362DADCC1C0A6566000A58EC /* letimg.c in Sources */ = {isa = PBXBuildFile; fileRef = 362DAD9F1C0A6566000A58EC /* letimg.c */; };
+		362DADCD1C0A6566000A58EC /* LetterGroupView.m in Sources */ = {isa = PBXBuildFile; fileRef = 362DADA21C0A6566000A58EC /* LetterGroupView.m */; };
+		362DADCE1C0A6566000A58EC /* LetterShapesController.m in Sources */ = {isa = PBXBuildFile; fileRef = 362DADA41C0A6566000A58EC /* LetterShapesController.m */; };
+		362DADCF1C0A6566000A58EC /* lidata.c in Sources */ = {isa = PBXBuildFile; fileRef = 362DADA51C0A6566000A58EC /* lidata.c */; };
+		362DADD01C0A6566000A58EC /* ThumbImageView.m in Sources */ = {isa = PBXBuildFile; fileRef = 362DADAE1C0A6566000A58EC /* ThumbImageView.m */; };
+		362DADD11C0A6566000A58EC /* LanguageManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 362DADB11C0A6566000A58EC /* LanguageManager.m */; };
+		362DADD21C0A6566000A58EC /* NSMutableArray+AddUnique.m in Sources */ = {isa = PBXBuildFile; fileRef = 362DADB31C0A6566000A58EC /* NSMutableArray+AddUnique.m */; };
+		362DADD31C0A6566000A58EC /* RecognizerManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 362DADB61C0A6566000A58EC /* RecognizerManager.m */; };
+		362DADD41C0A6566000A58EC /* RectObject.m in Sources */ = {isa = PBXBuildFile; fileRef = 362DADB81C0A6566000A58EC /* RectObject.m */; };
+		362DADD51C0A6566000A58EC /* SuggestionsView.m in Sources */ = {isa = PBXBuildFile; fileRef = 362DADBA1C0A6566000A58EC /* SuggestionsView.m */; };
+		362DADD61C0A6566000A58EC /* utils.m in Sources */ = {isa = PBXBuildFile; fileRef = 362DADBD1C0A6566000A58EC /* utils.m */; };
+		362DADD71C0A6566000A58EC /* WPTextView.m in Sources */ = {isa = PBXBuildFile; fileRef = 362DADBF1C0A6566000A58EC /* WPTextView.m */; };
+		362DADD81C0A6566000A58EC /* WritePadPersistentData.m in Sources */ = {isa = PBXBuildFile; fileRef = 362DADC11C0A6566000A58EC /* WritePadPersistentData.m */; };
+		362DADD91C0A6566000A58EC /* InkCollectorView.m in Sources */ = {isa = PBXBuildFile; fileRef = 362DADC41C0A6566000A58EC /* InkCollectorView.m */; };
+		362DADDA1C0A6566000A58EC /* AsyncResultView.m in Sources */ = {isa = PBXBuildFile; fileRef = 362DADC71C0A6566000A58EC /* AsyncResultView.m */; };
+		362DADDB1C0A6566000A58EC /* WritePadInputPanel.m in Sources */ = {isa = PBXBuildFile; fileRef = 362DADC91C0A6566000A58EC /* WritePadInputPanel.m */; };
+		362DADDC1C0A6566000A58EC /* WritePadInputView.m in Sources */ = {isa = PBXBuildFile; fileRef = 362DADCB1C0A6566000A58EC /* WritePadInputView.m */; };
+		362DADEA1C0A6AB2000A58EC /* Shortcut.m in Sources */ = {isa = PBXBuildFile; fileRef = 362DADE71C0A6AB2000A58EC /* Shortcut.m */; };
+		362DADEB1C0A6AB2000A58EC /* Shortcuts.m in Sources */ = {isa = PBXBuildFile; fileRef = 362DADE91C0A6AB2000A58EC /* Shortcuts.m */; };
+		362DADF91C0A74FC000A58EC /* ReleaseNotes.txt in Resources */ = {isa = PBXBuildFile; fileRef = 362DADF71C0A74FC000A58EC /* ReleaseNotes.txt */; };
+		362DADFB1C0A7504000A58EC /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 362DADFA1C0A7504000A58EC /* Images.xcassets */; };
+		362DADFF1C0A752F000A58EC /* usershortcuts.csv in Resources */ = {isa = PBXBuildFile; fileRef = 362DADFE1C0A752F000A58EC /* usershortcuts.csv */; };
+		362DAE061C0A7546000A58EC /* EditWordItemViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 362DAE011C0A7546000A58EC /* EditWordItemViewController.swift */; };
+		362DAE071C0A7546000A58EC /* LanguageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 362DAE021C0A7546000A58EC /* LanguageViewController.swift */; };
+		362DAE081C0A7546000A58EC /* OptionsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 362DAE031C0A7546000A58EC /* OptionsViewController.swift */; };
+		362DAE091C0A7546000A58EC /* UserDictViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 362DAE041C0A7546000A58EC /* UserDictViewController.swift */; };
+		362DAE0A1C0A7546000A58EC /* WordListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 362DAE051C0A7546000A58EC /* WordListViewController.swift */; };
+		362DAE0F1C0A75A0000A58EC /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 362DAE0B1C0A75A0000A58EC /* LaunchScreen.xib */; };
+		362DAE101C0A75A0000A58EC /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 362DAE0D1C0A75A0000A58EC /* Main.storyboard */; };
 		3694AA4E1AE43830001E8BE3 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3694AA4D1AE43830001E8BE3 /* AppDelegate.swift */; };
 		3694AA501AE43830001E8BE3 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3694AA4F1AE43830001E8BE3 /* ViewController.swift */; };
-		3694AA531AE43830001E8BE3 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3694AA511AE43830001E8BE3 /* Main.storyboard */; };
-		3694AA581AE43830001E8BE3 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3694AA561AE43830001E8BE3 /* LaunchScreen.xib */; };
 		3694AA641AE43830001E8BE3 /* WritePadSDK_Sample_SwiftTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3694AA631AE43830001E8BE3 /* WritePadSDK_Sample_SwiftTests.swift */; };
 		3694AA8E1AE44B12001E8BE3 /* libWritePadRecoUniversal.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 3694AA8D1AE44B12001E8BE3 /* libWritePadRecoUniversal.a */; };
-		3694AAA31AE6D38A001E8BE3 /* LanguageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3694AAA21AE6D38A001E8BE3 /* LanguageViewController.swift */; };
-		3694AAA51AE77062001E8BE3 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 3694AAA41AE77062001E8BE3 /* Images.xcassets */; };
-		3694AAA71AE7718F001E8BE3 /* ReleaseNotes.txt in Resources */ = {isa = PBXBuildFile; fileRef = 3694AAA61AE7718F001E8BE3 /* ReleaseNotes.txt */; };
 		3694AAB71AE771E5001E8BE3 /* Indonesian.dct in Resources */ = {isa = PBXBuildFile; fileRef = 3694AAA91AE771E5001E8BE3 /* Indonesian.dct */; };
 		3694AAB81AE771E5001E8BE3 /* Brazilian.dct in Resources */ = {isa = PBXBuildFile; fileRef = 3694AAAA1AE771E5001E8BE3 /* Brazilian.dct */; };
 		3694AAB91AE771E5001E8BE3 /* Danish.dct in Resources */ = {isa = PBXBuildFile; fileRef = 3694AAAB1AE771E5001E8BE3 /* Danish.dct */; };
@@ -63,67 +67,79 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		360802BF1AECAB6500612018 /* EditWordItemViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EditWordItemViewController.swift; sourceTree = "<group>"; };
-		361206A21AEB54EE00BF17CC /* WordListViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WordListViewController.swift; sourceTree = "<group>"; };
-		362543DC1AEAC8E400083F72 /* UserDictViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserDictViewController.swift; sourceTree = "<group>"; };
-		3643A9251AE8D07B003DCC57 /* OptionsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OptionsViewController.swift; sourceTree = "<group>"; };
-		3643A9281AE8D1EA003DCC57 /* LanguageManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LanguageManager.h; sourceTree = "<group>"; };
-		3643A9291AE8D1EA003DCC57 /* LanguageManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LanguageManager.m; sourceTree = "<group>"; };
-		3643A92B1AE8D1EA003DCC57 /* letimg.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = letimg.c; sourceTree = "<group>"; };
-		3643A92C1AE8D1EA003DCC57 /* letimg.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = letimg.h; sourceTree = "<group>"; };
-		3643A92D1AE8D1EA003DCC57 /* LetterGroupView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LetterGroupView.h; sourceTree = "<group>"; };
-		3643A92E1AE8D1EA003DCC57 /* LetterGroupView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LetterGroupView.m; sourceTree = "<group>"; };
-		3643A92F1AE8D1EA003DCC57 /* LetterShapesController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LetterShapesController.h; sourceTree = "<group>"; };
-		3643A9301AE8D1EA003DCC57 /* LetterShapesController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LetterShapesController.m; sourceTree = "<group>"; };
-		3643A9311AE8D1EA003DCC57 /* lidata.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = lidata.c; sourceTree = "<group>"; };
-		3643A9321AE8D1EA003DCC57 /* lidatadf.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = lidatadf.h; sourceTree = "<group>"; };
-		3643A9331AE8D1EA003DCC57 /* lidt_eng.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = lidt_eng.h; sourceTree = "<group>"; };
-		3643A9341AE8D1EA003DCC57 /* lidt_fre.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = lidt_fre.h; sourceTree = "<group>"; };
-		3643A9351AE8D1EA003DCC57 /* lidt_ger.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = lidt_ger.h; sourceTree = "<group>"; };
-		3643A9361AE8D1EA003DCC57 /* ligstate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ligstate.h; sourceTree = "<group>"; };
-		3643A9371AE8D1EA003DCC57 /* liintern.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = liintern.h; sourceTree = "<group>"; };
-		3643A9381AE8D1EA003DCC57 /* ShapeAPI.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ShapeAPI.h; sourceTree = "<group>"; };
-		3643A9391AE8D1EA003DCC57 /* ThumbImageView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ThumbImageView.h; sourceTree = "<group>"; };
-		3643A93A1AE8D1EA003DCC57 /* ThumbImageView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ThumbImageView.m; sourceTree = "<group>"; };
-		3643A93B1AE8D1EA003DCC57 /* OptionKeys.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OptionKeys.h; sourceTree = "<group>"; };
-		3643A93C1AE8D1EA003DCC57 /* RecognizerManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RecognizerManager.h; sourceTree = "<group>"; };
-		3643A93D1AE8D1EA003DCC57 /* RecognizerManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RecognizerManager.m; sourceTree = "<group>"; };
-		3643A93E1AE8D1EA003DCC57 /* SuggestionsView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SuggestionsView.h; sourceTree = "<group>"; };
-		3643A93F1AE8D1EA003DCC57 /* SuggestionsView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SuggestionsView.m; sourceTree = "<group>"; };
-		3643A9401AE8D1EA003DCC57 /* UIConst.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UIConst.h; sourceTree = "<group>"; };
-		3643A9411AE8D1EA003DCC57 /* utils.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = utils.h; sourceTree = "<group>"; };
-		3643A9421AE8D1EA003DCC57 /* utils.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = utils.m; sourceTree = "<group>"; };
-		3643A9431AE8D1EA003DCC57 /* WPTextView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WPTextView.h; sourceTree = "<group>"; };
-		3643A9441AE8D1EA003DCC57 /* WPTextView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WPTextView.m; sourceTree = "<group>"; };
-		3643A9461AE8D1EA003DCC57 /* InkCollectorView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = InkCollectorView.h; sourceTree = "<group>"; };
-		3643A9471AE8D1EA003DCC57 /* InkCollectorView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = InkCollectorView.m; sourceTree = "<group>"; };
-		3643A9491AE8D1EA003DCC57 /* AsyncResultView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AsyncResultView.h; sourceTree = "<group>"; };
-		3643A94A1AE8D1EA003DCC57 /* AsyncResultView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AsyncResultView.m; sourceTree = "<group>"; };
-		3643A94B1AE8D1EA003DCC57 /* WritePadInputPanel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WritePadInputPanel.h; sourceTree = "<group>"; };
-		3643A94C1AE8D1EA003DCC57 /* WritePadInputPanel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WritePadInputPanel.m; sourceTree = "<group>"; };
-		3643A94D1AE8D1EA003DCC57 /* WritePadInputView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WritePadInputView.h; sourceTree = "<group>"; };
-		3643A94E1AE8D1EA003DCC57 /* WritePadInputView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WritePadInputView.m; sourceTree = "<group>"; };
+		362DAD9F1C0A6566000A58EC /* letimg.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = letimg.c; sourceTree = "<group>"; };
+		362DADA01C0A6566000A58EC /* letimg.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = letimg.h; sourceTree = "<group>"; };
+		362DADA11C0A6566000A58EC /* LetterGroupView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LetterGroupView.h; sourceTree = "<group>"; };
+		362DADA21C0A6566000A58EC /* LetterGroupView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LetterGroupView.m; sourceTree = "<group>"; };
+		362DADA31C0A6566000A58EC /* LetterShapesController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LetterShapesController.h; sourceTree = "<group>"; };
+		362DADA41C0A6566000A58EC /* LetterShapesController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LetterShapesController.m; sourceTree = "<group>"; };
+		362DADA51C0A6566000A58EC /* lidata.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = lidata.c; sourceTree = "<group>"; };
+		362DADA61C0A6566000A58EC /* lidatadf.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = lidatadf.h; sourceTree = "<group>"; };
+		362DADA71C0A6566000A58EC /* lidt_eng.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = lidt_eng.h; sourceTree = "<group>"; };
+		362DADA81C0A6566000A58EC /* lidt_fre.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = lidt_fre.h; sourceTree = "<group>"; };
+		362DADA91C0A6566000A58EC /* lidt_ger.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = lidt_ger.h; sourceTree = "<group>"; };
+		362DADAA1C0A6566000A58EC /* ligstate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ligstate.h; sourceTree = "<group>"; };
+		362DADAB1C0A6566000A58EC /* liintern.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = liintern.h; sourceTree = "<group>"; };
+		362DADAC1C0A6566000A58EC /* ShapeAPI.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ShapeAPI.h; sourceTree = "<group>"; };
+		362DADAD1C0A6566000A58EC /* ThumbImageView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ThumbImageView.h; sourceTree = "<group>"; };
+		362DADAE1C0A6566000A58EC /* ThumbImageView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ThumbImageView.m; sourceTree = "<group>"; };
+		362DADB01C0A6566000A58EC /* LanguageManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LanguageManager.h; sourceTree = "<group>"; };
+		362DADB11C0A6566000A58EC /* LanguageManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LanguageManager.m; sourceTree = "<group>"; };
+		362DADB21C0A6566000A58EC /* NSMutableArray+AddUnique.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSMutableArray+AddUnique.h"; sourceTree = "<group>"; };
+		362DADB31C0A6566000A58EC /* NSMutableArray+AddUnique.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSMutableArray+AddUnique.m"; sourceTree = "<group>"; };
+		362DADB41C0A6566000A58EC /* OptionKeys.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OptionKeys.h; sourceTree = "<group>"; };
+		362DADB51C0A6566000A58EC /* RecognizerManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RecognizerManager.h; sourceTree = "<group>"; };
+		362DADB61C0A6566000A58EC /* RecognizerManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RecognizerManager.m; sourceTree = "<group>"; };
+		362DADB71C0A6566000A58EC /* RectObject.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RectObject.h; sourceTree = "<group>"; };
+		362DADB81C0A6566000A58EC /* RectObject.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RectObject.m; sourceTree = "<group>"; };
+		362DADB91C0A6566000A58EC /* SuggestionsView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SuggestionsView.h; sourceTree = "<group>"; };
+		362DADBA1C0A6566000A58EC /* SuggestionsView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SuggestionsView.m; sourceTree = "<group>"; };
+		362DADBB1C0A6566000A58EC /* UIConst.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UIConst.h; sourceTree = "<group>"; };
+		362DADBC1C0A6566000A58EC /* utils.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = utils.h; sourceTree = "<group>"; };
+		362DADBD1C0A6566000A58EC /* utils.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = utils.m; sourceTree = "<group>"; };
+		362DADBE1C0A6566000A58EC /* WPTextView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WPTextView.h; sourceTree = "<group>"; };
+		362DADBF1C0A6566000A58EC /* WPTextView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WPTextView.m; sourceTree = "<group>"; };
+		362DADC01C0A6566000A58EC /* WritePadPersistentData.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WritePadPersistentData.h; sourceTree = "<group>"; };
+		362DADC11C0A6566000A58EC /* WritePadPersistentData.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WritePadPersistentData.m; sourceTree = "<group>"; };
+		362DADC31C0A6566000A58EC /* InkCollectorView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = InkCollectorView.h; sourceTree = "<group>"; };
+		362DADC41C0A6566000A58EC /* InkCollectorView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = InkCollectorView.m; sourceTree = "<group>"; };
+		362DADC61C0A6566000A58EC /* AsyncResultView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AsyncResultView.h; sourceTree = "<group>"; };
+		362DADC71C0A6566000A58EC /* AsyncResultView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AsyncResultView.m; sourceTree = "<group>"; };
+		362DADC81C0A6566000A58EC /* WritePadInputPanel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WritePadInputPanel.h; sourceTree = "<group>"; };
+		362DADC91C0A6566000A58EC /* WritePadInputPanel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WritePadInputPanel.m; sourceTree = "<group>"; };
+		362DADCA1C0A6566000A58EC /* WritePadInputView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WritePadInputView.h; sourceTree = "<group>"; };
+		362DADCB1C0A6566000A58EC /* WritePadInputView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WritePadInputView.m; sourceTree = "<group>"; };
+		362DADDE1C0A656D000A58EC /* gestures.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = gestures.h; sourceTree = "<group>"; };
+		362DADDF1C0A656D000A58EC /* InkWrapper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = InkWrapper.h; sourceTree = "<group>"; };
+		362DADE01C0A656D000A58EC /* langid.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = langid.h; sourceTree = "<group>"; };
+		362DADE11C0A656D000A58EC /* recodefs.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = recodefs.h; sourceTree = "<group>"; };
+		362DADE21C0A656D000A58EC /* RecognizerApi.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RecognizerApi.h; sourceTree = "<group>"; };
+		362DADE31C0A656D000A58EC /* RecognizerWrapper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RecognizerWrapper.h; sourceTree = "<group>"; };
+		362DADE41C0A656D000A58EC /* recotypes.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = recotypes.h; sourceTree = "<group>"; };
+		362DADE61C0A6AB2000A58EC /* Shortcut.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Shortcut.h; sourceTree = "<group>"; };
+		362DADE71C0A6AB2000A58EC /* Shortcut.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Shortcut.m; sourceTree = "<group>"; };
+		362DADE81C0A6AB2000A58EC /* Shortcuts.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Shortcuts.h; sourceTree = "<group>"; };
+		362DADE91C0A6AB2000A58EC /* Shortcuts.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Shortcuts.m; sourceTree = "<group>"; };
+		362DADF81C0A74FC000A58EC /* Base */ = {isa = PBXFileReference; lastKnownFileType = text; name = Base; path = Resource/Base.lproj/ReleaseNotes.txt; sourceTree = "<group>"; };
+		362DADFA1C0A7504000A58EC /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; name = Images.xcassets; path = Resource/Images.xcassets; sourceTree = "<group>"; };
+		362DADFE1C0A752F000A58EC /* usershortcuts.csv */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = usershortcuts.csv; path = Resource/usershortcuts.csv; sourceTree = "<group>"; };
+		362DAE011C0A7546000A58EC /* EditWordItemViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EditWordItemViewController.swift; sourceTree = "<group>"; };
+		362DAE021C0A7546000A58EC /* LanguageViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LanguageViewController.swift; sourceTree = "<group>"; };
+		362DAE031C0A7546000A58EC /* OptionsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OptionsViewController.swift; sourceTree = "<group>"; };
+		362DAE041C0A7546000A58EC /* UserDictViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserDictViewController.swift; sourceTree = "<group>"; };
+		362DAE051C0A7546000A58EC /* WordListViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WordListViewController.swift; sourceTree = "<group>"; };
+		362DAE0C1C0A75A0000A58EC /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Resource/Base.lproj/LaunchScreen.xib; sourceTree = "<group>"; };
+		362DAE0E1C0A75A0000A58EC /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Resource/Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		362DAE111C0AA75A000A58EC /* WritePadSDK-Sample-Swift.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.xml; path = "WritePadSDK-Sample-Swift.entitlements"; sourceTree = "<group>"; };
 		3694AA481AE43830001E8BE3 /* WritePadSDK-Sample-Swift.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "WritePadSDK-Sample-Swift.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		3694AA4C1AE43830001E8BE3 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		3694AA4D1AE43830001E8BE3 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		3694AA4F1AE43830001E8BE3 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
-		3694AA521AE43830001E8BE3 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
-		3694AA571AE43830001E8BE3 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/LaunchScreen.xib; sourceTree = "<group>"; };
 		3694AA5D1AE43830001E8BE3 /* WritePadSDK-Sample-SwiftTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "WritePadSDK-Sample-SwiftTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		3694AA621AE43830001E8BE3 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		3694AA631AE43830001E8BE3 /* WritePadSDK_Sample_SwiftTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WritePadSDK_Sample_SwiftTests.swift; sourceTree = "<group>"; };
 		3694AA701AE43C68001E8BE3 /* WritePadSDK-Sample-Swift-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "WritePadSDK-Sample-Swift-Bridging-Header.h"; sourceTree = "<group>"; };
-		3694AA831AE44A1B001E8BE3 /* langid.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = langid.h; path = ../../include/langid.h; sourceTree = "<group>"; };
-		3694AA841AE44A38001E8BE3 /* gestures.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = gestures.h; path = ../../include/gestures.h; sourceTree = "<group>"; };
-		3694AA851AE44A38001E8BE3 /* InkWrapper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = InkWrapper.h; path = ../../include/InkWrapper.h; sourceTree = "<group>"; };
-		3694AA861AE44A38001E8BE3 /* recodefs.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = recodefs.h; path = ../../include/recodefs.h; sourceTree = "<group>"; };
-		3694AA871AE44A38001E8BE3 /* RecognizerAPI.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = RecognizerAPI.h; path = ../../include/RecognizerAPI.h; sourceTree = "<group>"; };
-		3694AA881AE44A38001E8BE3 /* RecognizerWrapper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = RecognizerWrapper.h; path = ../../include/RecognizerWrapper.h; sourceTree = "<group>"; };
-		3694AA891AE44A38001E8BE3 /* RecoTypes.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = RecoTypes.h; path = ../../include/RecoTypes.h; sourceTree = "<group>"; };
 		3694AA8D1AE44B12001E8BE3 /* libWritePadRecoUniversal.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = libWritePadRecoUniversal.a; path = ../../Library/libWritePadRecoUniversal.a; sourceTree = "<group>"; };
-		3694AAA21AE6D38A001E8BE3 /* LanguageViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LanguageViewController.swift; sourceTree = "<group>"; };
-		3694AAA41AE77062001E8BE3 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
-		3694AAA61AE7718F001E8BE3 /* ReleaseNotes.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = ReleaseNotes.txt; sourceTree = "<group>"; };
 		3694AAA91AE771E5001E8BE3 /* Indonesian.dct */ = {isa = PBXFileReference; lastKnownFileType = file; name = Indonesian.dct; path = ../../Dictionaries/Indonesian.dct; sourceTree = "<group>"; };
 		3694AAAA1AE771E5001E8BE3 /* Brazilian.dct */ = {isa = PBXFileReference; lastKnownFileType = file; name = Brazilian.dct; path = ../../Dictionaries/Brazilian.dct; sourceTree = "<group>"; };
 		3694AAAB1AE771E5001E8BE3 /* Danish.dct */ = {isa = PBXFileReference; lastKnownFileType = file; name = Danish.dct; path = ../../Dictionaries/Danish.dct; sourceTree = "<group>"; };
@@ -159,73 +175,139 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		3643A9271AE8D1EA003DCC57 /* RecognizerSupport */ = {
+		362DAD9D1C0A6566000A58EC /* Shared */ = {
 			isa = PBXGroup;
 			children = (
-				3694AA7C1AE448E1001E8BE3 /* Include */,
-				3643A9481AE8D1EA003DCC57 /* WritePanel */,
-				3643A9451AE8D1EA003DCC57 /* WriteAnywhere */,
-				3643A92A1AE8D1EA003DCC57 /* LetterShapes */,
-				3643A9281AE8D1EA003DCC57 /* LanguageManager.h */,
-				3643A9291AE8D1EA003DCC57 /* LanguageManager.m */,
-				3643A9401AE8D1EA003DCC57 /* UIConst.h */,
-				3643A93B1AE8D1EA003DCC57 /* OptionKeys.h */,
-				3643A93C1AE8D1EA003DCC57 /* RecognizerManager.h */,
-				3643A93D1AE8D1EA003DCC57 /* RecognizerManager.m */,
-				3643A93E1AE8D1EA003DCC57 /* SuggestionsView.h */,
-				3643A93F1AE8D1EA003DCC57 /* SuggestionsView.m */,
-				3643A9411AE8D1EA003DCC57 /* utils.h */,
-				3643A9421AE8D1EA003DCC57 /* utils.m */,
-				3643A9431AE8D1EA003DCC57 /* WPTextView.h */,
-				3643A9441AE8D1EA003DCC57 /* WPTextView.m */,
+				362DADE51C0A6AB2000A58EC /* Shortcuts */,
+				362DAD9E1C0A6566000A58EC /* ShapeSelector */,
+				362DADAF1C0A6566000A58EC /* Utilities */,
+				362DADC21C0A6566000A58EC /* WriteAnywhere */,
+				362DADC51C0A6566000A58EC /* WritePanel */,
 			);
-			path = RecognizerSupport;
+			name = Shared;
+			path = ../../Shared;
 			sourceTree = "<group>";
 		};
-		3643A92A1AE8D1EA003DCC57 /* LetterShapes */ = {
+		362DAD9E1C0A6566000A58EC /* ShapeSelector */ = {
 			isa = PBXGroup;
 			children = (
-				3643A92B1AE8D1EA003DCC57 /* letimg.c */,
-				3643A92C1AE8D1EA003DCC57 /* letimg.h */,
-				3643A92D1AE8D1EA003DCC57 /* LetterGroupView.h */,
-				3643A92E1AE8D1EA003DCC57 /* LetterGroupView.m */,
-				3643A92F1AE8D1EA003DCC57 /* LetterShapesController.h */,
-				3643A9301AE8D1EA003DCC57 /* LetterShapesController.m */,
-				3643A9311AE8D1EA003DCC57 /* lidata.c */,
-				3643A9321AE8D1EA003DCC57 /* lidatadf.h */,
-				3643A9331AE8D1EA003DCC57 /* lidt_eng.h */,
-				3643A9341AE8D1EA003DCC57 /* lidt_fre.h */,
-				3643A9351AE8D1EA003DCC57 /* lidt_ger.h */,
-				3643A9361AE8D1EA003DCC57 /* ligstate.h */,
-				3643A9371AE8D1EA003DCC57 /* liintern.h */,
-				3643A9381AE8D1EA003DCC57 /* ShapeAPI.h */,
-				3643A9391AE8D1EA003DCC57 /* ThumbImageView.h */,
-				3643A93A1AE8D1EA003DCC57 /* ThumbImageView.m */,
+				362DAD9F1C0A6566000A58EC /* letimg.c */,
+				362DADA01C0A6566000A58EC /* letimg.h */,
+				362DADA11C0A6566000A58EC /* LetterGroupView.h */,
+				362DADA21C0A6566000A58EC /* LetterGroupView.m */,
+				362DADA31C0A6566000A58EC /* LetterShapesController.h */,
+				362DADA41C0A6566000A58EC /* LetterShapesController.m */,
+				362DADA51C0A6566000A58EC /* lidata.c */,
+				362DADA61C0A6566000A58EC /* lidatadf.h */,
+				362DADA71C0A6566000A58EC /* lidt_eng.h */,
+				362DADA81C0A6566000A58EC /* lidt_fre.h */,
+				362DADA91C0A6566000A58EC /* lidt_ger.h */,
+				362DADAA1C0A6566000A58EC /* ligstate.h */,
+				362DADAB1C0A6566000A58EC /* liintern.h */,
+				362DADAC1C0A6566000A58EC /* ShapeAPI.h */,
+				362DADAD1C0A6566000A58EC /* ThumbImageView.h */,
+				362DADAE1C0A6566000A58EC /* ThumbImageView.m */,
 			);
-			path = LetterShapes;
+			path = ShapeSelector;
 			sourceTree = "<group>";
 		};
-		3643A9451AE8D1EA003DCC57 /* WriteAnywhere */ = {
+		362DADAF1C0A6566000A58EC /* Utilities */ = {
 			isa = PBXGroup;
 			children = (
-				3643A9461AE8D1EA003DCC57 /* InkCollectorView.h */,
-				3643A9471AE8D1EA003DCC57 /* InkCollectorView.m */,
+				362DADB01C0A6566000A58EC /* LanguageManager.h */,
+				362DADB11C0A6566000A58EC /* LanguageManager.m */,
+				362DADB21C0A6566000A58EC /* NSMutableArray+AddUnique.h */,
+				362DADB31C0A6566000A58EC /* NSMutableArray+AddUnique.m */,
+				362DADB41C0A6566000A58EC /* OptionKeys.h */,
+				362DADB51C0A6566000A58EC /* RecognizerManager.h */,
+				362DADB61C0A6566000A58EC /* RecognizerManager.m */,
+				362DADB71C0A6566000A58EC /* RectObject.h */,
+				362DADB81C0A6566000A58EC /* RectObject.m */,
+				362DADB91C0A6566000A58EC /* SuggestionsView.h */,
+				362DADBA1C0A6566000A58EC /* SuggestionsView.m */,
+				362DADBB1C0A6566000A58EC /* UIConst.h */,
+				362DADBC1C0A6566000A58EC /* utils.h */,
+				362DADBD1C0A6566000A58EC /* utils.m */,
+				362DADBE1C0A6566000A58EC /* WPTextView.h */,
+				362DADBF1C0A6566000A58EC /* WPTextView.m */,
+				362DADC01C0A6566000A58EC /* WritePadPersistentData.h */,
+				362DADC11C0A6566000A58EC /* WritePadPersistentData.m */,
+			);
+			path = Utilities;
+			sourceTree = "<group>";
+		};
+		362DADC21C0A6566000A58EC /* WriteAnywhere */ = {
+			isa = PBXGroup;
+			children = (
+				362DADC31C0A6566000A58EC /* InkCollectorView.h */,
+				362DADC41C0A6566000A58EC /* InkCollectorView.m */,
 			);
 			path = WriteAnywhere;
 			sourceTree = "<group>";
 		};
-		3643A9481AE8D1EA003DCC57 /* WritePanel */ = {
+		362DADC51C0A6566000A58EC /* WritePanel */ = {
 			isa = PBXGroup;
 			children = (
-				3643A9491AE8D1EA003DCC57 /* AsyncResultView.h */,
-				3643A94A1AE8D1EA003DCC57 /* AsyncResultView.m */,
-				3643A94B1AE8D1EA003DCC57 /* WritePadInputPanel.h */,
-				3643A94C1AE8D1EA003DCC57 /* WritePadInputPanel.m */,
-				3643A94D1AE8D1EA003DCC57 /* WritePadInputView.h */,
-				3643A94E1AE8D1EA003DCC57 /* WritePadInputView.m */,
+				362DADC61C0A6566000A58EC /* AsyncResultView.h */,
+				362DADC71C0A6566000A58EC /* AsyncResultView.m */,
+				362DADC81C0A6566000A58EC /* WritePadInputPanel.h */,
+				362DADC91C0A6566000A58EC /* WritePadInputPanel.m */,
+				362DADCA1C0A6566000A58EC /* WritePadInputView.h */,
+				362DADCB1C0A6566000A58EC /* WritePadInputView.m */,
 			);
 			path = WritePanel;
 			sourceTree = "<group>";
+		};
+		362DADDD1C0A656D000A58EC /* include */ = {
+			isa = PBXGroup;
+			children = (
+				362DADDE1C0A656D000A58EC /* gestures.h */,
+				362DADDF1C0A656D000A58EC /* InkWrapper.h */,
+				362DADE01C0A656D000A58EC /* langid.h */,
+				362DADE11C0A656D000A58EC /* recodefs.h */,
+				362DADE21C0A656D000A58EC /* RecognizerApi.h */,
+				362DADE31C0A656D000A58EC /* RecognizerWrapper.h */,
+				362DADE41C0A656D000A58EC /* recotypes.h */,
+			);
+			name = include;
+			path = ../../include;
+			sourceTree = "<group>";
+		};
+		362DADE51C0A6AB2000A58EC /* Shortcuts */ = {
+			isa = PBXGroup;
+			children = (
+				362DADE61C0A6AB2000A58EC /* Shortcut.h */,
+				362DADE71C0A6AB2000A58EC /* Shortcut.m */,
+				362DADE81C0A6AB2000A58EC /* Shortcuts.h */,
+				362DADE91C0A6AB2000A58EC /* Shortcuts.m */,
+			);
+			path = Shortcuts;
+			sourceTree = "<group>";
+		};
+		362DADF41C0A7420000A58EC /* Resource */ = {
+			isa = PBXGroup;
+			children = (
+				362DADFA1C0A7504000A58EC /* Images.xcassets */,
+				362DAE0B1C0A75A0000A58EC /* LaunchScreen.xib */,
+				362DAE0D1C0A75A0000A58EC /* Main.storyboard */,
+				362DADF71C0A74FC000A58EC /* ReleaseNotes.txt */,
+				362DADFE1C0A752F000A58EC /* usershortcuts.csv */,
+			);
+			name = Resource;
+			sourceTree = "<group>";
+		};
+		362DAE001C0A7546000A58EC /* Options */ = {
+			isa = PBXGroup;
+			children = (
+				362DAE011C0A7546000A58EC /* EditWordItemViewController.swift */,
+				362DAE021C0A7546000A58EC /* LanguageViewController.swift */,
+				362DAE031C0A7546000A58EC /* OptionsViewController.swift */,
+				362DAE041C0A7546000A58EC /* UserDictViewController.swift */,
+				362DAE051C0A7546000A58EC /* WordListViewController.swift */,
+			);
+			name = Options;
+			path = "WritePadSDK-Sample-Swift/Options";
+			sourceTree = SOURCE_ROOT;
 		};
 		3694AA3F1AE43830001E8BE3 = {
 			isa = PBXGroup;
@@ -248,18 +330,12 @@
 		3694AA4A1AE43830001E8BE3 /* WritePadSDK-Sample-Swift */ = {
 			isa = PBXGroup;
 			children = (
-				3643A9271AE8D1EA003DCC57 /* RecognizerSupport */,
-				3694AA4D1AE43830001E8BE3 /* AppDelegate.swift */,
+				362DAE111C0AA75A000A58EC /* WritePadSDK-Sample-Swift.entitlements */,
+				362DADDD1C0A656D000A58EC /* include */,
+				362DAD9D1C0A6566000A58EC /* Shared */,
+				362DAE001C0A7546000A58EC /* Options */,
 				3694AA4F1AE43830001E8BE3 /* ViewController.swift */,
-				3643A9251AE8D07B003DCC57 /* OptionsViewController.swift */,
-				360802BF1AECAB6500612018 /* EditWordItemViewController.swift */,
-				362543DC1AEAC8E400083F72 /* UserDictViewController.swift */,
-				361206A21AEB54EE00BF17CC /* WordListViewController.swift */,
-				3694AAA21AE6D38A001E8BE3 /* LanguageViewController.swift */,
-				3694AA511AE43830001E8BE3 /* Main.storyboard */,
-				3694AAA41AE77062001E8BE3 /* Images.xcassets */,
-				3694AA561AE43830001E8BE3 /* LaunchScreen.xib */,
-				3694AAA61AE7718F001E8BE3 /* ReleaseNotes.txt */,
+				3694AA4D1AE43830001E8BE3 /* AppDelegate.swift */,
 				3694AA4B1AE43830001E8BE3 /* Supporting Files */,
 				3694AA701AE43C68001E8BE3 /* WritePadSDK-Sample-Swift-Bridging-Header.h */,
 			);
@@ -269,6 +345,7 @@
 		3694AA4B1AE43830001E8BE3 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				362DADF41C0A7420000A58EC /* Resource */,
 				3694AAA81AE771D5001E8BE3 /* Dictionaries */,
 				3694AA8D1AE44B12001E8BE3 /* libWritePadRecoUniversal.a */,
 				3694AA4C1AE43830001E8BE3 /* Info.plist */,
@@ -291,21 +368,6 @@
 				3694AA621AE43830001E8BE3 /* Info.plist */,
 			);
 			name = "Supporting Files";
-			sourceTree = "<group>";
-		};
-		3694AA7C1AE448E1001E8BE3 /* Include */ = {
-			isa = PBXGroup;
-			children = (
-				3694AA841AE44A38001E8BE3 /* gestures.h */,
-				3694AA851AE44A38001E8BE3 /* InkWrapper.h */,
-				3694AA861AE44A38001E8BE3 /* recodefs.h */,
-				3694AA871AE44A38001E8BE3 /* RecognizerAPI.h */,
-				3694AA881AE44A38001E8BE3 /* RecognizerWrapper.h */,
-				3694AA891AE44A38001E8BE3 /* RecoTypes.h */,
-				3694AA831AE44A1B001E8BE3 /* langid.h */,
-			);
-			name = Include;
-			path = ..;
 			sourceTree = "<group>";
 		};
 		3694AAA81AE771D5001E8BE3 /* Dictionaries */ = {
@@ -381,6 +443,11 @@
 					3694AA471AE43830001E8BE3 = {
 						CreatedOnToolsVersion = 6.3;
 						DevelopmentTeam = U97D34BCNV;
+						SystemCapabilities = {
+							com.apple.ApplicationGroups.iOS = {
+								enabled = 0;
+							};
+						};
 					};
 					3694AA5C1AE43830001E8BE3 = {
 						CreatedOnToolsVersion = 6.3;
@@ -416,20 +483,21 @@
 				3694AABE1AE771E5001E8BE3 /* French.dct in Resources */,
 				3694AABF1AE771E5001E8BE3 /* German.dct in Resources */,
 				3694AAC41AE771E5001E8BE3 /* Swedish.dct in Resources */,
+				362DADFF1C0A752F000A58EC /* usershortcuts.csv in Resources */,
 				3694AAC11AE771E5001E8BE3 /* Norwegian.dct in Resources */,
-				3694AAA71AE7718F001E8BE3 /* ReleaseNotes.txt in Resources */,
 				3694AABC1AE771E5001E8BE3 /* EnglishUK.dct in Resources */,
 				3694AABA1AE771E5001E8BE3 /* Dutch.dct in Resources */,
 				3694AABB1AE771E5001E8BE3 /* English.dct in Resources */,
 				3694AAC31AE771E5001E8BE3 /* Spanish.dct in Resources */,
+				362DADFB1C0A7504000A58EC /* Images.xcassets in Resources */,
 				3694AAB91AE771E5001E8BE3 /* Danish.dct in Resources */,
 				3694AABD1AE771E5001E8BE3 /* Finnish.dct in Resources */,
 				3694AAC21AE771E5001E8BE3 /* Portuguese.dct in Resources */,
-				3694AAA51AE77062001E8BE3 /* Images.xcassets in Resources */,
 				3694AAC01AE771E5001E8BE3 /* Italian.dct in Resources */,
 				3694AAB71AE771E5001E8BE3 /* Indonesian.dct in Resources */,
-				3694AA531AE43830001E8BE3 /* Main.storyboard in Resources */,
-				3694AA581AE43830001E8BE3 /* LaunchScreen.xib in Resources */,
+				362DAE0F1C0A75A0000A58EC /* LaunchScreen.xib in Resources */,
+				362DAE101C0A75A0000A58EC /* Main.storyboard in Resources */,
+				362DADF91C0A74FC000A58EC /* ReleaseNotes.txt in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -447,27 +515,32 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				3643A9531AE8D1EA003DCC57 /* lidata.c in Sources */,
-				3643A94F1AE8D1EA003DCC57 /* LanguageManager.m in Sources */,
-				361206A31AEB54EE00BF17CC /* WordListViewController.swift in Sources */,
-				3643A9261AE8D07B003DCC57 /* OptionsViewController.swift in Sources */,
-				3643A95C1AE8D1EA003DCC57 /* WritePadInputView.m in Sources */,
-				3694AAA31AE6D38A001E8BE3 /* LanguageViewController.swift in Sources */,
-				3643A95A1AE8D1EA003DCC57 /* AsyncResultView.m in Sources */,
-				3643A9551AE8D1EA003DCC57 /* RecognizerManager.m in Sources */,
-				362543DD1AEAC8E400083F72 /* UserDictViewController.swift in Sources */,
-				3643A9521AE8D1EA003DCC57 /* LetterShapesController.m in Sources */,
-				3643A9581AE8D1EA003DCC57 /* WPTextView.m in Sources */,
-				3643A9561AE8D1EA003DCC57 /* SuggestionsView.m in Sources */,
+				362DAE061C0A7546000A58EC /* EditWordItemViewController.swift in Sources */,
+				362DADCD1C0A6566000A58EC /* LetterGroupView.m in Sources */,
+				362DADD51C0A6566000A58EC /* SuggestionsView.m in Sources */,
+				362DADCC1C0A6566000A58EC /* letimg.c in Sources */,
+				362DADD01C0A6566000A58EC /* ThumbImageView.m in Sources */,
 				3694AA501AE43830001E8BE3 /* ViewController.swift in Sources */,
-				3643A95B1AE8D1EA003DCC57 /* WritePadInputPanel.m in Sources */,
-				360802C01AECAB6500612018 /* EditWordItemViewController.swift in Sources */,
-				3643A9511AE8D1EA003DCC57 /* LetterGroupView.m in Sources */,
-				3643A9591AE8D1EA003DCC57 /* InkCollectorView.m in Sources */,
+				362DAE0A1C0A7546000A58EC /* WordListViewController.swift in Sources */,
+				362DADDC1C0A6566000A58EC /* WritePadInputView.m in Sources */,
+				362DADD91C0A6566000A58EC /* InkCollectorView.m in Sources */,
+				362DAE071C0A7546000A58EC /* LanguageViewController.swift in Sources */,
+				362DAE081C0A7546000A58EC /* OptionsViewController.swift in Sources */,
+				362DAE091C0A7546000A58EC /* UserDictViewController.swift in Sources */,
+				362DADD31C0A6566000A58EC /* RecognizerManager.m in Sources */,
+				362DADD11C0A6566000A58EC /* LanguageManager.m in Sources */,
+				362DADD21C0A6566000A58EC /* NSMutableArray+AddUnique.m in Sources */,
+				362DADD41C0A6566000A58EC /* RectObject.m in Sources */,
+				362DADD81C0A6566000A58EC /* WritePadPersistentData.m in Sources */,
+				362DADDA1C0A6566000A58EC /* AsyncResultView.m in Sources */,
+				362DADEA1C0A6AB2000A58EC /* Shortcut.m in Sources */,
+				362DADDB1C0A6566000A58EC /* WritePadInputPanel.m in Sources */,
 				3694AA4E1AE43830001E8BE3 /* AppDelegate.swift in Sources */,
-				3643A9571AE8D1EA003DCC57 /* utils.m in Sources */,
-				3643A9501AE8D1EA003DCC57 /* letimg.c in Sources */,
-				3643A9541AE8D1EA003DCC57 /* ThumbImageView.m in Sources */,
+				362DADD71C0A6566000A58EC /* WPTextView.m in Sources */,
+				362DADD61C0A6566000A58EC /* utils.m in Sources */,
+				362DADEB1C0A6AB2000A58EC /* Shortcuts.m in Sources */,
+				362DADCF1C0A6566000A58EC /* lidata.c in Sources */,
+				362DADCE1C0A6566000A58EC /* LetterShapesController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -475,9 +548,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				3621054D1AFDB44F00E906F9 /* RecognizerManager.m in Sources */,
 				3694AA641AE43830001E8BE3 /* WritePadSDK_Sample_SwiftTests.swift in Sources */,
-				3621054C1AFDB44C00E906F9 /* LanguageManager.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -492,20 +563,28 @@
 /* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
-		3694AA511AE43830001E8BE3 /* Main.storyboard */ = {
+		362DADF71C0A74FC000A58EC /* ReleaseNotes.txt */ = {
 			isa = PBXVariantGroup;
 			children = (
-				3694AA521AE43830001E8BE3 /* Base */,
+				362DADF81C0A74FC000A58EC /* Base */,
 			);
-			name = Main.storyboard;
+			name = ReleaseNotes.txt;
 			sourceTree = "<group>";
 		};
-		3694AA561AE43830001E8BE3 /* LaunchScreen.xib */ = {
+		362DAE0B1C0A75A0000A58EC /* LaunchScreen.xib */ = {
 			isa = PBXVariantGroup;
 			children = (
-				3694AA571AE43830001E8BE3 /* Base */,
+				362DAE0C1C0A75A0000A58EC /* Base */,
 			);
 			name = LaunchScreen.xib;
+			sourceTree = "<group>";
+		};
+		362DAE0D1C0A75A0000A58EC /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				362DAE0E1C0A75A0000A58EC /* Base */,
+			);
+			name = Main.storyboard;
 			sourceTree = "<group>";
 		};
 /* End PBXVariantGroup section */
@@ -600,6 +679,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
+				CODE_SIGN_ENTITLEMENTS = "WritePadSDK-Sample-Swift/WritePadSDK-Sample-Swift.entitlements";
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				INFOPLIST_FILE = "WritePadSDK-Sample-Swift/Info.plist";
@@ -623,6 +703,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
+				CODE_SIGN_ENTITLEMENTS = "WritePadSDK-Sample-Swift/WritePadSDK-Sample-Swift.entitlements";
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				INFOPLIST_FILE = "WritePadSDK-Sample-Swift/Info.plist";

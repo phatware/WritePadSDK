@@ -7,21 +7,30 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		362DAD8C1C0A64E7000A58EC /* letimg.c in Sources */ = {isa = PBXBuildFile; fileRef = 362DAD5F1C0A64E7000A58EC /* letimg.c */; };
+		362DAD8D1C0A64E7000A58EC /* LetterGroupView.m in Sources */ = {isa = PBXBuildFile; fileRef = 362DAD621C0A64E7000A58EC /* LetterGroupView.m */; };
+		362DAD8E1C0A64E7000A58EC /* LetterShapesController.m in Sources */ = {isa = PBXBuildFile; fileRef = 362DAD641C0A64E7000A58EC /* LetterShapesController.m */; };
+		362DAD8F1C0A64E7000A58EC /* lidata.c in Sources */ = {isa = PBXBuildFile; fileRef = 362DAD651C0A64E7000A58EC /* lidata.c */; };
+		362DAD901C0A64E7000A58EC /* ThumbImageView.m in Sources */ = {isa = PBXBuildFile; fileRef = 362DAD6E1C0A64E7000A58EC /* ThumbImageView.m */; };
+		362DAD911C0A64E7000A58EC /* LanguageManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 362DAD711C0A64E7000A58EC /* LanguageManager.m */; };
+		362DAD921C0A64E7000A58EC /* NSMutableArray+AddUnique.m in Sources */ = {isa = PBXBuildFile; fileRef = 362DAD731C0A64E7000A58EC /* NSMutableArray+AddUnique.m */; };
+		362DAD931C0A64E7000A58EC /* RecognizerManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 362DAD761C0A64E7000A58EC /* RecognizerManager.m */; };
+		362DAD941C0A64E7000A58EC /* RectObject.m in Sources */ = {isa = PBXBuildFile; fileRef = 362DAD781C0A64E7000A58EC /* RectObject.m */; };
+		362DAD951C0A64E7000A58EC /* SuggestionsView.m in Sources */ = {isa = PBXBuildFile; fileRef = 362DAD7A1C0A64E7000A58EC /* SuggestionsView.m */; };
+		362DAD961C0A64E7000A58EC /* utils.m in Sources */ = {isa = PBXBuildFile; fileRef = 362DAD7D1C0A64E7000A58EC /* utils.m */; };
+		362DAD971C0A64E7000A58EC /* WPTextView.m in Sources */ = {isa = PBXBuildFile; fileRef = 362DAD7F1C0A64E7000A58EC /* WPTextView.m */; };
+		362DAD981C0A64E7000A58EC /* WritePadPersistentData.m in Sources */ = {isa = PBXBuildFile; fileRef = 362DAD811C0A64E7000A58EC /* WritePadPersistentData.m */; };
+		362DAD991C0A64E7000A58EC /* InkCollectorView.m in Sources */ = {isa = PBXBuildFile; fileRef = 362DAD841C0A64E7000A58EC /* InkCollectorView.m */; };
+		362DAD9A1C0A64E7000A58EC /* AsyncResultView.m in Sources */ = {isa = PBXBuildFile; fileRef = 362DAD871C0A64E7000A58EC /* AsyncResultView.m */; };
+		362DAD9B1C0A64E7000A58EC /* WritePadInputPanel.m in Sources */ = {isa = PBXBuildFile; fileRef = 362DAD891C0A64E7000A58EC /* WritePadInputPanel.m */; };
+		362DAD9C1C0A64E7000A58EC /* WritePadInputView.m in Sources */ = {isa = PBXBuildFile; fileRef = 362DAD8B1C0A64E7000A58EC /* WritePadInputView.m */; };
+		362DADF11C0A6FB6000A58EC /* Shortcut.m in Sources */ = {isa = PBXBuildFile; fileRef = 362DADEE1C0A6FB6000A58EC /* Shortcut.m */; };
+		362DADF21C0A6FB6000A58EC /* Shortcuts.m in Sources */ = {isa = PBXBuildFile; fileRef = 362DADF01C0A6FB6000A58EC /* Shortcuts.m */; };
 		3691918319F0AFFF002A09E3 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 3691917D19F0AFFF002A09E3 /* Images.xcassets */; };
 		3691918419F0AFFF002A09E3 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3691917E19F0AFFF002A09E3 /* LaunchScreen.xib */; };
 		3691918519F0AFFF002A09E3 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3691917F19F0AFFF002A09E3 /* Main.storyboard */; };
 		3691918619F0AFFF002A09E3 /* ReleaseNotes.txt in Resources */ = {isa = PBXBuildFile; fileRef = 3691918019F0AFFF002A09E3 /* ReleaseNotes.txt */; };
 		3691918819F0AFFF002A09E3 /* usershortcuts.csv in Resources */ = {isa = PBXBuildFile; fileRef = 3691918219F0AFFF002A09E3 /* usershortcuts.csv */; };
-		369191A619F0B132002A09E3 /* AsyncResultView.m in Sources */ = {isa = PBXBuildFile; fileRef = 369191A119F0B132002A09E3 /* AsyncResultView.m */; };
-		369191A719F0B132002A09E3 /* WritePadInputPanel.m in Sources */ = {isa = PBXBuildFile; fileRef = 369191A319F0B132002A09E3 /* WritePadInputPanel.m */; };
-		369191A819F0B132002A09E3 /* WritePadInputView.m in Sources */ = {isa = PBXBuildFile; fileRef = 369191A519F0B132002A09E3 /* WritePadInputView.m */; };
-		369191AE19F0B159002A09E3 /* InkCollectorView.m in Sources */ = {isa = PBXBuildFile; fileRef = 369191AB19F0B159002A09E3 /* InkCollectorView.m */; };
-		369191C119F0B243002A09E3 /* LanguageManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 369191B219F0B243002A09E3 /* LanguageManager.m */; };
-		369191C219F0B243002A09E3 /* RecognizerManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 369191B519F0B243002A09E3 /* RecognizerManager.m */; };
-		369191C319F0B243002A09E3 /* RectObject.m in Sources */ = {isa = PBXBuildFile; fileRef = 369191B719F0B243002A09E3 /* RectObject.m */; };
-		369191C419F0B243002A09E3 /* SuggestionsView.m in Sources */ = {isa = PBXBuildFile; fileRef = 369191B919F0B243002A09E3 /* SuggestionsView.m */; };
-		369191C519F0B243002A09E3 /* utils.m in Sources */ = {isa = PBXBuildFile; fileRef = 369191BC19F0B243002A09E3 /* utils.m */; };
-		369191C619F0B243002A09E3 /* WPTextView.m in Sources */ = {isa = PBXBuildFile; fileRef = 369191BE19F0B243002A09E3 /* WPTextView.m */; };
 		369191EE19F0B27C002A09E3 /* CellTextField.m in Sources */ = {isa = PBXBuildFile; fileRef = 369191CA19F0B27C002A09E3 /* CellTextField.m */; };
 		369191EF19F0B27C002A09E3 /* CellTextView.m in Sources */ = {isa = PBXBuildFile; fileRef = 369191CC19F0B27C002A09E3 /* CellTextView.m */; };
 		369191F019F0B27C002A09E3 /* DictEditViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 369191CE19F0B27C002A09E3 /* DictEditViewController.m */; };
@@ -29,16 +38,9 @@
 		369191F219F0B27C002A09E3 /* EditOptionsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 369191D219F0B27C002A09E3 /* EditOptionsViewController.m */; };
 		369191F319F0B27C002A09E3 /* EditWordViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 369191D419F0B27C002A09E3 /* EditWordViewController.m */; };
 		369191F419F0B27C002A09E3 /* LanguageViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 369191D619F0B27C002A09E3 /* LanguageViewController.m */; };
-		369191F519F0B27C002A09E3 /* letimg.c in Sources */ = {isa = PBXBuildFile; fileRef = 369191D819F0B27C002A09E3 /* letimg.c */; };
-		369191F619F0B27C002A09E3 /* LetterGroupView.m in Sources */ = {isa = PBXBuildFile; fileRef = 369191DB19F0B27C002A09E3 /* LetterGroupView.m */; };
-		369191F719F0B27C002A09E3 /* LetterShapesController.m in Sources */ = {isa = PBXBuildFile; fileRef = 369191DD19F0B27C002A09E3 /* LetterShapesController.m */; };
-		369191F819F0B27C002A09E3 /* lidata.c in Sources */ = {isa = PBXBuildFile; fileRef = 369191DE19F0B27C002A09E3 /* lidata.c */; };
-		369191F919F0B27C002A09E3 /* ThumbImageView.m in Sources */ = {isa = PBXBuildFile; fileRef = 369191E719F0B27C002A09E3 /* ThumbImageView.m */; };
 		369191FA19F0B27C002A09E3 /* LanguageSelectorController.m in Sources */ = {isa = PBXBuildFile; fileRef = 369191E919F0B27C002A09E3 /* LanguageSelectorController.m */; };
 		369191FB19F0B27C002A09E3 /* SourceCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 369191EB19F0B27C002A09E3 /* SourceCell.m */; };
 		369191FC19F0B27C002A09E3 /* WordListEditViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 369191ED19F0B27C002A09E3 /* WordListEditViewController.m */; };
-		3691920219F0B2A9002A09E3 /* Shortcut.m in Sources */ = {isa = PBXBuildFile; fileRef = 369191FF19F0B2A9002A09E3 /* Shortcut.m */; };
-		3691920319F0B2A9002A09E3 /* Shortcuts.m in Sources */ = {isa = PBXBuildFile; fileRef = 3691920119F0B2A9002A09E3 /* Shortcuts.m */; };
 		3691920619F0BFC0002A09E3 /* libWritePadRecoUniversal.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 3691920519F0BFC0002A09E3 /* libWritePadRecoUniversal.a */; };
 		36BBBCEC19E32FD700E63C5C /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 36BBBCEB19E32FD700E63C5C /* main.m */; };
 		36BBBCEF19E32FD700E63C5C /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 36BBBCEE19E32FD700E63C5C /* AppDelegate.m */; };
@@ -60,32 +62,57 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		362DAD5F1C0A64E7000A58EC /* letimg.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = letimg.c; sourceTree = "<group>"; };
+		362DAD601C0A64E7000A58EC /* letimg.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = letimg.h; sourceTree = "<group>"; };
+		362DAD611C0A64E7000A58EC /* LetterGroupView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LetterGroupView.h; sourceTree = "<group>"; };
+		362DAD621C0A64E7000A58EC /* LetterGroupView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LetterGroupView.m; sourceTree = "<group>"; };
+		362DAD631C0A64E7000A58EC /* LetterShapesController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LetterShapesController.h; sourceTree = "<group>"; };
+		362DAD641C0A64E7000A58EC /* LetterShapesController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LetterShapesController.m; sourceTree = "<group>"; };
+		362DAD651C0A64E7000A58EC /* lidata.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = lidata.c; sourceTree = "<group>"; };
+		362DAD661C0A64E7000A58EC /* lidatadf.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = lidatadf.h; sourceTree = "<group>"; };
+		362DAD671C0A64E7000A58EC /* lidt_eng.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = lidt_eng.h; sourceTree = "<group>"; };
+		362DAD681C0A64E7000A58EC /* lidt_fre.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = lidt_fre.h; sourceTree = "<group>"; };
+		362DAD691C0A64E7000A58EC /* lidt_ger.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = lidt_ger.h; sourceTree = "<group>"; };
+		362DAD6A1C0A64E7000A58EC /* ligstate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ligstate.h; sourceTree = "<group>"; };
+		362DAD6B1C0A64E7000A58EC /* liintern.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = liintern.h; sourceTree = "<group>"; };
+		362DAD6C1C0A64E7000A58EC /* ShapeAPI.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ShapeAPI.h; sourceTree = "<group>"; };
+		362DAD6D1C0A64E7000A58EC /* ThumbImageView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ThumbImageView.h; sourceTree = "<group>"; };
+		362DAD6E1C0A64E7000A58EC /* ThumbImageView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ThumbImageView.m; sourceTree = "<group>"; };
+		362DAD701C0A64E7000A58EC /* LanguageManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LanguageManager.h; sourceTree = "<group>"; };
+		362DAD711C0A64E7000A58EC /* LanguageManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LanguageManager.m; sourceTree = "<group>"; };
+		362DAD721C0A64E7000A58EC /* NSMutableArray+AddUnique.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSMutableArray+AddUnique.h"; sourceTree = "<group>"; };
+		362DAD731C0A64E7000A58EC /* NSMutableArray+AddUnique.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSMutableArray+AddUnique.m"; sourceTree = "<group>"; };
+		362DAD741C0A64E7000A58EC /* OptionKeys.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OptionKeys.h; sourceTree = "<group>"; };
+		362DAD751C0A64E7000A58EC /* RecognizerManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RecognizerManager.h; sourceTree = "<group>"; };
+		362DAD761C0A64E7000A58EC /* RecognizerManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RecognizerManager.m; sourceTree = "<group>"; };
+		362DAD771C0A64E7000A58EC /* RectObject.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RectObject.h; sourceTree = "<group>"; };
+		362DAD781C0A64E7000A58EC /* RectObject.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RectObject.m; sourceTree = "<group>"; };
+		362DAD791C0A64E7000A58EC /* SuggestionsView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SuggestionsView.h; sourceTree = "<group>"; };
+		362DAD7A1C0A64E7000A58EC /* SuggestionsView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SuggestionsView.m; sourceTree = "<group>"; };
+		362DAD7B1C0A64E7000A58EC /* UIConst.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UIConst.h; sourceTree = "<group>"; };
+		362DAD7C1C0A64E7000A58EC /* utils.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = utils.h; sourceTree = "<group>"; };
+		362DAD7D1C0A64E7000A58EC /* utils.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = utils.m; sourceTree = "<group>"; };
+		362DAD7E1C0A64E7000A58EC /* WPTextView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WPTextView.h; sourceTree = "<group>"; };
+		362DAD7F1C0A64E7000A58EC /* WPTextView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WPTextView.m; sourceTree = "<group>"; };
+		362DAD801C0A64E7000A58EC /* WritePadPersistentData.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WritePadPersistentData.h; sourceTree = "<group>"; };
+		362DAD811C0A64E7000A58EC /* WritePadPersistentData.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WritePadPersistentData.m; sourceTree = "<group>"; };
+		362DAD831C0A64E7000A58EC /* InkCollectorView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = InkCollectorView.h; sourceTree = "<group>"; };
+		362DAD841C0A64E7000A58EC /* InkCollectorView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = InkCollectorView.m; sourceTree = "<group>"; };
+		362DAD861C0A64E7000A58EC /* AsyncResultView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AsyncResultView.h; sourceTree = "<group>"; };
+		362DAD871C0A64E7000A58EC /* AsyncResultView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AsyncResultView.m; sourceTree = "<group>"; };
+		362DAD881C0A64E7000A58EC /* WritePadInputPanel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WritePadInputPanel.h; sourceTree = "<group>"; };
+		362DAD891C0A64E7000A58EC /* WritePadInputPanel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WritePadInputPanel.m; sourceTree = "<group>"; };
+		362DAD8A1C0A64E7000A58EC /* WritePadInputView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WritePadInputView.h; sourceTree = "<group>"; };
+		362DAD8B1C0A64E7000A58EC /* WritePadInputView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WritePadInputView.m; sourceTree = "<group>"; };
+		362DADED1C0A6FB6000A58EC /* Shortcut.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Shortcut.h; sourceTree = "<group>"; };
+		362DADEE1C0A6FB6000A58EC /* Shortcut.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Shortcut.m; sourceTree = "<group>"; };
+		362DADEF1C0A6FB6000A58EC /* Shortcuts.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Shortcuts.h; sourceTree = "<group>"; };
+		362DADF01C0A6FB6000A58EC /* Shortcuts.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Shortcuts.m; sourceTree = "<group>"; };
 		3691917D19F0AFFF002A09E3 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		3691917E19F0AFFF002A09E3 /* LaunchScreen.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = LaunchScreen.xib; sourceTree = "<group>"; };
 		3691917F19F0AFFF002A09E3 /* Main.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Main.storyboard; sourceTree = "<group>"; };
 		3691918019F0AFFF002A09E3 /* ReleaseNotes.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = ReleaseNotes.txt; sourceTree = "<group>"; };
 		3691918219F0AFFF002A09E3 /* usershortcuts.csv */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = usershortcuts.csv; sourceTree = "<group>"; };
-		369191A019F0B132002A09E3 /* AsyncResultView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AsyncResultView.h; sourceTree = "<group>"; };
-		369191A119F0B132002A09E3 /* AsyncResultView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AsyncResultView.m; sourceTree = "<group>"; };
-		369191A219F0B132002A09E3 /* WritePadInputPanel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WritePadInputPanel.h; sourceTree = "<group>"; };
-		369191A319F0B132002A09E3 /* WritePadInputPanel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WritePadInputPanel.m; sourceTree = "<group>"; };
-		369191A419F0B132002A09E3 /* WritePadInputView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WritePadInputView.h; sourceTree = "<group>"; };
-		369191A519F0B132002A09E3 /* WritePadInputView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WritePadInputView.m; sourceTree = "<group>"; };
-		369191AA19F0B159002A09E3 /* InkCollectorView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = InkCollectorView.h; sourceTree = "<group>"; };
-		369191AB19F0B159002A09E3 /* InkCollectorView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = InkCollectorView.m; sourceTree = "<group>"; };
-		369191B119F0B243002A09E3 /* LanguageManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LanguageManager.h; sourceTree = "<group>"; };
-		369191B219F0B243002A09E3 /* LanguageManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LanguageManager.m; sourceTree = "<group>"; };
-		369191B319F0B243002A09E3 /* OptionKeys.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OptionKeys.h; sourceTree = "<group>"; };
-		369191B419F0B243002A09E3 /* RecognizerManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RecognizerManager.h; sourceTree = "<group>"; };
-		369191B519F0B243002A09E3 /* RecognizerManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RecognizerManager.m; sourceTree = "<group>"; };
-		369191B619F0B243002A09E3 /* RectObject.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RectObject.h; sourceTree = "<group>"; };
-		369191B719F0B243002A09E3 /* RectObject.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RectObject.m; sourceTree = "<group>"; };
-		369191B819F0B243002A09E3 /* SuggestionsView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SuggestionsView.h; sourceTree = "<group>"; };
-		369191B919F0B243002A09E3 /* SuggestionsView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SuggestionsView.m; sourceTree = "<group>"; };
-		369191BB19F0B243002A09E3 /* utils.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = utils.h; sourceTree = "<group>"; };
-		369191BC19F0B243002A09E3 /* utils.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = utils.m; sourceTree = "<group>"; };
-		369191BD19F0B243002A09E3 /* WPTextView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WPTextView.h; sourceTree = "<group>"; };
-		369191BE19F0B243002A09E3 /* WPTextView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WPTextView.m; sourceTree = "<group>"; };
 		369191C919F0B27C002A09E3 /* CellTextField.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CellTextField.h; sourceTree = "<group>"; };
 		369191CA19F0B27C002A09E3 /* CellTextField.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CellTextField.m; sourceTree = "<group>"; };
 		369191CB19F0B27C002A09E3 /* CellTextView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CellTextView.h; sourceTree = "<group>"; };
@@ -100,32 +127,12 @@
 		369191D419F0B27C002A09E3 /* EditWordViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EditWordViewController.m; sourceTree = "<group>"; };
 		369191D519F0B27C002A09E3 /* LanguageViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LanguageViewController.h; sourceTree = "<group>"; };
 		369191D619F0B27C002A09E3 /* LanguageViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LanguageViewController.m; sourceTree = "<group>"; };
-		369191D819F0B27C002A09E3 /* letimg.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = letimg.c; sourceTree = "<group>"; };
-		369191D919F0B27C002A09E3 /* letimg.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = letimg.h; sourceTree = "<group>"; };
-		369191DA19F0B27C002A09E3 /* LetterGroupView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LetterGroupView.h; sourceTree = "<group>"; };
-		369191DB19F0B27C002A09E3 /* LetterGroupView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LetterGroupView.m; sourceTree = "<group>"; };
-		369191DC19F0B27C002A09E3 /* LetterShapesController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LetterShapesController.h; sourceTree = "<group>"; };
-		369191DD19F0B27C002A09E3 /* LetterShapesController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LetterShapesController.m; sourceTree = "<group>"; };
-		369191DE19F0B27C002A09E3 /* lidata.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = lidata.c; sourceTree = "<group>"; };
-		369191DF19F0B27C002A09E3 /* lidatadf.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = lidatadf.h; sourceTree = "<group>"; };
-		369191E019F0B27C002A09E3 /* lidt_eng.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = lidt_eng.h; sourceTree = "<group>"; };
-		369191E119F0B27C002A09E3 /* lidt_fre.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = lidt_fre.h; sourceTree = "<group>"; };
-		369191E219F0B27C002A09E3 /* lidt_ger.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = lidt_ger.h; sourceTree = "<group>"; };
-		369191E319F0B27C002A09E3 /* ligstate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ligstate.h; sourceTree = "<group>"; };
-		369191E419F0B27C002A09E3 /* liintern.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = liintern.h; sourceTree = "<group>"; };
-		369191E519F0B27C002A09E3 /* ShapeAPI.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ShapeAPI.h; sourceTree = "<group>"; };
-		369191E619F0B27C002A09E3 /* ThumbImageView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ThumbImageView.h; sourceTree = "<group>"; };
-		369191E719F0B27C002A09E3 /* ThumbImageView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ThumbImageView.m; sourceTree = "<group>"; };
 		369191E819F0B27C002A09E3 /* LanguageSelectorController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LanguageSelectorController.h; sourceTree = "<group>"; };
 		369191E919F0B27C002A09E3 /* LanguageSelectorController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LanguageSelectorController.m; sourceTree = "<group>"; };
 		369191EA19F0B27C002A09E3 /* SourceCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SourceCell.h; sourceTree = "<group>"; };
 		369191EB19F0B27C002A09E3 /* SourceCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SourceCell.m; sourceTree = "<group>"; };
 		369191EC19F0B27C002A09E3 /* WordListEditViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WordListEditViewController.h; sourceTree = "<group>"; };
 		369191ED19F0B27C002A09E3 /* WordListEditViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WordListEditViewController.m; sourceTree = "<group>"; };
-		369191FE19F0B2A9002A09E3 /* Shortcut.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Shortcut.h; sourceTree = "<group>"; };
-		369191FF19F0B2A9002A09E3 /* Shortcut.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Shortcut.m; sourceTree = "<group>"; };
-		3691920019F0B2A9002A09E3 /* Shortcuts.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Shortcuts.h; sourceTree = "<group>"; };
-		3691920119F0B2A9002A09E3 /* Shortcuts.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Shortcuts.m; sourceTree = "<group>"; };
 		3691920519F0BFC0002A09E3 /* libWritePadRecoUniversal.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = libWritePadRecoUniversal.a; path = ../../Library/libWritePadRecoUniversal.a; sourceTree = "<group>"; };
 		36BBBCE619E32FD700E63C5C /* WritePadSDK-Sample.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "WritePadSDK-Sample.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		36BBBCEA19E32FD700E63C5C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -153,7 +160,6 @@
 		36BBBD5D19E3B5FC00E63C5C /* Portuguese.dct */ = {isa = PBXFileReference; lastKnownFileType = file; name = Portuguese.dct; path = ../../Dictionaries/Portuguese.dct; sourceTree = "<group>"; };
 		36BBBD5E19E3B5FC00E63C5C /* Spanish.dct */ = {isa = PBXFileReference; lastKnownFileType = file; name = Spanish.dct; path = ../../Dictionaries/Spanish.dct; sourceTree = "<group>"; };
 		36BBBD5F19E3B5FC00E63C5C /* Swedish.dct */ = {isa = PBXFileReference; lastKnownFileType = file; name = Swedish.dct; path = ../../Dictionaries/Swedish.dct; sourceTree = "<group>"; };
-		36C1553019F1CD4600ACBB71 /* UIConst.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UIConst.h; sourceTree = "<group>"; };
 		36EEA1241AA43EB40033E8C0 /* Indonesian.dct */ = {isa = PBXFileReference; lastKnownFileType = file; name = Indonesian.dct; path = ../../Dictionaries/Indonesian.dct; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -169,6 +175,100 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		362DAD5D1C0A64E7000A58EC /* Shared */ = {
+			isa = PBXGroup;
+			children = (
+				362DADEC1C0A6FB6000A58EC /* Shortcuts */,
+				362DAD5E1C0A64E7000A58EC /* ShapeSelector */,
+				362DAD6F1C0A64E7000A58EC /* Utilities */,
+				362DAD821C0A64E7000A58EC /* WriteAnywhere */,
+				362DAD851C0A64E7000A58EC /* WritePanel */,
+			);
+			name = Shared;
+			path = ../../Shared;
+			sourceTree = "<group>";
+		};
+		362DAD5E1C0A64E7000A58EC /* ShapeSelector */ = {
+			isa = PBXGroup;
+			children = (
+				362DAD5F1C0A64E7000A58EC /* letimg.c */,
+				362DAD601C0A64E7000A58EC /* letimg.h */,
+				362DAD611C0A64E7000A58EC /* LetterGroupView.h */,
+				362DAD621C0A64E7000A58EC /* LetterGroupView.m */,
+				362DAD631C0A64E7000A58EC /* LetterShapesController.h */,
+				362DAD641C0A64E7000A58EC /* LetterShapesController.m */,
+				362DAD651C0A64E7000A58EC /* lidata.c */,
+				362DAD661C0A64E7000A58EC /* lidatadf.h */,
+				362DAD671C0A64E7000A58EC /* lidt_eng.h */,
+				362DAD681C0A64E7000A58EC /* lidt_fre.h */,
+				362DAD691C0A64E7000A58EC /* lidt_ger.h */,
+				362DAD6A1C0A64E7000A58EC /* ligstate.h */,
+				362DAD6B1C0A64E7000A58EC /* liintern.h */,
+				362DAD6C1C0A64E7000A58EC /* ShapeAPI.h */,
+				362DAD6D1C0A64E7000A58EC /* ThumbImageView.h */,
+				362DAD6E1C0A64E7000A58EC /* ThumbImageView.m */,
+			);
+			path = ShapeSelector;
+			sourceTree = "<group>";
+		};
+		362DAD6F1C0A64E7000A58EC /* Utilities */ = {
+			isa = PBXGroup;
+			children = (
+				362DAD701C0A64E7000A58EC /* LanguageManager.h */,
+				362DAD711C0A64E7000A58EC /* LanguageManager.m */,
+				362DAD721C0A64E7000A58EC /* NSMutableArray+AddUnique.h */,
+				362DAD731C0A64E7000A58EC /* NSMutableArray+AddUnique.m */,
+				362DAD741C0A64E7000A58EC /* OptionKeys.h */,
+				362DAD751C0A64E7000A58EC /* RecognizerManager.h */,
+				362DAD761C0A64E7000A58EC /* RecognizerManager.m */,
+				362DAD771C0A64E7000A58EC /* RectObject.h */,
+				362DAD781C0A64E7000A58EC /* RectObject.m */,
+				362DAD791C0A64E7000A58EC /* SuggestionsView.h */,
+				362DAD7A1C0A64E7000A58EC /* SuggestionsView.m */,
+				362DAD7B1C0A64E7000A58EC /* UIConst.h */,
+				362DAD7C1C0A64E7000A58EC /* utils.h */,
+				362DAD7D1C0A64E7000A58EC /* utils.m */,
+				362DAD7E1C0A64E7000A58EC /* WPTextView.h */,
+				362DAD7F1C0A64E7000A58EC /* WPTextView.m */,
+				362DAD801C0A64E7000A58EC /* WritePadPersistentData.h */,
+				362DAD811C0A64E7000A58EC /* WritePadPersistentData.m */,
+			);
+			path = Utilities;
+			sourceTree = "<group>";
+		};
+		362DAD821C0A64E7000A58EC /* WriteAnywhere */ = {
+			isa = PBXGroup;
+			children = (
+				362DAD831C0A64E7000A58EC /* InkCollectorView.h */,
+				362DAD841C0A64E7000A58EC /* InkCollectorView.m */,
+			);
+			path = WriteAnywhere;
+			sourceTree = "<group>";
+		};
+		362DAD851C0A64E7000A58EC /* WritePanel */ = {
+			isa = PBXGroup;
+			children = (
+				362DAD861C0A64E7000A58EC /* AsyncResultView.h */,
+				362DAD871C0A64E7000A58EC /* AsyncResultView.m */,
+				362DAD881C0A64E7000A58EC /* WritePadInputPanel.h */,
+				362DAD891C0A64E7000A58EC /* WritePadInputPanel.m */,
+				362DAD8A1C0A64E7000A58EC /* WritePadInputView.h */,
+				362DAD8B1C0A64E7000A58EC /* WritePadInputView.m */,
+			);
+			path = WritePanel;
+			sourceTree = "<group>";
+		};
+		362DADEC1C0A6FB6000A58EC /* Shortcuts */ = {
+			isa = PBXGroup;
+			children = (
+				362DADED1C0A6FB6000A58EC /* Shortcut.h */,
+				362DADEE1C0A6FB6000A58EC /* Shortcut.m */,
+				362DADEF1C0A6FB6000A58EC /* Shortcuts.h */,
+				362DADF01C0A6FB6000A58EC /* Shortcuts.m */,
+			);
+			path = Shortcuts;
+			sourceTree = "<group>";
+		};
 		3691917C19F0AFFF002A09E3 /* Resource */ = {
 			isa = PBXGroup;
 			children = (
@@ -181,61 +281,19 @@
 			path = Resource;
 			sourceTree = "<group>";
 		};
-		3691919F19F0B132002A09E3 /* WritePanel */ = {
-			isa = PBXGroup;
-			children = (
-				369191A019F0B132002A09E3 /* AsyncResultView.h */,
-				369191A119F0B132002A09E3 /* AsyncResultView.m */,
-				369191A219F0B132002A09E3 /* WritePadInputPanel.h */,
-				369191A319F0B132002A09E3 /* WritePadInputPanel.m */,
-				369191A419F0B132002A09E3 /* WritePadInputView.h */,
-				369191A519F0B132002A09E3 /* WritePadInputView.m */,
-			);
-			path = WritePanel;
-			sourceTree = "<group>";
-		};
-		369191A919F0B159002A09E3 /* WriteAnywhere */ = {
-			isa = PBXGroup;
-			children = (
-				369191AA19F0B159002A09E3 /* InkCollectorView.h */,
-				369191AB19F0B159002A09E3 /* InkCollectorView.m */,
-			);
-			path = WriteAnywhere;
-			sourceTree = "<group>";
-		};
-		369191B019F0B243002A09E3 /* Utilities */ = {
-			isa = PBXGroup;
-			children = (
-				369191B119F0B243002A09E3 /* LanguageManager.h */,
-				369191B219F0B243002A09E3 /* LanguageManager.m */,
-				369191B419F0B243002A09E3 /* RecognizerManager.h */,
-				369191B519F0B243002A09E3 /* RecognizerManager.m */,
-				369191B819F0B243002A09E3 /* SuggestionsView.h */,
-				369191B919F0B243002A09E3 /* SuggestionsView.m */,
-				369191B619F0B243002A09E3 /* RectObject.h */,
-				369191B719F0B243002A09E3 /* RectObject.m */,
-				369191BB19F0B243002A09E3 /* utils.h */,
-				369191BC19F0B243002A09E3 /* utils.m */,
-				369191B319F0B243002A09E3 /* OptionKeys.h */,
-				36C1553019F1CD4600ACBB71 /* UIConst.h */,
-				369191BD19F0B243002A09E3 /* WPTextView.h */,
-				369191BE19F0B243002A09E3 /* WPTextView.m */,
-			);
-			path = Utilities;
-			sourceTree = "<group>";
-		};
 		369191C819F0B27C002A09E3 /* Options */ = {
 			isa = PBXGroup;
 			children = (
-				369191D719F0B27C002A09E3 /* ShapeSelector */,
 				369191C919F0B27C002A09E3 /* CellTextField.h */,
 				369191CA19F0B27C002A09E3 /* CellTextField.m */,
 				369191CB19F0B27C002A09E3 /* CellTextView.h */,
 				369191CC19F0B27C002A09E3 /* CellTextView.m */,
-				369191CD19F0B27C002A09E3 /* DictEditViewController.h */,
-				369191CE19F0B27C002A09E3 /* DictEditViewController.m */,
+				369191EA19F0B27C002A09E3 /* SourceCell.h */,
+				369191EB19F0B27C002A09E3 /* SourceCell.m */,
 				369191CF19F0B27C002A09E3 /* EditableTableViewCell.h */,
 				369191D019F0B27C002A09E3 /* EditableTableViewCell.m */,
+				369191CD19F0B27C002A09E3 /* DictEditViewController.h */,
+				369191CE19F0B27C002A09E3 /* DictEditViewController.m */,
 				369191D119F0B27C002A09E3 /* EditOptionsViewController.h */,
 				369191D219F0B27C002A09E3 /* EditOptionsViewController.m */,
 				369191D319F0B27C002A09E3 /* EditWordViewController.h */,
@@ -244,46 +302,10 @@
 				369191D619F0B27C002A09E3 /* LanguageViewController.m */,
 				369191E819F0B27C002A09E3 /* LanguageSelectorController.h */,
 				369191E919F0B27C002A09E3 /* LanguageSelectorController.m */,
-				369191EA19F0B27C002A09E3 /* SourceCell.h */,
-				369191EB19F0B27C002A09E3 /* SourceCell.m */,
 				369191EC19F0B27C002A09E3 /* WordListEditViewController.h */,
 				369191ED19F0B27C002A09E3 /* WordListEditViewController.m */,
 			);
 			path = Options;
-			sourceTree = "<group>";
-		};
-		369191D719F0B27C002A09E3 /* ShapeSelector */ = {
-			isa = PBXGroup;
-			children = (
-				369191D819F0B27C002A09E3 /* letimg.c */,
-				369191D919F0B27C002A09E3 /* letimg.h */,
-				369191DA19F0B27C002A09E3 /* LetterGroupView.h */,
-				369191DB19F0B27C002A09E3 /* LetterGroupView.m */,
-				369191DC19F0B27C002A09E3 /* LetterShapesController.h */,
-				369191DD19F0B27C002A09E3 /* LetterShapesController.m */,
-				369191DE19F0B27C002A09E3 /* lidata.c */,
-				369191DF19F0B27C002A09E3 /* lidatadf.h */,
-				369191E019F0B27C002A09E3 /* lidt_eng.h */,
-				369191E119F0B27C002A09E3 /* lidt_fre.h */,
-				369191E219F0B27C002A09E3 /* lidt_ger.h */,
-				369191E319F0B27C002A09E3 /* ligstate.h */,
-				369191E419F0B27C002A09E3 /* liintern.h */,
-				369191E519F0B27C002A09E3 /* ShapeAPI.h */,
-				369191E619F0B27C002A09E3 /* ThumbImageView.h */,
-				369191E719F0B27C002A09E3 /* ThumbImageView.m */,
-			);
-			path = ShapeSelector;
-			sourceTree = "<group>";
-		};
-		369191FD19F0B2A9002A09E3 /* Shortcuts */ = {
-			isa = PBXGroup;
-			children = (
-				369191FE19F0B2A9002A09E3 /* Shortcut.h */,
-				369191FF19F0B2A9002A09E3 /* Shortcut.m */,
-				3691920019F0B2A9002A09E3 /* Shortcuts.h */,
-				3691920119F0B2A9002A09E3 /* Shortcuts.m */,
-			);
-			path = Shortcuts;
 			sourceTree = "<group>";
 		};
 		36BBBCDD19E32FD700E63C5C = {
@@ -305,12 +327,9 @@
 		36BBBCE819E32FD700E63C5C /* WritePadSDK-Sample */ = {
 			isa = PBXGroup;
 			children = (
-				369191FD19F0B2A9002A09E3 /* Shortcuts */,
-				369191C819F0B27C002A09E3 /* Options */,
-				369191B019F0B243002A09E3 /* Utilities */,
-				369191A919F0B159002A09E3 /* WriteAnywhere */,
-				3691919F19F0B132002A09E3 /* WritePanel */,
 				36BBBD2119E333BB00E63C5C /* Include */,
+				362DAD5D1C0A64E7000A58EC /* Shared */,
+				369191C819F0B27C002A09E3 /* Options */,
 				36BBBCED19E32FD700E63C5C /* AppDelegate.h */,
 				36BBBCEE19E32FD700E63C5C /* AppDelegate.m */,
 				36BBBCF019E32FD700E63C5C /* ViewController.h */,
@@ -453,36 +472,38 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				369191C519F0B243002A09E3 /* utils.m in Sources */,
-				369191C419F0B243002A09E3 /* SuggestionsView.m in Sources */,
 				369191EE19F0B27C002A09E3 /* CellTextField.m in Sources */,
-				369191F719F0B27C002A09E3 /* LetterShapesController.m in Sources */,
-				369191F919F0B27C002A09E3 /* ThumbImageView.m in Sources */,
 				369191FC19F0B27C002A09E3 /* WordListEditViewController.m in Sources */,
 				369191F419F0B27C002A09E3 /* LanguageViewController.m in Sources */,
-				369191C319F0B243002A09E3 /* RectObject.m in Sources */,
 				369191FA19F0B27C002A09E3 /* LanguageSelectorController.m in Sources */,
+				362DAD941C0A64E7000A58EC /* RectObject.m in Sources */,
 				369191F119F0B27C002A09E3 /* EditableTableViewCell.m in Sources */,
+				362DAD911C0A64E7000A58EC /* LanguageManager.m in Sources */,
 				36BBBCF219E32FD700E63C5C /* ViewController.m in Sources */,
+				362DAD8F1C0A64E7000A58EC /* lidata.c in Sources */,
 				369191F219F0B27C002A09E3 /* EditOptionsViewController.m in Sources */,
-				369191C119F0B243002A09E3 /* LanguageManager.m in Sources */,
-				369191F519F0B27C002A09E3 /* letimg.c in Sources */,
 				36BBBCEF19E32FD700E63C5C /* AppDelegate.m in Sources */,
-				369191F619F0B27C002A09E3 /* LetterGroupView.m in Sources */,
+				362DAD921C0A64E7000A58EC /* NSMutableArray+AddUnique.m in Sources */,
+				362DAD901C0A64E7000A58EC /* ThumbImageView.m in Sources */,
+				362DAD931C0A64E7000A58EC /* RecognizerManager.m in Sources */,
+				362DAD981C0A64E7000A58EC /* WritePadPersistentData.m in Sources */,
 				369191F019F0B27C002A09E3 /* DictEditViewController.m in Sources */,
+				362DAD971C0A64E7000A58EC /* WPTextView.m in Sources */,
 				369191FB19F0B27C002A09E3 /* SourceCell.m in Sources */,
-				369191C219F0B243002A09E3 /* RecognizerManager.m in Sources */,
-				369191F819F0B27C002A09E3 /* lidata.c in Sources */,
-				3691920319F0B2A9002A09E3 /* Shortcuts.m in Sources */,
+				362DAD8E1C0A64E7000A58EC /* LetterShapesController.m in Sources */,
+				362DAD8C1C0A64E7000A58EC /* letimg.c in Sources */,
 				369191EF19F0B27C002A09E3 /* CellTextView.m in Sources */,
-				369191A619F0B132002A09E3 /* AsyncResultView.m in Sources */,
+				362DADF21C0A6FB6000A58EC /* Shortcuts.m in Sources */,
+				362DAD9A1C0A64E7000A58EC /* AsyncResultView.m in Sources */,
+				362DAD9B1C0A64E7000A58EC /* WritePadInputPanel.m in Sources */,
+				362DAD951C0A64E7000A58EC /* SuggestionsView.m in Sources */,
+				362DAD9C1C0A64E7000A58EC /* WritePadInputView.m in Sources */,
 				369191F319F0B27C002A09E3 /* EditWordViewController.m in Sources */,
-				369191A719F0B132002A09E3 /* WritePadInputPanel.m in Sources */,
-				369191A819F0B132002A09E3 /* WritePadInputView.m in Sources */,
-				3691920219F0B2A9002A09E3 /* Shortcut.m in Sources */,
-				369191AE19F0B159002A09E3 /* InkCollectorView.m in Sources */,
+				362DADF11C0A6FB6000A58EC /* Shortcut.m in Sources */,
+				362DAD961C0A64E7000A58EC /* utils.m in Sources */,
+				362DAD991C0A64E7000A58EC /* InkCollectorView.m in Sources */,
+				362DAD8D1C0A64E7000A58EC /* LetterGroupView.m in Sources */,
 				36BBBCEC19E32FD700E63C5C /* main.m in Sources */,
-				369191C619F0B243002A09E3 /* WPTextView.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -574,7 +595,10 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
-				GCC_PREPROCESSOR_DEFINITIONS = "$(inherited) ";
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"$(inherited)",
+					PERSISTENT_DATA,
+				);
 				INFOPLIST_FILE = "WritePadSDK-Sample/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
@@ -596,7 +620,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
-				GCC_PREPROCESSOR_DEFINITIONS = "";
+				GCC_PREPROCESSOR_DEFINITIONS = PERSISTENT_DATA;
 				INFOPLIST_FILE = "WritePadSDK-Sample/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";

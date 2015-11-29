@@ -47,48 +47,16 @@
 #import "UIConst.h"
 #import "RecognizerManager.h"
 
-#import "WordListEditViewController.h"
-#import "EditWordViewController.h"
-#import "UIConst.h"
-#import "utils.h"
-#import "RecognizerManager.h"
-
 static NSString *kCellIdentifier = @"WordCellIdentifier";
 
-static int EnumWordListCallback( const UCHR * pszWordFrom, const UCHR * pszWordTo, unsigned int flags, void * pParam )
+@interface WordListEditViewController() <EditWordViewControllerDelegate>
 {
-    NSMutableArray * array = (__bridge NSMutableArray *)pParam;
-    WordListItem *	 item = [[WordListItem alloc] init];
-    item.wordFrom = [RecognizerManager stringFromUchr:pszWordFrom];
-    item.wordTo = [RecognizerManager stringFromUchr:pszWordTo];
-    item.flags = flags;
-    
-    [array addObject:item];
-    return 1;
+    Boolean				 _bModified;
+    UIBarButtonItem *	 buttonItemEdit;
+    UIBarButtonItem *	 buttonItemDone;
+    NSMutableArray  *   _sections;
 }
 
-@implementation WordListItem
-
-@synthesize wordFrom;
-@synthesize wordTo;
-@synthesize flags;
-
-- (id)init
-{
-    self = [super init];
-    if (self)
-    {
-        wordFrom = nil;
-        wordTo = nil;
-        flags = 0;
-    }
-    return self;
-}
-
-@end
-
-@interface WordListEditViewController (WordListEditViewControllerDelegate)  <EditWordViewControllerDelegate>
-- (void) editWordViewController:(EditWordViewController *)wordView wordModified:(WordListItem *)item isNew:(BOOL)bNew;
 @end
 
 @implementation WordListEditViewController
@@ -100,33 +68,25 @@ static int EnumWordListCallback( const UCHR * pszWordFrom, const UCHR * pszWordT
     {
         // this title will appear in the navigation bar
         self.title = NSLocalizedString( @"Autocorrector", @"" );
-        _recognizer = [[RecognizerManager sharedManager] recognizer];
-        _userWords = [[NSMutableArray alloc] init];
+        self.userWords = [NSMutableArray array];
         _bModified = NO;
     }
     return self;
 }
 
-- (void)editWordViewController:(EditWordViewController *)wordView wordModified:(WordListItem *)item isNew:(BOOL)bNew
+- (void)editWordViewController:(EditWordViewController *)wordView newItem:(NSDictionary *)newItem index:(NSInteger)index
 {
-    if ( bNew && item != nil )
+    if ( index < 0 )
     {
         // add new word
-        [_userWords insertObject:item atIndex:0];
+        [self.userWords insertObject:newItem atIndex:0];
         [self recalcSections];
-        _bModified = YES;
     }
-    else if ( item != nil )
+    else
     {
-        _bModified = YES;
+        [self.userWords replaceObjectAtIndex:index withObject:newItem];
     }
-}
-
-static NSInteger compareUserWords (id a, id b, void *ctx )
-{
-    WordListItem * item1 = (WordListItem *)a;
-    WordListItem * item2 = (WordListItem *)b;
-    return [item1.wordFrom caseInsensitiveCompare:item2.wordFrom];
+    _bModified = YES;
 }
 
 #pragma mark Initialize View
@@ -150,44 +110,27 @@ static NSInteger compareUserWords (id a, id b, void *ctx )
     }
     
     _sections = [[NSMutableArray alloc ] init];
-    [_userWords removeAllObjects];
-    if ( _recognizer != NULL )
-    {
-        // enumirate user dictionary and add words to array
-        int     nWords = HWR_EnumWordList( _recognizer, EnumWordListCallback, ( __bridge void *)_userWords );
-        NSLog(@"%i words added", nWords );
-        if ( nWords > 1 )
-        {
-            [_userWords sortUsingFunction:compareUserWords context:(__bridge void *)self];
-        }
-    }
+    self.userWords = [[RecognizerManager sharedManager] getCorrectorWordList];
     _bModified = NO;
 }
 
 - (IBAction)editAction
 {
-    if ( _recognizer != NULL )
-    {
-        [_sections insertObject:@{ @"name"   : @"+",
-                                   @"index"  : [NSNumber numberWithInt:0],
-                                   @"length" : [NSNumber numberWithInt:1] } atIndex:0];
-        self.navigationItem.rightBarButtonItem = buttonItemDone;
-        [self.tableView insertSections:[NSIndexSet indexSetWithIndex:0] withRowAnimation:UITableViewRowAnimationBottom];
-        [self.tableView setEditing:YES animated:YES];
-        [self.tableView reloadSections:[NSIndexSet indexSetWithIndex:0] withRowAnimation:NO];
-    }
+    [_sections insertObject:@{ @"name"   : @"+",
+                               @"index"  : [NSNumber numberWithInt:0],
+                               @"length" : [NSNumber numberWithInt:1] } atIndex:0];
+    self.navigationItem.rightBarButtonItem = buttonItemDone;
+    [self.tableView insertSections:[NSIndexSet indexSetWithIndex:0] withRowAnimation:UITableViewRowAnimationBottom];
+    [self.tableView setEditing:YES animated:YES];
+    [self.tableView reloadSections:[NSIndexSet indexSetWithIndex:0] withRowAnimation:NO];
 }
 
 - (IBAction)doneAction
 {
-    if ( _recognizer != NULL )
-    {
-        [self.tableView setEditing:NO animated:YES];
-        self.navigationItem.rightBarButtonItem = buttonItemEdit;
-        [_sections removeObjectAtIndex:0];
-        [self.tableView deleteSections:[NSIndexSet indexSetWithIndex:0] withRowAnimation:UITableViewRowAnimationTop];
-        // [tableWordList reloadData];
-    }
+    [self.tableView setEditing:NO animated:YES];
+    self.navigationItem.rightBarButtonItem = buttonItemEdit;
+    [_sections removeObjectAtIndex:0];
+    [self.tableView deleteSections:[NSIndexSet indexSetWithIndex:0] withRowAnimation:UITableViewRowAnimationTop];
 }
 
 - (void) recalcSections
@@ -199,16 +142,16 @@ static NSInteger compareUserWords (id a, id b, void *ctx )
                                    @"index"  : [NSNumber numberWithInt:0],
                                    @"length" : [NSNumber numberWithInt:1] } atIndex:0];
     }
-    if ( [_userWords count] < 1 )
+    if ( [self.userWords count] < 1 )
         return;
     
-    unichar chr, ch0 = [[[_userWords objectAtIndex:0] wordFrom] characterAtIndex:0];
+    unichar chr, ch0 = [[[self.userWords objectAtIndex:0] objectForKey:ackeyWordFrom] characterAtIndex:0];
     int index0 = 0;
     // create sections for indexing
     for ( int i = 1; i < [_userWords count]; i++ )
     {
-        WordListItem * item = [_userWords objectAtIndex:i];
-        chr = [item.wordFrom characterAtIndex:0];
+        NSDictionary * item = [self.userWords objectAtIndex:i];
+        chr = [[item objectForKey:ackeyWordFrom] characterAtIndex:0];
         if ( tolower( chr ) != tolower( ch0 ) )
         {
             [_sections addObject:@{ @"name"   : [NSString stringWithCharacters:&ch0 length:1],
@@ -233,21 +176,10 @@ static NSInteger compareUserWords (id a, id b, void *ctx )
 {
     [super viewWillDisappear:animated];
     
-    if ( _bModified && _recognizer )
+    if ( _bModified )
     {
         // save autocorrector word list
-        if ( HWR_EmptyWordList( _recognizer ) )
-        {
-            for ( int i = 0; i < [_userWords count]; i++ )
-            {
-                WordListItem *	 item = [_userWords objectAtIndex:i];
-                const UCHR * pszWord1 = [RecognizerManager uchrFromString:item.wordFrom];
-                const UCHR * pszWord2 = [RecognizerManager uchrFromString:item.wordTo];
-                HWR_AddWordToWordList( _recognizer, pszWord1, pszWord2, (int)item.flags, NO );
-            }
-        }
-        // save the word list now
-        [[RecognizerManager sharedManager] saveRecognizerDataOfType:USERDATA_AUTOCORRECTOR];
+        [[RecognizerManager sharedManager] newWordListFromWordList:self.userWords];
         _bModified = NO;
     }
 }
@@ -260,8 +192,7 @@ static NSInteger compareUserWords (id a, id b, void *ctx )
     [self recalcSections];
     [self.tableView reloadData];
     
-    if ( _recognizer != NULL )
-        self.navigationItem.rightBarButtonItem = [self.tableView isEditing] ? buttonItemDone : buttonItemEdit;
+    self.navigationItem.rightBarButtonItem = [self.tableView isEditing] ? buttonItemDone : buttonItemEdit;
 }
 
 #pragma mark - UITableView delegates
@@ -277,7 +208,6 @@ static NSInteger compareUserWords (id a, id b, void *ctx )
 
 - (NSString *)tableView:(UITableView *)tableView titleForHeaderInSection:(NSInteger)section
 {
-    // NSString *title = (_recognizer==nil) ? NSLocalizedTableTitle( @"Recognizer Not Loaded..." ) : nil;
     return nil;
 }
 
@@ -333,8 +263,8 @@ static NSInteger compareUserWords (id a, id b, void *ctx )
         NSInteger index = [[[_sections objectAtIndex:section] objectForKey:@"index"] intValue] + row;
         if ( index < [_userWords count] )
         {
-            WordListItem * item = [_userWords objectAtIndex:index];
-            cell.textLabel.text = [NSString stringWithFormat:@"%@  =>  %@", item.wordFrom, item.wordTo];
+            NSDictionary * item = [self.userWords objectAtIndex:index];
+            cell.textLabel.text = [NSString stringWithFormat:@"%@  ⇒  %@", [item objectForKey:ackeyWordFrom], [item objectForKey:ackeyWordTo]];
         }
         else
         {
@@ -354,17 +284,18 @@ static NSInteger compareUserWords (id a, id b, void *ctx )
     NSInteger section = [indexPath section];
     
     NSInteger index = [[[_sections objectAtIndex:section] objectForKey:@"index"] intValue] + row;
-    if ( index < (int)[_userWords count] )
+    if ( index < (int)[self.userWords count] )
     {
         EditWordViewController *viewController = [[EditWordViewController alloc] initWithStyle:(UITableViewStyleGrouped)];
         
         if ( [tableView isEditing] && section == 0 )
         {
-            viewController.wordListItem = nil;
+            viewController.wordIndex = -1;
         }
         else
         {
-            viewController.wordListItem = [_userWords objectAtIndex:index];
+            viewController.wordListItem = [self.userWords objectAtIndex:index];
+            viewController.wordIndex = index;
         }
         viewController.delegate = self;
         [self.navigationController pushViewController:viewController animated:YES];
@@ -404,7 +335,7 @@ static NSInteger compareUserWords (id a, id b, void *ctx )
         else if (editingStyle == UITableViewCellEditingStyleInsert)
         {
             EditWordViewController *viewController = [[EditWordViewController alloc] init];
-            viewController.wordListItem = nil;
+            viewController.wordIndex = -1;
             viewController.delegate = self;
             [self.navigationController pushViewController:viewController animated:YES];
         }

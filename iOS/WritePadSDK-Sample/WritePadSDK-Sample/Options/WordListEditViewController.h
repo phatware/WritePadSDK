@@ -44,31 +44,12 @@
 
 
 #import <UIKit/UIKit.h>
-#import "RecognizerWrapper.h"
 
-
-@interface WordListItem : NSObject
+@interface WordListEditViewController : UITableViewController 
 {
-    NSString *	wordFrom;
-    NSString *  wordTo;
-    NSUInteger	flags;
 }
 
-@property (nonatomic, copy) NSString *	wordFrom;
-@property (nonatomic, copy) NSString *	wordTo;
-@property (nonatomic) NSUInteger		flags;
+@property (nonatomic, retain) NSMutableArray * userWords;
 
-@end
-
-@interface WordListEditViewController : UITableViewController
-{
-@private
-    NSMutableArray *	 _userWords;
-    RECOGNIZER_PTR		 _recognizer;
-    Boolean				 _bModified;
-    UIBarButtonItem *	 buttonItemEdit;
-    UIBarButtonItem *	 buttonItemDone;
-    NSMutableArray  *   _sections;
-}
 
 @end

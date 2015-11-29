@@ -44,7 +44,7 @@
 
 #import <UIKit/UIKit.h>
 #import "CellTextField.h"
-#import "RecognizerWrapper.h"
+#import "RecognizerManager.h"
 #import "WordListEditViewController.h"
 
 enum ControlTableRows
@@ -61,33 +61,23 @@ enum ControlTableRows
 @protocol EditWordViewControllerDelegate;
 
 @interface EditWordViewController : UITableViewController <UIScrollViewDelegate, UITextFieldDelegate, EditableTableViewCellDelegate>
-{
-    UITextField		*	wordFromField;
-    UITextField		*	wordToField;
-    WordListItem *		wordListItem;
-    NSUInteger			flags;
-    
-@private
-    CellTextField	*	wordFromCell;
-    CellTextField	*	wordToCell;
-    UISwitch	*		switchDisable;
-    UISwitch	*		switchIgnoreCase;
-    UISwitch	*		switchAlways;
-    
+{    
 }
 
-@property (nonatomic, retain) UITextField *	wordFromField;
-@property (nonatomic, retain) UITextField *	wordToField;
-@property (nonatomic) NSUInteger			flags;
-@property (nonatomic, retain) WordListItem *	wordListItem;
 @property (assign) id<EditWordViewControllerDelegate> delegate;
+
+@property (nonatomic, retain) UITextField *     wordFromField;
+@property (nonatomic, retain) UITextField *     wordToField;
+@property (nonatomic, retain) NSDictionary *	wordListItem;
+@property (nonatomic) int       flags;
+@property (nonatomic) NSInteger wordIndex;
 
 @end
 
-@protocol EditWordViewControllerDelegate<NSObject>
+@protocol EditWordViewControllerDelegate <NSObject>
 @optional
 
-- (void)editWordViewController:(EditWordViewController *)wordView wordModified:(WordListItem *)item isNew:(BOOL)bNew;
+- (void)editWordViewController:(EditWordViewController *)wordView newItem:(NSDictionary *)newItem index:(NSInteger)index;
 
 @end
 

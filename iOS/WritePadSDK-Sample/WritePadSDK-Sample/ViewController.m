@@ -260,7 +260,7 @@
     NSDictionary * language;
     for ( NSNumber * l in langs )
     {
-        WPLanguage lang = [langman languageFromLanguageID:[l intValue]];
+        WPLanguage lang = [langman languageIDFromLanguageCode:[l intValue]];
         UIImage * image = [langman languageImageForLanguageID:lang];
         NSString * name = [langman languageName:lang];
         language = @{ @"name" : name, @"ID" : [NSNumber numberWithInt:lang], @"image" : image };

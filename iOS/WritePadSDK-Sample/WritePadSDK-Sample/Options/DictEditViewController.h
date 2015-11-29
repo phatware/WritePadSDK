@@ -43,21 +43,10 @@
  * ************************************************************************************* */
 
 #import <UIKit/UIKit.h>
-#import "RecognizerWrapper.h"
 #import "CellTextField.h"
 
 @interface DictEditViewController : UITableViewController <UITextViewDelegate, EditableTableViewCellDelegate>
 {
-@private
-	UITextField *		 newWordField;
-	CellTextField	*	 newWordCell;
-    
-	UIBarButtonItem *	 buttonItemEdit;
-	UIBarButtonItem *	 buttonItemDone;
-	NSMutableArray *	 _userWords;
-	RECOGNIZER_PTR		_recognizer;
-	Boolean				_bDictModified;
-    NSMutableArray  *   _sections;
 }
 
 @end

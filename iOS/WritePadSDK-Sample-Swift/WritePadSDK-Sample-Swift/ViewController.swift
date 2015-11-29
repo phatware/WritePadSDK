@@ -64,7 +64,7 @@ class ViewController: UIViewController, UITextViewDelegate, LanguageSelectorDele
     {
         super.viewDidLoad()
         
-        self.textView = WPTextViewCreate( self.view.frame )
+        self.textView = WPTextView.createTextView(self.view.bounds)
         self.textView.delegate = self
         self.view.addSubview(self.textView)
         
@@ -167,7 +167,7 @@ class ViewController: UIViewController, UITextViewDelegate, LanguageSelectorDele
 
         for l in languages
         {
-            let lang : WPLanguage = langman.languageFromLanguageID(Int32(l.integerValue))
+            let lang : WPLanguage = langman.languageIDFromLanguageCode(Int32(l.integerValue))
             arrLanguages.updateValue(langman.languageImageForLanguageID(lang),
                 forKey: langman.languageName(lang))
             if langman.currentLanguage.rawValue == lang.rawValue
@@ -191,7 +191,7 @@ class ViewController: UIViewController, UITextViewDelegate, LanguageSelectorDele
         let languages : NSArray = langman.supportedLanguages()
         for l in languages
         {
-            let lang : WPLanguage = langman.languageFromLanguageID(Int32(l.integerValue))
+            let lang : WPLanguage = langman.languageIDFromLanguageCode(Int32(l.integerValue))
             if language == langman.languageName(lang)
             {
                 NSUserDefaults.standardUserDefaults().setInteger(Int(lang.rawValue), forKey: kGeneralOptionsCurrentLanguage)

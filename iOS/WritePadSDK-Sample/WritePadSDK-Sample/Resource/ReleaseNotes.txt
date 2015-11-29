@@ -1,4 +1,4 @@
-WritePad® SDK 5.2 for iOS
+WritePad® SDK 5.3 for iOS
 Release Notes
 Copyright © 2008-2015 PhatWare® Corp. All rights reserved.
 
@@ -7,7 +7,7 @@ Overview
 
 WritePad® is a natural, style, writer and lexicon independent multilingual handwriting recognition technology. WritePad SDK enables natural handwriting input in third party applications on pen and/or touch enabled mobile devices. The SDK includes:
 
-•	WritePad recognition engine in object code and dictionaries for English, French, German, Dutch, Danish, Italian, Portuguese, Norwegian, Finish, Swedish, and Spanish languages. Engine is compatible with the user-specified platform. This SDK can supports iOS 7.0 or later.
+•	WritePad recognition engince in object code and dictionaries for English, French, German, Dutch, Danish, Italian, Portuguese, Norwegian, Finish, Swedish, and Spanish languages. Engine is compatible with the user-specified platform. This SDK can supports iOS 7.0 or later.
 •	C/C++ header files with definition of API calls and structures
 •	Developer's Guide in Microsoft Word format
 •	Sample source code that demonstrates how to use the WritePad SDK in an iOS application.

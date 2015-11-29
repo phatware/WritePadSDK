@@ -50,8 +50,15 @@
 static NSString * kDisplayCell_ID = @"kDisplayCell_ID";
 
 
-// Private interface for TextFieldController - internal only methods.
-@interface EditWordViewController (Private)
+@interface EditWordViewController ()
+{
+    CellTextField	*	wordFromCell;
+    CellTextField	*	wordToCell;
+    UISwitch	*		switchDisable;
+    UISwitch	*		switchIgnoreCase;
+    UISwitch	*		switchAlways;
+}
+
 @end
 
 @implementation EditWordViewController
@@ -165,7 +172,7 @@ static NSString * kDisplayCell_ID = @"kDisplayCell_ID";
     [switchIgnoreCase release];
     [switchAlways release];
     
-    [wordListItem release];
+    self.wordListItem = nil;
     
     [super dealloc];
 }
@@ -186,7 +193,7 @@ static NSString * kDisplayCell_ID = @"kDisplayCell_ID";
     wordFromField = [self createTextField:NSLocalizedString( @"<enter misspelled word>", @"")];
     wordToField = [self createTextField:NSLocalizedString( @"<enter correct word>", @"")];
     
-    [self create_switchAlways];
+    [self create_switchAlways]; 
     [self create_switchDisable];
     [self create_switchIgnoreCase];
 }
@@ -334,9 +341,9 @@ static NSString * kDisplayCell_ID = @"kDisplayCell_ID";
     
     if ( nil != wordListItem )
     {
-        wordFromField.text = wordListItem.wordFrom;
-        wordToField.text = wordListItem.wordTo;
-        flags = wordListItem.flags;
+        wordFromField.text = [wordListItem objectForKey:ackeyWordFrom];
+        wordToField.text = [wordListItem  objectForKey:ackeyWordTo];
+        flags = [[wordListItem objectForKey:ackeyFlags] intValue];
     }
     
     switchIgnoreCase.on = (0 != (flags & WCF_IGNORECASE));
@@ -351,31 +358,27 @@ static NSString * kDisplayCell_ID = @"kDisplayCell_ID";
     
     if ( nil != wordListItem && [wordFromField.text length] > 0 && [wordToField.text length] > 0 )
     {
-        if ( wordListItem.flags != flags ||
-            NSOrderedSame != [wordListItem.wordFrom compare:wordFromField.text] ||
-            NSOrderedSame != [wordListItem.wordTo compare:wordToField.text] )
+        if ( [[wordListItem objectForKey:ackeyFlags] intValue] != flags ||
+            ![[wordListItem objectForKey:ackeyWordFrom] isEqualToString:wordFromField.text] ||
+            ![[wordListItem objectForKey:ackeyWordTo] isEqualToString:wordToField.text] )
         {
-            wordListItem.wordFrom = wordFromField.text;
-            wordListItem.wordTo = wordToField.text;
-            wordListItem.flags = flags;
-            
-            if ( delegate != nil && [delegate respondsToSelector:@selector(editWordViewController:wordModified:isNew:)])
+            NSDictionary * item = @{ ackeyWordFrom : wordFromField.text, ackeyWordTo : wordToField.text, ackeyFlags : [NSNumber numberWithInt:flags] };
+
+            self.wordListItem = item;
+            if ( delegate != nil && [delegate respondsToSelector:@selector(editWordViewController:newItem:index:)])
             {
-                [delegate editWordViewController:self wordModified:wordListItem isNew:NO];
+                [delegate editWordViewController:self newItem:item index:self.wordIndex];
             }
         }
     }
     else if ( nil == wordListItem && [wordFromField.text length] > 0 && [wordToField.text length] > 0 )
     {
         // Add new word to the WORD LIST
-        WordListItem *	 item = [WordListItem alloc];
-        item.wordFrom = wordFromField.text;
-        item.wordTo = wordToField.text;
-        item.flags = flags;
-        
-        if ( delegate != nil && [delegate respondsToSelector:@selector(editWordViewController:wordModified:isNew:)])
+        NSDictionary * item = @{ ackeyWordFrom : wordFromField.text, ackeyWordTo : wordToField.text, ackeyFlags : [NSNumber numberWithInt:flags] };
+        self.wordListItem = item;
+        if ( delegate != nil && [delegate respondsToSelector:@selector(editWordViewController:newItem:index:)])
         {
-            [delegate editWordViewController:self wordModified:item isNew:YES];
+            [delegate editWordViewController:self newItem:item index:-1];
         }
 #if !__has_feature(objc_arc)
         [item release];

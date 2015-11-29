@@ -48,21 +48,20 @@
 
 static NSString *kCellIdentifier = @"DictCellIdentifier";
 
-static int EnumWordsCallback( const UCHR * pszWord, void * pParam )
+@interface DictEditViewController()
 {
-	NSMutableArray * array = (__bridge NSMutableArray *)pParam;
-	NSString * sWord = [RecognizerManager stringFromUchr:pszWord];
-    if ( nil != sWord )
-        [array addObject:sWord];
-	return 1;
+    UITextField *		 newWordField;
+    CellTextField	*	 newWordCell;
+
+    UIBarButtonItem *	 buttonItemEdit;
+    UIBarButtonItem *	 buttonItemDone;
+    Boolean				_bDictModified;
+    NSMutableArray  *   _sections;
 }
 
-static NSInteger compareUserWords (id a, id b, void *ctx)
-{
-	NSString * s1 = (NSString *)a;
-	NSString * s2 = (NSString *)b;
-	return [s1 caseInsensitiveCompare:s2];
-}
+@property (nonatomic, retain) NSMutableArray *	 userWords;
+
+@end
 
 @implementation DictEditViewController
 
@@ -73,8 +72,7 @@ static NSInteger compareUserWords (id a, id b, void *ctx)
 	{
 		// this title will appear in the navigation bar
 		self.title = NSLocalizedString( @"User Dictionary", @"" );
-		_recognizer = [[RecognizerManager sharedManager] recognizer];
-		_userWords = [[NSMutableArray alloc] init];
+		self.userWords = [NSMutableArray array];
         _sections = [[NSMutableArray alloc] init];
 		_bDictModified = NO;
 	}
@@ -107,17 +105,8 @@ static NSInteger compareUserWords (id a, id b, void *ctx)
 {
 	// init word list
 	[_userWords removeAllObjects];
-	
-	if ( _recognizer != NULL )
-	{
-		// enumirate user dictionary and add words to array
-		int nWords = HWR_EnumUserWords( _recognizer, EnumWordsCallback, (__bridge void *)_userWords );
-		NSLog(@"%i words added", nWords );
-		if ( nWords > 1 )
-		{
-			[_userWords sortUsingFunction:compareUserWords context:(__bridge void *)(self)];
-		}
-	}
+
+    self.userWords = [[RecognizerManager sharedManager] getUserWords];
     [self recalcSections];
     [self.tableView reloadData];
 }
@@ -185,29 +174,23 @@ static NSInteger compareUserWords (id a, id b, void *ctx)
 
 - (IBAction)editAction
 {
-	if ( _recognizer != NULL )
-	{
-        [_sections insertObject:@{ @"name"   : @"+",
-                                   @"index"  : [NSNumber numberWithInteger:0],
-                                   @"length" : [NSNumber numberWithInteger:1] } atIndex:0];
-		self.navigationItem.rightBarButtonItem = buttonItemDone;
-		[self.tableView insertSections:[NSIndexSet indexSetWithIndex:0] withRowAnimation:UITableViewRowAnimationBottom];
-		[self.tableView setEditing:YES animated:YES];
-        [self.tableView reloadSections:[NSIndexSet indexSetWithIndex:0] withRowAnimation:NO];
-	}
+    [_sections insertObject:@{ @"name"   : @"+",
+                               @"index"  : [NSNumber numberWithInteger:0],
+                               @"length" : [NSNumber numberWithInteger:1] } atIndex:0];
+    self.navigationItem.rightBarButtonItem = buttonItemDone;
+    [self.tableView insertSections:[NSIndexSet indexSetWithIndex:0] withRowAnimation:UITableViewRowAnimationBottom];
+    [self.tableView setEditing:YES animated:YES];
+    [self.tableView reloadSections:[NSIndexSet indexSetWithIndex:0] withRowAnimation:NO];
 }
 
 - (IBAction)doneAction
 {
 	// if ( [newWordField isFirstResponder] )
 	[newWordField resignFirstResponder];
-	if ( _recognizer != NULL )
-	{
-		[self.tableView setEditing:NO animated:YES];
-		self.navigationItem.rightBarButtonItem = buttonItemEdit;
-        [_sections removeObjectAtIndex:0];
-		[self.tableView deleteSections:[NSIndexSet indexSetWithIndex:0] withRowAnimation:UITableViewRowAnimationTop];
-	}
+    [self.tableView setEditing:NO animated:YES];
+    self.navigationItem.rightBarButtonItem = buttonItemEdit;
+    [_sections removeObjectAtIndex:0];
+    [self.tableView deleteSections:[NSIndexSet indexSetWithIndex:0] withRowAnimation:UITableViewRowAnimationTop];
 }
 
 #pragma mark UIViewController delegate methods
@@ -225,23 +208,10 @@ static NSInteger compareUserWords (id a, id b, void *ctx)
 	// if ( [newWordField isFirstResponder] )
 	[newWordField resignFirstResponder];
 	
-	if ( _bDictModified && _recognizer )
+	if ( _bDictModified )
 	{
-		// save the user dictionary
-		if ( HWR_NewUserDict( _recognizer ) )
-		{
-			for ( int i = 0; i < [_userWords count]; i++ )
-			{
-				NSString *	 strWord = [_userWords objectAtIndex:i];
-				const UCHR * pszWord = [RecognizerManager uchrFromString:strWord];
-				if ( pszWord != nil )
-				{
-					HWR_AddUserWordToDict( _recognizer, pszWord, NO );
-				}
-			}
-		}
 		// save the word list now
-		[[RecognizerManager sharedManager] saveRecognizerDataOfType:USERDATA_DICTIONARY];
+        [[RecognizerManager sharedManager] newUserDictFromWordList:self.userWords];
 		_bDictModified = NO;
 	}
 	// _recognizer = NULL;
@@ -251,11 +221,9 @@ static NSInteger compareUserWords (id a, id b, void *ctx)
 - (void)viewWillAppear:(BOOL)animated
 {
 	[super viewWillAppear:animated];
-    
     [self reloadDictionary];
-	
-	if ( ! self.tableView.hidden && _recognizer != NULL )
-		self.navigationItem.rightBarButtonItem = [self.tableView isEditing] ? buttonItemDone : buttonItemEdit;
+
+    self.navigationItem.rightBarButtonItem = [self.tableView isEditing] ? buttonItemDone : buttonItemEdit;
 }
 
 #pragma mark - UITableView delegates

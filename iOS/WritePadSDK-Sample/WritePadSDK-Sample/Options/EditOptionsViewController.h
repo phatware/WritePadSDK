@@ -43,7 +43,6 @@
  * ************************************************************************************* */
 
 #import <UIKit/UIKit.h>
-#import "RecognizerWrapper.h"
 #import "LanguageSelectorController.h"
 
 enum EditSettingsTableSections

@@ -36,8 +36,8 @@ natural handwriting input in third party applications on pen and/or
 touch enabled mobile devices. The SDK includes:
 
 -   WritePad handwriting recognition engine in object code and
-    dictionaries for English, French, German, Dutch, Danish, Indonesian, Italian,
-    Portuguese, Norwegian, Finish, Swedish, and Spanish languages.
+    dictionaries support following languages **English (UK and US), French, German, Dutch, Danish, Indonesian, Italian,
+    Portuguese (Brazilian and European), Norwegian, Finish, Swedish, and Spanish**.
     Engine is compatible with the user-specified platform. 
 -   **iOS**: WritePad SDK static library supports iOS 6.0 or later. The sample code is for iOS
     9 or later and requires Xcode 7.0 or later.

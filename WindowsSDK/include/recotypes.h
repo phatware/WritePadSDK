@@ -138,7 +138,7 @@ typedef unsigned short	UNCHAR;
 typedef UNCHAR *		LPUSTR;
 typedef const UNCHAR *	LPCUSTR;
 
-#ifndef WIN32
+#ifndef _MINWINDEF_
 typedef UInt32			COLORREF;
 
 /// Type to represent a boolean value.
@@ -149,8 +149,10 @@ typedef signed char BOOL;
 // BOOL is explicitly signed so @encode(BOOL) == "c" rather than "C"
 // even if -funsigned-char is used.
 #endif
-#endif // WIN32
+#endif // _MINWINDEF_
+
 
 #define IMAGE_SUPPORT	1		// support image storage
 
 #endif // __RecoTypes_h__
+ 

@@ -289,6 +289,7 @@ namespace WritePad_CSharpSample.Model
                     "Finnish",
                     "French",
                     "German",
+                    "Indonesian",
                     "Italian",
                     "Medical US",
                     "Norwegian",
@@ -329,6 +330,8 @@ namespace WritePad_CSharpSample.Model
                         return "Spanish.dct";
                     case "Swedish":
                         return "Swedish.dct";
+                    case "Indonesian":
+                        return "Indonesian.dct";
                 }
                 return "English.dct";
             }
@@ -376,6 +379,8 @@ namespace WritePad_CSharpSample.Model
                     return "Spanish";
                 if (language.Contains("sv"))
                     return "Swedish";
+                if (language.Contains("id"))
+                    return "Indonesian";
 
                 return "English";
             }
@@ -417,6 +422,8 @@ namespace WritePad_CSharpSample.Model
                         return WritePadAPI.LANGUAGE_SPANISH;
                     case "Swedish":
                         return WritePadAPI.LANGUAGE_SWEDISH;
+                    case "Indonesian":
+                        return WritePadAPI.LANGUAGE_INDONESIAN;
                 }
                 return WritePadAPI.LANGUAGE_ENGLISH;
             }

@@ -112,7 +112,8 @@ namespace WritePad_WinFormsSample
             "Finnish",
             "Sweddish",
             "Norwegian",
-            "Danish"});
+            "Danish",
+            "Indonesian"});
             this.LanguagesCombo.Location = new System.Drawing.Point(798, 130);
             this.LanguagesCombo.Name = "LanguagesCombo";
             this.LanguagesCombo.Size = new System.Drawing.Size(172, 21);

@@ -128,7 +128,7 @@ namespace WritePadSDK_WPFSample.SDK
 	    public const int FLAG_DISABLED = 0x0004;
         public const String TAG = "WritePadAPI";
         public const int DEFAULT_INK_PRESSURE = 127;
-        public const int DEFAULT_INK_WIDTH = 3;
+        public const float DEFAULT_INK_WIDTH = 3.0f;
         public const int LONG_STROKE_MINLENGTH = 200;
 
 	    public enum SHAPETYPE
@@ -171,7 +171,9 @@ namespace WritePadSDK_WPFSample.SDK
 
 		public const int LANGUAGE_FINNISH = 13;
 
-		public const int LANGUAGE_ENGLISHUK = 14;
+		public const int LANGUAGE_ENGLISHUK = 15;
+
+        public const int LANGUAGE_INDONESIOAN = 14;
 
 		public const int USERDATA_DICTIONARY = 0x0004;
 		public const int USERDATA_AUTOCORRECTOR = 0x0001;
@@ -183,7 +185,7 @@ namespace WritePadSDK_WPFSample.SDK
             da = 9,
             de = 3,
             nl = 8,
-            en_uk = 14,
+            en_uk = 15,
             en = 1,
             es = 4,
             fr = 2,
@@ -192,7 +194,8 @@ namespace WritePadSDK_WPFSample.SDK
             pt_BR = 11,
             pt_PT = 10,
             sv = 6,
-            fi = 13
+            fi = 13,
+            id = 14
         }
 
         public static LanguageType language = LanguageType.en;
@@ -237,7 +240,7 @@ namespace WritePadSDK_WPFSample.SDK
 		public static extern byte INK_Serialize(IntPtr pData, Int32 bWrite, IntPtr File, ref IntPtr data, ref int pcbSize, Int32 skipImages, Int32 savePressure);
 
 		[DllImport("WritePadReco.dll", CharSet = CharSet.Ansi, CallingConvention = CallingConvention.Cdecl)]
-		public static extern int INK_GetStroke(IntPtr pData, UInt32 nStroke, ref IntPtr ppoints, ref Int32 nWidth,
+		public static extern int INK_GetStroke(IntPtr pData, UInt32 nStroke, ref IntPtr ppoints, ref float nWidth,
 											   ref Int32 color);
 
 		[DllImport("WritePadReco.dll", CharSet = CharSet.Ansi, CallingConvention = CallingConvention.Cdecl)]
@@ -253,7 +256,7 @@ namespace WritePadSDK_WPFSample.SDK
 		public static extern void INK_EnableShapeRecognition(IntPtr pData, byte bEnable);
 
 		[DllImport("WritePadReco.dll", CharSet = CharSet.Ansi, CallingConvention = CallingConvention.Cdecl)]
-		public static extern byte INK_AddStroke(IntPtr inkData, [MarshalAs(UnmanagedType.LPArray)] CGStroke[] ptStroke, int nStrokeCnt, int iWidth,
+		public static extern byte INK_AddStroke(IntPtr inkData, [MarshalAs(UnmanagedType.LPArray)] CGStroke[] ptStroke, int nStrokeCnt, float nWidth,
 												  UInt32 color);
 
 		[DllImport("WritePadReco.dll", CharSet = CharSet.Ansi, CallingConvention = CallingConvention.Cdecl)]
@@ -265,7 +268,7 @@ namespace WritePadSDK_WPFSample.SDK
 		public static extern byte INK_IsShapeRecognitionEnabled(IntPtr inkData);
 
 		[DllImport("WritePadReco.dll", CharSet = CharSet.Ansi, CallingConvention = CallingConvention.Cdecl)]
-		public static extern int INK_AddEmptyStroke(IntPtr pData, int iWidth, UInt32 color);
+		public static extern int INK_AddEmptyStroke(IntPtr pData, float nWidth, UInt32 color);
 
 		[DllImport("WritePadReco.dll", CharSet = CharSet.Ansi, CallingConvention = CallingConvention.Cdecl)]
 		public static extern int INK_ResizeStroke(IntPtr pData, int nStroke, float xOffset, float yOffset,

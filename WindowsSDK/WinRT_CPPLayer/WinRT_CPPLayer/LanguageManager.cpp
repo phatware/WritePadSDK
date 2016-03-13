@@ -106,6 +106,10 @@ WPLanguage CLanguageManager::getLanguageWPID(int languageID )
 		case LANGUAGE_DANISH  :
 			language = WPLanguageDanish;
 			break;
+
+		case LANGUAGE_INDONESIAN :
+			language = WPLanguageIndonesian;
+			break;
 			
 		default :
 			break;
@@ -174,6 +178,11 @@ const char* CLanguageManager::mainDictionaryName()
 		case WPLanguageEnglishUK :
 			theLanguage = "EnglishUK.dct";
 			break;
+
+		case WPLanguageIndonesian :
+			theLanguage = "Indonesian.dct";
+			break;
+
 		default :
 			break;
 	}
@@ -229,6 +238,11 @@ int  CLanguageManager::getLanguageID()
 		case WPLanguageDanish :
 			language = LANGUAGE_DANISH;
 			break;			
+
+		case WPLanguageIndonesian:
+			language = LANGUAGE_INDONESIAN;
+			break;
+
 		default :
 			break;
 	}
@@ -343,6 +357,15 @@ const char * CLanguageManager::userFileNameOfType( int type )
 				name = "WritePad_UserDAN.dct";
 			break;
 			
+		case WPLanguageIndonesian:
+			if (type == USERDATA_AUTOCORRECTOR)
+				name = "WritePad_CorrIND.cwl";
+			else if (type == USERDATA_LEARNER)
+				name = "WritePad_StatIND.lrn";
+			else
+				name = "WritePad_UserIND.dct";
+			break;
+
 		case WPLanguageMedicalUK :
 		case WPLanguageEnglishUK :
 			if ( type == USERDATA_AUTOCORRECTOR )

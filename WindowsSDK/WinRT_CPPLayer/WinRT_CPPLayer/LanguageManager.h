@@ -57,6 +57,7 @@ typedef enum
 	WPLanguageFinnish,
 	WPLanguageMedicalUS,
 	WPLanguageMedicalUK,
+	WPLanguageIndonesian
 } WPLanguage;
 
 #define USERDATA_DICTIONARY		0x0004

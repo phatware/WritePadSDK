@@ -59,6 +59,7 @@ namespace WritePad_CSharpSample
             }
 
             // If the app is not snapped, then the back button shows the Settings pane again.
+     
             if (Windows.UI.ViewManagement.ApplicationView.Value != Windows.UI.ViewManagement.ApplicationViewState.Snapped)
             {
                 SettingsPane.Show();

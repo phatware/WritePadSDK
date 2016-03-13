@@ -168,7 +168,7 @@ public class WritePadAPI {
 
     private static native int stopRecognizer();
 
-    private static native int newStroke(int width, int color);
+    private static native int newStroke(float width, int color);
 
     private static native int addPixelToStroke(int stroke, float x, float y);
 
@@ -257,7 +257,7 @@ public class WritePadAPI {
         resetInkData();
     }
 
-    public int recoNewStroke(int width, int color) {
+    public int recoNewStroke(float width, int color) {
         return newStroke(width, color);
     }
 

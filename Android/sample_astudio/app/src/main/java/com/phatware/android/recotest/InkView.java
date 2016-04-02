@@ -193,7 +193,7 @@ public class InkView extends View implements RecoTest.OnInkViewListener {
         mX = x;
         mY = y;
         mMoved = false;
-        mCurrStroke = WritePadManager.recoNewStroke(3, 0xFF0000FF);
+        mCurrStroke = WritePadManager.recoNewStroke(3.0f, 0xFF0000FF);
         if (mCurrStroke >= 0) {
             int res = WritePadManager.recoAddPixel(mCurrStroke, x, y);
             if (res < 1) {

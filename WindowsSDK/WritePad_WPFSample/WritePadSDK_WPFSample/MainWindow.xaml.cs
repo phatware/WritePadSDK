@@ -103,7 +103,7 @@ namespace WritePadSDK_WPFSample
         private void MainWindow_OnLoaded(object sender, RoutedEventArgs e)
         {
             DrawGrid();
-            LanguagesCombo.ItemsSource = new[] { "English", "English (UK)", "German", "French", "Spanish", "Portuguese", "Brazilian", "Dutch", "Italian", "Finnish", "Sweddish", "Norwegian", "Danish" };
+            LanguagesCombo.ItemsSource = new[] { "English", "English (UK)", "German", "French", "Spanish", "Portuguese", "Brazilian", "Dutch", "Italian", "Finnish", "Sweddish", "Norwegian", "Danish", "Indonesian" };
             DictionaryChanged();
             var langId = WritePadAPI.getLanguage();
             UpdateSelectedLanguage(langId);
@@ -153,6 +153,10 @@ namespace WritePadSDK_WPFSample
                 case WritePadAPI.LanguageType.da:
                     langIndex = 12;
                     break;
+                case WritePadAPI.LanguageType.id:
+                    langIndex = 13;
+                    break;
+
             }
             LanguagesCombo.SelectedIndex = langIndex;
         }
@@ -201,6 +205,9 @@ namespace WritePadSDK_WPFSample
                     break;
                 case 12:
                     language = WritePadAPI.LanguageType.da;
+                    break;
+                case 13:
+                    language = WritePadAPI.LanguageType.id;
                     break;
             }
             var flags = WritePadAPI.HWR_GetRecognitionFlags(WritePadAPI.getRecoHandle());

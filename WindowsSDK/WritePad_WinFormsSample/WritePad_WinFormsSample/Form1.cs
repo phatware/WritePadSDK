@@ -283,6 +283,9 @@ namespace WritePad_WinFormsSample
                 case WritePadAPI.LanguageType.da:
                     langIndex = 12;
                     break;
+                case WritePadAPI.LanguageType.id:
+                    langIndex = 13;
+                    break;
             }
             LanguagesCombo.SelectedIndex = langIndex;
         }
@@ -331,6 +334,9 @@ namespace WritePad_WinFormsSample
                     break;
                 case 12:
                     language = WritePadAPI.LanguageType.da;
+                    break;
+                case 13:
+                    language = WritePadAPI.LanguageType.id;
                     break;
             }
             var flags = WritePadAPI.HWR_GetRecognitionFlags(WritePadAPI.getRecoHandle());

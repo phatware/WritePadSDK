@@ -69,6 +69,7 @@ static INK_DATA_PTR		inkData = NULL;
 static RECOGNIZER_PTR _recognizerSearch = NULL;
 static TCHAR * _searchWord = NULL;
 
+static RECOGNIZER_PTR	_num_recognizer = NULL;
 
 #define MIN(a,b)    (((a) < (b)) ? (a) : (b))
 
@@ -153,6 +154,67 @@ extern "C" __declspec(dllexport) const TCHAR* getUserWords()
 	return AllocString(pParam.c_str());
 }
 
+extern "C" __declspec(dllexport) int initNumericRecognizer()
+{
+	if (_num_recognizer != NULL)
+	{
+		HWR_FreeRecognizer(_num_recognizer, NULL, NULL, NULL);
+		_num_recognizer = NULL;
+	}
+	int flags = FLAG_SEPLET | FLAG_SINGLEWORDONLY;
+	_num_recognizer = HWR_InitRecognizer(NULL, NULL, NULL, NULL, LANGUAGE_ENGLISH, &flags);
+	if (_num_recognizer == NULL)
+	{
+		return -1;
+	}
+
+	flags = FLAG_SEPLET | FLAG_ONLYDICT | FLAG_SINGLEWORDONLY;
+	const TCHAR * characters = L"0123456789";
+	if (HWR_NewUserDict(_num_recognizer))
+	{
+		UCHR pszWord[2];
+		pszWord[1] = 0;
+		const TCHAR * numbers = characters;
+		while (*numbers)
+		{
+			pszWord[0] = *numbers++;
+			HWR_AddUserWordToDict(_num_recognizer, pszWord, FALSE);
+		}
+		flags |= FLAG_USERDICT;
+	}
+	HWR_SetDefaultShapes(_num_recognizer);
+	HWR_SetCustomCharset(_num_recognizer, (UCHR *)characters, NULL);
+	HWR_SetRecognitionMode(_num_recognizer, RECMODE_CUSTOM);
+	// can also use this instead of 2 lines above: HWR_SetRecognitionMode(_num_recognizer, RECMODE_NUM);
+	HWR_SetRecognitionFlags(_num_recognizer, flags);
+	return flags;
+}
+
+extern "C" __declspec(dllexport) TCHAR * recognizeNumber(INK_DATA_PTR inkData, int baseline, int size)
+{
+	if (_num_recognizer != NULL)
+	{
+		if (!HWR_RecognizeSymbol(_num_recognizer, inkData, baseline, size))
+			return NULL;
+		int altCount = HWR_GetResultAlternativeCount(_num_recognizer, 0);
+		if (altCount > 0)
+		{
+			TCHAR * result = new TCHAR[altCount * 2 + 1];
+			int k = 0;
+			for (int alt = 0; alt < altCount; alt++)
+			{
+				UCHR* number = (UCHR*)HWR_GetResultWord(_num_recognizer, 0, alt);
+				result[k++] = number[0];
+				result[k++] = ',';
+			}
+			result[k] = 0;
+			TCHAR * ret = AllocString((TCHAR*)result);
+			delete[] result;
+			return ret;
+		}
+	}
+	return NULL;
+}
 /// <summary>
 /// Initialize dictionary. This should be called before recognizing any strokes.
 /// </summary>

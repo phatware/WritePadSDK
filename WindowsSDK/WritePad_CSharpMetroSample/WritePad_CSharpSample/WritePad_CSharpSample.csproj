@@ -202,6 +202,10 @@
       <Link>Swedish.dct</Link>
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
+    <None Include="..\..\Dictionaries\Indonesian.dct">
+      <Link>Indonesian.dct</Link>
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
     <None Include="Package.StoreAssociation.xml">
       <SubType>Designer</SubType>
     </None>

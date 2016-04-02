@@ -1,6 +1,6 @@
 /* ************************************************************************************* */
 /* *    PhatWare WritePad SDK                                                          * */
-/* *    Copyright (c) 2008-2015 PhatWare(r) Corp. All rights reserved.                 * */
+/* *    Copyright (c) 2008-2016 PhatWare(r) Corp. All rights reserved.                 * */
 /* ************************************************************************************* */
 
 /* ************************************************************************************* *
@@ -348,7 +348,7 @@ static DummyInputView * sharedDummyInputView = nil;
                 NSInteger to = MAX( 0, strokeLen-1 );
                 if ( from < to )
                 {
-                    int penwidth = 2.0 + strokeWidth/2.0;
+                    CGFloat penwidth = 2.0 + strokeWidth/2.0;
                     CGRect rect = CGRectMake( ptStroke[to].pt.x, ptStroke[to].pt.y, ptStroke[to].pt.x, ptStroke[to].pt.y );
                     for ( NSInteger i = from; i < to; i++ )
                     {
@@ -873,7 +873,7 @@ static DummyInputView * sharedDummyInputView = nil;
 	
 	register int		nStroke = 0;
 	int			nStrokeLen = 0;
-	int			nWidth = 1;
+	float       nWidth = 1.0;
 	CGStroke	points = NULL;
 	COLORREF	coloref = 0;
 	CGRect		rStroke = CGRectZero;
@@ -885,7 +885,7 @@ static DummyInputView * sharedDummyInputView = nil;
 			nStrokeLen = INK_GetStrokeP( inkData, nStroke, &points, &nWidth, &coloref );
 			if ( nStrokeLen < 1 || NULL == points )
 				break;
-			[WPInkView _renderLine:points pointCount:nStrokeLen inContext:context withWidth:(float)nWidth withColor:[utils _uiColorRefToColor:coloref]];
+			[WPInkView _renderLine:points pointCount:nStrokeLen inContext:context withWidth:nWidth withColor:[utils _uiColorRefToColor:coloref]];
 		}
 		nStroke++;
 	}
@@ -1068,7 +1068,7 @@ static DummyInputView * sharedDummyInputView = nil;
 	{
         NSInteger from = MAX( 0, strokeLen-1-_nAdded );
         NSInteger to = MAX( 0, strokeLen-1 );
-        int penwidth = 2.0 + strokeWidth/2.0;
+        CGFloat penwidth = 2.0 + strokeWidth/2.0;
         CGRect rect = CGRectMake( ptStroke[to].pt.x, ptStroke[to].pt.y, ptStroke[to].pt.x, ptStroke[to].pt.y );
         for ( NSInteger i = from; i < to; i++ )
         {

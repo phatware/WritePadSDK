@@ -1,6 +1,6 @@
 /* ************************************************************************************* */
 /* *    PhatWare WritePad SDK                                                          * */
-/* *    Copyright (c) 2008-2014 PhatWare(r) Corp. All rights reserved.                 * */
+/* *    Copyright (c) 2008-2016 PhatWare(r) Corp. All rights reserved.                 * */
 /* ************************************************************************************* */
 
 /* ************************************************************************************* *
@@ -107,7 +107,7 @@
 	INK_DATA_PTR		inkData;
 	GESTURE_TYPE		gesturesEnabledIfEmpty;
 	GESTURE_TYPE		gesturesEnabledIfData;
-	CGFloat				strokeWidth;
+	float				strokeWidth;
 		
 	CGPoint				_inkQueue[MAX_QUEUE_SIZE];
 	int					_inkQueueGet, _inkQueuePut;
@@ -139,7 +139,7 @@
     NSTimer *          _timerRecognizer;
 }
 
-@property(nonatomic, readwrite) CGFloat			strokeWidth;
+@property(nonatomic, readwrite) float			strokeWidth;
 @property(nonatomic, readonly)  UIColor *		strokeColor;
 @property(nonatomic, readonly)  Boolean			asyncRecoEnabled;
 @property(nonatomic, readonly)  Boolean			asyncInkCollector;

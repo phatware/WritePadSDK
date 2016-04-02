@@ -102,12 +102,12 @@ extern "C"
 	int 			INK_StrokeCount( INK_DATA_PTR pData, BOOL selectedOnly );
 	BOOL			INK_DeleteStroke( INK_DATA_PTR pData, int nStroke );
 	SHAPETYPE		INK_RecognizeShape( CGStroke pStroke, int nStrokeCnt, SHAPETYPE inType );
-	int 			INK_AddStroke( INK_DATA_PTR pData, CGStroke pStroke, int nStrokeCnt, int iWidth, COLORREF color );
-	int				INK_GetStroke( INK_DATA_PTR pData, int nStroke, CGPoint ** ppoints, int * nWidth, COLORREF * color );
-    int             INK_GetStrokeP( INK_DATA_PTR pData, int nStroke, CGStroke * ppoints, int * pnWidth, COLORREF * pColor );
+	int 			INK_AddStroke( INK_DATA_PTR pData, CGStroke pStroke, int nStrokeCnt, float fWidth, COLORREF color );
+	int				INK_GetStroke( INK_DATA_PTR pData, int nStroke, CGPoint ** ppoints, float * pfWidth, COLORREF * color );
+    int             INK_GetStrokeP( INK_DATA_PTR pData, int nStroke, CGStroke * ppoints, float * pfWidth, COLORREF * pColor );
 	BOOL			INK_GetStrokeRect( INK_DATA_PTR pData, int nStroke, CGRect * rect, BOOL bAddWidth );
 	BOOL			INK_GetDataRect( INK_DATA_PTR pData, CGRect * rect, BOOL selectedOnly );
-	int 			INK_AddEmptyStroke( INK_DATA_PTR pData, int iWidth, COLORREF color );
+	int 			INK_AddEmptyStroke( INK_DATA_PTR pData, float fWidth, COLORREF color );
 	int 			INK_AddPixelToStroke( INK_DATA_PTR pData, int nStroke, float x, float y, int p );
     BOOL            INK_GetStrokePointP( INK_DATA_PTR pData, int nStroke, int nPoint, float * pX, float * pY, int *pP );
     BOOL            INK_GetStrokePoint( INK_DATA_PTR pData, int nStroke, int nPoint, float * pX, float * pY );
@@ -136,7 +136,7 @@ extern "C"
 	int				INK_SelectStrokesInRect( INK_DATA_PTR pData, CGRect selRect );
 	void			INK_EmptyUndoBuffer( INK_DATA_PTR pData );
     BOOL             INK_CurveIntersectsStroke( INK_DATA_PTR pData, int nStroke, const CGStroke points, int nPointCount );
-	BOOL			INK_SetStrokeWidthAndColor( INK_DATA_PTR pData, int nStroke, COLORREF color, int nWidth );
+	BOOL			INK_SetStrokeWidthAndColor( INK_DATA_PTR pData, int nStroke, COLORREF color, float fWidth );
     int             INK_DeleteIntersectedStrokes( INK_DATA_PTR pData, const CGStroke points, int nPointCount );
 	BOOL			INK_ResizeStroke( INK_DATA_PTR pData, int nStroke, float x0, float y0, float scalex, float scaley, BOOL bReset, CGRect * pRect, BOOL recordUndo );
     

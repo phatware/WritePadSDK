@@ -160,7 +160,7 @@ public class WritePadManager {
         writePadAPI.recoResetInk();
     }
 
-    public static int recoNewStroke(int width, int color) {
+    public static int recoNewStroke(float width, int color) {
         return writePadAPI.recoNewStroke(width, color);
     }
 

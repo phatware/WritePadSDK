@@ -216,6 +216,10 @@
       <Link>Swedish.dct</Link>
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
+    <None Include="..\..\Dictionaries\Indonesian.dct">
+      <Link>Indonesian.dct</Link>
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>

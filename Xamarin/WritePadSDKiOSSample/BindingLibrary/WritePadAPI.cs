@@ -1,6 +1,6 @@
 ﻿/* ************************************************************************************* */
 /* *    PhatWare WritePad SDK                                                          * */
-/* *    Copyright (c) 2008-2015 PhatWare(r) Corp. All rights reserved.                 * */
+/* *    Copyright (c) 2008-2016 PhatWare(r) Corp. All rights reserved.                 * */
 /* ************************************************************************************* */
 
 /* ************************************************************************************* *
@@ -88,20 +88,20 @@ namespace BindingLibrary
 
 		// gestures
 		public  const int GEST_NONE = 0x00000000;
-		public  const int GEST_DELETE = 0x00000001;    //
+		public  const int GEST_DELETE = 0x00000001;   
 		public  const int GEST_SCROLLUP = 0x00000002;
-		public  const int GEST_BACK = 0x00000004;    //
-		public  const int GEST_SPACE = 0x00000008;    //
-		public  const int GEST_RETURN = 0x00000010;    //
+		public  const int GEST_BACK = 0x00000004;   
+		public  const int GEST_SPACE = 0x00000008;   
+		public  const int GEST_RETURN = 0x00000010;   
 		public  const int GEST_CORRECT = 0x00000020;
 		public  const int GEST_SPELL = 0x00000040;
 		public  const int GEST_SELECTALL = 0x00000080;
-		public  const int GEST_UNDO = 0x00000100;    //
+		public  const int GEST_UNDO = 0x00000100;   
 		public  const int GEST_SMALLPT = 0x00000200;
 		public  const int GEST_COPY = 0x00000400;
 		public  const int GEST_CUT = 0x00000800;
 		public  const int GEST_PASTE = 0x00001000;
-		public  const int GEST_TAB = 0x00002000;    //
+		public  const int GEST_TAB = 0x00002000;    
 		public  const int GEST_MENU = 0x00004000;
 		public  const int GEST_LOOP = 0x00008000;
 		public  const int GEST_REDO = 0x00010000;
@@ -184,7 +184,7 @@ namespace BindingLibrary
 		private static extern bool INK_DeleteStroke( IntPtr inkData, int nStroke );
 
 		[DllImport("__Internal", EntryPoint = "INK_AddEmptyStroke")]
-		private static extern int INK_AddEmptyStroke( IntPtr inkData, int width, uint color );
+		private static extern int INK_AddEmptyStroke( IntPtr inkData, float width, uint color );
 
 		[DllImport("__Internal", EntryPoint = "HWR_GetResultWordCount")]
 		private static extern int HWR_GetResultWordCount( IntPtr reco );
@@ -211,7 +211,7 @@ namespace BindingLibrary
 		private static extern uint HWR_GetRecognitionFlags(  IntPtr reco );
 
 		[DllImport("__Internal", EntryPoint = "INK_GetStrokeP")]
-		private static extern int INK_GetStrokeP(  IntPtr inkData, int nStroke, ref IntPtr stroke, IntPtr width, IntPtr color );
+		private static extern int INK_GetStrokeP(  IntPtr inkData, int nStroke, ref IntPtr stroke, float [] width, ref IntPtr color );
 
 		[DllImport("__Internal", EntryPoint = "HWR_CheckGesture")]
 		private static extern int HWR_CheckGesture(  int type, CGTracePoint[] stroke, int len, int nScale, int nMinLen );
@@ -282,7 +282,7 @@ namespace BindingLibrary
 			HWR_SetRecognitionFlags(recoHandle, flags);
 		}
 
-		public static int recoNewStroke(int width, uint color)
+		public static int recoNewStroke(float width, uint color)
 		{
 			return INK_AddEmptyStroke(inkData, width, color);
 		}

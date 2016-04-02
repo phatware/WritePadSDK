@@ -216,7 +216,7 @@ Global
 		$0.VersionControlPolicy = $34
 		$34.inheritsSet = Mono
 		description = WritePad Handwriting Recognition SDK for Xamarin (iOS Sample)
-		version = 5.2
+		version = 5.5
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

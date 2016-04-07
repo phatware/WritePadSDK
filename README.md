@@ -9,8 +9,8 @@
 
 **You can:**
 
--   Install WritePad SDK on your computer and use it for personal and
-    evaluation purposes only
+-   Install WritePad SDK on your computer and use it for personal,
+    evaluation, and **not for profit** academic research only
 
 **You cannot:**
 

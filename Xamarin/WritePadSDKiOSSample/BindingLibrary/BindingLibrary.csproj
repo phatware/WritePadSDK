@@ -9,7 +9,7 @@
     <RootNamespace>BindingLibrary</RootNamespace>
     <IPhoneResourcePrefix>Resources</IPhoneResourcePrefix>
     <AssemblyName>BindingLibrary</AssemblyName>
-    <ReleaseVersion>5.2</ReleaseVersion>
+    <ReleaseVersion>5.5</ReleaseVersion>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|iPhoneSimulator' ">
     <DebugSymbols>true</DebugSymbols>

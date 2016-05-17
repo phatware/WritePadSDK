@@ -558,7 +558,7 @@ jboolean Java_com_phatware_android_RecoInterface_WritePadAPI_isPointStroke( JNIE
 			return false;
 		if ( INK_GetStrokeRect( _inkData, nStroke, &rect, false) )
 		{
-			if ( rect.size.width <= 2 && rect.size.height <= 2 )
+			if ( rect.size.width <= 2.0f && rect.size.height <= 2.0f )
 				return true;
 		}
 	}
@@ -572,7 +572,7 @@ jint Java_com_phatware_android_RecoInterface_WritePadAPI_checkStrokeNewLine( JNI
 	{
 		CGRect rect = {0,0,0,0};
 		CGStroke pStroke = NULL;
-		int		width = 2;
+		float		width = 2.0f;
 
 		if ( nStroke < 0 )
 			nStroke = INK_StrokeCount( _inkData, false ) - 1;
@@ -591,7 +591,7 @@ jint Java_com_phatware_android_RecoInterface_WritePadAPI_checkStrokeNewLine( JNI
 			return 0;
 		if ( rect.size.width < width && rect.size.height < width )
 			return 0;
-		if ( rect.size.width > 2 * rect.size.height && rect.size.height <= 2 * width )
+		if ( rect.size.width > 2.0f * rect.size.height && rect.size.height <= 2.0f * width )
 			return 0;
 		
 		int xx = (int)rect.origin.x;
@@ -1108,7 +1108,7 @@ jboolean Java_com_phatware_android_RecoInterface_WritePadAPI_preRecognizeInkData
 	return HWR_PreRecognizeInkData(_recognizer, _inkData, nDataLen, false);
 }
 
-jboolean Java_com_phatware_android_RecoInterface_WritePadAPI_newStroke( JNIEnv * env, jobject thiz, jint width, jint color)
+jboolean Java_com_phatware_android_RecoInterface_WritePadAPI_newStroke( JNIEnv * env, jobject thiz, jfloat width, jint color)
 {
 	jint result = -1;
 	if (NULL != _inkData) {

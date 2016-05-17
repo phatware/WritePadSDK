@@ -174,7 +174,7 @@ Global
 		$30.IncludeInstanceMembers = True
 		$30.IncludeStaticEntities = True
 		description = WritePad Handwriting Recognition SDK - Android Sample
-		version = 5.2
+		version = 5.5
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

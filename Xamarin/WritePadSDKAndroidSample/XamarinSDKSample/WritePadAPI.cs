@@ -1,6 +1,6 @@
 /* ************************************************************************************* */
 /* *    PhatWare WritePad SDK                                                          * */
-/* *    Copyright (c) 2008-2015 PhatWare(r) Corp. All rights reserved.                 * */
+/* *    Copyright (c) 2008-2016 PhatWare(r) Corp. All rights reserved.                 * */
 /* ************************************************************************************* */
 
 /* ************************************************************************************* *
@@ -163,7 +163,7 @@ namespace WritePadXamarinSample
         public  const int FLAG_DISABLED = 0x0004;
         public  const String TAG = "WritePadAPI";
         public const int DEFAULT_INK_PRESSURE = 127;
-        public const int DEFAULT_INK_WIDTH = 3;
+        public const float DEFAULT_INK_WIDTH = 3;
         public const int LONG_STROKE_MINLENGTH = 200;
 
         [DllImport("libWritePadReco.so", EntryPoint = "HWR_RecognizeInkData")]
@@ -185,7 +185,7 @@ namespace WritePadXamarinSample
         private static extern bool INK_DeleteStroke(IntPtr inkData, int nStroke);
 
         [DllImport("libWritePadReco.so", EntryPoint = "INK_AddEmptyStroke")]
-        private static extern int INK_AddEmptyStroke(IntPtr inkData, int width, uint color);
+        private static extern int INK_AddEmptyStroke(IntPtr inkData, float width, uint color);
 
         [DllImport("libWritePadReco.so", EntryPoint = "HWR_GetResultWordCount")]
         private static extern int HWR_GetResultWordCount(IntPtr reco);
@@ -212,7 +212,7 @@ namespace WritePadXamarinSample
         private static extern uint HWR_GetRecognitionFlags(IntPtr reco);
 
         [DllImport("libWritePadReco.so", EntryPoint = "INK_GetStrokeP")]
-        private static extern int INK_GetStrokeP(IntPtr inkData, int nStroke, ref IntPtr stroke, IntPtr width, IntPtr color);
+		private static extern int INK_GetStrokeP(IntPtr inkData, int nStroke, ref IntPtr stroke, float [] width, IntPtr color);
 
         [DllImport("libWritePadReco.so", EntryPoint = "HWR_CheckGesture")]
         private static extern int HWR_CheckGesture(int type, CGTracePoint[] stroke, int len, int nScale, int nMinLen);
@@ -280,7 +280,7 @@ namespace WritePadXamarinSample
             HWR_SetRecognitionFlags(recoHandle, flags);
         }
 
-        public static int recoNewStroke(int width, uint color)
+        public static int recoNewStroke(float width, uint color)
         {
             return INK_AddEmptyStroke(inkData, width, color);
         }

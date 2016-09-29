@@ -28,6 +28,9 @@ For additional information, please read the [WritePad SDK developer license agre
 To obtain commercial license, please contact PhatWare Corp. by sending
 your request to [developer@phatware.com](mailto:developer@phatware.com)
 
+If you are working on an Open Source project, you can access the WRITEPAD Handwriting 
+Recognition Engine source code under GPL v.3.0 license here: https://github.com/phatware/WritePad-Handwriting-Recognition-Engine
+
 ## SDK Overview
 
 WritePad® is a natural, style, writer and lexicon independent

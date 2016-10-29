@@ -38,7 +38,6 @@
 		362DAE101C0A75A0000A58EC /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 362DAE0D1C0A75A0000A58EC /* Main.storyboard */; };
 		3694AA4E1AE43830001E8BE3 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3694AA4D1AE43830001E8BE3 /* AppDelegate.swift */; };
 		3694AA501AE43830001E8BE3 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3694AA4F1AE43830001E8BE3 /* ViewController.swift */; };
-		3694AA641AE43830001E8BE3 /* WritePadSDK_Sample_SwiftTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3694AA631AE43830001E8BE3 /* WritePadSDK_Sample_SwiftTests.swift */; };
 		3694AA8E1AE44B12001E8BE3 /* libWritePadRecoUniversal.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 3694AA8D1AE44B12001E8BE3 /* libWritePadRecoUniversal.a */; };
 		3694AAB71AE771E5001E8BE3 /* Indonesian.dct in Resources */ = {isa = PBXBuildFile; fileRef = 3694AAA91AE771E5001E8BE3 /* Indonesian.dct */; };
 		3694AAB81AE771E5001E8BE3 /* Brazilian.dct in Resources */ = {isa = PBXBuildFile; fileRef = 3694AAAA1AE771E5001E8BE3 /* Brazilian.dct */; };
@@ -55,16 +54,6 @@
 		3694AAC31AE771E5001E8BE3 /* Spanish.dct in Resources */ = {isa = PBXBuildFile; fileRef = 3694AAB51AE771E5001E8BE3 /* Spanish.dct */; };
 		3694AAC41AE771E5001E8BE3 /* Swedish.dct in Resources */ = {isa = PBXBuildFile; fileRef = 3694AAB61AE771E5001E8BE3 /* Swedish.dct */; };
 /* End PBXBuildFile section */
-
-/* Begin PBXContainerItemProxy section */
-		3694AA5E1AE43830001E8BE3 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 3694AA401AE43830001E8BE3 /* Project object */;
-			proxyType = 1;
-			remoteGlobalIDString = 3694AA471AE43830001E8BE3;
-			remoteInfo = "WritePadSDK-Sample-Swift";
-		};
-/* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
 		362DAD9F1C0A6566000A58EC /* letimg.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = letimg.c; sourceTree = "<group>"; };
@@ -135,9 +124,6 @@
 		3694AA4C1AE43830001E8BE3 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		3694AA4D1AE43830001E8BE3 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		3694AA4F1AE43830001E8BE3 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
-		3694AA5D1AE43830001E8BE3 /* WritePadSDK-Sample-SwiftTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "WritePadSDK-Sample-SwiftTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
-		3694AA621AE43830001E8BE3 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		3694AA631AE43830001E8BE3 /* WritePadSDK_Sample_SwiftTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WritePadSDK_Sample_SwiftTests.swift; sourceTree = "<group>"; };
 		3694AA701AE43C68001E8BE3 /* WritePadSDK-Sample-Swift-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "WritePadSDK-Sample-Swift-Bridging-Header.h"; sourceTree = "<group>"; };
 		3694AA8D1AE44B12001E8BE3 /* libWritePadRecoUniversal.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = libWritePadRecoUniversal.a; path = ../../Library/libWritePadRecoUniversal.a; sourceTree = "<group>"; };
 		3694AAA91AE771E5001E8BE3 /* Indonesian.dct */ = {isa = PBXFileReference; lastKnownFileType = file; name = Indonesian.dct; path = ../../Dictionaries/Indonesian.dct; sourceTree = "<group>"; };
@@ -162,13 +148,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				3694AA8E1AE44B12001E8BE3 /* libWritePadRecoUniversal.a in Frameworks */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		3694AA5A1AE43830001E8BE3 /* Frameworks */ = {
-			isa = PBXFrameworksBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -313,7 +292,6 @@
 			isa = PBXGroup;
 			children = (
 				3694AA4A1AE43830001E8BE3 /* WritePadSDK-Sample-Swift */,
-				3694AA601AE43830001E8BE3 /* WritePadSDK-Sample-SwiftTests */,
 				3694AA491AE43830001E8BE3 /* Products */,
 			);
 			sourceTree = "<group>";
@@ -322,7 +300,6 @@
 			isa = PBXGroup;
 			children = (
 				3694AA481AE43830001E8BE3 /* WritePadSDK-Sample-Swift.app */,
-				3694AA5D1AE43830001E8BE3 /* WritePadSDK-Sample-SwiftTests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -349,23 +326,6 @@
 				3694AAA81AE771D5001E8BE3 /* Dictionaries */,
 				3694AA8D1AE44B12001E8BE3 /* libWritePadRecoUniversal.a */,
 				3694AA4C1AE43830001E8BE3 /* Info.plist */,
-			);
-			name = "Supporting Files";
-			sourceTree = "<group>";
-		};
-		3694AA601AE43830001E8BE3 /* WritePadSDK-Sample-SwiftTests */ = {
-			isa = PBXGroup;
-			children = (
-				3694AA631AE43830001E8BE3 /* WritePadSDK_Sample_SwiftTests.swift */,
-				3694AA611AE43830001E8BE3 /* Supporting Files */,
-			);
-			path = "WritePadSDK-Sample-SwiftTests";
-			sourceTree = "<group>";
-		};
-		3694AA611AE43830001E8BE3 /* Supporting Files */ = {
-			isa = PBXGroup;
-			children = (
-				3694AA621AE43830001E8BE3 /* Info.plist */,
 			);
 			name = "Supporting Files";
 			sourceTree = "<group>";
@@ -411,24 +371,6 @@
 			productReference = 3694AA481AE43830001E8BE3 /* WritePadSDK-Sample-Swift.app */;
 			productType = "com.apple.product-type.application";
 		};
-		3694AA5C1AE43830001E8BE3 /* WritePadSDK-Sample-SwiftTests */ = {
-			isa = PBXNativeTarget;
-			buildConfigurationList = 3694AA6A1AE43830001E8BE3 /* Build configuration list for PBXNativeTarget "WritePadSDK-Sample-SwiftTests" */;
-			buildPhases = (
-				3694AA591AE43830001E8BE3 /* Sources */,
-				3694AA5A1AE43830001E8BE3 /* Frameworks */,
-				3694AA5B1AE43830001E8BE3 /* Resources */,
-			);
-			buildRules = (
-			);
-			dependencies = (
-				3694AA5F1AE43830001E8BE3 /* PBXTargetDependency */,
-			);
-			name = "WritePadSDK-Sample-SwiftTests";
-			productName = "WritePadSDK-Sample-SwiftTests";
-			productReference = 3694AA5D1AE43830001E8BE3 /* WritePadSDK-Sample-SwiftTests.xctest */;
-			productType = "com.apple.product-type.bundle.unit-test";
-		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
@@ -437,21 +379,18 @@
 			attributes = {
 				LastSwiftMigration = 0700;
 				LastSwiftUpdateCheck = 0700;
-				LastUpgradeCheck = 0700;
+				LastUpgradeCheck = 0810;
 				ORGANIZATIONNAME = "PhatWare Corp.";
 				TargetAttributes = {
 					3694AA471AE43830001E8BE3 = {
 						CreatedOnToolsVersion = 6.3;
 						DevelopmentTeam = U97D34BCNV;
+						LastSwiftMigration = 0810;
 						SystemCapabilities = {
 							com.apple.ApplicationGroups.iOS = {
 								enabled = 0;
 							};
 						};
-					};
-					3694AA5C1AE43830001E8BE3 = {
-						CreatedOnToolsVersion = 6.3;
-						TestTargetID = 3694AA471AE43830001E8BE3;
 					};
 				};
 			};
@@ -469,7 +408,6 @@
 			projectRoot = "";
 			targets = (
 				3694AA471AE43830001E8BE3 /* WritePadSDK-Sample-Swift */,
-				3694AA5C1AE43830001E8BE3 /* WritePadSDK-Sample-SwiftTests */,
 			);
 		};
 /* End PBXProject section */
@@ -498,13 +436,6 @@
 				362DAE0F1C0A75A0000A58EC /* LaunchScreen.xib in Resources */,
 				362DAE101C0A75A0000A58EC /* Main.storyboard in Resources */,
 				362DADF91C0A74FC000A58EC /* ReleaseNotes.txt in Resources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		3694AA5B1AE43830001E8BE3 /* Resources */ = {
-			isa = PBXResourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -544,23 +475,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		3694AA591AE43830001E8BE3 /* Sources */ = {
-			isa = PBXSourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				3694AA641AE43830001E8BE3 /* WritePadSDK_Sample_SwiftTests.swift in Sources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 /* End PBXSourcesBuildPhase section */
-
-/* Begin PBXTargetDependency section */
-		3694AA5F1AE43830001E8BE3 /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			target = 3694AA471AE43830001E8BE3 /* WritePadSDK-Sample-Swift */;
-			targetProxy = 3694AA5E1AE43830001E8BE3 /* PBXContainerItemProxy */;
-		};
-/* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
 		362DADF71C0A74FC000A58EC /* ReleaseNotes.txt */ = {
@@ -603,8 +518,10 @@
 				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
 				CLANG_WARN_EMPTY_BODY = YES;
 				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
@@ -649,8 +566,10 @@
 				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
 				CLANG_WARN_EMPTY_BODY = YES;
 				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
@@ -669,6 +588,7 @@
 				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				SDKROOT = iphoneos;
+				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
 				TARGETED_DEVICE_FAMILY = "1,2";
 				VALIDATE_PRODUCT = YES;
 			};
@@ -680,8 +600,9 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_ENTITLEMENTS = "WritePadSDK-Sample-Swift/WritePadSDK-Sample-Swift.entitlements";
-				CODE_SIGN_IDENTITY = "iPhone Developer";
+				CODE_SIGN_IDENTITY = "iPhone Developer: stanmiasnikov@gmail.com (7JQSL24E9R)";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				DEVELOPMENT_TEAM = U97D34BCNV;
 				INFOPLIST_FILE = "WritePadSDK-Sample-Swift/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
@@ -690,11 +611,12 @@
 					"$(SRCROOT)/../Library",
 				);
 				OTHER_LDFLAGS = "-lstdc++";
-				PRODUCT_BUNDLE_IDENTIFIER = "com.phatware.$(PRODUCT_NAME:rfc1034identifier)";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.phatware.WritePadSDK-Swift";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
 				SWIFT_OBJC_BRIDGING_HEADER = "WritePadSDK-Sample-Swift/WritePadSDK-Sample-Swift-Bridging-Header.h";
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_VERSION = 3.0;
 			};
 			name = Debug;
 		};
@@ -704,8 +626,9 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_ENTITLEMENTS = "WritePadSDK-Sample-Swift/WritePadSDK-Sample-Swift.entitlements";
-				CODE_SIGN_IDENTITY = "iPhone Developer";
+				CODE_SIGN_IDENTITY = "iPhone Developer: stanmiasnikov@gmail.com (7JQSL24E9R)";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				DEVELOPMENT_TEAM = U97D34BCNV;
 				INFOPLIST_FILE = "WritePadSDK-Sample-Swift/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
@@ -714,46 +637,11 @@
 					"$(SRCROOT)/../Library",
 				);
 				OTHER_LDFLAGS = "-lstdc++";
-				PRODUCT_BUNDLE_IDENTIFIER = "com.phatware.$(PRODUCT_NAME:rfc1034identifier)";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.phatware.WritePadSDK-Swift";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
 				SWIFT_OBJC_BRIDGING_HEADER = "WritePadSDK-Sample-Swift/WritePadSDK-Sample-Swift-Bridging-Header.h";
-			};
-			name = Release;
-		};
-		3694AA6B1AE43830001E8BE3 /* Debug */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				BUNDLE_LOADER = "$(TEST_HOST)";
-				FRAMEWORK_SEARCH_PATHS = (
-					"$(SDKROOT)/Developer/Library/Frameworks",
-					"$(inherited)",
-				);
-				GCC_PREPROCESSOR_DEFINITIONS = (
-					"DEBUG=1",
-					"$(inherited)",
-				);
-				INFOPLIST_FILE = "WritePadSDK-Sample-SwiftTests/Info.plist";
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = "com.phatware.$(PRODUCT_NAME:rfc1034identifier)";
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/WritePadSDK-Sample-Swift.app/WritePadSDK-Sample-Swift";
-			};
-			name = Debug;
-		};
-		3694AA6C1AE43830001E8BE3 /* Release */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				BUNDLE_LOADER = "$(TEST_HOST)";
-				FRAMEWORK_SEARCH_PATHS = (
-					"$(SDKROOT)/Developer/Library/Frameworks",
-					"$(inherited)",
-				);
-				INFOPLIST_FILE = "WritePadSDK-Sample-SwiftTests/Info.plist";
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = "com.phatware.$(PRODUCT_NAME:rfc1034identifier)";
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/WritePadSDK-Sample-Swift.app/WritePadSDK-Sample-Swift";
+				SWIFT_VERSION = 3.0;
 			};
 			name = Release;
 		};
@@ -774,15 +662,6 @@
 			buildConfigurations = (
 				3694AA681AE43830001E8BE3 /* Debug */,
 				3694AA691AE43830001E8BE3 /* Release */,
-			);
-			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
-		};
-		3694AA6A1AE43830001E8BE3 /* Build configuration list for PBXNativeTarget "WritePadSDK-Sample-SwiftTests" */ = {
-			isa = XCConfigurationList;
-			buildConfigurations = (
-				3694AA6B1AE43830001E8BE3 /* Debug */,
-				3694AA6C1AE43830001E8BE3 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;

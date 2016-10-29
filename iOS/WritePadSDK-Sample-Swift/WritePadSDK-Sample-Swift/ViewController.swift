@@ -68,82 +68,82 @@ class ViewController: UIViewController, UITextViewDelegate, LanguageSelectorDele
         self.textView.delegate = self
         self.view.addSubview(self.textView)
         
-        let suggestions = SuggestionsView.sharedSuggestionsView()
-        suggestions.showResultsinKeyboard(self.view, inRect:self.view.bounds)
+        let suggestions : SuggestionsView = SuggestionsView.shared()
+        suggestions.showResultsinKeyboard(self.view, in:self.view.bounds)
         suggestions.translatesAutoresizingMaskIntoConstraints = false
         suggestions.backgroundColor = UIColor( white: 0.22, alpha:0.92)
         
         self.suggestionsHeight = NSLayoutConstraint( item:suggestions,
-            attribute: NSLayoutAttribute.Height,
-            relatedBy: NSLayoutRelation.Equal, toItem: nil,
-            attribute: NSLayoutAttribute.Height,
+            attribute: NSLayoutAttribute.height,
+            relatedBy: NSLayoutRelation.equal, toItem: nil,
+            attribute: NSLayoutAttribute.height,
             multiplier: 1.0, constant: SuggestionsView.getHeight())
         suggestions.addConstraint( self.suggestionsHeight )
         
         let leftS = NSLayoutConstraint( item:suggestions,
-            attribute: NSLayoutAttribute.Left,
-            relatedBy: NSLayoutRelation.Equal, toItem:self.view,
-            attribute: NSLayoutAttribute.Left,
+            attribute: NSLayoutAttribute.left,
+            relatedBy: NSLayoutRelation.equal, toItem:self.view,
+            attribute: NSLayoutAttribute.left,
             multiplier: 1.0, constant: 0.0 )
         self.view.addConstraint( leftS )
         let topS = NSLayoutConstraint( item:suggestions,
-            attribute: NSLayoutAttribute.Top,
-            relatedBy: NSLayoutRelation.Equal, toItem:self.navBar,
-            attribute: NSLayoutAttribute.Bottom,
+            attribute: NSLayoutAttribute.top,
+            relatedBy: NSLayoutRelation.equal, toItem:self.navBar,
+            attribute: NSLayoutAttribute.bottom,
             multiplier: 1.0, constant: 0.0 )
         self.view.addConstraint( topS )
         let rightS = NSLayoutConstraint( item:suggestions,
-            attribute: NSLayoutAttribute.Right,
-            relatedBy: NSLayoutRelation.Equal, toItem:self.view,
-            attribute: NSLayoutAttribute.Right,
+            attribute: NSLayoutAttribute.right,
+            relatedBy: NSLayoutRelation.equal, toItem:self.view,
+            attribute: NSLayoutAttribute.right,
             multiplier: 1.0, constant: 0.0 )
         self.view.addConstraint( rightS )
         
         let right = NSLayoutConstraint( item: self.textView,
-            attribute: NSLayoutAttribute.Right,
-            relatedBy: NSLayoutRelation.Equal, toItem:self.view,
-            attribute: NSLayoutAttribute.Right,
+            attribute: NSLayoutAttribute.right,
+            relatedBy: NSLayoutRelation.equal, toItem:self.view,
+            attribute: NSLayoutAttribute.right,
             multiplier: 1.0, constant: 0.0 )
         self.view.addConstraint( right )
         let left = NSLayoutConstraint( item: self.textView,
-            attribute: NSLayoutAttribute.Left,
-            relatedBy: NSLayoutRelation.Equal, toItem:self.view,
-            attribute: NSLayoutAttribute.Left,
+            attribute: NSLayoutAttribute.left,
+            relatedBy: NSLayoutRelation.equal, toItem:self.view,
+            attribute: NSLayoutAttribute.left,
             multiplier: 1.0, constant: 0.0 )
         self.view.addConstraint( left )
         let top = NSLayoutConstraint( item: self.textView,
-            attribute: NSLayoutAttribute.Top,
-            relatedBy: NSLayoutRelation.Equal, toItem: suggestions,
-            attribute: NSLayoutAttribute.Bottom,
+            attribute: NSLayoutAttribute.top,
+            relatedBy: NSLayoutRelation.equal, toItem: suggestions,
+            attribute: NSLayoutAttribute.bottom,
             multiplier: 1.0, constant: 0.0 )
         self.view.addConstraint( top )
         
         self.keyboardHeight = NSLayoutConstraint( item: self.textView,
-            attribute: NSLayoutAttribute.Bottom,
-            relatedBy: NSLayoutRelation.Equal, toItem: self.view,
-            attribute: NSLayoutAttribute.Bottom,
+            attribute: NSLayoutAttribute.bottom,
+            relatedBy: NSLayoutRelation.equal, toItem: self.view,
+            attribute: NSLayoutAttribute.bottom,
             multiplier: 1.0, constant: 0.0 )
         self.view.addConstraint( self.keyboardHeight )
         
-        let notifications = NSNotificationCenter.defaultCenter()
-        notifications.addObserver( self, selector:"keyboardWillShow:", name: UIKeyboardWillShowNotification, object: nil)
-        notifications.addObserver( self, selector:"keyboardWillHide:", name: UIKeyboardWillHideNotification, object: nil)
-        notifications.addObserver( self, selector:"keyboardDidShow:", name: UIKeyboardDidShowNotification, object: nil)
-        notifications.addObserver( self, selector:"reloadOptions:", name: EDITCTL_RELOAD_OPTIONS, object: nil)
+        let notifications = NotificationCenter.default
+        notifications.addObserver( self, selector:#selector(ViewController.keyboardWillShow(_:)), name: NSNotification.Name.UIKeyboardWillShow, object: nil)
+        notifications.addObserver( self, selector:#selector(ViewController.keyboardWillHide(_:)), name: NSNotification.Name.UIKeyboardWillHide, object: nil)
+        notifications.addObserver( self, selector:#selector(ViewController.keyboardDidShow(_:)), name: NSNotification.Name.UIKeyboardDidShow, object: nil)
+        notifications.addObserver( self, selector:#selector(ViewController.reloadOptions(_:)), name: NSNotification.Name(rawValue: EDITCTL_RELOAD_OPTIONS), object: nil)
         
-        let defaults = NSUserDefaults.standardUserDefaults()
-        let language = UInt32( defaults.integerForKey( kGeneralOptionsCurrentLanguage ) )
+        let defaults = UserDefaults.standard
+        let language = UInt32( defaults.integer( forKey: kGeneralOptionsCurrentLanguage ) )
         if (language < WPLanguageEnglishUS.rawValue) || (language > WPLanguageMedicalUK.rawValue)
         {
-            let time : dispatch_time_t = dispatch_time(DISPATCH_TIME_NOW, Int64(0.8 * Double(NSEC_PER_SEC)))
-            dispatch_after( time, dispatch_get_main_queue(), { () -> Void in
+            let time : DispatchTime = DispatchTime.now() + Double(Int64(0.8 * Double(NSEC_PER_SEC))) / Double(NSEC_PER_SEC)
+            DispatchQueue.main.asyncAfter( deadline: time, execute: { () -> Void in
                 self.selectDefaultLanguage()
                 // your function here
             })
         }
         
-        let path = NSBundle.mainBundle().pathForResource("ReleaseNotes", ofType: "txt")
-        let text = try! String(contentsOfFile: path!, encoding: NSUTF8StringEncoding)
+        let path = Bundle.main.path(forResource: "ReleaseNotes", ofType: "txt")
+        let text = try! String(contentsOfFile: path!, encoding: String.Encoding.utf8)
         
         self.textView.text = text
         self.input.selectedSegmentIndex = Int( InputSystem_InputPanel.rawValue )
@@ -153,75 +153,75 @@ class ViewController: UIViewController, UITextViewDelegate, LanguageSelectorDele
     
     func selectDefaultLanguage()
     {
-        let langman = LanguageManager.sharedManager()
-        let viewController = LanguageViewController( style: UITableViewStyle.Plain )
+        let langman = LanguageManager.shared()
+        let viewController = LanguageViewController( style: UITableViewStyle.plain )
         viewController.delegate = self
         
         let navigationContoller = UINavigationController(rootViewController: viewController)
-        navigationContoller.modalPresentationStyle = UIModalPresentationStyle.FormSheet
-        navigationContoller.modalTransitionStyle = UIModalTransitionStyle.CrossDissolve
+        navigationContoller.modalPresentationStyle = UIModalPresentationStyle.formSheet
+        navigationContoller.modalTransitionStyle = UIModalTransitionStyle.crossDissolve
         
-        let languages : NSArray = langman.supportedLanguages()
+        let languages : NSArray = langman!.supportedLanguages() as NSArray
         // var arrLanguages : [[String:UIImage]] = []
         var arrLanguages : Dictionary<String,UIImage> = [String:UIImage](minimumCapacity: languages.count)
 
         for l in languages
         {
-            let lang : WPLanguage = langman.languageIDFromLanguageCode(Int32(l.integerValue))
-            arrLanguages.updateValue(langman.languageImageForLanguageID(lang),
-                forKey: langman.languageName(lang))
-            if langman.currentLanguage.rawValue == lang.rawValue
+            let lang : WPLanguage = langman!.languageID(fromLanguageCode:(l as! Int32))
+            arrLanguages.updateValue((langman?.languageImage(forLanguageID: lang))!,
+                forKey: (langman?.languageName(lang))!)
+            if langman?.currentLanguage.rawValue == lang.rawValue
             {
-                viewController.selectedLanguage = langman.languageName(lang)
+                viewController.selectedLanguage = langman?.languageName(lang)
             }
         }
         viewController.languages = arrLanguages
         viewController.showDone = true
-        self.presentViewController( navigationContoller, animated: true ) { () -> Void in
+        self.present( navigationContoller, animated: true ) { () -> Void in
             
         }
     }
     
-    func languageSelected( language : String )
+    func languageSelected( _ language : String )
     {
-        let recognizer = RecognizerManager.sharedManager()
-        let mode = recognizer.getMode()
-        recognizer.disable( true )
-        let langman = LanguageManager.sharedManager()
-        let languages : NSArray = langman.supportedLanguages()
+        let recognizer = RecognizerManager.shared()
+        let mode = recognizer?.getMode()
+        recognizer?.disable( true )
+        let langman = LanguageManager.shared()
+        let languages : NSArray = langman!.supportedLanguages() as NSArray
         for l in languages
         {
-            let lang : WPLanguage = langman.languageIDFromLanguageCode(Int32(l.integerValue))
-            if language == langman.languageName(lang)
+            let lang : WPLanguage = langman!.languageID(fromLanguageCode:(l as! Int32))
+            if language == langman?.languageName(lang)
             {
-                NSUserDefaults.standardUserDefaults().setInteger(Int(lang.rawValue), forKey: kGeneralOptionsCurrentLanguage)
+                UserDefaults.standard.set(Int(lang.rawValue), forKey: kGeneralOptionsCurrentLanguage)
             }
         }
-        recognizer.enable()
-        recognizer.setMode( mode )
+        recognizer?.enable()
+        recognizer?.setMode( mode! )
         textView.becomeFirstResponder()
     }
     
-    override func viewDidAppear(animated: Bool)
+    override func viewDidAppear(_ animated: Bool)
     {
         super.viewDidAppear( animated )
         textView.becomeFirstResponder()
     }
     
-    @IBAction func options( sender: UIBarButtonItem )
+    @IBAction func options( _ sender: UIBarButtonItem )
     {
-        let viewController = OptionsViewController( style: UITableViewStyle.Grouped )
+        let viewController = OptionsViewController( style: UITableViewStyle.grouped )
         
         let navigationContoller = UINavigationController(rootViewController: viewController)
-        navigationContoller.modalPresentationStyle = UIModalPresentationStyle.FormSheet
-        navigationContoller.modalTransitionStyle = UIModalTransitionStyle.CrossDissolve
+        navigationContoller.modalPresentationStyle = UIModalPresentationStyle.formSheet
+        navigationContoller.modalTransitionStyle = UIModalTransitionStyle.crossDissolve
         
-        self.presentViewController( navigationContoller, animated: true ) { () -> Void in
+        self.present( navigationContoller, animated: true ) { () -> Void in
             
         }
     }
     
-    @IBAction func selectInput(sender: UISegmentedControl)
+    @IBAction func selectInput(_ sender: UISegmentedControl)
     {
         var inputSystem : InputSystem = InputSystem_InputPanel;
         switch self.input.selectedSegmentIndex
@@ -237,56 +237,56 @@ class ViewController: UIViewController, UITextViewDelegate, LanguageSelectorDele
         }
         self.textView.setInputMethod(inputSystem)
         self.suggestionsHeight.constant = (inputSystem == InputSystem_Keyboard) ? 0.0 : SuggestionsView.getHeight()
-        UIView.animateWithDuration( 0.3 ) { () -> Void in
+        UIView.animate( withDuration: 0.3, animations: { () -> Void in
             self.view.layoutIfNeeded()
-        }
+        } ) 
     }
     
-    @objc func reloadOptions( notification: NSNotification )
+    @objc func reloadOptions( _ notification: Notification )
     {
-        let recognizer = RecognizerManager.sharedManager()
-        let mode = recognizer.getMode()
-        recognizer.disable( true )
-        recognizer.enable()
-        recognizer.setMode( mode )
+        let recognizer = RecognizerManager.shared()
+        let mode = recognizer?.getMode()
+        recognizer?.disable( true )
+        recognizer?.enable()
+        recognizer?.setMode( mode! )
         self.textView.reloadOptions()
         textView.becomeFirstResponder()
     }
     
-    @objc func keyboardWillShow(notification: NSNotification)
+    @objc func keyboardWillShow(_ notification: Notification)
     {
-        let info : NSDictionary = notification.userInfo!
-        let kbFrame : NSValue = info.objectForKey( UIKeyboardFrameEndUserInfoKey ) as! NSValue
-        let animationDuration : NSNumber = info.objectForKey( UIKeyboardAnimationDurationUserInfoKey ) as! NSNumber
-        let keyboardFrame : CGRect = kbFrame.CGRectValue()
-        let duration : NSTimeInterval = animationDuration.doubleValue
+        let info : NSDictionary = notification.userInfo! as NSDictionary
+        let kbFrame : NSValue = info.object( forKey: UIKeyboardFrameEndUserInfoKey ) as! NSValue
+        let animationDuration : NSNumber = info.object( forKey: UIKeyboardAnimationDurationUserInfoKey ) as! NSNumber
+        let keyboardFrame : CGRect = kbFrame.cgRectValue
+        let duration : TimeInterval = animationDuration.doubleValue
         
         let height = keyboardFrame.size.height
         self.keyboardHeight.constant = -height;
         
         self.view.setNeedsUpdateConstraints()
         
-        UIView.animateWithDuration(duration) { () -> Void in
+        UIView.animate(withDuration: duration, animations: { () -> Void in
             self.view.layoutIfNeeded()
-        }
+        }) 
     }
     
 
-    @objc func keyboardWillHide(notification: NSNotification)
+    @objc func keyboardWillHide(_ notification: Notification)
     {
-        let info : NSDictionary = notification.userInfo!
-        let animationDuration : NSNumber = info.objectForKey( UIKeyboardAnimationDurationUserInfoKey ) as! NSNumber
-        let duration : NSTimeInterval = animationDuration.doubleValue
+        let info : NSDictionary = notification.userInfo! as NSDictionary
+        let animationDuration : NSNumber = info.object( forKey: UIKeyboardAnimationDurationUserInfoKey ) as! NSNumber
+        let duration : TimeInterval = animationDuration.doubleValue
         
         self.keyboardHeight.constant = 0;
         self.view.setNeedsUpdateConstraints()
         
-        UIView.animateWithDuration(duration) { () -> Void in
+        UIView.animate(withDuration: duration, animations: { () -> Void in
             self.view.layoutIfNeeded()
-        }
+        }) 
     }
     
-    @objc func keyboardDidShow(notification: NSNotification)
+    @objc func keyboardDidShow(_ notification: Notification)
     {
         textView.scrollToVisible()
     }
@@ -298,7 +298,7 @@ class ViewController: UIViewController, UITextViewDelegate, LanguageSelectorDele
         // Dispose of any resources that can be recreated.
     }
 
-    func textViewShouldBeginEditing(textView: UITextView) -> Bool
+    func textViewShouldBeginEditing(_ textView: UITextView) -> Bool
     {
         // textView.becomeFirstResponder()
         return true
@@ -306,7 +306,7 @@ class ViewController: UIViewController, UITextViewDelegate, LanguageSelectorDele
     
     deinit
     {
-        NSNotificationCenter.defaultCenter().removeObserver( self )
+        NotificationCenter.default.removeObserver( self )
     }
 }
 

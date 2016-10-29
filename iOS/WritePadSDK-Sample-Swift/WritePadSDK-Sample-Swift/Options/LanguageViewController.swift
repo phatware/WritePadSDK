@@ -48,7 +48,7 @@ import UIKit
 
 protocol LanguageSelectorDelegate
 {
-    func languageSelected( language : String )
+    func languageSelected( _ language : String )
 }
 
 class LanguageViewController: UITableViewController
@@ -70,13 +70,13 @@ class LanguageViewController: UITableViewController
 
         if self.showDone == true
         {
-            self.navigationItem.leftBarButtonItem = UIBarButtonItem(barButtonSystemItem: UIBarButtonSystemItem.Cancel, target: self, action: "CancelButton:")
+            self.navigationItem.leftBarButtonItem = UIBarButtonItem(barButtonSystemItem: UIBarButtonSystemItem.cancel, target: self, action: #selector(LanguageViewController.CancelButton(_:)))
         }
     }
     
-    @objc func CancelButton( sender : UIBarButtonItem )
+    @objc func CancelButton( _ sender : UIBarButtonItem )
     {
-        self.dismissViewControllerAnimated( true, completion: { () -> Void in
+        self.dismiss( animated: true, completion: { () -> Void in
             
         })        
     }
@@ -89,28 +89,28 @@ class LanguageViewController: UITableViewController
 
     // MARK: - Table view data source
 
-    override func numberOfSectionsInTableView(tableView: UITableView) -> Int
+    override func numberOfSections(in tableView: UITableView) -> Int
     {
         return 1
     }
 
-    override func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int
+    override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int
     {
         return self.languages.count
     }
 
 
-    override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell
+    override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell
     {
-        var cell : UITableViewCell? = tableView.dequeueReusableCellWithIdentifier("ID1092479864") as UITableViewCell?
+        var cell : UITableViewCell? = tableView.dequeueReusableCell(withIdentifier: "ID1092479864") as UITableViewCell?
         if cell == nil
         {
-            cell = UITableViewCell(style: UITableViewCellStyle.Default, reuseIdentifier: "ID1092479864")
+            cell = UITableViewCell(style: UITableViewCellStyle.default, reuseIdentifier: "ID1092479864")
         }
 
         // Configure the cell...
-        cell!.selectionStyle = UITableViewCellSelectionStyle.None
-        cell!.accessoryType = UITableViewCellAccessoryType.None
+        cell!.selectionStyle = UITableViewCellSelectionStyle.none
+        cell!.accessoryType = UITableViewCellAccessoryType.none
         
         let index = indexPath.row
         if index < self.languages.count
@@ -123,18 +123,18 @@ class LanguageViewController: UITableViewController
             {
                 if self.selectedLanguage == lang
                 {
-                    cell!.accessoryType = UITableViewCellAccessoryType.Checkmark
+                    cell!.accessoryType = UITableViewCellAccessoryType.checkmark
                 }
             }
             else if index == self.selectedIndex
             {
-                cell!.accessoryType = UITableViewCellAccessoryType.Checkmark
+                cell!.accessoryType = UITableViewCellAccessoryType.checkmark
             }
         }
         return cell!
     }
     
-    override func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath)
+    override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath)
     {
         let index = indexPath.row
         if index < self.languages.count
@@ -147,13 +147,13 @@ class LanguageViewController: UITableViewController
             
             if self.showDone == true
             {
-                self.dismissViewControllerAnimated( true, completion: { () -> Void in
+                self.dismiss( animated: true, completion: { () -> Void in
                     
                 })
             }
             else
             {
-                self.navigationController!.popToRootViewControllerAnimated(true)
+                self.navigationController!.popToRootViewController(animated: true)
             }
         }
     }

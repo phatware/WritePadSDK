@@ -1,4 +1,4 @@
-﻿/* ************************************************************************************* */
+/* ************************************************************************************* */
 /* *    PhatWare WritePad SDK                                                          * */
 /* *    Copyright (c) 2008-2015 PhatWare(r) Corp. All rights reserved.                 * */
 /* ************************************************************************************* */
@@ -43,10 +43,10 @@
  * ************************************************************************************* */
 
 using System;
-using System.Drawing;
-using MonoTouch.Foundation;
-using MonoTouch.UIKit;
-using MonoTouch.ObjCRuntime;
+using CoreGraphics;
+using Foundation;
+using UIKit;
+using ObjCRuntime;
 using BindingLibrary;
 
 namespace xamarin_sample
@@ -69,24 +69,24 @@ namespace xamarin_sample
 		{
 		}
 
-		public override int NumberOfSections (UITableView tableView)
+		public override nint NumberOfSections (UITableView tableView)
 		{
 			// return the actual number of sections
 			return 1;
 		}
 
-		public override int RowsInSection (UITableView tableview, int section)
+		public override nint RowsInSection (UITableView tableview, nint section)
 		{
 			// return the actual number of items in the section
 			return (int)WritePadOptions.kWritePadOptionsTotal;
 		}
 
-		public override string TitleForHeader (UITableView tableView, int section)
+		public override string TitleForHeader (UITableView tableView, nint section)
 		{
 			return null;
 		}
 
-		public override string TitleForFooter (UITableView tableView, int section)
+		public override string TitleForFooter (UITableView tableView, nint section)
 		{
 			return null;
 		}

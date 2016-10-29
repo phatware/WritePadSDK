@@ -43,9 +43,9 @@
  * ************************************************************************************* */
 
 using System;
-using System.Drawing;
-using MonoTouch.Foundation;
-using MonoTouch.UIKit;
+using CoreGraphics;
+using Foundation;
+using UIKit;
 using System.Collections.Generic;
 using BindingLibrary;
 
@@ -62,31 +62,31 @@ namespace xamarin_sample
 			this.values = values;
 		}
 
-		public override int GetComponentCount (UIPickerView picker)
+		public override nint GetComponentCount (UIPickerView picker)
 		{
 			return 1;
 		}
 
-		public override int GetRowsInComponent (UIPickerView picker, int component)
+		public override nint GetRowsInComponent (UIPickerView picker, nint component)
 		{
 			return values.Count;
 		}
 
-		public override string GetTitle (UIPickerView picker, int row, int component)
+		public override string GetTitle (UIPickerView picker, nint row, nint component)
 		{
-			return values[row].ToString ();
+			return values[(int)row].ToString ();
 		}
 
-		public override float GetRowHeight (UIPickerView picker, int component)
+		public override nfloat GetRowHeight (UIPickerView picker, nint component)
 		{
 			return 40f;
 		}
 
-		public override void Selected (UIPickerView picker, int row, int component)
+		public override void Selected (UIPickerView picker, nint row, nint component)
 		{
 			if (this.PickerChanged != null)
 			{
-				this.PickerChanged(this, new PickerChangedEventArgs{SelectedValue = values[row]});
+				this.PickerChanged(this, new PickerChangedEventArgs{SelectedValue = values[(int)row]});
 			}
 		}
 
@@ -127,23 +127,23 @@ namespace xamarin_sample
 
 		public override void WillRotate(UIInterfaceOrientation toInterfaceOrientation, double duration)
 		{
-			float height = View.Frame.Height;
-			float width = View.Frame.Width;
+			float height = (float)View.Frame.Height;
+			float width = (float)View.Frame.Width;
 			if (toInterfaceOrientation == UIInterfaceOrientation.LandscapeLeft || toInterfaceOrientation == UIInterfaceOrientation.LandscapeRight) 
 			{
-				width = View.Frame.Height;
-				height = View.Frame.Width;
+				width = (float)View.Frame.Height;
+				height = (float)View.Frame.Width;
 			}
-			inkView.Frame = new RectangleF (button_gap, header_height + height/4 + button_gap, width - button_gap * 2, height - bottom_gap - button_gap - (height/4) - header_height - button_gap);
-			recognizedText.Frame = new RectangleF(button_gap, header_height, width - button_gap * 2, height/4);
+			inkView.Frame = new CGRect (button_gap, header_height + height/4 + button_gap, width - button_gap * 2, height - bottom_gap - button_gap - (height/4) - header_height - button_gap);
+			recognizedText.Frame = new CGRect(button_gap, header_height, width - button_gap * 2, height/4);
 			float x = (width - (button_width * 4 + button_gap * 3))/2;
-			recognizeAllButton.Frame = new RectangleF (x, height - bottom_gap, button_width, button_height);
+			recognizeAllButton.Frame = new CGRect (x, height - bottom_gap, button_width, button_height);
 			x += (button_gap + button_width);
-			clearButton.Frame = new RectangleF(x, height - bottom_gap, button_width, button_height);
+			clearButton.Frame = new CGRect(x, height - bottom_gap, button_width, button_height);
 			x += (button_gap + button_width);
-			languageButton.Frame = new RectangleF(x, height - bottom_gap, button_width, button_height);
+			languageButton.Frame = new CGRect(x, height - bottom_gap, button_width, button_height);
 			x += (button_gap + button_width);
-			optionsButton.Frame = new RectangleF(x, height - bottom_gap, button_width, button_height);
+			optionsButton.Frame = new CGRect(x, height - bottom_gap, button_width, button_height);
 		}
 
 		public override void DidReceiveMemoryWarning ()
@@ -165,19 +165,19 @@ namespace xamarin_sample
 		{
 			base.ViewDidLoad ();
 			UIInterfaceOrientation orientation = UIApplication.SharedApplication.StatusBarOrientation;
-			float width = View.Frame.Width;
+			float width = (float)View.Frame.Width;
 
-			float height = View.Frame.Height;
+			float height = (float)View.Frame.Height;
 			if (orientation == UIInterfaceOrientation.LandscapeLeft || orientation == UIInterfaceOrientation.LandscapeRight) 
 			{
-				width = View.Frame.Height;
-				height = View.Frame.Width;
+				width = (float)View.Frame.Height;
+				height = (float)View.Frame.Width;
 			}
 
-			recognizedTextLabel = new UILabel (new RectangleF(button_gap, 30, width, 20));
+			recognizedTextLabel = new UILabel (new CGRect(button_gap, 30, width, 20));
 			recognizedTextLabel.Text = "Recognized Text:";
 			View.Add (recognizedTextLabel);
-			recognizedText = new UITextView (new RectangleF (button_gap, header_height, width - button_gap * 2, height/4));
+			recognizedText = new UITextView (new CGRect (button_gap, header_height, width - button_gap * 2, height/4));
 			recognizedText.Editable = false;
 			recognizedText.Font = UIFont.FromName ("Courier", 18);
 			recognizedText.Text = "";
@@ -185,7 +185,7 @@ namespace xamarin_sample
 			recognizedText.TextColor = UIColor.White;
 			View.Add (recognizedText);
 			inkView = new InkView ();
-			inkView.Frame = new RectangleF (button_gap, header_height + height/4 + button_gap, width - button_gap * 2, height - bottom_gap - (height/4) - header_height - button_gap);
+			inkView.Frame = new CGRect (button_gap, header_height + height/4 + button_gap, width - button_gap * 2, height - bottom_gap - (height/4) - header_height - button_gap);
 			inkView.ContentMode = UIViewContentMode.Redraw;
 			View.Add (inkView);
 
@@ -195,7 +195,7 @@ namespace xamarin_sample
 
 			float x = (width - (button_width * 4 + button_gap * 3))/2;
 			recognizeAllButton = new UIButton (UIButtonType.Custom);
-			recognizeAllButton.Frame = new RectangleF (x, height - bottom_gap, button_width, button_height);
+			recognizeAllButton.Frame = new CGRect (x, height - bottom_gap, button_width, button_height);
 			recognizeAllButton.SetTitle("Recognize", UIControlState.Normal);
 			recognizeAllButton.Font = UIFont.SystemFontOfSize( button_font_size );
 			recognizeAllButton.SetTitleColor (UIColor.Blue, UIControlState.Normal);
@@ -207,7 +207,7 @@ namespace xamarin_sample
 			View.Add (recognizeAllButton);
 			x += (button_gap + button_width);
 			clearButton = new UIButton (UIButtonType.Custom);
-			clearButton.Frame = new RectangleF (x, height - bottom_gap, button_width, button_height);
+			clearButton.Frame = new CGRect (x, height - bottom_gap, button_width, button_height);
 			clearButton.SetTitle("Clear", UIControlState.Normal);
 			clearButton.Font = UIFont.SystemFontOfSize( button_font_size );
 			clearButton.SetTitleColor (UIColor.Blue, UIControlState.Normal);
@@ -220,7 +220,7 @@ namespace xamarin_sample
 
 			x += (button_gap + button_width);
 			languageButton = new UIButton (UIButtonType.Custom);
-			languageButton.Frame = new RectangleF (x , height - bottom_gap, button_width, button_height);
+			languageButton.Frame = new CGRect (x , height - bottom_gap, button_width, button_height);
 			languageButton.SetTitle("Language", UIControlState.Normal);
 			languageButton.Font = UIFont.SystemFontOfSize( button_font_size );
 			languageButton.SetTitleColor (UIColor.Blue, UIControlState.Normal);
@@ -287,7 +287,7 @@ namespace xamarin_sample
 
 			x += (button_gap + button_width);
 			optionsButton = new UIButton (UIButtonType.Custom);
-			optionsButton.Frame = new RectangleF (x, height - bottom_gap, button_width, button_height);
+			optionsButton.Frame = new CGRect (x, height - bottom_gap, button_width, button_height);
 			optionsButton.SetTitle("Options", UIControlState.Normal);
 			optionsButton.Font = UIFont.SystemFontOfSize( button_font_size );
 			optionsButton.SetTitleColor (UIColor.Blue, UIControlState.Normal);

@@ -159,6 +159,8 @@ You can use the sample source code in your project when integrating with WritePa
 The sample source code is provided "AS-IS" without any warranties. For more information, see the 
 license and warranty disclaimer at the beginning of each source file.
 
+![alt tag](https://github.com/phatware/WritePadSDK/blob/master/Documentation/images/WritePad-Windows.png)
+
 ## Compiling the sample project (Xamarin)
 
 -   **WritePadSDKiOSSample** sample project is included with the SDK. This is a universal app, which 

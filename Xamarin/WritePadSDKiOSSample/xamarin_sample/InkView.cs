@@ -1,4 +1,4 @@
-﻿/* ************************************************************************************* */
+/* ************************************************************************************* */
 /* *    PhatWare WritePad SDK                                                          * */
 /* *    Copyright (c) 2008-2016 PhatWare(r) Corp. All rights reserved.                 * */
 /* ************************************************************************************* */
@@ -45,9 +45,8 @@
 using System;
 using System.Collections.Generic;
 using System.Linq;
-using MonoTouch.UIKit;
-using System.Drawing;
-using MonoTouch.CoreGraphics;
+using UIKit;
+using CoreGraphics;
 using BindingLibrary;
 
 namespace xamarin_sample
@@ -169,7 +168,7 @@ namespace xamarin_sample
 			mCurrStroke = -1;
 		}
 
-		public override void Draw(RectangleF rect)
+		public override void Draw(CGRect rect)
 		{
 			base.Draw (rect); 
 			using (CGContext g = UIGraphics.GetCurrentContext ()) 
@@ -180,8 +179,8 @@ namespace xamarin_sample
 				UIColor.Red.SetStroke ();
 				for ( float y = GRID_GAP; y < rect.Height; y += GRID_GAP )
 				{
-					path.MoveTo( new PointF( 0, y ) );
-					path.AddLineTo( new PointF( rect.Width, y ) );
+					path.MoveTo( new CGPoint( 0, y ) );
+					path.AddLineTo( new CGPoint( rect.Width, y ) );
 					path.Stroke();
 				}
 
@@ -204,16 +203,16 @@ namespace xamarin_sample
 			currentStroke.Add (point);
 		}
 
-		public override void TouchesBegan (MonoTouch.Foundation.NSSet touches, UIEvent evt)
+		public override void TouchesBegan (Foundation.NSSet touches, UIEvent evt)
 		{
 			base.TouchesBegan (touches, evt);
 			currentStroke = new List<WritePadAPI.CGTracePoint> ();
 			UITouch touch = (UITouch)touches.AnyObject;
 			var location = touch.LocationInView (this);
 			mPath.RemoveAllPoints ();
-			mPath.MoveTo(new PointF(location.X, location.Y));
-			mX = location.X;
-			mY = location.Y;
+			mPath.MoveTo(new CGPoint(location.X, location.Y));
+			mX = (float)location.X;
+			mY = (float)location.Y;
 			AddCurrentPoint (mX, mY);
 			mMoved = false;
 			strokeLen = 0;
@@ -221,31 +220,31 @@ namespace xamarin_sample
 			AddPixelsXY( mX, mY, false );
 		}
 
-		public override void TouchesMoved (MonoTouch.Foundation.NSSet touches, UIEvent evt)
+		public override void TouchesMoved (Foundation.NSSet touches, UIEvent evt)
 		{
 			base.TouchesMoved (touches, evt);
 			UITouch touch = (UITouch)touches.AnyObject;
 			var location = touch.LocationInView (this);
 
-			float dx = Math.Abs(location.X - mX);
-			float dy = Math.Abs(location.Y - mY);
+			float dx = (float)Math.Abs(location.X - mX);
+			float dy = (float)Math.Abs(location.Y - mY);
 			if (dx >= TOUCH_TOLERANCE || dy >= TOUCH_TOLERANCE)
 			{
-				mPath.AddQuadCurveToPoint(new PointF((location.X + mX) / 2f, (location.Y + mY) / 2f), new PointF(mX, mY));
+				mPath.AddQuadCurveToPoint(new CGPoint((location.X + mX) / 2f, (location.Y + mY) / 2f), new CGPoint(mX, mY));
 				mMoved = true;
-				mX = location.X;
-				mY = location.Y;
+				mX = (float)location.X;
+				mY = (float)location.Y;
 				AddPixelsXY( mX, mY, false );
 			}
 			this.SetNeedsDisplay ();
 		}
 
-		public override void TouchesCancelled (MonoTouch.Foundation.NSSet touches, UIEvent evt)
+		public override void TouchesCancelled (Foundation.NSSet touches, UIEvent evt)
 		{
 			base.TouchesCancelled (touches, evt);
 		}
 
-		public override void TouchesEnded (MonoTouch.Foundation.NSSet touches, UIEvent evt)
+		public override void TouchesEnded (Foundation.NSSet touches, UIEvent evt)
 		{
 			base.TouchesEnded (touches, evt);
 			var gesture = WritePadAPI.detectGesture (WritePadAPI.GEST_CUT | WritePadAPI.GEST_RETURN, currentStroke);
@@ -257,7 +256,7 @@ namespace xamarin_sample
 			mMoved = false;
 			strokeLen = 0;
 
-			mPath.AddLineTo(new PointF(mX, mY));
+			mPath.AddLineTo(new CGPoint(mX, mY));
 			mPathList.Add(mPath);
 			mPath = new UIBezierPath ();
 			mPath.LineWidth = WritePadAPI.DEFAULT_INK_WIDTH;

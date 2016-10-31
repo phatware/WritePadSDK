@@ -48,7 +48,7 @@ import UIKit
 
 protocol EditWordItemDelegate
 {
-     func updateWordListItem( itemView : EditWordItemViewController )
+     func updateWordListItem( _ itemView : EditWordItemViewController )
 }
 
 class EditWordItemViewController: UITableViewController, UITextFieldDelegate
@@ -62,19 +62,19 @@ class EditWordItemViewController: UITableViewController, UITextFieldDelegate
     enum EditWordListSection : Int
     {
         // recognizer
-        case FromWord_Section = 0
-        case ToWord_Section = 1
-        case Options_Section = 2
-        case Total_Sections = 3
+        case fromWord_Section = 0
+        case toWord_Section = 1
+        case options_Section = 2
+        case total_Sections = 3
     }
 
     enum EditWordFlagsRow : Int
     {
         // recognizer
-        case IgnoreCase_Row = 0
-        case Always_Row = 1
-        case Disable_Row = 2
-        case Total_Rows = 3
+        case ignoreCase_Row = 0
+        case always_Row = 1
+        case disable_Row = 2
+        case total_Rows = 3
     }
     
     var toWordField : UITextField? = nil
@@ -83,13 +83,13 @@ class EditWordItemViewController: UITableViewController, UITextFieldDelegate
     override init(style: UITableViewStyle)
     {
         super.init(style: style)
-        self.toWordField = createTextField( EditWordListSection.ToWord_Section.rawValue )
+        self.toWordField = createTextField( EditWordListSection.toWord_Section.rawValue )
         self.toWordField!.placeholder = "Corrected Word"
-        self.fromWordField = createTextField( EditWordListSection.FromWord_Section.rawValue )
+        self.fromWordField = createTextField( EditWordListSection.fromWord_Section.rawValue )
         self.fromWordField!.placeholder = "Misspelled Word"
     }
 
-    required override init(nibName nibNameOrNil: String?, bundle nibBundleOrNil: NSBundle?)
+    required override init(nibName nibNameOrNil: String?, bundle nibBundleOrNil: Bundle?)
     {
         super.init(nibName: nibNameOrNil, bundle: nibBundleOrNil)
     }
@@ -112,53 +112,53 @@ class EditWordItemViewController: UITableViewController, UITextFieldDelegate
         self.title = "Edit Word Correction"
     }
 
-    override func viewWillDisappear(animated: Bool)
+    override func viewWillDisappear(_ animated: Bool)
     {
         super.viewWillDisappear( animated )
         
-        if (self.delegate != nil && self.fromWordField!.text!.lengthOfBytesUsingEncoding( NSUTF8StringEncoding ) > 0
-            && self.toWordField!.text!.lengthOfBytesUsingEncoding( NSUTF8StringEncoding ) > 0)
+        if (self.delegate != nil && self.fromWordField!.text!.lengthOfBytes( using: String.Encoding.utf8 ) > 0
+            && self.toWordField!.text!.lengthOfBytes( using: String.Encoding.utf8 ) > 0)
         {
             self.delegate!.updateWordListItem( self )
         }
     }
     
-    func createTextField( tag : Int ) -> UITextField
+    func createTextField( _ tag : Int ) -> UITextField
     {
         let frame : CGRect = CGRect(x: 0.0, y: 0.0, width: kTextFieldWidth, height: kTextFieldHeight)
         let returnTextField : UITextField = UITextField(frame: frame)
         
-        returnTextField.borderStyle = UITextBorderStyle.RoundedRect
-        returnTextField.font = UIFont.systemFontOfSize( 18.0 )
-        returnTextField.backgroundColor = UIColor.whiteColor()
-        returnTextField.autocorrectionType = UITextAutocorrectionType.No	// no auto correction support
-        returnTextField.autocapitalizationType = UITextAutocapitalizationType.None
-        returnTextField.autoresizingMask = UIViewAutoresizing.FlexibleWidth
+        returnTextField.borderStyle = UITextBorderStyle.roundedRect
+        returnTextField.font = UIFont.systemFont( ofSize: 18.0 )
+        returnTextField.backgroundColor = UIColor.white
+        returnTextField.autocorrectionType = UITextAutocorrectionType.no	// no auto correction support
+        returnTextField.autocapitalizationType = UITextAutocapitalizationType.none
+        returnTextField.autoresizingMask = UIViewAutoresizing.flexibleWidth
         returnTextField.delegate = self
-        returnTextField.borderStyle = UITextBorderStyle.None
-        returnTextField.keyboardType = UIKeyboardType.Default
-        returnTextField.returnKeyType = UIReturnKeyType.Done
+        returnTextField.borderStyle = UITextBorderStyle.none
+        returnTextField.keyboardType = UIKeyboardType.default
+        returnTextField.returnKeyType = UIReturnKeyType.done
         returnTextField.tag = tag
-        returnTextField.clearButtonMode = UITextFieldViewMode.WhileEditing // has a clear 'x' button to the right
+        returnTextField.clearButtonMode = UITextFieldViewMode.whileEditing // has a clear 'x' button to the right
         
         return returnTextField
     }
 
-    func createSwitch( on : Bool, tag: Int ) -> UISwitch
+    func createSwitch( _ on : Bool, tag: Int ) -> UISwitch
     {
         let sw : UISwitch = UISwitch()
-        sw.addTarget(self, action: "switchAction:", forControlEvents: UIControlEvents.ValueChanged )
-        sw.on = on;
+        sw.addTarget(self, action: #selector(EditWordItemViewController.switchAction(_:)), for: UIControlEvents.valueChanged )
+        sw.isOn = on;
         sw.tag = tag;
         return sw
     }
     
-    @objc func switchAction( sender : UISwitch )
+    @objc func switchAction( _ sender : UISwitch )
     {
         switch sender.tag
         {
-        case EditWordFlagsRow.IgnoreCase_Row.rawValue :
-            if sender.on
+        case EditWordFlagsRow.ignoreCase_Row.rawValue :
+            if sender.isOn
             {
                 flags |= WCF_IGNORECASE;
             }
@@ -168,8 +168,8 @@ class EditWordItemViewController: UITableViewController, UITextFieldDelegate
             }
             break
             
-        case EditWordFlagsRow.Disable_Row.rawValue :
-            if sender.on
+        case EditWordFlagsRow.disable_Row.rawValue :
+            if sender.isOn
             {
                 flags |= WCF_DISABLED;
             }
@@ -179,8 +179,8 @@ class EditWordItemViewController: UITableViewController, UITextFieldDelegate
             }
             break
             
-        case EditWordFlagsRow.Always_Row.rawValue :
-            if sender.on
+        case EditWordFlagsRow.always_Row.rawValue :
+            if sender.isOn
             {
                 flags |= WCF_ALWAYS;
             }
@@ -203,65 +203,64 @@ class EditWordItemViewController: UITableViewController, UITextFieldDelegate
 
     // MARK: - Table view data source
 
-    override func numberOfSectionsInTableView(tableView: UITableView) -> Int
+    override func numberOfSections(in tableView: UITableView) -> Int
     {
-        return EditWordListSection.Total_Sections.rawValue
+        return EditWordListSection.total_Sections.rawValue
     }
 
-    override func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int
+    override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int
     {
-        if section == EditWordListSection.Options_Section.rawValue
+        if section == EditWordListSection.options_Section.rawValue
         {
-            return EditWordFlagsRow.Total_Rows.rawValue
+            return EditWordFlagsRow.total_Rows.rawValue
         }
         return 1
     }
 
-    override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell
+    override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell
     {
         var cell : UITableViewCell? = nil
         switch indexPath.section
         {
-        case EditWordListSection.FromWord_Section.rawValue,
-                    EditWordListSection.ToWord_Section.rawValue
+        case EditWordListSection.fromWord_Section.rawValue,
+                    EditWordListSection.toWord_Section.rawValue
                     where indexPath.row == 0 :
-            indexPath.section == 0
-            cell = tableView.dequeueReusableCellWithIdentifier("ID1092378783") as UITableViewCell?
+            cell = tableView.dequeueReusableCell(withIdentifier: "ID1092378783") as UITableViewCell?
             if cell == nil
             {
-                cell = UITableViewCell(style: UITableViewCellStyle.Default, reuseIdentifier: "ID1092378783")
+                cell = UITableViewCell(style: UITableViewCellStyle.default, reuseIdentifier: "ID1092378783")
             }
-            cell!.selectionStyle = UITableViewCellSelectionStyle.None
+            cell!.selectionStyle = UITableViewCellSelectionStyle.none
             // newWordField!.text = "";
             cell!.contentView.autoresizesSubviews = true
             var frame = cell!.contentView.bounds
             frame.origin.x = wordEditLeftOffset
             frame.size.width -= (2.0 * wordEditLeftOffset)
-            let editField : UITextField! = (indexPath.section == EditWordListSection.FromWord_Section.rawValue)
+            let editField : UITextField! = (indexPath.section == EditWordListSection.fromWord_Section.rawValue)
                 ? fromWordField! : toWordField!
             editField.frame =  frame
             cell!.addSubview( editField! )
             cell!.accessoryView = editField
             
-        case EditWordListSection.Options_Section.rawValue :
-            cell = tableView.dequeueReusableCellWithIdentifier("ID1092479864") as UITableViewCell?
+        case EditWordListSection.options_Section.rawValue :
+            cell = tableView.dequeueReusableCell(withIdentifier: "ID1092479864") as UITableViewCell?
             if cell == nil
             {
-                cell = UITableViewCell(style: UITableViewCellStyle.Default, reuseIdentifier: "ID1092479864")
+                cell = UITableViewCell(style: UITableViewCellStyle.default, reuseIdentifier: "ID1092479864")
             }
-            cell!.selectionStyle = UITableViewCellSelectionStyle.None
-            cell!.accessoryType = UITableViewCellAccessoryType.None
+            cell!.selectionStyle = UITableViewCellSelectionStyle.none
+            cell!.accessoryType = UITableViewCellAccessoryType.none
             switch indexPath.row
             {
-            case EditWordFlagsRow.IgnoreCase_Row.rawValue :
+            case EditWordFlagsRow.ignoreCase_Row.rawValue :
                 cell!.accessoryView = createSwitch( (0 != (flags & WCF_IGNORECASE)), tag:indexPath.row )
                 cell!.textLabel!.text = "Ignore Case"
 
-            case EditWordFlagsRow.Always_Row.rawValue :
+            case EditWordFlagsRow.always_Row.rawValue :
                 cell!.accessoryView = createSwitch( (0 != (flags & WCF_ALWAYS)), tag:indexPath.row )
                 cell!.textLabel!.text = "Always Replace"
 
-            case EditWordFlagsRow.Disable_Row.rawValue :
+            case EditWordFlagsRow.disable_Row.rawValue :
                 cell!.accessoryView = createSwitch( (0 != (flags & WCF_DISABLED)), tag:indexPath.row )
                 cell!.textLabel!.text = "Disabled"
                 
@@ -275,24 +274,24 @@ class EditWordItemViewController: UITableViewController, UITextFieldDelegate
         return cell!
     }
     
-    override func tableView(tableView: UITableView, willDisplayCell cell: UITableViewCell, forRowAtIndexPath indexPath: NSIndexPath)
+    override func tableView(_ tableView: UITableView, willDisplay cell: UITableViewCell, forRowAt indexPath: IndexPath)
     {
-        cell.separatorInset = UIEdgeInsetsZero
-        cell.layoutMargins = UIEdgeInsetsZero
+        cell.separatorInset = UIEdgeInsets.zero
+        cell.layoutMargins = UIEdgeInsets.zero
     }
     
     override func viewDidLayoutSubviews()
     {
-        self.tableView.separatorInset = UIEdgeInsetsZero
-        self.tableView.layoutMargins = UIEdgeInsetsZero
+        self.tableView.separatorInset = UIEdgeInsets.zero
+        self.tableView.layoutMargins = UIEdgeInsets.zero
     }
 
-    func textFieldShouldBeginEditing(textField: UITextField) -> Bool
+    func textFieldShouldBeginEditing(_ textField: UITextField) -> Bool
     {
         return true
     }
     
-    func textFieldShouldReturn(textField: UITextField) -> Bool
+    func textFieldShouldReturn(_ textField: UITextField) -> Bool
     {
         textField.resignFirstResponder()
         return true

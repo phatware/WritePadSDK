@@ -1,4 +1,4 @@
-﻿/* ************************************************************************************* */
+/* ************************************************************************************* */
 /* *    PhatWare WritePad SDK                                                          * */
 /* *    Copyright (c) 2008-2015 PhatWare(r) Corp. All rights reserved.                 * */
 /* ************************************************************************************* */
@@ -43,9 +43,9 @@
  * ************************************************************************************* */
 
 using System;
-using System.Drawing;
-using MonoTouch.Foundation;
-using MonoTouch.UIKit;
+using CoreGraphics;
+using Foundation;
+using UIKit;
 
 namespace xamarin_sample
 {

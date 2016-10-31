@@ -43,15 +43,15 @@ touch enabled mobile devices. The SDK includes:
     Portuguese (Brazilian and European), Norwegian, Finish, Swedish, and Spanish**.
     Engine is compatible with the user-specified platform. 
 -   **iOS**: WritePad SDK static library supports iOS 6.0 or later. The sample code is for iOS
-    9 or later and requires Xcode 7.0 or later.
+    10 (Swift 3) or later and requires Xcode 8.1 or later.
 -   **Android**: WritePad SDK static libraries support Android 4.0 or later for arm64-v8a, armeabi, armeabi-v7a, 
     mips, mips64, x86, and x86_64 CPUs. 
 -   **Windows**: WritePad SDK DLLs for Windows and Windows Phone (x86, x64, and ARM CPUs), metro-style 
     (Windows/Windows Phone 8.1+), and desktop C# WPF sample (Windows 10+, .NET framework 4.6). Sample
     code requires Visual Studio 2015 Community Edition or higher.
 -   **Xamarin (Android and iOS)**: WritePad SDK static libraries support Android 4.0 or later for arm64-v8a, armeabi, armeabi-v7a, 
-    mips, mips64, x86, and x86_64 CPUs and static library supports iOS 6.0 or later. Samples for Android and iOS.
-    Requires Xamarin Studio 5.0 or later Indie or Business edition.
+    mips, mips64, x86, and x86_64 CPUs and static library supports iOS 9.0 or later. Sample code is provided for Android and iOS.
+    Requires Xamarin Studio 6.1 or later Indie or Business edition.
 -   Header files with definition of API calls and structures
 -   Developer's Guide in PDF
 -   Sample source code that demonstrates how to use the WritePad SDK
@@ -134,12 +134,16 @@ WritePad SDK. The sample source code is provided “AS-IS” without any
 warranties. For more information, see the license and warranty
 disclaimer at the beginning of each source file.
 
+![alt tag](https://github.com/phatware/WritePadSDK/blob/master/Documentation/images/Xcode-iOS.png)
+
 ## Compiling the sample project (Android)
 
--   Start Android Studio 1.1 or later
+-   Start Android Studio 2.2 or later
 -   Choose *Open an existing Android Studio project* and naviage to **\<sdk_path\>/Android/sample_astudio** folder
 -   Choose Build/Make Project menu command
 -   Run sample app on device or emulator
+
+![alt tag](https://github.com/phatware/WritePadSDK/blob/master/Documentation/images/Android-Studio.png)
 
 ## Compiling the sample project (Windows)
 
@@ -155,6 +159,8 @@ You can use the sample source code in your project when integrating with WritePa
 The sample source code is provided "AS-IS" without any warranties. For more information, see the 
 license and warranty disclaimer at the beginning of each source file.
 
+![alt tag](https://github.com/phatware/WritePadSDK/blob/master/Documentation/images/WritePad-Windows.png)
+
 ## Compiling the sample project (Xamarin)
 
 -   **WritePadSDKiOSSample** sample project is included with the SDK. This is a universal app, which 
@@ -165,7 +171,9 @@ license and warranty disclaimer at the beginning of each source file.
     2.	Build the project and execute on the device or emulator.
     3.	When application starts, write one or more words in the selected language (English is set by default) 
         horizontally on the yellow pad, and then press the Recognize button to convert to text. You can also 
-        use the Return gesture (see documentation for description of gestures).  
+        use the Return gesture (see documentation for description of gestures).
+
+![alt tag](https://github.com/phatware/WritePadSDK/blob/master/Documentation/images/Xamarin-iOS.png)
 
 -   **WritePadSDKAndroidSample** sample project for Android OS is also included with the SDK.
  

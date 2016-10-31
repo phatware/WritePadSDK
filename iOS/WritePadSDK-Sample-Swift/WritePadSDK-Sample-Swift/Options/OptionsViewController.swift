@@ -52,21 +52,21 @@ class OptionsViewController: UITableViewController, LanguageSelectorDelegate
     enum RecognizerSettings : Int
     {
         // recognizer
-        case Language_Section = 0
-        case ShapeSelector_Section = 1
-        case UseCorrector_Section = 2
-        case UseUserDict_Section = 3
-        case UseLearner_Section = 4
-        case DetectNewLine_Section = 5
-        case Autospace_Section = 6
-        case SeparateLetters_Section = 7
-        case SingleWord_Section = 8
+        case language_Section = 0
+        case shapeSelector_Section = 1
+        case useCorrector_Section = 2
+        case useUserDict_Section = 3
+        case useLearner_Section = 4
+        case detectNewLine_Section = 5
+        case autospace_Section = 6
+        case separateLetters_Section = 7
+        case singleWord_Section = 8
         // dictionary
-        case OnlyDictWords_Section = 9
+        case onlyDictWords_Section = 9
         // ink Collector
-        case InsertResult_Section = 10
+        case insertResult_Section = 10
         // total
-        case Total_Sections = 11
+        case total_Sections = 11
     };
 
 
@@ -78,58 +78,58 @@ class OptionsViewController: UITableViewController, LanguageSelectorDelegate
         // Uncomment the following line to preserve selection between presentations
         // self.clearsSelectionOnViewWillAppear = false
 
-        self.navigationItem.leftBarButtonItem = UIBarButtonItem(barButtonSystemItem: UIBarButtonSystemItem.Done, target: self, action: "DoneButton:")
+        self.navigationItem.leftBarButtonItem = UIBarButtonItem(barButtonSystemItem: UIBarButtonSystemItem.done, target: self, action: #selector(OptionsViewController.DoneButton(_:)))
     }
     
-    func createSwitch( on : Bool, tag: Int ) -> UISwitch
+    func createSwitch( _ on : Bool, tag: Int ) -> UISwitch
     {
         let sw : UISwitch = UISwitch()
-        sw.addTarget(self, action: "switchAction:", forControlEvents: UIControlEvents.ValueChanged )
-        sw.on = on;
+        sw.addTarget(self, action: #selector(OptionsViewController.switchAction(_:)), for: UIControlEvents.valueChanged )
+        sw.isOn = on;
         sw.tag = tag;
         return sw
     }
 
-    @objc func DoneButton( sender : UIBarButtonItem )
+    @objc func DoneButton( _ sender : UIBarButtonItem )
     {
-        self.dismissViewControllerAnimated( true, completion: { () -> Void in
-            let notifications = NSNotificationCenter.defaultCenter()
-            notifications.postNotificationName(EDITCTL_RELOAD_OPTIONS, object: nil)
+        self.dismiss( animated: true, completion: { () -> Void in
+            let notifications = NotificationCenter.default
+            notifications.post(name: Notification.Name(rawValue: EDITCTL_RELOAD_OPTIONS), object: nil)
         })
     }
 
-    @objc func switchAction( sender : UISwitch )
+    @objc func switchAction( _ sender : UISwitch )
     {
-        let def = NSUserDefaults.standardUserDefaults()
+        let def = UserDefaults.standard
         
         switch sender.tag
         {
-            case RecognizerSettings.UseLearner_Section.rawValue :
-                def.setBool(sender.on, forKey: kRecoOptionsUseLearner)
+            case RecognizerSettings.useLearner_Section.rawValue :
+                def.set(sender.isOn, forKey: kRecoOptionsUseLearner)
             
-            case RecognizerSettings.UseCorrector_Section.rawValue :
-                def.setBool(sender.on, forKey: kRecoOptionsUseCorrector)
+            case RecognizerSettings.useCorrector_Section.rawValue :
+                def.set(sender.isOn, forKey: kRecoOptionsUseCorrector)
             
-            case RecognizerSettings.DetectNewLine_Section.rawValue :
-                def.setBool(sender.on, forKey: kRecoOptionsDetectNewLine)
+            case RecognizerSettings.detectNewLine_Section.rawValue :
+                def.set(sender.isOn, forKey: kRecoOptionsDetectNewLine)
             
-            case RecognizerSettings.Autospace_Section.rawValue :
-                def.setBool(sender.on, forKey: kEditOptionsAutospace)
+            case RecognizerSettings.autospace_Section.rawValue :
+                def.set(sender.isOn, forKey: kEditOptionsAutospace)
             
-            case RecognizerSettings.SeparateLetters_Section.rawValue :
-                def.setBool(sender.on, forKey: kRecoOptionsSeparateLetters)
+            case RecognizerSettings.separateLetters_Section.rawValue :
+                def.set(sender.isOn, forKey: kRecoOptionsSeparateLetters)
             
-            case RecognizerSettings.OnlyDictWords_Section.rawValue  :
-                def.setBool(sender.on, forKey: kRecoOptionsDictOnly)
+            case RecognizerSettings.onlyDictWords_Section.rawValue  :
+                def.set(sender.isOn, forKey: kRecoOptionsDictOnly)
             
-            case RecognizerSettings.UseUserDict_Section.rawValue :
-                def.setBool(sender.on, forKey: kRecoOptionsUseUserDict)
+            case RecognizerSettings.useUserDict_Section.rawValue :
+                def.set(sender.isOn, forKey: kRecoOptionsUseUserDict)
             
-            case RecognizerSettings.InsertResult_Section.rawValue :
-                def.setBool(sender.on, forKey: kRecoOptionsInsertResult)
+            case RecognizerSettings.insertResult_Section.rawValue :
+                def.set(sender.isOn, forKey: kRecoOptionsInsertResult)
             
-            case RecognizerSettings.SingleWord_Section.rawValue :
-                def.setBool(sender.on, forKey: kRecoOptionsSingleWordOnly)
+            case RecognizerSettings.singleWord_Section.rawValue :
+                def.set(sender.isOn, forKey: kRecoOptionsSingleWordOnly)
             
             default :
                 break
@@ -157,45 +157,45 @@ class OptionsViewController: UITableViewController, LanguageSelectorDelegate
     
     func selectLanguage()
     {
-        let langman = LanguageManager.sharedManager()
-        let viewController = LanguageViewController( style: UITableViewStyle.Plain )
+        let langman = LanguageManager.shared()
+        let viewController = LanguageViewController( style: UITableViewStyle.plain )
         viewController.delegate = self
         
-        let languages : NSArray = langman.supportedLanguages()
+        let languages : NSArray = langman!.supportedLanguages() as NSArray
         // var arrLanguages : [[String:UIImage]] = []
         var arrLanguages : Dictionary<String,UIImage> = [String:UIImage](minimumCapacity: languages.count)
         
         for l in languages
         {
-            let lang : WPLanguage = langman.languageIDFromLanguageCode(Int32(l.integerValue))
-            arrLanguages.updateValue(langman.languageImageForLanguageID(lang),
-                forKey: langman.languageName(lang))
-            if langman.currentLanguage.rawValue == lang.rawValue
+            let lang : WPLanguage = langman!.languageID(fromLanguageCode:(l as! Int32))
+            arrLanguages.updateValue((langman?.languageImage(forLanguageID: lang))!,
+                forKey: (langman?.languageName(lang))!)
+            if langman?.currentLanguage.rawValue == lang.rawValue
             {
-                viewController.selectedLanguage = langman.languageName(lang)
+                viewController.selectedLanguage = langman?.languageName(lang)
             }
         }
         viewController.languages = arrLanguages
         self.navigationController!.pushViewController(viewController, animated: true )
     }
     
-    func languageSelected( language : String )
+    func languageSelected( _ language : String )
     {
-        let recognizer = RecognizerManager.sharedManager()
-        let mode = recognizer.getMode()
-        recognizer.disable( true )
-        let langman = LanguageManager.sharedManager()
-        let languages : NSArray = langman.supportedLanguages()
+        let recognizer = RecognizerManager.shared()
+        let mode = recognizer?.getMode()
+        recognizer?.disable( true )
+        let langman : LanguageManager = LanguageManager.shared()
+        let languages : NSArray = langman.supportedLanguages() as NSArray
         for l in languages
         {
-            let lang : WPLanguage = langman.languageIDFromLanguageCode(Int32(l.integerValue))
+            let lang : WPLanguage = langman.languageID(fromLanguageCode:(l as! Int32))
             if language == langman.languageName(lang)
             {
-                NSUserDefaults.standardUserDefaults().setInteger(Int(lang.rawValue), forKey: kGeneralOptionsCurrentLanguage)
+                UserDefaults.standard.set(Int(lang.rawValue), forKey: kGeneralOptionsCurrentLanguage)
             }
         }
-        recognizer.enable()
-        recognizer.setMode( mode )
+        recognizer?.enable()
+        recognizer?.setMode( mode! )
         self.tableView.reloadData()
     }
 
@@ -208,95 +208,95 @@ class OptionsViewController: UITableViewController, LanguageSelectorDelegate
 
     // MARK: - Table view data source
 
-    override func numberOfSectionsInTableView(tableView: UITableView) -> Int
+    override func numberOfSections(in tableView: UITableView) -> Int
     {
-        return RecognizerSettings.Total_Sections.rawValue
+        return RecognizerSettings.total_Sections.rawValue
     }
 
-    override func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int
+    override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int
     {
-        if (section == RecognizerSettings.UseUserDict_Section.rawValue ||
-            section == RecognizerSettings.UseCorrector_Section.rawValue)
+        if (section == RecognizerSettings.useUserDict_Section.rawValue ||
+            section == RecognizerSettings.useCorrector_Section.rawValue)
         {
             return 2
         }
         return 1
     }
 
-    override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell
+    override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell
     {
-        var cell : UITableViewCell? = tableView.dequeueReusableCellWithIdentifier("ID1092868641") as UITableViewCell?
+        var cell : UITableViewCell? = tableView.dequeueReusableCell(withIdentifier: "ID1092868641") as UITableViewCell?
         if cell == nil
         {
-            cell = UITableViewCell(style: UITableViewCellStyle.Default, reuseIdentifier: "ID1092868641")
+            cell = UITableViewCell(style: UITableViewCellStyle.default, reuseIdentifier: "ID1092868641")
         }
         
         // Configure the cell...
-        cell!.selectionStyle = UITableViewCellSelectionStyle.None
-        cell!.accessoryType = UITableViewCellAccessoryType.None
+        cell!.selectionStyle = UITableViewCellSelectionStyle.none
+        cell!.accessoryType = UITableViewCellAccessoryType.none
         
-        let def = NSUserDefaults.standardUserDefaults()
+        let def = UserDefaults.standard
         
         switch indexPath.section
         {
-            case RecognizerSettings.ShapeSelector_Section.rawValue where indexPath.row == 0 :
+            case RecognizerSettings.shapeSelector_Section.rawValue where indexPath.row == 0 :
                 cell!.accessoryView = nil
-                cell!.accessoryType = UITableViewCellAccessoryType.DisclosureIndicator
-                cell!.selectionStyle = UITableViewCellSelectionStyle.Default
+                cell!.accessoryType = UITableViewCellAccessoryType.disclosureIndicator
+                cell!.selectionStyle = UITableViewCellSelectionStyle.default
                 cell!.textLabel!.text = "Letter Shapes"
 
-            case RecognizerSettings.Language_Section.rawValue where indexPath.row == 0 :
+            case RecognizerSettings.language_Section.rawValue where indexPath.row == 0 :
                 cell!.accessoryView = nil
-                cell!.accessoryType = UITableViewCellAccessoryType.DisclosureIndicator
-                cell!.selectionStyle = UITableViewCellSelectionStyle.Default
-                cell!.textLabel!.text = "Language: " + LanguageManager.sharedManager().languageName(WPLanguageUnknown)
+                cell!.accessoryType = UITableViewCellAccessoryType.disclosureIndicator
+                cell!.selectionStyle = UITableViewCellSelectionStyle.default
+                cell!.textLabel!.text = "Language: " + LanguageManager.shared().languageName(WPLanguageUnknown)
             
-            case RecognizerSettings.UseLearner_Section.rawValue where indexPath.row == 0 :
-                cell!.accessoryView = createSwitch( def.boolForKey(kRecoOptionsUseLearner) , tag: indexPath.section )
+            case RecognizerSettings.useLearner_Section.rawValue where indexPath.row == 0 :
+                cell!.accessoryView = createSwitch( def.bool(forKey: kRecoOptionsUseLearner) , tag: indexPath.section )
                 cell!.textLabel!.text = "Use Learner"
             
-            case RecognizerSettings.UseCorrector_Section.rawValue where indexPath.row == 0 :
-                cell!.accessoryView = createSwitch( def.boolForKey(kRecoOptionsUseCorrector) , tag: indexPath.section )
+            case RecognizerSettings.useCorrector_Section.rawValue where indexPath.row == 0 :
+                cell!.accessoryView = createSwitch( def.bool(forKey: kRecoOptionsUseCorrector) , tag: indexPath.section )
                 cell!.textLabel!.text = "Autocorrector"
             
-            case RecognizerSettings.UseCorrector_Section.rawValue where indexPath.row == 1 :
+            case RecognizerSettings.useCorrector_Section.rawValue where indexPath.row == 1 :
                 cell!.accessoryView = nil
-                cell!.accessoryType = UITableViewCellAccessoryType.DisclosureIndicator
-                cell!.selectionStyle = UITableViewCellSelectionStyle.Default
+                cell!.accessoryType = UITableViewCellAccessoryType.disclosureIndicator
+                cell!.selectionStyle = UITableViewCellSelectionStyle.default
                 cell!.textLabel!.text = "Autocorrector Word List"
 
-            case RecognizerSettings.DetectNewLine_Section.rawValue where indexPath.row == 0 :
-                cell!.accessoryView = createSwitch( def.boolForKey(kRecoOptionsDetectNewLine) , tag: indexPath.section )
+            case RecognizerSettings.detectNewLine_Section.rawValue where indexPath.row == 0 :
+                cell!.accessoryView = createSwitch( def.bool(forKey: kRecoOptionsDetectNewLine) , tag: indexPath.section )
                 cell!.textLabel!.text = "Detect New Line"
             
-            case RecognizerSettings.Autospace_Section.rawValue where indexPath.row == 0 :
-                cell!.accessoryView = createSwitch( def.boolForKey(kEditOptionsAutospace) , tag: indexPath.section )
+            case RecognizerSettings.autospace_Section.rawValue where indexPath.row == 0 :
+                cell!.accessoryView = createSwitch( def.bool(forKey: kEditOptionsAutospace) , tag: indexPath.section )
                 cell!.textLabel!.text = "Add Space"
             
-            case RecognizerSettings.SeparateLetters_Section.rawValue where indexPath.row == 0 :
-                cell!.accessoryView = createSwitch( def.boolForKey(kRecoOptionsSeparateLetters) , tag: indexPath.section )
+            case RecognizerSettings.separateLetters_Section.rawValue where indexPath.row == 0 :
+                cell!.accessoryView = createSwitch( def.bool(forKey: kRecoOptionsSeparateLetters) , tag: indexPath.section )
                 cell!.textLabel!.text = "Separate Letters"
             
-            case RecognizerSettings.OnlyDictWords_Section.rawValue where indexPath.row == 0 :
-                cell!.accessoryView = createSwitch( def.boolForKey(kRecoOptionsDictOnly) , tag: indexPath.section )
+            case RecognizerSettings.onlyDictWords_Section.rawValue where indexPath.row == 0 :
+                cell!.accessoryView = createSwitch( def.bool(forKey: kRecoOptionsDictOnly) , tag: indexPath.section )
                 cell!.textLabel!.text = "Separate Letters"
             
-            case RecognizerSettings.UseUserDict_Section.rawValue where indexPath.row == 0 :
-                cell!.accessoryView = createSwitch( def.boolForKey(kRecoOptionsUseUserDict) , tag: indexPath.section )
+            case RecognizerSettings.useUserDict_Section.rawValue where indexPath.row == 0 :
+                cell!.accessoryView = createSwitch( def.bool(forKey: kRecoOptionsUseUserDict) , tag: indexPath.section )
                 cell!.textLabel!.text = "User Dictionary"
             
-            case RecognizerSettings.UseUserDict_Section.rawValue where indexPath.row == 1 :
+            case RecognizerSettings.useUserDict_Section.rawValue where indexPath.row == 1 :
                 cell!.accessoryView = nil
-                cell!.accessoryType = UITableViewCellAccessoryType.DisclosureIndicator
-                cell!.selectionStyle = UITableViewCellSelectionStyle.Default
+                cell!.accessoryType = UITableViewCellAccessoryType.disclosureIndicator
+                cell!.selectionStyle = UITableViewCellSelectionStyle.default
                 cell!.textLabel!.text = "Edit User Dictionary"
 
-            case RecognizerSettings.InsertResult_Section.rawValue where indexPath.row == 0 :
-                cell!.accessoryView = createSwitch( def.boolForKey(kRecoOptionsInsertResult) , tag: indexPath.section )
+            case RecognizerSettings.insertResult_Section.rawValue where indexPath.row == 0 :
+                cell!.accessoryView = createSwitch( def.bool(forKey: kRecoOptionsInsertResult) , tag: indexPath.section )
                 cell!.textLabel!.text = "Continuous Writing"
             
-            case RecognizerSettings.SingleWord_Section.rawValue where indexPath.row == 0 :
-                cell!.accessoryView = createSwitch( def.boolForKey(kRecoOptionsSingleWordOnly) , tag: indexPath.section )
+            case RecognizerSettings.singleWord_Section.rawValue where indexPath.row == 0 :
+                cell!.accessoryView = createSwitch( def.bool(forKey: kRecoOptionsSingleWordOnly) , tag: indexPath.section )
                 cell!.textLabel!.text = "Single Word Only"
             
             default :
@@ -306,25 +306,25 @@ class OptionsViewController: UITableViewController, LanguageSelectorDelegate
         return cell!
     }
     
-    override func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath)
+    override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath)
     {
         switch indexPath.section
         {
-            case RecognizerSettings.ShapeSelector_Section.rawValue where indexPath.row == 0 :
+            case RecognizerSettings.shapeSelector_Section.rawValue where indexPath.row == 0 :
                 letterShapes()
             
-            case RecognizerSettings.Language_Section.rawValue where indexPath.row == 0 :
+            case RecognizerSettings.language_Section.rawValue where indexPath.row == 0 :
                 selectLanguage()
 
-            case RecognizerSettings.UseUserDict_Section.rawValue where indexPath.row == 1 :
+            case RecognizerSettings.useUserDict_Section.rawValue where indexPath.row == 1 :
                 userDictionary()
             
-            case RecognizerSettings.UseCorrector_Section.rawValue where indexPath.row == 1 :
+            case RecognizerSettings.useCorrector_Section.rawValue where indexPath.row == 1 :
                 wordList()
                 
             default :
                 break
         }
-        tableView.deselectRowAtIndexPath( indexPath, animated: true)
+        tableView.deselectRow( at: indexPath, animated: true)
     }
 }

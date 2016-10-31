@@ -45,6 +45,19 @@
 * ************************************************************************************* */
 
 import UIKit
+// FIXME: comparison operators with optionals were removed from the Swift Standard Libary.
+// Consider refactoring the code to use the non-optional operators.
+fileprivate func < <T : Comparable>(lhs: T?, rhs: T?) -> Bool {
+  switch (lhs, rhs) {
+  case let (l?, r?):
+    return l < r
+  case (nil, _?):
+    return true
+  default:
+    return false
+  }
+}
+
 
 class WordListViewController: UITableViewController, EditWordItemDelegate
 {
@@ -59,45 +72,46 @@ class WordListViewController: UITableViewController, EditWordItemDelegate
         // self.clearsSelectionOnViewWillAppear = false
 
         // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
-        self.navigationItem.rightBarButtonItem = UIBarButtonItem(barButtonSystemItem: UIBarButtonSystemItem.Add, target: self, action: "AddButton:")
+        self.navigationItem.rightBarButtonItem = UIBarButtonItem(barButtonSystemItem: UIBarButtonSystemItem.add, target: self, action: #selector(WordListViewController.AddButton(_:)))
         self.tableView.autoresizesSubviews = true
-        self.tableView.separatorInset = UIEdgeInsetsZero
+        self.tableView.separatorInset = UIEdgeInsets.zero
         self.title = "Corrector Word List"
         
-        wordList = RecognizerManager.sharedManager().getCorrectorWordList()!
+        wordList = RecognizerManager.shared().getCorrectorWordList()!
     }
     
-    override func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath)
+    override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath)
     {
-        let viewController = EditWordItemViewController(style: UITableViewStyle.Grouped)
-        let item : NSDictionary? = wordList![indexPath.row] as? NSDictionary
+        let viewController = EditWordItemViewController(style: UITableViewStyle.grouped)
+        if let item : NSDictionary = wordList![indexPath.row] as? NSDictionary {
         
-        viewController.newItem = false
-        viewController.fromWordField!.text = (item!.objectForKey( ackeyWordFrom ) as? String)!
-        viewController.toWordField!.text = (item!.objectForKey( ackeyWordTo ) as? String)!
-        viewController.flags = (item!.objectForKey( ackeyFlags )!.intValue as Int32)
-        viewController.delegate = self
-        viewController.itemIndex = indexPath.row
-        self.navigationController!.pushViewController(viewController, animated: true )
-        
-        tableView.deselectRowAtIndexPath(indexPath, animated: true)
+            viewController.newItem = false
+            viewController.fromWordField!.text = (item[ackeyWordFrom] as? String) ?? ""
+            viewController.toWordField!.text = (item[ackeyWordTo] as? String) ?? ""
+            viewController.flags = ((item[ackeyFlags] as! NSNumber).int32Value as Int32)
+            viewController.delegate = self
+            viewController.itemIndex = indexPath.row
+            self.navigationController!.pushViewController(viewController, animated: true )
+            
+            tableView.deselectRow(at: indexPath, animated: true)
+        }
     }
     
-    func updateWordListItem( itemView : EditWordItemViewController )
+    func updateWordListItem( _ itemView : EditWordItemViewController )
     {
         modified = true
         
         let newWord : NSDictionary = [ ackeyWordFrom : itemView.fromWordField!.text!,
             ackeyWordTo : itemView.toWordField!.text!,
-            ackeyFlags  : NSNumber(int: itemView.flags) ]
+            ackeyFlags  : NSNumber(value: itemView.flags as Int32) ]
        
         if itemView.newItem
         {
-            wordList!.insertObject(newWord as NSDictionary, atIndex: 0)
+            wordList!.insert(newWord as NSDictionary, at: 0)
         }
         else
         {
-            wordList!.replaceObjectAtIndex( itemView.itemIndex, withObject: newWord as NSDictionary)
+            wordList!.replaceObject( at: itemView.itemIndex, with: newWord as NSDictionary)
         }
         self.tableView.reloadData()
     }
@@ -108,29 +122,29 @@ class WordListViewController: UITableViewController, EditWordItemDelegate
         self.tableView.reloadData()
     }
     
-    @objc func AddButton( sender : UIBarButtonItem )
+    @objc func AddButton( _ sender : UIBarButtonItem )
     {
-        let viewController = EditWordItemViewController(style: UITableViewStyle.Grouped)
+        let viewController = EditWordItemViewController(style: UITableViewStyle.grouped)
         viewController.newItem = true
         viewController.delegate = self
         viewController.flags = WCF_IGNORECASE | WCF_ALWAYS
         self.navigationController!.pushViewController(viewController, animated: true )
     }
     
-    override func viewWillAppear(animated: Bool)
+    override func viewWillAppear(_ animated: Bool)
     {
         super.viewWillAppear( animated )
 
         self.reloadWordList()
     }
     
-    override func viewWillDisappear(animated: Bool)
+    override func viewWillDisappear(_ animated: Bool)
     {
         super.viewWillDisappear( animated )
         
         if (wordList != nil && modified == true)
         {
-            RecognizerManager.sharedManager().newWordListFromWordList( wordList! as [AnyObject] )
+            RecognizerManager.shared().newWordList( fromWordList: wordList! as [AnyObject] )
         }
     }
     
@@ -142,12 +156,12 @@ class WordListViewController: UITableViewController, EditWordItemDelegate
 
     // MARK: - Table view data source
 
-    override func numberOfSectionsInTableView(tableView: UITableView) -> Int
+    override func numberOfSections(in tableView: UITableView) -> Int
     {
         return 1
     }
 
-    override func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int
+    override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int
     {
         if wordList == nil
         {
@@ -156,75 +170,75 @@ class WordListViewController: UITableViewController, EditWordItemDelegate
         return wordList!.count
     }
     
-    override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell
+    override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell
     {
         var cell : UITableViewCell? = nil
-        cell = tableView.dequeueReusableCellWithIdentifier("ID1092479864") as UITableViewCell?
+        cell = tableView.dequeueReusableCell(withIdentifier: "ID1092479864") as UITableViewCell?
         if cell == nil
         {
-            cell = UITableViewCell(style: UITableViewCellStyle.Default, reuseIdentifier: "ID1092479864")
+            cell = UITableViewCell(style: UITableViewCellStyle.default, reuseIdentifier: "ID1092479864")
         }
-        cell!.selectionStyle = UITableViewCellSelectionStyle.None
-        cell!.accessoryType = UITableViewCellAccessoryType.DisclosureIndicator
+        cell!.selectionStyle = UITableViewCellSelectionStyle.none
+        cell!.accessoryType = UITableViewCellAccessoryType.disclosureIndicator
 
         if indexPath.row < wordList?.count
         {
             let item : NSDictionary? = wordList![indexPath.row] as? NSDictionary
-            var text : String = (item!.objectForKey( ackeyWordFrom ) as? String)!
+            var text : String = (item!.object( forKey: ackeyWordFrom ) as? String)!
             text += "  ⇒  "
-            text += (item!.objectForKey( ackeyWordTo ) as? String)!
+            text += (item!.object( forKey: ackeyWordTo ) as? String)!
             cell!.textLabel!.text = text
         }
         return cell!
     }
     
-    override func tableView(tableView: UITableView, editingStyleForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCellEditingStyle
+    override func tableView(_ tableView: UITableView, editingStyleForRowAt indexPath: IndexPath) -> UITableViewCellEditingStyle
     {
         if (indexPath.section == 0 )
         {
-            return UITableViewCellEditingStyle.Delete
+            return UITableViewCellEditingStyle.delete
         }
-        return UITableViewCellEditingStyle.None
+        return UITableViewCellEditingStyle.none
     }
     
-    func textFieldShouldBeginEditing(textField: UITextField) -> Bool
+    func textFieldShouldBeginEditing(_ textField: UITextField) -> Bool
     {
-        return self.tableView.editing
+        return self.tableView.isEditing
     }
     
-    func textFieldShouldReturn(textField: UITextField) -> Bool
+    func textFieldShouldReturn(_ textField: UITextField) -> Bool
     {
         textField.resignFirstResponder()
         return true
     }
     
     // Override to support editing the table view.
-    override func tableView(tableView: UITableView, commitEditingStyle editingStyle: UITableViewCellEditingStyle, forRowAtIndexPath indexPath: NSIndexPath)
+    override func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCellEditingStyle, forRowAt indexPath: IndexPath)
     {
-        if (editingStyle == .Delete && indexPath.section == 0 && indexPath.row < wordList?.count)
+        if (editingStyle == .delete && indexPath.section == 0 && indexPath.row < wordList?.count)
         {
             // Delete the row from the data source
-            wordList!.removeObjectAtIndex(indexPath.row)
-            tableView.deleteRowsAtIndexPaths([indexPath], withRowAnimation: .Fade)
+            wordList!.removeObject(at: indexPath.row)
+            tableView.deleteRows(at: [indexPath], with: .fade)
             modified = true
         }
-        else if editingStyle == .Insert && indexPath.section == 0
+        else if editingStyle == .insert && indexPath.section == 0
         {
             // Create a new instance of the appropriate class, insert it into the array, and add a new row to the table view
             // addNewWord()
         }
     }
     
-    override func tableView(tableView: UITableView, willDisplayCell cell: UITableViewCell, forRowAtIndexPath indexPath: NSIndexPath)
+    override func tableView(_ tableView: UITableView, willDisplay cell: UITableViewCell, forRowAt indexPath: IndexPath)
     {
-        cell.separatorInset = UIEdgeInsetsZero
-        cell.layoutMargins = UIEdgeInsetsZero
+        cell.separatorInset = UIEdgeInsets.zero
+        cell.layoutMargins = UIEdgeInsets.zero
     }
     
     override func viewDidLayoutSubviews()
     {
-        self.tableView.separatorInset = UIEdgeInsetsZero
-        self.tableView.layoutMargins = UIEdgeInsetsZero
+        self.tableView.separatorInset = UIEdgeInsets.zero
+        self.tableView.layoutMargins = UIEdgeInsets.zero
     }
 }
 

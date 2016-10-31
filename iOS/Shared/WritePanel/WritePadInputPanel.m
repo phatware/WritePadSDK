@@ -545,7 +545,7 @@ NSString * str_info = nil;
 	}
 	
 	// check if the new stroke is before the marker and we have enough text already
-	CGRect	inkRect;
+	CGRect	inkRect = CGRectZero;
 	if ( _bAddStroke && inputPanel.showMarker && nStrokeCount > 0 && INK_GetDataRect( inkData, &inkRect, FALSE ) )
 	{		
 		CGFloat marker = [inputPanel getMarkerPosition];

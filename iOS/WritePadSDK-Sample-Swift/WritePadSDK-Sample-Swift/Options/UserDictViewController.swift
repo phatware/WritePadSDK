@@ -45,6 +45,19 @@
 * ************************************************************************************* */
 
 import UIKit
+// FIXME: comparison operators with optionals were removed from the Swift Standard Libary.
+// Consider refactoring the code to use the non-optional operators.
+fileprivate func < <T : Comparable>(lhs: T?, rhs: T?) -> Bool {
+  switch (lhs, rhs) {
+  case let (l?, r?):
+    return l < r
+  case (nil, _?):
+    return true
+  default:
+    return false
+  }
+}
+
 
 class UserDictViewController: UITableViewController, UITextFieldDelegate
 {
@@ -61,9 +74,9 @@ class UserDictViewController: UITableViewController, UITextFieldDelegate
         // self.clearsSelectionOnViewWillAppear = false
 
         // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
-        self.navigationItem.rightBarButtonItem = self.editButtonItem()
+        self.navigationItem.rightBarButtonItem = self.editButtonItem
         self.tableView.autoresizesSubviews = true
-        self.tableView.separatorInset = UIEdgeInsetsZero
+        self.tableView.separatorInset = UIEdgeInsets.zero
         self.title = "User Dictionary"
         self.newWordField = createTextField()
     }
@@ -73,32 +86,32 @@ class UserDictViewController: UITableViewController, UITextFieldDelegate
         let frame : CGRect = CGRect(x: 0.0, y: 0.0, width: kTextFieldWidth, height: kTextFieldHeight)
         let returnTextField : UITextField = UITextField(frame: frame)
     
-        returnTextField.borderStyle = UITextBorderStyle.RoundedRect
-        returnTextField.font = UIFont.systemFontOfSize( 18.0 )
+        returnTextField.borderStyle = UITextBorderStyle.roundedRect
+        returnTextField.font = UIFont.systemFont( ofSize: 18.0 )
         returnTextField.placeholder = "Enter New Word"
-        returnTextField.backgroundColor = UIColor.whiteColor()
-        returnTextField.autocorrectionType = UITextAutocorrectionType.No	// no auto correction support
-        returnTextField.autocapitalizationType = UITextAutocapitalizationType.None
-        returnTextField.autoresizingMask = UIViewAutoresizing.FlexibleWidth
+        returnTextField.backgroundColor = UIColor.white
+        returnTextField.autocorrectionType = UITextAutocorrectionType.no	// no auto correction support
+        returnTextField.autocapitalizationType = UITextAutocapitalizationType.none
+        returnTextField.autoresizingMask = UIViewAutoresizing.flexibleWidth
         returnTextField.delegate = self
-        returnTextField.borderStyle = UITextBorderStyle.None
-        returnTextField.keyboardType = UIKeyboardType.Default
-        returnTextField.returnKeyType = UIReturnKeyType.Done
-        returnTextField.clearButtonMode = UITextFieldViewMode.WhileEditing // has a clear 'x' button to the right
+        returnTextField.borderStyle = UITextBorderStyle.none
+        returnTextField.keyboardType = UIKeyboardType.default
+        returnTextField.returnKeyType = UIReturnKeyType.done
+        returnTextField.clearButtonMode = UITextFieldViewMode.whileEditing // has a clear 'x' button to the right
     
         return returnTextField
     }
     
     func addNewWord()
     {
-        if newWordField!.text!.lengthOfBytesUsingEncoding(NSUTF8StringEncoding) > 0
+        if newWordField!.text!.lengthOfBytes(using: String.Encoding.utf8) > 0
         {
             newWordField!.resignFirstResponder()
             let str : String = newWordField!.text!
-            let newWord = str.stringByReplacingOccurrencesOfString( " ", withString: "", options: NSStringCompareOptions.LiteralSearch, range: nil)
-            if newWord.lengthOfBytesUsingEncoding(NSUTF8StringEncoding) > 0
+            let newWord = str.replacingOccurrences( of: " ", with: "", options: NSString.CompareOptions.literal, range: nil)
+            if newWord.lengthOfBytes(using: String.Encoding.utf8) > 0
             {
-                userWords!.insertObject(newWord, atIndex: 0)
+                userWords!.insert(newWord, at: 0)
                 modified = true
                 tableView.reloadData()
             }
@@ -106,12 +119,12 @@ class UserDictViewController: UITableViewController, UITextFieldDelegate
         newWordField!.text = ""
     }
     
-    override func setEditing(editing: Bool, animated: Bool)
+    override func setEditing(_ editing: Bool, animated: Bool)
     {
         super.setEditing(editing, animated: animated)
         if editing == true
         {
-            tableView.insertSections( NSIndexSet(index: 0), withRowAnimation: UITableViewRowAnimation.Bottom)
+            tableView.insertSections( IndexSet(integer: 0), with: UITableViewRowAnimation.bottom)
             if self.newWordField != nil
             {
                 newWordField!.becomeFirstResponder()
@@ -119,7 +132,7 @@ class UserDictViewController: UITableViewController, UITextFieldDelegate
         }
         else
         {
-            tableView.deleteSections( NSIndexSet(index: 0), withRowAnimation: UITableViewRowAnimation.Top)
+            tableView.deleteSections( IndexSet(integer: 0), with: UITableViewRowAnimation.top)
             if self.newWordField != nil
             {
                 self.newWordField!.resignFirstResponder()
@@ -129,25 +142,25 @@ class UserDictViewController: UITableViewController, UITextFieldDelegate
         // self.tableView.reloadData()
     }
     
-    override func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath)
+    override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath)
     {
-        tableView.deselectRowAtIndexPath(indexPath, animated: true)
+        tableView.deselectRow(at: indexPath, animated: true)
     }
     
     func reloadDictionary()
     {
-        userWords = RecognizerManager.sharedManager().getUserWords()!
+        userWords = RecognizerManager.shared().getUserWords()!
         self.tableView.reloadData()
     }
     
-    override func viewWillAppear(animated: Bool)
+    override func viewWillAppear(_ animated: Bool)
     {
         super.viewWillAppear( animated )
         
         self.reloadDictionary()
     }
     
-    override func viewWillDisappear(animated: Bool)
+    override func viewWillDisappear(_ animated: Bool)
     {
         super.viewWillDisappear( animated )
         
@@ -158,7 +171,7 @@ class UserDictViewController: UITableViewController, UITextFieldDelegate
         }
         if (userWords != nil && modified == true)
         {
-            RecognizerManager.sharedManager().newUserDictFromWordList( userWords! as [AnyObject] )
+            RecognizerManager.shared().newUserDict( fromWordList: userWords! as [AnyObject] )
             modified = false
         }
     }
@@ -171,14 +184,14 @@ class UserDictViewController: UITableViewController, UITextFieldDelegate
 
     // MARK: - Table view data source
 
-    override func numberOfSectionsInTableView(tableView: UITableView) -> Int
+    override func numberOfSections(in tableView: UITableView) -> Int
     {
-        return tableView.editing == true ? 2 : 1
+        return tableView.isEditing == true ? 2 : 1
     }
 
-    override func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int
+    override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int
     {
-        if (tableView.editing == true && section == 0)
+        if (tableView.isEditing == true && section == 0)
         {
             return 1
         }
@@ -189,17 +202,17 @@ class UserDictViewController: UITableViewController, UITextFieldDelegate
         return userWords!.count
     }
     
-    override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell
+    override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell
     {
         var cell : UITableViewCell? = nil
-        if (tableView.editing == true && indexPath.section == 0)
+        if (tableView.isEditing == true && indexPath.section == 0)
         {
-            cell = tableView.dequeueReusableCellWithIdentifier("ID1092378783") as UITableViewCell?
+            cell = tableView.dequeueReusableCell(withIdentifier: "ID1092378783") as UITableViewCell?
             if cell == nil
             {
-                cell = UITableViewCell(style: UITableViewCellStyle.Default, reuseIdentifier: "ID1092378783")
+                cell = UITableViewCell(style: UITableViewCellStyle.default, reuseIdentifier: "ID1092378783")
             }
-            cell!.selectionStyle = UITableViewCellSelectionStyle.None
+            cell!.selectionStyle = UITableViewCellSelectionStyle.none
             // newWordField!.text = "";
             cell!.contentView.autoresizesSubviews = true
             var frame = cell!.contentView.bounds
@@ -212,70 +225,70 @@ class UserDictViewController: UITableViewController, UITextFieldDelegate
         }
         else if indexPath.row < userWords?.count
         {
-            cell = tableView.dequeueReusableCellWithIdentifier("ID1092479864") as UITableViewCell?
+            cell = tableView.dequeueReusableCell(withIdentifier: "ID1092479864") as UITableViewCell?
             if cell == nil
             {
-                cell = UITableViewCell(style: UITableViewCellStyle.Default, reuseIdentifier: "ID1092479864")
+                cell = UITableViewCell(style: UITableViewCellStyle.default, reuseIdentifier: "ID1092479864")
             }
-            cell!.selectionStyle = UITableViewCellSelectionStyle.None
-            cell!.accessoryType = UITableViewCellAccessoryType.None
+            cell!.selectionStyle = UITableViewCellSelectionStyle.none
+            cell!.accessoryType = UITableViewCellAccessoryType.none
             cell!.textLabel!.text = userWords![indexPath.row] as? String
         }
         return cell!
     }
     
-    override func tableView(tableView: UITableView, editingStyleForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCellEditingStyle
+    override func tableView(_ tableView: UITableView, editingStyleForRowAt indexPath: IndexPath) -> UITableViewCellEditingStyle
     {
-        if ( self.tableView.editing == true )
+        if ( self.tableView.isEditing == true )
         {
             if (indexPath.section == 0 )
             {
-                return UITableViewCellEditingStyle.Insert
+                return UITableViewCellEditingStyle.insert
             }
-            return UITableViewCellEditingStyle.Delete
+            return UITableViewCellEditingStyle.delete
         }
-        return UITableViewCellEditingStyle.None
+        return UITableViewCellEditingStyle.none
     }
     
     // Override to support editing the table view.
-    override func tableView(tableView: UITableView, commitEditingStyle editingStyle: UITableViewCellEditingStyle, forRowAtIndexPath indexPath: NSIndexPath)
+    override func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCellEditingStyle, forRowAt indexPath: IndexPath)
     {
-        if ( tableView.editing == false )
+        if ( tableView.isEditing == false )
         {
             return
         }
-        if (editingStyle == .Delete && indexPath.section == 1 && indexPath.row < userWords?.count)
+        if (editingStyle == .delete && indexPath.section == 1 && indexPath.row < userWords?.count)
         {
             // Delete the row from the data source
-            userWords!.removeObjectAtIndex(indexPath.row)
-            tableView.deleteRowsAtIndexPaths([indexPath], withRowAnimation: .Fade)
+            userWords!.removeObject(at: indexPath.row)
+            tableView.deleteRows(at: [indexPath], with: .fade)
             modified = true
         }
-        else if editingStyle == .Insert && indexPath.section == 0
+        else if editingStyle == .insert && indexPath.section == 0
         {
             // Create a new instance of the appropriate class, insert it into the array, and add a new row to the table view
             addNewWord()
         }
     }
     
-    override func tableView(tableView: UITableView, willDisplayCell cell: UITableViewCell, forRowAtIndexPath indexPath: NSIndexPath)
+    override func tableView(_ tableView: UITableView, willDisplay cell: UITableViewCell, forRowAt indexPath: IndexPath)
     {
-        cell.separatorInset = UIEdgeInsetsZero
-        cell.layoutMargins = UIEdgeInsetsZero
+        cell.separatorInset = UIEdgeInsets.zero
+        cell.layoutMargins = UIEdgeInsets.zero
     }
     
     override func viewDidLayoutSubviews()
     {
-        self.tableView.separatorInset = UIEdgeInsetsZero
-        self.tableView.layoutMargins = UIEdgeInsetsZero
+        self.tableView.separatorInset = UIEdgeInsets.zero
+        self.tableView.layoutMargins = UIEdgeInsets.zero
     }
 
-    func textFieldShouldBeginEditing(textField: UITextField) -> Bool
+    func textFieldShouldBeginEditing(_ textField: UITextField) -> Bool
     {
-        return self.tableView.editing
+        return self.tableView.isEditing
     }
     
-    func textFieldShouldReturn(textField: UITextField) -> Bool
+    func textFieldShouldReturn(_ textField: UITextField) -> Bool
     {
         textField.resignFirstResponder()
         return true

@@ -2,7 +2,7 @@ apply plugin: 'com.android.application'
 
 android {
     compileSdkVersion 19
-    buildToolsVersion "21.1.2"
+    buildToolsVersion '25.0.0'
     sourceSets.main.jni.srcDirs = []
     sourceSets.main.jniLibs.srcDirs = []
 
@@ -39,7 +39,18 @@ android {
     // TODO: to reduce jar size, replace APP_ABI=all with list list of CPUs you want to support
 
     task ndkBuild(type: Exec, description: 'Compile JNI source via NDK') {
-        def ndkDir = plugins.getPlugin('com.android.application').sdkHandler.getNdkFolder() // '/Android/android-ndk'
+
+        def ndkDir  // '/Android/android-ndk'
+        if (android.hasProperty('plugin')) {
+            if (android.plugin.hasProperty('sdkHandler')) {
+                ndkDir = android.plugin.sdkHandler.getNdkFolder()
+            } else {
+                ndkDir = android.plugin.ndkDirectory.absolutePath
+            }
+        } else {
+            ndkDir = android.ndkDirectory.absolutePath
+        }
+        // def ndkDir = plugins.getPlugin('com.android.application').sdkHandler.getNdkFolder()
         commandLine "$ndkDir/ndk-build", 'APP_ABI=all', 'APP_OPTIM=release',
                 'NDK_PROJECT_PATH=build',
                 'APP_BUILD_SCRIPT=src/main/jni/Android.mk'

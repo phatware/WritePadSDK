@@ -1150,7 +1150,7 @@ int EnumWordListCallback(const UCHR * szWordFrom, const UCHR * szWordTo, unsigne
 	if (status < 0) {
 		status = (*gJavaVM)->AttachCurrentThread(gJavaVM, &env, NULL);
 		if (status < 0) {
-			return;
+			return 0;
 		}
 		isAttached = 1;
 	}
@@ -1162,7 +1162,7 @@ int EnumWordListCallback(const UCHR * szWordFrom, const UCHR * szWordTo, unsigne
 		// __android_log_print(ANDROID_LOG_INFO, "callback_handler"," failed to get class reference");
 		if (isAttached == 1)
 			(*gJavaVM)->DetachCurrentThread(gJavaVM);
-		return;
+		return 0;
 	}
 	/* Find the callBack method ID */
 
@@ -1176,7 +1176,7 @@ int EnumWordListCallback(const UCHR * szWordFrom, const UCHR * szWordTo, unsigne
 		if (isAttached == 1) {
 			(*gJavaVM)->DetachCurrentThread(gJavaVM);
 		}
-		return;
+		return 0;
 	}
 
     jstring newWordFrom = StringToJstring(env, szWordFrom);
@@ -1204,7 +1204,7 @@ int EnumUserWordsCallback(const UCHR * szWord, void * pParam)
 		status = (*gJavaVM)->AttachCurrentThread(gJavaVM, &env, NULL);
 		if (status < 0) {
 			// __android_log_print(ANDROID_LOG_INFO, "callback_handler: failed to attach ", "current thread");
-			return;
+			return 0;
 		}
 		isAttached = 1;
 	}
@@ -1216,7 +1216,7 @@ int EnumUserWordsCallback(const UCHR * szWord, void * pParam)
 		// __android_log_print(ANDROID_LOG_INFO, "callback_handler"," failed to get class reference");
 		if (isAttached == 1)
 			(*gJavaVM)->DetachCurrentThread(gJavaVM);
-		return;
+		return 0;
 	}
 
 	if (method == NULL)
@@ -1229,7 +1229,7 @@ int EnumUserWordsCallback(const UCHR * szWord, void * pParam)
 		if (isAttached == 1) {
 			(*gJavaVM)->DetachCurrentThread(gJavaVM);
 		}
-		return;
+		return 0;
 	}
 
     jstring newWord = StringToJstring(env, szWord);

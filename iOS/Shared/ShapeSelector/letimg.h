@@ -1,6 +1,6 @@
 /* ************************************************************************************* */
 /* *    PhatWare WritePad SDK                                                          * */
-/* *    Copyright (c) 2008-2014 PhatWare(r) Corp. All rights reserved.                 * */
+/* *    Copyright (c) 2008-2017 PhatWare(r) Corp. All rights reserved.                 * */
 /* ************************************************************************************* */
 
 /* ************************************************************************************* *
@@ -45,7 +45,7 @@
 #ifndef __LETIMG_H
 #define __LETIMG_H
 
-#include "RecoTypes.h"
+#include "recotypes.h"
 #include "ligstate.h"
 
 #define LIError		(-1)

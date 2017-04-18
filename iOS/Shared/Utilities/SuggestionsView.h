@@ -1,6 +1,6 @@
 /* ************************************************************************************* */
 /* *    PhatWare WritePad SDK                                                          * */
-/* *    Copyright (c) 2008-2015 PhatWare(r) Corp. All rights reserved.                 * */
+/* *    Copyright (c) 2008-2017 PhatWare(r) Corp. All rights reserved.                 * */
 /* ************************************************************************************* */
 
 /* ************************************************************************************* *
@@ -43,7 +43,7 @@
  * ************************************************************************************* */
 
 #import <UIKit/UIKit.h>
-#import "RecognizerAPI.h"
+#import "RecognizerApi.h"
 #import "RecognizerWrapper.h"
 
 @protocol SuggestionsViewDelegate;

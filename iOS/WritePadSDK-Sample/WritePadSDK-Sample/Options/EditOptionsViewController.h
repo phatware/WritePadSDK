@@ -48,7 +48,8 @@
 enum EditSettingsTableSections
 {
 	// recognizer
-    kUIUseLanguage_Section = 0,
+    kUIVersion_Section = 0,
+    kUIUseLanguage_Section,
 	kUIUseLearner_Section,
 	kUIUseCorrector_Section,
     kUIDetectNewLine_Section,

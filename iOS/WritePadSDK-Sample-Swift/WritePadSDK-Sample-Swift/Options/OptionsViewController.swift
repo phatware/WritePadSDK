@@ -225,10 +225,10 @@ class OptionsViewController: UITableViewController, LanguageSelectorDelegate
 
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell
     {
-        var cell : UITableViewCell? = tableView.dequeueReusableCell(withIdentifier: "ID1092868641") as UITableViewCell?
+        var cell : UITableViewCell? = tableView.dequeueReusableCell(withIdentifier: "cellId1") as UITableViewCell?
         if cell == nil
         {
-            cell = UITableViewCell(style: UITableViewCellStyle.default, reuseIdentifier: "ID1092868641")
+            cell = UITableViewCell(style: UITableViewCellStyle.default, reuseIdentifier: "cellId1")
         }
         
         // Configure the cell...

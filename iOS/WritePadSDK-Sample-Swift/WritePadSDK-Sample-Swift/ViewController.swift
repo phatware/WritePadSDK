@@ -2,7 +2,7 @@
 /* *    PhatWare WritePad SDK                                                          * */
 /* *    ViewController.swift                                                           * */
 /* *    Created by Stanislav Miasnikov on 4/19/15                                      * */
-/* *    Copyright (c) 2008-2015 PhatWare(r) Corp. All rights reserved.                 * */
+/* *    Copyright (c) 2008-2017 PhatWare(r) Corp. All rights reserved.                 * */
 /* ************************************************************************************* */
 
 /* ************************************************************************************* *

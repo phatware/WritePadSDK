@@ -1,47 +1,33 @@
-/* ************************************************************************************* */
-/* *    PhatWare WritePad SDK                                                          * */
-/* *    Copyright (c) 2008-2014 PhatWare(r) Corp. All rights reserved.                 * */
-/* ************************************************************************************* */
-
-/* ************************************************************************************* *
+/***************************************************************************************
  *
- * File: recodefs.h
+ *  WRITEPAD(r): Handwriting Recognition Engine (HWRE) and components.
+ *  Copyright (c) 2001-2017 PhatWare (r) Corp. All rights reserved.
  *
- * Unauthorized distribution of this code is prohibited. For more information
- * refer to the End User Software License Agreement provided with this
- * software.
+ *  Licensing and other inquires: <developer@phatware.com>
+ *  Developer: Stan Miasnikov, et al. (c) PhatWare Corp. <http://www.phatware.com>
  *
- * This source code is distributed and supported by PhatWare Corp.
- * http://www.phatware.com
+ *  WRITEPAD HWRE is free software: you can redistribute it and/or modify
+ *  it under the terms of the GNU General Public License as published by
+ *  the Free Software Foundation, either version 3 of the License, or
+ *  (at your option) any later version.
  *
- * THIS SAMPLE CODE CAN BE USED  AS A REFERENCE AND, IN ITS BINARY FORM,
- * IN THE USER'S PROJECT WHICH IS INTEGRATED WITH THE WRITEPAD SDK.
- * ANY OTHER USE OF THIS CODE IS PROHIBITED.
+ *  THE MATERIAL EMBODIED ON THIS SOFTWARE IS PROVIDED TO YOU "AS-IS"
+ *  AND WITHOUT WARRANTY OF ANY KIND, EXPRESS, IMPLIED OR OTHERWISE,
+ *  INCLUDING WITHOUT LIMITATION, ANY WARRANTY OF MERCHANTABILITY OR
+ *  FITNESS FOR A PARTICULAR PURPOSE. IN NO EVENT SHALL PHATWARE CORP.
+ *  BE LIABLE TO YOU OR ANYONE ELSE FOR ANY DIRECT, SPECIAL, INCIDENTAL,
+ *  INDIRECT OR CONSEQUENTIAL DAMAGES OF ANY KIND, OR ANY DAMAGES WHATSOEVER,
+ *  INCLUDING WITHOUT LIMITATION, LOSS OF PROFIT, LOSS OF USE, SAVINGS
+ *  OR REVENUE, OR THE CLAIMS OF THIRD PARTIES, WHETHER OR NOT PHATWARE CORP.
+ *  HAS BEEN ADVISED OF THE POSSIBILITY OF SUCH LOSS, HOWEVER CAUSED AND ON
+ *  ANY THEORY OF LIABILITY, ARISING OUT OF OR IN CONNECTION WITH THE
+ *  POSSESSION, USE OR PERFORMANCE OF THIS SOFTWARE.
+ *  See the GNU General Public License for more details.
  *
- * THE MATERIAL EMBODIED ON THIS SOFTWARE IS PROVIDED TO YOU "AS-IS"
- * AND WITHOUT WARRANTY OF ANY KIND, EXPRESS, IMPLIED OR OTHERWISE,
- * INCLUDING WITHOUT LIMITATION, ANY WARRANTY OF MERCHANTABILITY OR
- * FITNESS FOR A PARTICULAR PURPOSE. IN NO EVENT SHALL PHATWARE CORP.
- * BE LIABLE TO YOU OR ANYONE ELSE FOR ANY DIRECT, SPECIAL, INCIDENTAL,
- * INDIRECT OR CONSEQUENTIAL DAMAGES OF ANY KIND, OR ANY DAMAGES WHATSOEVER,
- * INCLUDING WITHOUT LIMITATION, LOSS OF PROFIT, LOSS OF USE, SAVINGS
- * OR REVENUE, OR THE CLAIMS OF THIRD PARTIES, WHETHER OR NOT PHATWARE CORP.
- * HAS BEEN ADVISED OF THE POSSIBILITY OF SUCH LOSS, HOWEVER CAUSED AND ON
- * ANY THEORY OF LIABILITY, ARISING OUT OF OR IN CONNECTION WITH THE
- * POSSESSION, USE OR PERFORMANCE OF THIS SOFTWARE.
+ *  You should have received a copy of the GNU General Public License
+ *  along with WritePad.  If not, see <http://www.gnu.org/licenses/>.
  *
- * US Government Users Restricted Rights
- * Use, duplication, or disclosure by the Government is subject to
- * restrictions set forth in EULA and in FAR 52.227.19(c)(2) or subparagraph
- * (c)(1)(ii) of the Rights in Technical Data and Computer Software
- * clause at DFARS 252.227-7013 and/or in similar or successor
- * clauses in the FAR or the DOD or NASA FAR Supplement.
- * Unpublished-- rights reserved under the copyright laws of the
- * United States.  Contractor/manufacturer is PhatWare Corp.
- * 1314 S. Grand Blvd. Ste. 2-175 Spokane, WA 99202
- *
- * ************************************************************************************* */
-
+ **************************************************************************************/
 
 #ifndef __Reco_Defs_h__
 #define __Reco_Defs_h__

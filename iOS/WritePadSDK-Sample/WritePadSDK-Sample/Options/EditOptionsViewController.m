@@ -1,6 +1,6 @@
 /* ************************************************************************************* */
 /* *    PhatWare WritePad SDK                                                          * */
-/* *    Copyright (c) 1997-2015 PhatWare(r) Corp. All rights reserved.                 * */
+/* *    Copyright (c) 1997-2017 PhatWare(r) Corp. All rights reserved.                 * */
 /* ************************************************************************************* */
 
 /* ************************************************************************************* *
@@ -215,7 +215,7 @@ static NSString * kEditCell_ID = @"WMEditSectionEditSettingsID";
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
-	if ( section == kUIShapeSelector_Section || section == kUIUseLanguage_Section  )
+	if ( section == kUIShapeSelector_Section || section <= kUIUseLanguage_Section )
     {
 		return 1;
     }
@@ -276,10 +276,10 @@ static NSString * kEditCell_ID = @"WMEditSectionEditSettingsID";
 	if ( indexPath.section == kUIShapeSelector_Section ||
         indexPath.section == kUIUseLanguage_Section )
 	{
-		cell = [tableView dequeueReusableCellWithIdentifier:kEditCell_ID];
+		cell = [tableView dequeueReusableCellWithIdentifier:@"cellId1"];
 		if ( cell == nil )
 		{
-			cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:kEditCell_ID];
+			cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:@"cellId1"];
 		}
 		cell.accessoryType = UITableViewCellAccessoryDisclosureIndicator;
 		cell.selectionStyle = UITableViewCellSelectionStyleBlue;
@@ -296,6 +296,22 @@ static NSString * kEditCell_ID = @"WMEditSectionEditSettingsID";
         }
 		return cell;
 	}
+    else if ( indexPath.section == kUIVersion_Section )
+    {
+        cell = [tableView dequeueReusableCellWithIdentifier:@"cellId2"];
+        if ( cell == nil )
+        {
+            cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleValue1 reuseIdentifier:@"cellId2"];
+        }
+
+        cell.textLabel.text = NSLocalizedString( @"WritePad Version:", @"" );
+        const char * recoId = HWR_ID();
+        cell.detailTextLabel.text = [NSString stringWithCString:recoId encoding:NSASCIIStringEncoding];
+        cell.accessoryType = UITableViewCellAccessoryNone;
+        cell.selectionStyle = UITableViewCellSelectionStyleNone;
+        cell.detailTextLabel.textColor = [UIColor blueColor];
+        return cell;
+    }
 	
 	cell = [self obtainTableCellForTable:tableView withRow:row];
 	switch( indexPath.section )

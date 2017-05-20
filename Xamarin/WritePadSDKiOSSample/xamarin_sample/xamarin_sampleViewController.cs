@@ -107,12 +107,12 @@ namespace xamarin_sample
 		InkView inkView;
 		// OptionsViewControllerController optionsController;
 
-		private const float button_width = 80;
+		private const float button_width = 75;
 		private const float button_gap = 2;
 		private const float button_height = 36;
 		private const float bottom_gap = 40;
 		private const float header_height = 60;
-		private const float button_font_size = 15;
+		private const float button_font_size = 14;
 
 
 		static bool UserInterfaceIdiomIsPhone 
@@ -125,26 +125,26 @@ namespace xamarin_sample
 		{
 		}
 
-		public override void WillRotate(UIInterfaceOrientation toInterfaceOrientation, double duration)
-		{
-			float height = (float)View.Frame.Height;
-			float width = (float)View.Frame.Width;
-			if (toInterfaceOrientation == UIInterfaceOrientation.LandscapeLeft || toInterfaceOrientation == UIInterfaceOrientation.LandscapeRight) 
-			{
-				width = (float)View.Frame.Height;
-				height = (float)View.Frame.Width;
-			}
-			inkView.Frame = new CGRect (button_gap, header_height + height/4 + button_gap, width - button_gap * 2, height - bottom_gap - button_gap - (height/4) - header_height - button_gap);
-			recognizedText.Frame = new CGRect(button_gap, header_height, width - button_gap * 2, height/4);
-			float x = (width - (button_width * 4 + button_gap * 3))/2;
-			recognizeAllButton.Frame = new CGRect (x, height - bottom_gap, button_width, button_height);
-			x += (button_gap + button_width);
-			clearButton.Frame = new CGRect(x, height - bottom_gap, button_width, button_height);
-			x += (button_gap + button_width);
-			languageButton.Frame = new CGRect(x, height - bottom_gap, button_width, button_height);
-			x += (button_gap + button_width);
-			optionsButton.Frame = new CGRect(x, height - bottom_gap, button_width, button_height);
-		}
+		//public override void WillRotate(UIInterfaceOrientation toInterfaceOrientation, double duration)
+		//{
+		//	float height = (float)View.Frame.Height;
+		//	float width = (float)View.Frame.Width;
+		//	if (toInterfaceOrientation == UIInterfaceOrientation.LandscapeLeft || toInterfaceOrientation == UIInterfaceOrientation.LandscapeRight) 
+		//	{
+		//		width = (float)View.Frame.Height;
+		//		height = (float)View.Frame.Width;
+		//	}
+		//	inkView.Frame = new CGRect (button_gap, header_height + height/4 + button_gap, width - button_gap * 2, height - bottom_gap - button_gap - (height/4) - header_height - button_gap);
+		//	recognizedText.Frame = new CGRect(button_gap, header_height, width - button_gap * 2, height/4);
+		//	float x = (width - (button_width * 4 + button_gap * 3))/2;
+		//	recognizeAllButton.Frame = new CGRect (x, height - bottom_gap, button_width, button_height);
+		//	x += (button_gap + button_width);
+		//	clearButton.Frame = new CGRect(x, height - bottom_gap, button_width, button_height);
+		//	x += (button_gap + button_width);
+		//	languageButton.Frame = new CGRect(x, height - bottom_gap, button_width, button_height);
+		//	x += (button_gap + button_width);
+		//	optionsButton.Frame = new CGRect(x, height - bottom_gap, button_width, button_height);
+		//}
 
 		public override void DidReceiveMemoryWarning ()
 		{
@@ -183,11 +183,15 @@ namespace xamarin_sample
 			recognizedText.Text = "";
 			recognizedText.BackgroundColor = UIColor.Gray;
 			recognizedText.TextColor = UIColor.White;
+			recognizedText.AutoresizingMask = UIViewAutoresizing.FlexibleWidth;
 			View.Add (recognizedText);
 			inkView = new InkView ();
 			inkView.Frame = new CGRect (button_gap, header_height + height/4 + button_gap, width - button_gap * 2, height - bottom_gap - (height/4) - header_height - button_gap);
 			inkView.ContentMode = UIViewContentMode.Redraw;
+			inkView.AutoresizingMask = UIViewAutoresizing.FlexibleWidth | UIViewAutoresizing.FlexibleHeight;
 			View.Add (inkView);
+
+
 
 			inkView.OnReturnGesture += () => recognizedText.Text = inkView.Recognize( true );
 			inkView.OnReturnGesture += () => inkView.cleanView(true);
@@ -200,6 +204,7 @@ namespace xamarin_sample
 			recognizeAllButton.Font = UIFont.SystemFontOfSize( button_font_size );
 			recognizeAllButton.SetTitleColor (UIColor.Blue, UIControlState.Normal);
 			recognizeAllButton.SetTitleColor (UIColor.White, UIControlState.Highlighted);
+			recognizeAllButton.AutoresizingMask = UIViewAutoresizing.FlexibleTopMargin | UIViewAutoresizing.FlexibleLeftMargin | UIViewAutoresizing.FlexibleRightMargin;
 			recognizeAllButton.TouchUpInside += (object sender, EventArgs e) => 
 			{
 				recognizedText.Text = inkView.Recognize( false );
@@ -212,6 +217,7 @@ namespace xamarin_sample
 			clearButton.Font = UIFont.SystemFontOfSize( button_font_size );
 			clearButton.SetTitleColor (UIColor.Blue, UIControlState.Normal);
 			clearButton.SetTitleColor (UIColor.White, UIControlState.Highlighted);
+			clearButton.AutoresizingMask = UIViewAutoresizing.FlexibleTopMargin | UIViewAutoresizing.FlexibleLeftMargin | UIViewAutoresizing.FlexibleRightMargin;
 			clearButton.TouchUpInside += (object sender, EventArgs e) => 
 			{
 				inkView.cleanView(true);
@@ -225,9 +231,10 @@ namespace xamarin_sample
 			languageButton.Font = UIFont.SystemFontOfSize( button_font_size );
 			languageButton.SetTitleColor (UIColor.Blue, UIControlState.Normal);
 			languageButton.SetTitleColor (UIColor.White, UIControlState.Highlighted);
+			languageButton.AutoresizingMask = UIViewAutoresizing.FlexibleTopMargin | UIViewAutoresizing.FlexibleLeftMargin | UIViewAutoresizing.FlexibleRightMargin;
 			languageButton.TouchUpInside += (object sender, EventArgs e) => 
 			{
-				var actionSheet = new UIActionSheet ("Select Language:", null, "Cancel", null, 
+				var actionSheet = new UIActionSheet ("Select Language:", (IUIActionSheetDelegate)null, "Cancel", null, 
 					new []{"English", "English UK", "German", "French", "Spanish", "Portuguese", "Brazilian", "Dutch", "Italian", "Finnish", "Swedish", "Norwegian", "Danish", "Indonesian"});
 				actionSheet.Clicked += delegate(object a, UIButtonEventArgs b) {
 					switch (b.ButtonIndex)
@@ -292,6 +299,7 @@ namespace xamarin_sample
 			optionsButton.Font = UIFont.SystemFontOfSize( button_font_size );
 			optionsButton.SetTitleColor (UIColor.Blue, UIControlState.Normal);
 			optionsButton.SetTitleColor (UIColor.White, UIControlState.Highlighted);
+			optionsButton.AutoresizingMask = UIViewAutoresizing.FlexibleTopMargin | UIViewAutoresizing.FlexibleLeftMargin | UIViewAutoresizing.FlexibleRightMargin;
 			optionsButton.TouchUpInside += (object sender, EventArgs e) => 
 			{
 				OptionsViewControllerController optionsController = new OptionsViewControllerController();

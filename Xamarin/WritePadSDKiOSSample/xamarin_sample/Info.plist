@@ -20,8 +20,6 @@
 		<string>UIInterfaceOrientationLandscapeLeft</string>
 		<string>UIInterfaceOrientationLandscapeRight</string>
 	</array>
-	<key>MinimumOSVersion</key>
-	<string>8.0</string>
 	<key>CFBundleVersion</key>
 	<string>5.2.0136</string>
 	<key>CFBundleDisplayName</key>
@@ -38,5 +36,13 @@
 	<string>Resources/Images.xcassets/AppIcons.appiconset</string>
 	<key>XSLaunchImageAssets</key>
 	<string>Resources/Images.xcassets/LaunchImage.launchimage</string>
+	<key>CFBundleName</key>
+	<string>WritePad SDK iOS Sample</string>
+	<key>Custom Property</key>
+	<string></string>
+	<key>MinimumOSVersion</key>
+	<string>9.0</string>
+	<key>UIRequiresFullScreen</key>
+	<true/>
 </dict>
 </plist>

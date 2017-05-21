@@ -167,25 +167,25 @@ namespace WritePadXamarinSample
         public const int LONG_STROKE_MINLENGTH = 200;
 
         [DllImport("libWritePadReco.so", EntryPoint = "HWR_RecognizeInkData")]
-        private static extern IntPtr HWR_RecognizeInkData(IntPtr reco, IntPtr inkData, int nFirstStroke, int nLastStroke, bool bAsync, bool bFlipY, bool bSort, bool bSelOnly);
+        private static extern IntPtr HWR_RecognizeInkData(IntPtr reco, IntPtr pIinkData, int nFirstStroke, int nLastStroke, bool bAsync, bool bFlipY, bool bSort, bool bSelOnly);
 
         [DllImport("libWritePadReco.so", EntryPoint = "INK_Erase")]
-        private static extern int INK_Erase(IntPtr inkData);
+        private static extern int INK_Erase(IntPtr pIinkData);
 
         [DllImport("libWritePadReco.so", EntryPoint = "INK_StrokeCount")]
-        private static extern int INK_StrokeCount(IntPtr inkData, bool selectedOnly);
+        private static extern int INK_StrokeCount(IntPtr pIinkData, bool selectedOnly);
 
         [DllImport("libWritePadReco.so", EntryPoint = "INK_AddPixelToStroke")]
-        private static extern int INK_AddPixelToStroke(IntPtr inkData, int stroke, float x, float y, int pressure);
+        private static extern int INK_AddPixelToStroke(IntPtr pIinkData, int stroke, float x, float y, int pressure);
 
         [DllImport("libWritePadReco.so", EntryPoint = "INK_InitData")]
         private static extern IntPtr INK_InitData();
 
         [DllImport("libWritePadReco.so", EntryPoint = "INK_DeleteStroke")]
-        private static extern bool INK_DeleteStroke(IntPtr inkData, int nStroke);
+        private static extern bool INK_DeleteStroke(IntPtr pIinkData, int nStroke);
 
         [DllImport("libWritePadReco.so", EntryPoint = "INK_AddEmptyStroke")]
-        private static extern int INK_AddEmptyStroke(IntPtr inkData, float width, uint color);
+        private static extern int INK_AddEmptyStroke(IntPtr pIinkData, float width, uint color);
 
         [DllImport("libWritePadReco.so", EntryPoint = "HWR_GetResultWordCount")]
         private static extern int HWR_GetResultWordCount(IntPtr reco);
@@ -212,13 +212,13 @@ namespace WritePadXamarinSample
         private static extern uint HWR_GetRecognitionFlags(IntPtr reco);
 
         [DllImport("libWritePadReco.so", EntryPoint = "INK_GetStrokeP")]
-		private static extern int INK_GetStrokeP(IntPtr inkData, int nStroke, ref IntPtr stroke, float [] width, IntPtr color);
+		private static extern int INK_GetStrokeP(IntPtr pIinkData, int nStroke, ref IntPtr stroke, float [] width, IntPtr color);
 
         [DllImport("libWritePadReco.so", EntryPoint = "HWR_CheckGesture")]
         private static extern int HWR_CheckGesture(int type, CGTracePoint[] stroke, int len, int nScale, int nMinLen);
 
         [DllImport("libWritePadReco.so", EntryPoint = "HWR_InitRecognizer")]
-        private static extern IntPtr HWR_InitRecognizer(string inDictionaryMain, string inDictionaryCustom, string inLearner, string inAutoCorrect, int language, ref int pFlags);
+        private static extern IntPtr HWR_InitRecognizer(string inDictionaryMain, string inDictionaryCustom, string inLearner, string inAutoCorrect, int nLanguage, ref int pFlags);
 
         [DllImport("libWritePadReco.so", EntryPoint = "HWR_LearnNewWord")]
 		private static extern int HWR_LearnNewWord(IntPtr reco, IntPtr word, UInt16 weight);

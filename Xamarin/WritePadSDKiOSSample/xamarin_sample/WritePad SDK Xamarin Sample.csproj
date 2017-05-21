@@ -51,10 +51,10 @@
     <WarningLevel>4</WarningLevel>
     <MtouchDebug>True</MtouchDebug>
     <ConsolePause>false</ConsolePause>
-    <CodesignKey>iPhone Developer</CodesignKey>
+    <CodesignKey>iPhone Developer: Stan Miasnikov (D7W3J7X8XA)</CodesignKey>
     <IpaPackageName>
     </IpaPackageName>
-    <MtouchArch>ARMv7, ARMv7s</MtouchArch>
+    <MtouchArch>ARMv7, ARMv7s, ARM64</MtouchArch>
     <AssemblyName>WritePadSDKXamarinSample</AssemblyName>
     <MtouchOptimizePNGs>True</MtouchOptimizePNGs>
     <MtouchLink>Full</MtouchLink>

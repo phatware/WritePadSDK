@@ -48,17 +48,20 @@
         <Button
             android:text="@string/Clear"
             android:id="@+id/ClearButton"
-            android:layout_width="wrap_content"
-            android:layout_height="match_parent" />
+            android:layout_width="82.5dp"
+            android:layout_height="match_parent"
+            android:layout_marginRight="0.0dp" />
         <Button
             android:text="@string/Language"
             android:id="@+id/LanguageButton"
             android:layout_width="wrap_content"
-            android:layout_height="match_parent" />
+            android:layout_height="match_parent"
+            android:layout_marginRight="0.0dp" />
         <Button
             android:text="@string/Options"
-            android:layout_width="wrap_content"
+            android:layout_width="88.0dp"
             android:layout_height="match_parent"
-            android:id="@+id/OptionsButton" />
+            android:id="@+id/OptionsButton"
+            android:layout_marginLeft="0.0dp" />
     </LinearLayout>
 </LinearLayout>

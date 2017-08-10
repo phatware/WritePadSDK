@@ -3,7 +3,7 @@
 
 **Accurate, fast, compact, easy to use, multilingual, multiplatform handwriting recognition technology for mobile and desktop computers**
 
-#### Copyright © 1997-2016 PhatWare® Corp. All rights reserved.
+#### Copyright © 1997-2017 PhatWare® Corp. All rights reserved.
 
 ## License Overview
 
@@ -42,7 +42,7 @@ touch enabled mobile devices. The SDK includes:
     dictionaries support following languages **English (UK and US), French, German, Dutch, Danish, Indonesian, Italian,
     Portuguese (Brazilian and European), Norwegian, Finish, Swedish, and Spanish**.
     Engine is compatible with the user-specified platform. 
--   **iOS**: WritePad SDK static library supports iOS 6.0 or later. The sample code is for iOS
+-   **iOS**: WritePad SDK static library supports iOS 8.0 or later. The sample code is for iOS
     10 (Swift 3) or later and requires Xcode 8.1 or later.
 -   **Android**: WritePad SDK static libraries support Android 4.0 or later for arm64-v8a, armeabi, armeabi-v7a, 
     mips, mips64, x86, and x86_64 CPUs. 
@@ -212,3 +212,5 @@ license and warranty disclaimer at the beginning of each source file.
 an application that is not integrated with the WritePad SDK is 
 prohibited and will constitute violation of the WritePad SDK License
 Agreement**. 
+
+***PhatWare and WritePad are registered trademarks of PhatWare corporation in the US and/or other countries.

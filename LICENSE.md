@@ -1,6 +1,6 @@
 # WritePad SDK License Agreement (Non-commercial Use)
 
-**Copyright (c) 1997-2015 PhatWare Corp. All rights reserved.**
+**Copyright (c) 1997-2017 PhatWare Corp. All rights reserved.**
 
 This WritePad SDK License Agreement (“Agreement”) is made and entered
 into on (today) ("Effective Date"), by and between PhatWare Corp.,

@@ -72,10 +72,9 @@
 
 static INK_DATA_PTR _inkData = NULL;
 static RECOGNIZER_PTR _recognizer = NULL;
-static int _currentStroke = -1;
 static char _szPath[MAX_PATH] = { 0 };
 
-#define MAX_XU_CONVERTS 5
+#define MAX_XU_CONVERTS         5
 
 static int _iHexes[MAX_XU_CONVERTS] = { 0x08a, 0x08c, 0x09a, 0x09c, 0x09f };
 static int _iUnicodes[MAX_XU_CONVERTS] = { 352, 338, 353, 339, 376 };
@@ -195,7 +194,8 @@ static const unsigned char * UnicodeToUTF8(const unsigned short *Src) {
 	if (NULL == strDest)
 		return NULL;
     
-	for (i = 0; i < SrcLen; i++) {
+	for (i = 0; i < SrcLen; i++)
+	{
 		if (outputlen >= DstLen - 1) {
 			//overflow detected
 			break;
@@ -365,64 +365,6 @@ jint Java_com_phatware_android_RecoInterface_WritePadAPI_recognizerInit( JNIEnv*
     
     if ( ! HWR_IsLanguageSupported( nLanguage ) )
         nLanguage = LANGUAGE_ENGLISH;
-	/*
-    strcpy( mainDict, "assets/" );
-    switch ( nLanguage )
-    {
-    	default :
-        case LANGUAGE_ENGLISH :
-            strcat( mainDict, "English.dct" );
-            break;
-            
-        case LANGUAGE_GERMAN :
-            strcat( mainDict, "German.dct" );
-            break;
-            
-        case LANGUAGE_FRENCH :
-            strcat( mainDict, "French.dct" );
-            break;
-            
-        case LANGUAGE_ITALIAN :
-            strcat( mainDict, "Italian.dct" );
-            break;
-            
-        case LANGUAGE_SPANISH :
-            strcat( mainDict, "Spanish.dct" );
-            break;
-            
-        case LANGUAGE_SWEDISH :
-            strcat( mainDict, "Swedish.dct" );
-            break;
-            
-        case LANGUAGE_NORWEGIAN :
-            strcat( mainDict, "Norwegian.dct" );
-            break;
-            
-        case LANGUAGE_DUTCH :
-            strcat( mainDict, "Dutch.dct" );
-            break;
-            
-        case LANGUAGE_DANISH :
-            strcat( mainDict, "Danish.dct" );
-            break;
-            
-        case LANGUAGE_PORTUGUESE :
-            strcat( mainDict, "Portuguese.dct" );
-            break;
-            
-        case LANGUAGE_PORTUGUESEB :
-            strcat( mainDict, "Brazilian.dct" );
-            break;
-            
-        case LANGUAGE_FINNISH :
-            strcat( mainDict, "Finnish.dct" );
-            break;
-
-        case LANGUAGE_INDONESIAN :
-            strcat( mainDict, "Indonesian.dct" );
-            break;
-    }
-    */
     if ( isCopy == JNI_TRUE && path )
         (*env)->ReleaseStringUTFChars(env, jpath, path);
 
@@ -435,7 +377,6 @@ jint Java_com_phatware_android_RecoInterface_WritePadAPI_recognizerInit( JNIEnv*
 	_inkData = INK_InitData();
 	if (NULL == _inkData)
 		return -1;
-	_currentStroke = -1;
 	return flags;
 }
 
@@ -667,13 +608,13 @@ void Java_com_phatware_android_RecoInterface_WritePadAPI_freeRecognizer( JNIEnv*
 		INK_FreeData(_inkData);
 		_inkData = NULL;
 	}
-	_currentStroke = -1;
 }
 
 jint  Java_com_phatware_android_RecoInterface_WritePadAPI_getRecognizerFlags( JNIEnv * env)
 {
 	jint result = 0;
-	if (_recognizer != NULL) {
+	if (_recognizer != NULL)
+    {
 		result = HWR_GetRecognitionFlags(_recognizer);
 	}
 	return result;
@@ -681,7 +622,8 @@ jint  Java_com_phatware_android_RecoInterface_WritePadAPI_getRecognizerFlags( JN
 
 void Java_com_phatware_android_RecoInterface_WritePadAPI_setRecognizerFlags( JNIEnv * env, jobject thiz, jint flags)
 {
-	if (_recognizer != NULL) {
+	if (_recognizer != NULL)
+    {
             HWR_SetRecognitionFlags(_recognizer, (unsigned int) flags);
 	}
 }
@@ -690,7 +632,8 @@ void Java_com_phatware_android_RecoInterface_WritePadAPI_setRecognizerFlags( JNI
 jint Java_com_phatware_android_RecoInterface_WritePadAPI_getRecognizerMode( JNIEnv * env) 
 {
 	jint result = 0;
-	if (_recognizer != NULL) {
+	if (_recognizer != NULL)
+    {
 		result = HWR_GetRecognitionMode(_recognizer);
 	}
 	return result;
@@ -698,14 +641,16 @@ jint Java_com_phatware_android_RecoInterface_WritePadAPI_getRecognizerMode( JNIE
 
 void Java_com_phatware_android_RecoInterface_WritePadAPI_setRecognizerMode( JNIEnv * env, jobject thiz, jint mode)
 {
-	if (_recognizer != NULL) {
+	if (_recognizer != NULL)
+    {
 		HWR_SetRecognitionMode(_recognizer, mode);
 	}
 }
 
 void Java_com_phatware_android_RecoInterface_WritePadAPI_stopRecognizer( JNIEnv* env)
 {
-	if (_recognizer != NULL) {
+	if (_recognizer != NULL)
+    {
 		HWR_StopAsyncReco(_recognizer);
 	}
 }
@@ -766,10 +711,10 @@ jboolean Java_com_phatware_android_RecoInterface_WritePadAPI_preRecognizeInkData
 jboolean Java_com_phatware_android_RecoInterface_WritePadAPI_newStroke( JNIEnv * env, jobject thiz, jfloat width, jint color)
 {
 	jint result = -1;
-	if (NULL != _inkData) {
+	if (NULL != _inkData)
+    {
 		result = INK_AddEmptyStroke(_inkData, width, (COLORREF) color);
 	}
-	_currentStroke = (int) result;
 	return result;
 }
 
@@ -777,7 +722,8 @@ jboolean Java_com_phatware_android_RecoInterface_WritePadAPI_newStroke( JNIEnv *
 jint Java_com_phatware_android_RecoInterface_WritePadAPI_getStrokeCount( JNIEnv * env) 
 {
 	jint result = -1;
-	if (NULL != _inkData) {
+	if (NULL != _inkData)
+    {
 		result = INK_StrokeCount(_inkData, false);
 	}
 	return result;
@@ -786,7 +732,8 @@ jint Java_com_phatware_android_RecoInterface_WritePadAPI_getStrokeCount( JNIEnv 
 jboolean Java_com_phatware_android_RecoInterface_WritePadAPI_deleteLastStroke( JNIEnv * env) 
 {
 	jboolean result = false;
-	if (NULL != _inkData) {
+	if (NULL != _inkData)
+    {
 		result = INK_DeleteStroke(_inkData, -1);
 	}
 	return result;
@@ -796,7 +743,8 @@ jboolean Java_com_phatware_android_RecoInterface_WritePadAPI_deleteLastStroke( J
 jboolean Java_com_phatware_android_RecoInterface_WritePadAPI_deleteStroke( JNIEnv * env, jobject thiz, jint nStroke )
 {
 	jboolean result = false;
-	if (NULL != _inkData) {
+	if (NULL != _inkData)
+    {
 		result = INK_DeleteStroke(_inkData, nStroke );
 	}
 	return result;
@@ -806,12 +754,15 @@ jint Java_com_phatware_android_RecoInterface_WritePadAPI_detectGesture( JNIEnv* 
 {
 	jint result = GEST_NONE;
 
-	if (NULL != _inkData) {
+	if (NULL != _inkData)
+    {
 		int nCnt = INK_StrokeCount(_inkData, false);
-		if (nCnt > 0) {
+		if (nCnt > 0)
+        {
 			CGStroke pStroke = NULL;
 			int len = INK_GetStrokeP(_inkData, nCnt - 1, &pStroke, NULL, NULL);
-			if (len > 5) {
+			if (len > 5)
+            {
 				result = HWR_CheckGesture((GESTURE_TYPE) type, pStroke, len, 1, 160);
 			}
 			if (pStroke != NULL)
@@ -825,7 +776,8 @@ jint Java_com_phatware_android_RecoInterface_WritePadAPI_addPixelToStroke(
                                 JNIEnv * env, jobject thiz, jint stroke, jfloat x, jfloat y)
 {
 	jint result = -1;
-	if (NULL != _inkData) {
+	if (NULL != _inkData)
+    {
         int pressure = DEFAULT_PRESSURE;
 		result = INK_AddPixelToStroke(_inkData, stroke, x, y, pressure );
 	}
@@ -835,7 +787,8 @@ jint Java_com_phatware_android_RecoInterface_WritePadAPI_addPixelToStroke(
 
 jboolean Java_com_phatware_android_RecoInterface_WritePadAPI_resetRecognizer(JNIEnv * env) 
 {
-	if (NULL != _recognizer) {
+	if (NULL != _recognizer)
+    {
 		HWR_Reset(_recognizer);
 		return true;
 	}
@@ -844,9 +797,9 @@ jboolean Java_com_phatware_android_RecoInterface_WritePadAPI_resetRecognizer(JNI
 
 jboolean Java_com_phatware_android_RecoInterface_WritePadAPI_resetInkData(JNIEnv * env)
 {
-	if (NULL != _inkData) {
+	if (NULL != _inkData)
+    {
 		INK_Erase(_inkData);
-		_currentStroke = -1;
 		return true;
 	}
 	return false;
@@ -855,7 +808,8 @@ jboolean Java_com_phatware_android_RecoInterface_WritePadAPI_resetInkData(JNIEnv
 jstring Java_com_phatware_android_RecoInterface_WritePadAPI_languageName(JNIEnv* env, jobject thiz) 
 {
 	jstring result = NULL;
-    if (NULL != _recognizer) {
+    if (NULL != _recognizer)
+    {
         result = (*env)->NewStringUTF(env, HWR_GetLanguageName(_recognizer));
     }
 	return result;
@@ -863,7 +817,8 @@ jstring Java_com_phatware_android_RecoInterface_WritePadAPI_languageName(JNIEnv*
 
 jint Java_com_phatware_android_RecoInterface_WritePadAPI_languageID( JNIEnv * env) 
 {
-    if (NULL != _recognizer) {
+    if (NULL != _recognizer)
+    {
         return HWR_GetLanguageID(_recognizer);
     }
     return 0;
@@ -872,7 +827,8 @@ jint Java_com_phatware_android_RecoInterface_WritePadAPI_languageID( JNIEnv * en
                                                           
 jboolean Java_com_phatware_android_RecoInterface_WritePadAPI_newUserDict(JNIEnv * env) 
 {
-	if (NULL != _recognizer) {
+	if (NULL != _recognizer)
+    {
 		return HWR_NewUserDict(_recognizer);
 	}
 	return false;
@@ -885,7 +841,8 @@ jboolean Java_com_phatware_android_RecoInterface_WritePadAPI_addWordToUserDict( 
 	if (NULL != _recognizer)
     {
 		const UCHR * strWord = JstringToString(env, jword);
-		if (strWord != NULL) {
+		if (strWord != NULL)
+        {
 			result = HWR_AddUserWordToDict(_recognizer, strWord, true);
 			free((void *) strWord);
 		}
@@ -897,7 +854,8 @@ jboolean Java_com_phatware_android_RecoInterface_WritePadAPI_addWordToUserDict( 
 jboolean Java_com_phatware_android_RecoInterface_WritePadAPI_resetResult( JNIEnv * env, jobject thiz)
 {
 	jboolean result = false;
-	if (NULL != _recognizer) {
+	if (NULL != _recognizer)
+    {
 		result = HWR_EmptyWordList(_recognizer);
 	}
 	return result;
@@ -906,9 +864,11 @@ jboolean Java_com_phatware_android_RecoInterface_WritePadAPI_resetResult( JNIEnv
 jboolean Java_com_phatware_android_RecoInterface_WritePadAPI_isWordInDict(JNIEnv * env, jobject thiz, jstring jword) 
 {
 	jboolean result = false;
-	if (_recognizer != NULL) {
+	if (_recognizer != NULL)
+    {
 		const UCHR * word = JstringToString(env, jword);
-		if (word != NULL) {
+		if (word != NULL)
+        {
 			result = HWR_IsWordInDict(_recognizer, word);
 			free((void *) word);
 		}
@@ -919,7 +879,8 @@ jboolean Java_com_phatware_android_RecoInterface_WritePadAPI_isWordInDict(JNIEnv
 jint Java_com_phatware_android_RecoInterface_WritePadAPI_getResultColumnCount(JNIEnv * env, jobject thiz) 
 {
 	jint result = 0;
-	if (NULL != _recognizer) {
+	if (NULL != _recognizer)
+    {
 		result = HWR_GetResultWordCount(_recognizer);
 	}
 	return result;
@@ -928,7 +889,8 @@ jint Java_com_phatware_android_RecoInterface_WritePadAPI_getResultColumnCount(JN
 jint Java_com_phatware_android_RecoInterface_WritePadAPI_getResultRowCount(JNIEnv * env, jobject thiz, jint col) 
 {
 	jint result = 0;
-	if (NULL != _recognizer) {
+	if (NULL != _recognizer)
+    {
 		result = HWR_GetResultAlternativeCount(_recognizer, col);
 	}
 	return result;
@@ -980,7 +942,8 @@ jstring Java_com_phatware_android_RecoInterface_WritePadAPI_getAutocorrectorWord
 jint Java_com_phatware_android_RecoInterface_WritePadAPI_getRecognizedWeight( JNIEnv * env, jobject thiz, jint col, jint row)
 {
 	jint result = 0;
-	if (NULL != _recognizer) {
+	if (NULL != _recognizer)
+    {
 		result = HWR_GetResultWeight(_recognizer, col, row);
 	}
 	return result;
@@ -989,7 +952,8 @@ jint Java_com_phatware_android_RecoInterface_WritePadAPI_getRecognizedWeight( JN
 jint Java_com_phatware_android_RecoInterface_WritePadAPI_getResultStrokesNumber( JNIEnv * env, jobject thiz, jint col, jint row)
 {
 	jint result = 0;
-	if (NULL != _recognizer) {
+	if (NULL != _recognizer)
+    {
 		result = HWR_GetResultStrokesNumber(_recognizer, col, row);
 	}
 	return result;
@@ -998,9 +962,11 @@ jint Java_com_phatware_android_RecoInterface_WritePadAPI_getResultStrokesNumber(
 jboolean Java_com_phatware_android_RecoInterface_WritePadAPI_learnerAddNewWord( JNIEnv * env, jobject thiz, jstring jword, jint weight) 
 {
 	jboolean result = false;
-	if (NULL != _recognizer) {
+	if (NULL != _recognizer)
+    {
 		const UCHR * word = JstringToString(env, jword);
-		if (word != NULL) {
+		if (word != NULL)
+        {
 			result = HWR_LearnNewWord(_recognizer, word, weight);
 			free((void *) word);
 		}
@@ -1013,10 +979,12 @@ jboolean Java_com_phatware_android_RecoInterface_WritePadAPI_learnerReplaceWord(
         JNIEnv * env, jobject thiz, jstring jword1, jint weight1, jstring jword2, jint weight2) 
 {
 	jboolean result = false;
-	if (NULL != _recognizer) {
+	if (NULL != _recognizer)
+    {
 		const UCHR * word1 = JstringToString(env, jword1);
 		const UCHR * word2 = JstringToString(env, jword2);
-		if (word1 != NULL && word2 != NULL) {
+		if (word1 != NULL && word2 != NULL)
+        {
 			result = HWR_ReplaceWord(_recognizer, word1, weight1, word2,
 					weight2);
 			free((void *) word1);
@@ -1031,10 +999,12 @@ jboolean Java_com_phatware_android_RecoInterface_WritePadAPI_autocorrectorLearnW
             JNIEnv * env, jobject thiz, jstring jword1, jstring jword2, jint flags, jboolean bReplace) 
 {
 	jboolean result = false;
-	if (NULL != _recognizer) {
+	if (NULL != _recognizer)
+    {
 		const UCHR * word1 = JstringToString(env, jword1);
 		const UCHR * word2 = JstringToString(env, jword2);
-		if (word1 != NULL && word2 != NULL) {
+		if (word1 != NULL && word2 != NULL)
+        {
 			result = HWR_AddWordToWordList(_recognizer, word1, word2, flags,
 					bReplace);
 			free((void *) word1); 
@@ -1147,18 +1117,22 @@ int EnumWordListCallback(const UCHR * szWordFrom, const UCHR * szWordTo, unsigne
 	isAttached = 0;
 
 	status = (*gJavaVM)->GetEnv(gJavaVM, (void **) &env, JNI_VERSION_1_4);
-	if (status < 0) {
+	if (status < 0)
+    {
 		status = (*gJavaVM)->AttachCurrentThread(gJavaVM, &env, NULL);
-		if (status < 0) {
+		if (status < 0)
+        {
 			return 0;
 		}
 		isAttached = 1;
 	}
-    if (interfaceClass  == NULL){
+    if (interfaceClass  == NULL)
+    {
 	    interfaceClass = (*env)->GetObjectClass(env, gInterfaceObject);
 	}
 
-	if (!interfaceClass) {
+	if (!interfaceClass)
+    {
 		// __android_log_print(ANDROID_LOG_INFO, "callback_handler"," failed to get class reference");
 		if (isAttached == 1)
 			(*gJavaVM)->DetachCurrentThread(gJavaVM);
@@ -1171,9 +1145,11 @@ int EnumWordListCallback(const UCHR * szWordFrom, const UCHR * szWordTo, unsigne
 	    method = (*env)->GetStaticMethodID(env, interfaceClass, "onEnumWord", "(Ljava/lang/String;Ljava/lang/String;I)V");
 	}
 
-	if (!method) {
+	if (!method)
+    {
 		// __android_log_print(ANDROID_LOG_INFO, "callback_handler"," failed to get method ID");
-		if (isAttached == 1) {
+		if (isAttached == 1)
+        {
 			(*gJavaVM)->DetachCurrentThread(gJavaVM);
 		}
 		return 0;
@@ -1186,7 +1162,8 @@ int EnumWordListCallback(const UCHR * szWordFrom, const UCHR * szWordTo, unsigne
     (*env)->DeleteLocalRef(env, newWordFrom);
     (*env)->DeleteLocalRef(env, newWordTo);
 
-	if (isAttached == 1) {
+	if (isAttached == 1)
+    {
 		(*gJavaVM)->DetachCurrentThread(gJavaVM);
 	}
 
@@ -1199,20 +1176,24 @@ int EnumUserWordsCallback(const UCHR * szWord, void * pParam)
 	isAttached = 0;
 
 	status = (*gJavaVM)->GetEnv(gJavaVM, (void **) &env, JNI_VERSION_1_4);
-	if (status < 0) {
+	if (status < 0)
+    {
 		// __android_log_print(ANDROID_LOG_INFO, "callback_handler: failed to get JNI environment, assuming native thread");
 		status = (*gJavaVM)->AttachCurrentThread(gJavaVM, &env, NULL);
-		if (status < 0) {
+		if (status < 0)
+        {
 			// __android_log_print(ANDROID_LOG_INFO, "callback_handler: failed to attach ", "current thread");
 			return 0;
 		}
 		isAttached = 1;
 	}
-    if (interfaceClass == NULL){
+    if (interfaceClass == NULL)
+    {
 	    interfaceClass = (*env)->GetObjectClass(env, gInterfaceObject);
 	}
 
-	if (!interfaceClass) {
+	if (!interfaceClass)
+    {
 		// __android_log_print(ANDROID_LOG_INFO, "callback_handler"," failed to get class reference");
 		if (isAttached == 1)
 			(*gJavaVM)->DetachCurrentThread(gJavaVM);
@@ -1224,9 +1205,11 @@ int EnumUserWordsCallback(const UCHR * szWord, void * pParam)
 	    method = (*env)->GetStaticMethodID(env, interfaceClass, "onEnumUserWords", "(Ljava/lang/String;)V");
 	}
 
-	if (!method) {
+	if (!method)
+    {
 		// __android_log_print(ANDROID_LOG_INFO, "callback_handler"," failed to get method ID");
-		if (isAttached == 1) {
+		if (isAttached == 1)
+        {
 			(*gJavaVM)->DetachCurrentThread(gJavaVM);
 		}
 		return 0;
@@ -1236,7 +1219,8 @@ int EnumUserWordsCallback(const UCHR * szWord, void * pParam)
     (*env)->CallStaticVoidMethod(env, interfaceClass, method, newWord);
     (*env)->DeleteLocalRef(env, newWord);
 
-	if (isAttached == 1) {
+	if (isAttached == 1)
+    {
 		(*gJavaVM)->DetachCurrentThread(gJavaVM);
 	}
 
@@ -1246,7 +1230,8 @@ int EnumUserWordsCallback(const UCHR * szWord, void * pParam)
 jint Java_com_phatware_android_RecoInterface_WritePadAPI_getEnumUserWordsList( JNIEnv * env, jobject thiz, void * param) 
 {
 	jint result = 0;
-	if (NULL != _recognizer) {
+	if (NULL != _recognizer)
+    {
         interfaceClass = NULL;
         method = NULL;
 		result = HWR_EnumUserWords(_recognizer, EnumUserWordsCallback, param);
@@ -1257,7 +1242,8 @@ jint Java_com_phatware_android_RecoInterface_WritePadAPI_getEnumUserWordsList( J
 jint Java_com_phatware_android_RecoInterface_WritePadAPI_getEnumWordList( JNIEnv * env, jobject thiz, void * param) 
 {
 	jint result = 0;
-	if (NULL != _recognizer) {
+	if (NULL != _recognizer)
+    {
         interfaceClass = NULL;
         method = NULL;
 		result = HWR_EnumWordList(_recognizer, EnumWordListCallback, param);
@@ -1265,19 +1251,23 @@ jint Java_com_phatware_android_RecoInterface_WritePadAPI_getEnumWordList( JNIEnv
 	return result;
 }
 
-void initClassHelper(JNIEnv *env, const char *path, jobject *objptr) {
+void initClassHelper(JNIEnv *env, const char *path, jobject *objptr)
+{
 	jclass cls = (*env)->FindClass(env, path);
-	if (!cls) {
+	if (!cls)
+    {
 		// __android_log_print(ANDROID_LOG_INFO, "initClassHelper: failed to get %s class reference", path);
 		return;
 	}
 	jmethodID constr = (*env)->GetMethodID(env, cls, "<init>", "()V");
-	if (!constr) {
+	if (!constr)
+    {
 		// __android_log_print(ANDROID_LOG_INFO, "initClassHelper: failed to get %s constructor", path);
 		return;
 	}
 	jobject obj = (*env)->NewObject(env, cls, constr);
-	if (!obj) {
+	if (!obj)
+    {
 		// __android_log_print(ANDROID_LOG_INFO, "initClassHelper: failed to create a %s object", path);
 		return;
 	}

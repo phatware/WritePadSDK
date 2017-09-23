@@ -1,4 +1,4 @@
-WritePad® SDK 5.6 for iOS 9
+WritePad® SDK 5.7 for iOS 9+
 Release Notes
 Copyright © 2008-2017 PhatWare® Corp. All rights reserved.
 

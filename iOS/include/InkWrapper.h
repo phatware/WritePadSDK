@@ -82,7 +82,7 @@ extern "C"
 	} TextAttributes;
     
 	// Ink data API
-	INK_DATA_PTR	INK_InitData();
+	INK_DATA_PTR	INK_InitData(void);
 	void			INK_FreeData( INK_DATA_PTR pData );
 	void			INK_Erase( INK_DATA_PTR pData );
 	int 			INK_StrokeCount( INK_DATA_PTR pData, BOOL selectedOnly );

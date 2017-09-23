@@ -68,10 +68,10 @@ extern "C"
 	typedef RECO_ONGOTWORDLIST * PRECO_ONGOTWORDLIST;
 
     // recognizer Info
-    const char *    HWR_Description();
-    const char *    HWR_ID();
-    int             HWR_Capabilities();
-    PHWR_VERSION    HWR_Version();
+    const char *    HWR_Description(void);
+    const char *    HWR_ID(void);
+    int             HWR_Capabilities(void);
+    PHWR_VERSION    HWR_Version(void);
     BOOL            HWR_IsLanguageSupported( int langID );
     int             HWR_GetSupportedLanguages( int ** languages );
 

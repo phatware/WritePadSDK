@@ -2,7 +2,7 @@
 /* *    PhatWare WritePad SDK                                                          * */
 /* *    ViewController.swift                                                           * */
 /* *    Created by Stanislav Miasnikov on 4/19/15                                      * */
-/* *    Copyright (c) 2008-2017 PhatWare(r) Corp. All rights reserved.                 * */
+/* *    Copyright (c) 2008-2018 PhatWare(r) Corp. All rights reserved.                 * */
 /* ************************************************************************************* */
 
 /* ************************************************************************************* *
@@ -60,6 +60,8 @@ class ViewController: UIViewController, UITextViewDelegate, LanguageSelectorDele
     var suggestionsHeight : NSLayoutConstraint!
     var keyboardHeight : NSLayoutConstraint!
     
+    fileprivate let marginOffset : CGFloat = 19.0
+    
     override func viewDidLoad()
     {
         super.viewDidLoad()
@@ -67,6 +69,7 @@ class ViewController: UIViewController, UITextViewDelegate, LanguageSelectorDele
         self.textView = WPTextView.createTextView(self.view.bounds)
         self.textView.delegate = self
         self.view.addSubview(self.textView)
+        self.textView.translatesAutoresizingMaskIntoConstraints = false
         
         let suggestions : SuggestionsView = SuggestionsView.shared()
         suggestions.showResultsinKeyboard(self.view, in:self.view.bounds)
@@ -83,8 +86,8 @@ class ViewController: UIViewController, UITextViewDelegate, LanguageSelectorDele
         let leftS = NSLayoutConstraint( item:suggestions,
             attribute: NSLayoutAttribute.left,
             relatedBy: NSLayoutRelation.equal, toItem:self.view,
-            attribute: NSLayoutAttribute.left,
-            multiplier: 1.0, constant: 0.0 )
+            attribute: NSLayoutAttribute.leftMargin,
+            multiplier: 1.0, constant:-marginOffset )
         self.view.addConstraint( leftS )
         let topS = NSLayoutConstraint( item:suggestions,
             attribute: NSLayoutAttribute.top,
@@ -95,21 +98,21 @@ class ViewController: UIViewController, UITextViewDelegate, LanguageSelectorDele
         let rightS = NSLayoutConstraint( item:suggestions,
             attribute: NSLayoutAttribute.right,
             relatedBy: NSLayoutRelation.equal, toItem:self.view,
-            attribute: NSLayoutAttribute.right,
-            multiplier: 1.0, constant: 0.0 )
+            attribute: NSLayoutAttribute.rightMargin,
+            multiplier: 1.0, constant: marginOffset )
         self.view.addConstraint( rightS )
         
         let right = NSLayoutConstraint( item: self.textView,
             attribute: NSLayoutAttribute.right,
             relatedBy: NSLayoutRelation.equal, toItem:self.view,
-            attribute: NSLayoutAttribute.right,
-            multiplier: 1.0, constant: 0.0 )
+            attribute: NSLayoutAttribute.rightMargin,
+            multiplier: 1.0, constant: marginOffset )
         self.view.addConstraint( right )
         let left = NSLayoutConstraint( item: self.textView,
             attribute: NSLayoutAttribute.left,
             relatedBy: NSLayoutRelation.equal, toItem:self.view,
-            attribute: NSLayoutAttribute.left,
-            multiplier: 1.0, constant: 0.0 )
+            attribute: NSLayoutAttribute.leftMargin,
+            multiplier: 1.0, constant: -marginOffset )
         self.view.addConstraint( left )
         let top = NSLayoutConstraint( item: self.textView,
             attribute: NSLayoutAttribute.top,

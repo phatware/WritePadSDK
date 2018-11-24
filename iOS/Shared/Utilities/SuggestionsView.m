@@ -1,6 +1,6 @@
 /* ************************************************************************************* */
 /* *    PhatWare WritePad SDK                                                          * */
-/* *    Copyright (c) 2008-2014 PhatWare(r) Corp. All rights reserved.                 * */
+/* *    Copyright (c) 2008-2018 PhatWare(r) Corp. All rights reserved.                 * */
 /* ************************************************************************************* */
 
 /* ************************************************************************************* *
@@ -490,9 +490,9 @@ static SuggestionsView * g_sugestions = nil;
             NSMutableArray * words = [recoData objectForKey:@"words"];
             int iWord, prob, nWordsAdded;
             
-            [_lock lock];
+                [self->_lock lock];
             
-            [_words removeAllObjects];
+                [self->_words removeAllObjects];
             
             if ( wordCnt > 1 )
             {
@@ -556,13 +556,13 @@ static SuggestionsView * g_sugestions = nil;
                         {
                             NSAttributedString * attribPhrase = [self attribSuggestion:phrase words:wrds];
                             NSDictionary * dict = @{ @"word" : phrase, @"attrib_word" : attribPhrase,  @"words" : wrds, @"weights" : probs, @"total" : [NSNumber numberWithInt:prob] };
-                            [_words addObject:dict];
-                            if ( [_words count] >= MAX_WORDS )
+                            [self->_words addObject:dict];
+                            if ( [self->_words count] >= MAX_WORDS )
                                 break;
                         }
                     }
                 }
-                if ( [words count] < 2 * wordCnt || wordCnt < 2 || [_words count] >= MAX_WORDS )
+                if ( [words count] < 2 * wordCnt || wordCnt < 2 || [self->_words count] >= MAX_WORDS )
                 {
                     break;
                 }
@@ -592,7 +592,7 @@ static SuggestionsView * g_sugestions = nil;
             if ( wordCnt > 1 )
             {
                 // re-sort the resuting array by total probability
-                [_words sortUsingComparator:^NSComparisonResult(id obj1, id obj2) {
+                [self->_words sortUsingComparator:^NSComparisonResult(id obj1, id obj2) {
                     NSDictionary * d1 = (NSDictionary *)obj1;
                     NSDictionary * d2 = (NSDictionary *)obj2;
                     int prob1 = [[d1 objectForKey:@"total"] intValue];
@@ -609,8 +609,8 @@ static SuggestionsView * g_sugestions = nil;
             else if ( wordCnt == 1 )
             {
                 RecognizedWord * word = [words firstObject];
-                textLength = [word.word length];
-                if ( textLength >= 3 )
+                self->textLength = [word.word length];
+                if ( self->textLength >= 3 )
                     [self generateWordList:word.word addSpace:bAddSpace spell:NO]; // TODO: test
             }
             
@@ -618,19 +618,19 @@ static SuggestionsView * g_sugestions = nil;
             dispatch_sync(q_main, ^(void)
                 {
                     [self removeAllButtons];
-                    CGRect  rButton = CGRectMake( 2, 0, viewHeight, viewHeight );
-                    if ( ! _isError )
+                    CGRect  rButton = CGRectMake( 2, 0, self->viewHeight, self->viewHeight );
+                    if ( ! self->_isError )
                     {
                         [self addSubview:self.clearButton];
                         rButton.origin.x += rButton.size.width + GAP;
                     }
-                    for ( int i = 0; i < [_words count] && i < [buttons count]; i++ )
+                    for ( int i = 0; i < [self->_words count] && i < [self->buttons count]; i++ )
                     {
                         NSString * title = [self wordForIndex:i];
                         NSAttributedString * attribTitle = nil;
-                        rButton.size.width = [title sizeWithAttributes:@{ NSFontAttributeName : _font }].width + 2 * GAP;
+                        rButton.size.width = [title sizeWithAttributes:@{ NSFontAttributeName : self->_font }].width + 2 * GAP;
                         UIButton *button;
-                        button = [buttons objectAtIndex:i];
+                        button = [self->buttons objectAtIndex:i];
                         button.frame = rButton;
                         
                         if ( i > 0 )
@@ -657,12 +657,12 @@ static SuggestionsView * g_sugestions = nil;
                         rButton.origin.x += rButton.size.width + GAP;
                     }
 
-                    if ( [buttons count] > 0 )
+                    if ( [self->buttons count] > 0 )
                     {
                         self.contentOffset = CGPointMake( 0, 0 );
-                        [self setContentSize:CGSizeMake(rButton.origin.x, viewHeight)];
+                        [self setContentSize:CGSizeMake(rButton.origin.x, self->viewHeight)];
                         
-                        if ( ! attachedToKeyboard )
+                        if ( ! self->attachedToKeyboard )
                         {
                             int x = (int)(inFrame.origin.x + GAP);
                             CGFloat width = MIN( rButton.origin.x + 2 * GAP, inFrame.size.width - 2 * GAP );
@@ -672,7 +672,7 @@ static SuggestionsView * g_sugestions = nil;
                                 {
                                     x = (int)(inFrame.size.width - 2 * GAP - width)/2;
                                 }
-                                CGRect r = CGRectMake( (CGFloat)x, inFrame.size.height - viewHeight - GAP, width, viewHeight );
+                                CGRect r = CGRectMake( (CGFloat)x, inFrame.size.height - self->viewHeight - GAP, width, self->viewHeight );
                                 self.frame = r;
                             }
                             else
@@ -686,15 +686,15 @@ static SuggestionsView * g_sugestions = nil;
                                 CGFloat y = rPosition.origin.y + rPosition.size.height + GAP/2;
                                 if ( y < 0.0 )
                                     y = rPosition.size.height + GAP/2;
-                                else if ( y + viewHeight > inFrame.size.height )
+                                else if ( y + self->viewHeight > inFrame.size.height )
                                 {
                                     if ( rPosition.origin.y < inFrame.size.height )
-                                        y = rPosition.origin.y - viewHeight - GAP;
+                                        y = rPosition.origin.y - self->viewHeight - GAP;
                                     else
-                                        y = inFrame.size.height - viewHeight - GAP;
+                                        y = inFrame.size.height - self->viewHeight - GAP;
                                 }
                                 y += inFrame.origin.y;
-                                CGRect r = CGRectMake( (CGFloat)x, y, width, viewHeight );
+                                CGRect r = CGRectMake( (CGFloat)x, y, width, self->viewHeight );
                                 self.frame = r;
                             }
                             [self show:YES];
@@ -707,7 +707,7 @@ static SuggestionsView * g_sugestions = nil;
                     // [self setNeedsDisplay];
                     [self setNeedsLayout];
                 });
-            [_lock unlock];
+                [self->_lock unlock];
         }
     });
     return YES;

@@ -1,6 +1,6 @@
 /* ************************************************************************************* */
 /* *    PhatWare WritePad SDK                                                          * */
-/* *    Copyright (c) 2008-2017 PhatWare(r) Corp. All rights reserved.                 * */
+/* *    Copyright (c) 2008-2018 PhatWare(r) Corp. All rights reserved.                 * */
 /* ************************************************************************************* */
 
 /* ************************************************************************************* *
@@ -47,9 +47,6 @@
 #import "LanguageViewController.h"
 
 @interface ViewController : UIViewController <UITextViewDelegate, LanguageSelectorControllerDelegate>
-{
-    WPTextView * textView;
-}
 
 @property (nonatomic, strong) IBOutlet UISegmentedControl * input;
 @property (nonatomic, strong) IBOutlet UINavigationBar * navBar;

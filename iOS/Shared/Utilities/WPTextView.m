@@ -1,6 +1,6 @@
 /* ************************************************************************************* */
 /* *    PhatWare WritePad SDK                                                          * */
-/* *    Copyright (c) 2008-2015 PhatWare(r) Corp. All rights reserved.                 * */
+/* *    Copyright (c) 2008-2018 PhatWare(r) Corp. All rights reserved.                 * */
 /* ************************************************************************************* */
 
 /* ************************************************************************************* *
@@ -139,6 +139,8 @@
             self.inputView = [DummyInputView sharedDummyInputPanel];
             // TODO: you should add ink view to the supervierw of the text editor and resize it based on the desired writing area
             inkCollector.frame = self.frame;
+            self.inputView.frame = CGRectMake(0.0, 0.0, 1.0, 1.0);
+
             [self.superview insertSubview:inkCollector belowSubview:[SuggestionsView sharedSuggestionsView]];
             break;
             

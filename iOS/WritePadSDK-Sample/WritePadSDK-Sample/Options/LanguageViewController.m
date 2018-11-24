@@ -1,6 +1,6 @@
 /* ************************************************************************************* */
 /* *    PhatWare WritePad SDK                                                          * */
-/* *    Copyright (c) 2008-2015 PhatWare(r) Corp. All rights reserved.                 * */
+/* *    Copyright (c) 2008-2018 PhatWare(r) Corp. All rights reserved.                 * */
 /* ************************************************************************************* */
 
 /* ************************************************************************************* *
@@ -148,10 +148,10 @@ static NSString *kCellIdentifier = @"MyCellIdentifier";
                                                 handler:^(UIAlertAction * action)
       {
           [alert dismissViewControllerAnimated:YES completion:nil];
-          if (delegate && [delegate respondsToSelector:@selector(languageSelected:language:)])
+          if (self->delegate && [self->delegate respondsToSelector:@selector(languageSelected:language:)])
           {
-              [delegate languageSelected:self
-                                language:[[[languages objectAtIndex:selectedIndex] objectForKey:@"ID"] intValue]];
+              [self->delegate languageSelected:self
+                                      language:[[[self->languages objectAtIndex:self->selectedIndex] objectForKey:@"ID"] intValue]];
           }
           [self.navigationController dismissViewControllerAnimated:YES completion:nil];
       }];

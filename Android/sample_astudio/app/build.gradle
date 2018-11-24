@@ -1,15 +1,15 @@
 apply plugin: 'com.android.application'
 
 android {
-    compileSdkVersion 19
-    buildToolsVersion '25.0.0'
+    compileSdkVersion 28
+    buildToolsVersion '28.0.3'
     sourceSets.main.jni.srcDirs = []
     sourceSets.main.jniLibs.srcDirs = []
 
     defaultConfig {
         applicationId "com.phatware.android.recotest"
-        minSdkVersion 14
-        targetSdkVersion 21
+        minSdkVersion 20
+        targetSdkVersion 28
 
         ndk {
             moduleName "libWritePadRecos"
@@ -57,6 +57,6 @@ android {
     }
 
     dependencies {
-        compile fileTree(dir: new File(buildDir, 'libs'), include: '*.jar')
+        api fileTree(dir: new File(buildDir, 'libs'), include: ['*.jar'])
     }
 }

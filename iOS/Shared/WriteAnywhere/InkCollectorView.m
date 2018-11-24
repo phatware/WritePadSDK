@@ -1,6 +1,6 @@
 /* ************************************************************************************* */
 /* *    PhatWare WritePad SDK                                                          * */
-/* *    Copyright (c) 2008-2016 PhatWare(r) Corp. All rights reserved.                 * */
+/* *    Copyright (c) 2008-2018 PhatWare(r) Corp. All rights reserved.                 * */
 /* ************************************************************************************* */
 
 /* ************************************************************************************* *
@@ -53,6 +53,43 @@
 #import "WPTextView.h"
 #import "utils.h"
 
+static DummyInputView * sharedDummyInputView = nil;
+
+@implementation DummyInputView
+
+- (id)initWithFrame:(CGRect)frame
+{
+    frame.size.height = 1.0;
+    self = [super initWithFrame:frame inputViewStyle:UIInputViewStyleDefault];
+    if (self)
+    {
+        // Initialization code
+    }
+    return self;
+}
+
++ (DummyInputView *) sharedDummyInputPanel
+{
+    if ( sharedDummyInputView == nil )
+    {
+        sharedDummyInputView = [[DummyInputView alloc] initWithFrame:CGRectZero inputViewStyle:UIInputViewStyleDefault];
+        sharedDummyInputView.allowsSelfSizing = YES;
+        sharedDummyInputView.autoresizingMask = UIViewAutoresizingFlexibleWidth;
+        sharedDummyInputView.backgroundColor = [UIColor clearColor];
+    }
+    return sharedDummyInputView;
+}
+
++ (void) destroySharedDummyInputPanel
+{
+    if ( sharedDummyInputView != nil )
+    {
+        sharedDummyInputView = nil;
+    }
+}
+
+@end
+
 @implementation InkCurrentStrokeView
 
 @synthesize inkView;
@@ -95,43 +132,6 @@
 - (int) AddPixelsX:(int)x Y:(int)y pressure:(int)pressure IsLastPoint:(BOOL)bLastPoint;
 
 @property (nonatomic, copy ) NSString * currentResult;
-
-@end
-
-static DummyInputView * sharedDummyInputView = nil;
-
-@implementation DummyInputView
-
-- (id)initWithFrame:(CGRect)frame
-{
-    frame.size.height = 0.5;
-    self = [super initWithFrame:frame];
-    if (self)
-    {
-        // Initialization code
-    }
-    return self;
-}
-
-+ (DummyInputView *) sharedDummyInputPanel
-{
-	if ( sharedDummyInputView == nil )
-	{
-		CGRect f = CGRectNull;
-		sharedDummyInputView = [[DummyInputView alloc] initWithFrame:f];
-		sharedDummyInputView.autoresizingMask = UIViewAutoresizingFlexibleWidth;
-        sharedDummyInputView.backgroundColor = [UIColor clearColor];
-	}
-	return sharedDummyInputView;
-}
-
-+ (void) destroySharedDummyInputPanel
-{
-	if ( sharedDummyInputView != nil )
-	{
-		sharedDummyInputView = nil;
-	}
-}
 
 @end
 

@@ -1,8 +1,9 @@
 {
   "images" : [
     {
-      "idiom" : "iphone",
       "size" : "20x20",
+      "idiom" : "iphone",
+      "filename" : "writepad-41.png",
       "scale" : "2x"
     },
     {
@@ -47,13 +48,15 @@
       "scale" : "3x"
     },
     {
-      "idiom" : "ipad",
       "size" : "20x20",
+      "idiom" : "ipad",
+      "filename" : "writepad-20.png",
       "scale" : "1x"
     },
     {
-      "idiom" : "ipad",
       "size" : "20x20",
+      "idiom" : "ipad",
+      "filename" : "writepad-42.png",
       "scale" : "2x"
     },
     {
@@ -97,6 +100,12 @@
       "idiom" : "ipad",
       "filename" : "Writepad-icon-167.png",
       "scale" : "2x"
+    },
+    {
+      "size" : "1024x1024",
+      "idiom" : "ios-marketing",
+      "filename" : "writepad-1024.png",
+      "scale" : "1x"
     }
   ],
   "info" : {

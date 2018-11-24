@@ -1,6 +1,6 @@
 /* ************************************************************************************* */
 /* *    PhatWare WritePad SDK                                                          * */
-/* *    Copyright (c) 2008-2016 PhatWare(r) Corp. All rights reserved.                 * */
+/* *    Copyright (c) 2008-2018 PhatWare(r) Corp. All rights reserved.                 * */
 /* ************************************************************************************* */
 
 /* ************************************************************************************* *
@@ -61,16 +61,13 @@ enum {
 {
 }
 
-@property(nonatomic, weak) InkCollectorView *		inkView;
+@property(nonatomic, weak) InkCollectorView * inkView;
 
 @end
 
 // dummy input view
 
-@interface DummyInputView : UIView
-{
-    
-}
+@interface DummyInputView : UIInputView
 
 + (DummyInputView *) sharedDummyInputPanel;
 + (void) destroySharedDummyInputPanel;

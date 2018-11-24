@@ -1,7 +1,7 @@
 //
 /* ************************************************************************************* */
 /* *    PhatWare WritePad SDK                                                          * */
-/* *    Copyright (c) 2008-2017 PhatWare(r) Corp. All rights reserved.                 * */
+/* *    Copyright (c) 2008-2018 PhatWare(r) Corp. All rights reserved.                 * */
 /* ************************************************************************************* */
 
 /* ************************************************************************************* *
@@ -49,9 +49,9 @@
 #import "EditOptionsViewController.h"
 #import "OptionKeys.h"
 
-@interface ViewController ()
+#define MARGIN_OFFSET   16.0
 
-- (void) create_WPTextView;
+@interface ViewController ()
 
 @property (nonatomic, strong)  WPTextView * textView;
 @property (nonatomic, strong)  NSLayoutConstraint *keyboardHeight;
@@ -61,13 +61,9 @@
 
 @implementation ViewController
 
-@synthesize textView;
-@synthesize keyboardHeight;
-@synthesize suggestionsHeight;
-
 - (void) create_WPTextView
 {
-    textView = [[WPTextView alloc] initWithFrame:self.view.bounds];
+    WPTextView * textView = [[WPTextView alloc] initWithFrame:self.view.bounds];
     
     textView.opaque = NO;
     textView.font = [UIFont fontWithName:@"Arial" size:20.0];
@@ -76,8 +72,10 @@
     textView.autoresizesSubviews = YES;
     textView.translatesAutoresizingMaskIntoConstraints = NO;
     textView.delegate = self;
+    textView.insetsLayoutMarginsFromSafeArea = YES;
     textView.keyboardType = UIKeyboardTypeDefault;	// use the default type input method (entire keyboard)
     [self.view addSubview:textView];
+    self.textView = textView;
     
     SuggestionsView * suggestions = [SuggestionsView sharedSuggestionsView];
     
@@ -86,24 +84,71 @@
 
     // show suggestions view
     NSLayoutConstraint * constr;
-    self.suggestionsHeight = [NSLayoutConstraint constraintWithItem:suggestions attribute:NSLayoutAttributeHeight relatedBy:NSLayoutRelationEqual toItem:nil attribute:NSLayoutAttributeHeight multiplier:1.0 constant:[SuggestionsView getHeight]];
+    self.suggestionsHeight = [NSLayoutConstraint constraintWithItem:suggestions
+                                                          attribute:NSLayoutAttributeHeight
+                                                          relatedBy:NSLayoutRelationEqual
+                                                             toItem:nil
+                                                          attribute:NSLayoutAttributeHeight
+                                                         multiplier:1.0
+                                                           constant:[SuggestionsView getHeight]];
     [suggestions addConstraint:self.suggestionsHeight];
-    constr = [NSLayoutConstraint constraintWithItem:suggestions attribute:NSLayoutAttributeLeft relatedBy:NSLayoutRelationEqual toItem:self.view attribute:NSLayoutAttributeLeft multiplier:1.0 constant:0.0];
+    constr = [NSLayoutConstraint constraintWithItem:suggestions
+                                          attribute:NSLayoutAttributeLeft
+                                          relatedBy:NSLayoutRelationEqual
+                                             toItem:self.view attribute:NSLayoutAttributeLeftMargin
+                                         multiplier:1.0
+                                           constant:-MARGIN_OFFSET];
     [self.view addConstraint:constr];
-    constr = [NSLayoutConstraint constraintWithItem:suggestions attribute:NSLayoutAttributeRight relatedBy:NSLayoutRelationEqual toItem:self.view attribute:NSLayoutAttributeRight multiplier:1.0 constant:0.0];
+    constr = [NSLayoutConstraint constraintWithItem:suggestions
+                                          attribute:NSLayoutAttributeRight
+                                          relatedBy:NSLayoutRelationEqual
+                                             toItem:self.view
+                                          attribute:NSLayoutAttributeRightMargin
+                                         multiplier:1.0
+                                           constant:MARGIN_OFFSET];
     [self.view addConstraint:constr];
-    constr = [NSLayoutConstraint constraintWithItem:suggestions attribute:NSLayoutAttributeTop relatedBy:NSLayoutRelationEqual toItem:self.navBar attribute:NSLayoutAttributeBottom multiplier:1.0 constant:0.0];
+    constr = [NSLayoutConstraint constraintWithItem:suggestions
+                                          attribute:NSLayoutAttributeTop
+                                          relatedBy:NSLayoutRelationEqual
+                                             toItem:self.navBar
+                                          attribute:NSLayoutAttributeBottom
+                                         multiplier:1.0
+                                           constant:0.0];
     [self.view addConstraint:constr];
     
-    constr = [NSLayoutConstraint constraintWithItem:textView attribute:NSLayoutAttributeLeft relatedBy:NSLayoutRelationEqual toItem:self.view attribute:NSLayoutAttributeLeft multiplier:1.0 constant:0.0];
+    constr = [NSLayoutConstraint constraintWithItem:textView
+                                          attribute:NSLayoutAttributeLeft
+                                          relatedBy:NSLayoutRelationEqual
+                                             toItem:self.view
+                                          attribute:NSLayoutAttributeLeftMargin
+                                         multiplier:1.0
+                                           constant:-MARGIN_OFFSET];
     [self.view addConstraint:constr];
-    constr = [NSLayoutConstraint constraintWithItem:textView attribute:NSLayoutAttributeRight relatedBy:NSLayoutRelationEqual toItem:self.view attribute:NSLayoutAttributeRight multiplier:1.0 constant:0.0];
+    constr = [NSLayoutConstraint constraintWithItem:textView
+                                          attribute:NSLayoutAttributeRight
+                                          relatedBy:NSLayoutRelationEqual
+                                             toItem:self.view
+                                          attribute:NSLayoutAttributeRightMargin
+                                         multiplier:1.0
+                                           constant:MARGIN_OFFSET];
     [self.view addConstraint:constr];
-    constr = [NSLayoutConstraint constraintWithItem:textView attribute:NSLayoutAttributeTop relatedBy:NSLayoutRelationEqual toItem:suggestions  attribute:NSLayoutAttributeBottom multiplier:1.0 constant:0.0];
+    constr = [NSLayoutConstraint constraintWithItem:textView
+                                          attribute:NSLayoutAttributeTop
+                                          relatedBy:NSLayoutRelationEqual
+                                             toItem:suggestions
+                                          attribute:NSLayoutAttributeBottom
+                                         multiplier:1.0
+                                           constant:0.0];
     [self.view addConstraint:constr];
 
     // Use autolayout to position the view
-    self.keyboardHeight = [NSLayoutConstraint constraintWithItem:textView attribute:NSLayoutAttributeBottom relatedBy:NSLayoutRelationEqual toItem:self.view attribute:NSLayoutAttributeBottom multiplier:1.0 constant:0.0];
+    self.keyboardHeight = [NSLayoutConstraint constraintWithItem:textView
+                                                       attribute:NSLayoutAttributeBottom
+                                                       relatedBy:NSLayoutRelationEqual
+                                                          toItem:self.view
+                                                       attribute:NSLayoutAttributeBottom
+                                                      multiplier:1.0
+                                                        constant:0.0];
     [self.view addConstraint:self.keyboardHeight];
     
     // Uncomment to show suggestion view as popup
@@ -134,18 +179,19 @@
     NSError	*	fileerror = nil;
     NSString *	fileName = [[NSString alloc] initWithString:[[NSBundle mainBundle] pathForResource:@"ReleaseNotes" ofType:@"txt"]];
     NSString *	text = [[NSString alloc] initWithContentsOfFile:fileName encoding:NSUTF8StringEncoding error:&fileerror];
-    textView.text = text;
+    _textView.text = text;
     
     [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(reloadOptions:) name:EDITCTL_RELOAD_OPTIONS object:nil];
     
     self.input.selectedSegmentIndex = InputSystem_InputPanel;
-    [textView setInputMethod:InputSystem_InputPanel];
+    [_textView setInputMethod:InputSystem_InputPanel];
 }
 
 -(IBAction) onInput:(id)sender
 {
-    [textView setInputMethod:(int)self.input.selectedSegmentIndex];
-    self.suggestionsHeight.constant = (textView.inputSystem == InputSystem_Keyboard) ? 0.0 : [SuggestionsView getHeight];
+    self.keyboardHeight.constant = 0.0;
+    [_textView setInputMethod:(int)self.input.selectedSegmentIndex];
+    self.suggestionsHeight.constant = (_textView.inputSystem == InputSystem_Keyboard) ? 0.0 : [SuggestionsView getHeight];
     [UIView animateWithDuration:0.25 animations:^{
         [self.view layoutIfNeeded];
     }];
@@ -155,16 +201,17 @@
 {
     // Make the keyboard appear when the application launches.
     [super viewWillAppear:animated];
-    [textView becomeFirstResponder];
+    [_textView becomeFirstResponder];
 }
 
 - (void)viewDidAppear:(BOOL)animated
 {
+    [super viewDidAppear:animated];
     // After everything has been initialized set this flag
     [[NSUserDefaults standardUserDefaults] setBool:YES forKey:kRecoOptionsFirstStartKey];
 }
 
-- (BOOL)textViewShouldBeginEditing:(UITextView *)aTextView
+- (BOOL) textViewShouldBeginEditing:(UITextView *)aTextView
 {
     return YES;
 }
@@ -175,10 +222,10 @@
     [[RecognizerManager sharedManager] disable:YES];
     [[RecognizerManager sharedManager] enable];
     [[RecognizerManager sharedManager] setMode:mode];
-    [textView reloadOptions];
+    [_textView reloadOptions];
 }
 
-- (BOOL)textViewShouldEndEditing:(UITextView *)aTextView
+- (BOOL) textViewShouldEndEditing:(UITextView *)aTextView
 {
     [aTextView resignFirstResponder];
     return YES;
@@ -297,7 +344,8 @@
     self.keyboardHeight = nil;
     self.suggestionsHeight = nil;
     [[NSNotificationCenter defaultCenter] removeObserver:self];
-    [textView removeFromSuperview];
+    [_textView removeFromSuperview];
+    self.textView = nil;
 }
 
 @end

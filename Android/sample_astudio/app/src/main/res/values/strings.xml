@@ -20,6 +20,8 @@
     <string name="preference_recognizer_separate_letters_summary">If ON, do not connect individual letters.</string>
     <string name="preference_recognizer_single_word_only_on">Single Word Only</string>
     <string name="preference_recognizer_single_word_only_summary">If ON, write only one word per recognition session.</string>
+    <string name="recognized_text">Recognized Text</string>
+    <string name="ready_text">Ready Text</string>
 
 
     <string-array name="preference_main_settings_language_list">

@@ -102,8 +102,7 @@ public class WritePadManager {
 
     static Language language = Language.en;
 
-
-   public static boolean reloadAutocorrector() {
+    public static boolean reloadAutocorrector() {
         return writePadAPI.recoReloadAutocorrector();
     }
 
@@ -180,7 +179,7 @@ public class WritePadManager {
         return writePadAPI.recoInkData(nDataLen, bAsync, bFlipY, bSort );
     }
 
-   public static int recoInit(Context context) {
+    public static int recoInit(Context context) {
         int result = -1;
         try {
             String dir = context.getDir("user", 0).getAbsolutePath();
@@ -197,19 +196,19 @@ public class WritePadManager {
         language.setInit(false);
     }
 
-     public static Language getLangByString(String defaultLanguage) {
-        defaultLanguage = defaultLanguage == null ? Locale.getDefault().getLanguage() : defaultLanguage;
-        if (defaultLanguage == null) {
-            return Language.en;
-        }
-        Language language;
-        try {
-            language = Language.valueOf(defaultLanguage);
-        } catch (Exception ignored) {
-            language = Language.en;
-        }
+    public static Language getLangByString(String defaultLanguage) {
+    defaultLanguage = defaultLanguage == null ? Locale.getDefault().getLanguage() : defaultLanguage;
+    if (defaultLanguage == null) {
+        return Language.en;
+    }
+    Language language;
+    try {
+        language = Language.valueOf(defaultLanguage);
+    } catch (Exception ignored) {
+        language = Language.en;
+    }
 
-        return language;
+    return language;
     }
 
     public static void setLanguage(String pLanguage, Context context) {

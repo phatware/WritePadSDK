@@ -73,7 +73,11 @@ public class MainSettings extends PreferenceActivity {
             languagePreference.setOnPreferenceClickListener(new Preference.OnPreferenceClickListener() {
                 @Override
                 public boolean onPreferenceClick(final Preference preference) {
-                    DialogHelper.createLanguageDialog(MainSettings.this, getCurrentFocus().getWindowToken()).show();
+                    try {
+                        DialogHelper.createLanguageDialog(MainSettings.this, getWindow().getDecorView().getRootView().getWindowToken()).show();
+                    } catch( Throwable e) {
+                        Log.e(TAG, e.getMessage(), e);
+                    }
                     return true;
                 }
             });
@@ -87,7 +91,6 @@ public class MainSettings extends PreferenceActivity {
             finish();
         }
     }
-
 
 
     public static String getLanguage(Context context) {
@@ -118,5 +121,10 @@ public class MainSettings extends PreferenceActivity {
 
     public static boolean isSingleWordEnabled(Context context) {
         return getCheckBoxPreference(context, context.getResources(), R.string.preference_recognizer_single_word_only_key, false);
+    }
+
+    @Override
+    public void onBackPressed() {
+        finish();
     }
 }

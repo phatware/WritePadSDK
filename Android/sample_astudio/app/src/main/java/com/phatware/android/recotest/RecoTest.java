@@ -101,7 +101,7 @@ public class RecoTest extends Activity {
         Point size = new Point();
         defaultDisplay.getSize(size);
         int screenHeight = size.y;
-        int textViewHeight = 15 * screenHeight / 100;
+        int textViewHeight = (15 * screenHeight) / 100;
         final LinearLayout.LayoutParams params = new LinearLayout.LayoutParams(ViewGroup.LayoutParams.MATCH_PARENT, textViewHeight);
         recognizedTextContainer.setLayoutParams(params);
         readyText.setLayoutParams(params);

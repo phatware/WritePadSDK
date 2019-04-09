@@ -6,13 +6,13 @@
         >
     <TextView
             android:id="@+id/ready_text_title"
-            android:text="Ready Text"
+            android:text="@string/ready_text"
             android:layout_width="fill_parent"
             android:layout_height="wrap_content"
             android:background="@color/candidate_recommended_background"
             android:textColor="@color/white"
-            android:paddingLeft="2dp"
-            android:textSize="12dp"
+            android:paddingStart="2dp"
+            android:textSize="12sp"
             />
 
     <TextView
@@ -21,19 +21,19 @@
         android:layout_height="34dp"
         android:layout_margin="2dp"
         android:background="@color/white"
-        android:paddingLeft="2dp"
+        android:paddingStart="2dp"
         android:textColor="@color/black"
-        android:textSize="16dp" />
+        android:textSize="16sp" />
 
     <TextView
             android:id="@+id/recognized_text_title"
-            android:text="Recognized Text"
+            android:text="@string/recognized_text"
             android:layout_width="fill_parent"
             android:layout_height="wrap_content"
             android:background="@color/candidate_recommended_background"
-            android:paddingLeft="2dp"
+            android:paddingStart="2dp"
             android:textColor="@color/white"
-            android:textSize="12dp"
+            android:textSize="12sp"
             />
 
     <LinearLayout

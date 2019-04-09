@@ -36,7 +36,7 @@ android {
         into 'lib/'
     }
 
-    // TODO: to reduce jar size, replace APP_ABI=all with list list of CPUs you want to support
+    // TODO: to reduce jar size, replace APP_ABI=all with list of CPUs you want to support
 
     task ndkBuild(type: Exec, description: 'Compile JNI source via NDK') {
 

@@ -8,7 +8,7 @@
     <OutputType>Exe</OutputType>
     <RootNamespace>xamarin_sample</RootNamespace>
     <IPhoneResourcePrefix>Resources</IPhoneResourcePrefix>
-    <ReleaseVersion>5.5</ReleaseVersion>
+    <ReleaseVersion>5.6</ReleaseVersion>
     <Description>WritePad Handwriting Recognition SDK (iOS Sample)</Description>
     <TargetFrameworkIdentifier>Xamarin.iOS</TargetFrameworkIdentifier>
     <TargetFrameworkVersion>v1.0</TargetFrameworkVersion>
@@ -24,7 +24,7 @@
     <MtouchLink>None</MtouchLink>
     <ConsolePause>false</ConsolePause>
     <MtouchDebug>True</MtouchDebug>
-    <MtouchArch>i386</MtouchArch>
+    <MtouchArch>x86_64</MtouchArch>
     <AssemblyName>WritePadSDKXamarinSample</AssemblyName>
     <MtouchOptimizePNGs>True</MtouchOptimizePNGs>
     <CodesignKey>iPhone Developer</CodesignKey>
@@ -126,6 +126,7 @@
   <ItemGroup>
     <InterfaceDefinition Include="xamarin_sampleViewController_iPhone.xib" />
     <InterfaceDefinition Include="xamarin_sampleViewController_iPad.xib" />
+    <InterfaceDefinition Include="LaunchScreen.storyboard" />
   </ItemGroup>
   <ItemGroup>
     <BundleResource Include="..\..\Dictionaries\Italian.dct">
@@ -240,19 +241,22 @@
     <ImageAsset Include="Resources\Images.xcassets\AppIcons.appiconset\writepad-58.png">
       <InProject>false</InProject>
     </ImageAsset>
-    <ImageAsset Include="Resources\Images.xcassets\LaunchImage.launchimage\Contents.json">
-      <InProject>false</InProject>
-    </ImageAsset>
-    <ImageAsset Include="Resources\Images.xcassets\LaunchImage.launchimage\Default-568h%402x.png">
-      <InProject>false</InProject>
-    </ImageAsset>
     <ImageAsset Include="Resources\Images.xcassets\AppIcons.appiconset\Writepad-icon-167.png" />
+    <ImageAsset Include="Resources\Images.xcassets\AppIcons.appiconset\writepad-1024.png" />
+    <ImageAsset Include="Resources\Images.xcassets\AppIcons.appiconset\writepad-40.png" />
+    <ImageAsset Include="Resources\Images.xcassets\AppIcons.appiconset\writepad-40-1.png" />
+    <ImageAsset Include="Resources\Images.xcassets\AppIcons.appiconset\writepad-20.png" />
+    <ImageAsset Include="Resources\Images.xcassets\LaunchImage-1.launchimage\Contents.json" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\BindingLibrary\BindingLibrary.csproj">
       <Project>{2E456650-2AC6-4D6D-9887-96030794EA3C}</Project>
       <Name>BindingLibrary</Name>
     </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <ITunesArtwork Include="iTunesArtwork%402x" />
+    <ITunesArtwork Include="iTunesArtwork" />
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath)\Xamarin\iOS\Xamarin.iOS.CSharp.targets" />
 </Project>

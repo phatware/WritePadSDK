@@ -225,8 +225,14 @@ Global
 		$0.TextStylePolicy = $38
 		$38.inheritsSet = null
 		$38.scope = text/x-vs
+		$0.TextStylePolicy = $39
+		$39.inheritsSet = null
+		$39.scope = application/vnd.apple-xcode-storyboard
+		$0.XmlFormattingPolicy = $40
+		$40.inheritsSet = null
+		$40.scope = application/vnd.apple-xcode-storyboard
 		description = WritePad Handwriting Recognition SDK for Xamarin (iOS Sample)
-		version = 5.5
+		version = 5.6
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

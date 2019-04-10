@@ -1,11 +1,10 @@
 # WritePad SDK License Agreement (Non-commercial Use)
 
-**Copyright (c) 1997-2017 PhatWare Corp. All rights reserved.**
+**Copyright (c) 1997-2019 PhatWare Corp. All rights reserved.**
 
 This WritePad SDK License Agreement (“Agreement”) is made and entered
 into on (today) ("Effective Date"), by and between PhatWare Corp.,
-a Delaware company located at 1314 S. Grand Blvd, Ste. 2-175 Spokane, WA
-99202 ("PhatWare"), and Licensee.
+a Delaware company ("PhatWare"), and Licensee.
 
 PhatWare has developed certain computer software more fully described in
 Exhibit A attached hereto (the "Software") and provides such Software to

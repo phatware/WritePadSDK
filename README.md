@@ -3,7 +3,7 @@
 
 **Accurate, fast, compact, easy to use, multilingual, multiplatform handwriting recognition technology for mobile and desktop computers**
 
-#### Copyright © 1997-2017 PhatWare® Corp. All rights reserved.
+#### Copyright © 1997-2019 PhatWare® Corp. All rights reserved.
 
 ## License Overview
 
@@ -43,15 +43,15 @@ touch enabled mobile devices. The SDK includes:
     Portuguese (Brazilian and European), Norwegian, Finish, Swedish, and Spanish**.
     Engine is compatible with the user-specified platform. 
 -   **iOS**: WritePad SDK static library supports iOS 8.0 or later. The sample code is for iOS
-    10 (Swift 3) or later and requires Xcode 8.1 or later.
+    11 (Swift 5) or later and requires Xcode 10.2 or later.
 -   **Android**: WritePad SDK static libraries support Android 4.0 or later for arm64-v8a, armeabi, armeabi-v7a, 
     mips, mips64, x86, and x86_64 CPUs. 
 -   **Windows**: WritePad SDK DLLs for Windows and Windows Phone (x86, x64, and ARM CPUs), metro-style 
     (Windows/Windows Phone 8.1+), and desktop C# WPF sample (Windows 10+, .NET framework 4.6). Sample
     code requires Visual Studio 2015 Community Edition or higher.
 -   **Xamarin (Android and iOS)**: WritePad SDK static libraries support Android 4.0 or later for arm64-v8a, armeabi, armeabi-v7a, 
-    mips, mips64, x86, and x86_64 CPUs and static library supports iOS 9.0 or later. Sample code is provided for Android and iOS.
-    Requires Xamarin Studio 6.1 or later Indie or Business edition.
+    mips, mips64, x86, and x86_64 CPUs and static library supports iOS 10.0 or later. Sample code is provided for Android and iOS.
+    Requires Microsoft Visual Studio 8 or later Indie or Business edition.
 -   Header files with definition of API calls and structures
 -   Developer's Guide in PDF
 -   Sample source code that demonstrates how to use the WritePad SDK

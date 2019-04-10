@@ -70,7 +70,7 @@ class LanguageViewController: UITableViewController
 
         if self.showDone == true
         {
-            self.navigationItem.leftBarButtonItem = UIBarButtonItem(barButtonSystemItem: UIBarButtonSystemItem.cancel, target: self, action: #selector(LanguageViewController.CancelButton(_:)))
+            self.navigationItem.leftBarButtonItem = UIBarButtonItem(barButtonSystemItem: UIBarButtonItem.SystemItem.cancel, target: self, action: #selector(LanguageViewController.CancelButton(_:)))
         }
     }
     
@@ -105,12 +105,12 @@ class LanguageViewController: UITableViewController
         var cell : UITableViewCell? = tableView.dequeueReusableCell(withIdentifier: "ID1092479864") as UITableViewCell?
         if cell == nil
         {
-            cell = UITableViewCell(style: UITableViewCellStyle.default, reuseIdentifier: "ID1092479864")
+            cell = UITableViewCell(style: UITableViewCell.CellStyle.default, reuseIdentifier: "ID1092479864")
         }
 
         // Configure the cell...
-        cell!.selectionStyle = UITableViewCellSelectionStyle.none
-        cell!.accessoryType = UITableViewCellAccessoryType.none
+        cell!.selectionStyle = UITableViewCell.SelectionStyle.none
+        cell!.accessoryType = UITableViewCell.AccessoryType.none
         
         let index = indexPath.row
         if index < self.languages.count
@@ -123,12 +123,12 @@ class LanguageViewController: UITableViewController
             {
                 if self.selectedLanguage == lang
                 {
-                    cell!.accessoryType = UITableViewCellAccessoryType.checkmark
+                    cell!.accessoryType = UITableViewCell.AccessoryType.checkmark
                 }
             }
             else if index == self.selectedIndex
             {
-                cell!.accessoryType = UITableViewCellAccessoryType.checkmark
+                cell!.accessoryType = UITableViewCell.AccessoryType.checkmark
             }
         }
         return cell!

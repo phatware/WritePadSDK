@@ -1,0 +1,15 @@
+
+/* Class = "UIBarButtonItem"; title = "Options"; ObjectID = "0mS-6z-hct"; */
+"0mS-6z-hct.title" = "Options";
+
+/* Class = "UINavigationItem"; title = "WritePad SDK"; ObjectID = "DDc-Yj-Dkx"; */
+"DDc-Yj-Dkx.title" = "WritePad SDK";
+
+/* Class = "UISegmentedControl"; uLT-T0-rMk.segmentTitles[0] = "WP"; ObjectID = "uLT-T0-rMk"; */
+"uLT-T0-rMk.segmentTitles[0]" = "WP";
+
+/* Class = "UISegmentedControl"; uLT-T0-rMk.segmentTitles[1] = "WA"; ObjectID = "uLT-T0-rMk"; */
+"uLT-T0-rMk.segmentTitles[1]" = "WA";
+
+/* Class = "UISegmentedControl"; uLT-T0-rMk.segmentTitles[2] = "KB"; ObjectID = "uLT-T0-rMk"; */
+"uLT-T0-rMk.segmentTitles[2]" = "KB";

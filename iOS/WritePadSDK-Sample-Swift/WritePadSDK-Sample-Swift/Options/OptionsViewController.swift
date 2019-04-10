@@ -78,13 +78,13 @@ class OptionsViewController: UITableViewController, LanguageSelectorDelegate
         // Uncomment the following line to preserve selection between presentations
         // self.clearsSelectionOnViewWillAppear = false
 
-        self.navigationItem.leftBarButtonItem = UIBarButtonItem(barButtonSystemItem: UIBarButtonSystemItem.done, target: self, action: #selector(OptionsViewController.DoneButton(_:)))
+        self.navigationItem.leftBarButtonItem = UIBarButtonItem(barButtonSystemItem: UIBarButtonItem.SystemItem.done, target: self, action: #selector(OptionsViewController.DoneButton(_:)))
     }
     
     func createSwitch( _ on : Bool, tag: Int ) -> UISwitch
     {
         let sw : UISwitch = UISwitch()
-        sw.addTarget(self, action: #selector(OptionsViewController.switchAction(_:)), for: UIControlEvents.valueChanged )
+        sw.addTarget(self, action: #selector(OptionsViewController.switchAction(_:)), for: UIControl.Event.valueChanged )
         sw.isOn = on;
         sw.tag = tag;
         return sw
@@ -158,7 +158,7 @@ class OptionsViewController: UITableViewController, LanguageSelectorDelegate
     func selectLanguage()
     {
         let langman = LanguageManager.shared()
-        let viewController = LanguageViewController( style: UITableViewStyle.plain )
+        let viewController = LanguageViewController( style: UITableView.Style.plain )
         viewController.delegate = self
         
         let languages : NSArray = langman!.supportedLanguages() as NSArray
@@ -228,12 +228,12 @@ class OptionsViewController: UITableViewController, LanguageSelectorDelegate
         var cell : UITableViewCell? = tableView.dequeueReusableCell(withIdentifier: "cellId1") as UITableViewCell?
         if cell == nil
         {
-            cell = UITableViewCell(style: UITableViewCellStyle.default, reuseIdentifier: "cellId1")
+            cell = UITableViewCell(style: UITableViewCell.CellStyle.default, reuseIdentifier: "cellId1")
         }
         
         // Configure the cell...
-        cell!.selectionStyle = UITableViewCellSelectionStyle.none
-        cell!.accessoryType = UITableViewCellAccessoryType.none
+        cell!.selectionStyle = UITableViewCell.SelectionStyle.none
+        cell!.accessoryType = UITableViewCell.AccessoryType.none
         
         let def = UserDefaults.standard
         
@@ -241,14 +241,14 @@ class OptionsViewController: UITableViewController, LanguageSelectorDelegate
         {
             case RecognizerSettings.shapeSelector_Section.rawValue where indexPath.row == 0 :
                 cell!.accessoryView = nil
-                cell!.accessoryType = UITableViewCellAccessoryType.disclosureIndicator
-                cell!.selectionStyle = UITableViewCellSelectionStyle.default
+                cell!.accessoryType = UITableViewCell.AccessoryType.disclosureIndicator
+                cell!.selectionStyle = UITableViewCell.SelectionStyle.default
                 cell!.textLabel!.text = "Letter Shapes"
 
             case RecognizerSettings.language_Section.rawValue where indexPath.row == 0 :
                 cell!.accessoryView = nil
-                cell!.accessoryType = UITableViewCellAccessoryType.disclosureIndicator
-                cell!.selectionStyle = UITableViewCellSelectionStyle.default
+                cell!.accessoryType = UITableViewCell.AccessoryType.disclosureIndicator
+                cell!.selectionStyle = UITableViewCell.SelectionStyle.default
                 cell!.textLabel!.text = "Language: " + LanguageManager.shared().languageName(WPLanguageUnknown)
             
             case RecognizerSettings.useLearner_Section.rawValue where indexPath.row == 0 :
@@ -261,8 +261,8 @@ class OptionsViewController: UITableViewController, LanguageSelectorDelegate
             
             case RecognizerSettings.useCorrector_Section.rawValue where indexPath.row == 1 :
                 cell!.accessoryView = nil
-                cell!.accessoryType = UITableViewCellAccessoryType.disclosureIndicator
-                cell!.selectionStyle = UITableViewCellSelectionStyle.default
+                cell!.accessoryType = UITableViewCell.AccessoryType.disclosureIndicator
+                cell!.selectionStyle = UITableViewCell.SelectionStyle.default
                 cell!.textLabel!.text = "Autocorrector Word List"
 
             case RecognizerSettings.detectNewLine_Section.rawValue where indexPath.row == 0 :
@@ -287,8 +287,8 @@ class OptionsViewController: UITableViewController, LanguageSelectorDelegate
             
             case RecognizerSettings.useUserDict_Section.rawValue where indexPath.row == 1 :
                 cell!.accessoryView = nil
-                cell!.accessoryType = UITableViewCellAccessoryType.disclosureIndicator
-                cell!.selectionStyle = UITableViewCellSelectionStyle.default
+                cell!.accessoryType = UITableViewCell.AccessoryType.disclosureIndicator
+                cell!.selectionStyle = UITableViewCell.SelectionStyle.default
                 cell!.textLabel!.text = "Edit User Dictionary"
 
             case RecognizerSettings.insertResult_Section.rawValue where indexPath.row == 0 :

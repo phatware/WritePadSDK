@@ -80,7 +80,7 @@ class EditWordItemViewController: UITableViewController, UITextFieldDelegate
     var toWordField : UITextField? = nil
     var fromWordField : UITextField? = nil
 
-    override init(style: UITableViewStyle)
+    override init(style: UITableView.Style)
     {
         super.init(style: style)
         self.toWordField = createTextField( EditWordListSection.toWord_Section.rawValue )
@@ -128,18 +128,18 @@ class EditWordItemViewController: UITableViewController, UITextFieldDelegate
         let frame : CGRect = CGRect(x: 0.0, y: 0.0, width: kTextFieldWidth, height: kTextFieldHeight)
         let returnTextField : UITextField = UITextField(frame: frame)
         
-        returnTextField.borderStyle = UITextBorderStyle.roundedRect
+        returnTextField.borderStyle = UITextField.BorderStyle.roundedRect
         returnTextField.font = UIFont.systemFont( ofSize: 18.0 )
         returnTextField.backgroundColor = UIColor.white
         returnTextField.autocorrectionType = UITextAutocorrectionType.no	// no auto correction support
         returnTextField.autocapitalizationType = UITextAutocapitalizationType.none
-        returnTextField.autoresizingMask = UIViewAutoresizing.flexibleWidth
+        returnTextField.autoresizingMask = UIView.AutoresizingMask.flexibleWidth
         returnTextField.delegate = self
-        returnTextField.borderStyle = UITextBorderStyle.none
+        returnTextField.borderStyle = UITextField.BorderStyle.none
         returnTextField.keyboardType = UIKeyboardType.default
         returnTextField.returnKeyType = UIReturnKeyType.done
         returnTextField.tag = tag
-        returnTextField.clearButtonMode = UITextFieldViewMode.whileEditing // has a clear 'x' button to the right
+        returnTextField.clearButtonMode = UITextField.ViewMode.whileEditing // has a clear 'x' button to the right
         
         return returnTextField
     }
@@ -147,7 +147,7 @@ class EditWordItemViewController: UITableViewController, UITextFieldDelegate
     func createSwitch( _ on : Bool, tag: Int ) -> UISwitch
     {
         let sw : UISwitch = UISwitch()
-        sw.addTarget(self, action: #selector(EditWordItemViewController.switchAction(_:)), for: UIControlEvents.valueChanged )
+        sw.addTarget(self, action: #selector(EditWordItemViewController.switchAction(_:)), for: UIControl.Event.valueChanged )
         sw.isOn = on;
         sw.tag = tag;
         return sw
@@ -228,9 +228,9 @@ class EditWordItemViewController: UITableViewController, UITextFieldDelegate
             cell = tableView.dequeueReusableCell(withIdentifier: "ID1092378783") as UITableViewCell?
             if cell == nil
             {
-                cell = UITableViewCell(style: UITableViewCellStyle.default, reuseIdentifier: "ID1092378783")
+                cell = UITableViewCell(style: UITableViewCell.CellStyle.default, reuseIdentifier: "ID1092378783")
             }
-            cell!.selectionStyle = UITableViewCellSelectionStyle.none
+            cell!.selectionStyle = UITableViewCell.SelectionStyle.none
             // newWordField!.text = "";
             cell!.contentView.autoresizesSubviews = true
             var frame = cell!.contentView.bounds
@@ -246,10 +246,10 @@ class EditWordItemViewController: UITableViewController, UITextFieldDelegate
             cell = tableView.dequeueReusableCell(withIdentifier: "ID1092479864") as UITableViewCell?
             if cell == nil
             {
-                cell = UITableViewCell(style: UITableViewCellStyle.default, reuseIdentifier: "ID1092479864")
+                cell = UITableViewCell(style: UITableViewCell.CellStyle.default, reuseIdentifier: "ID1092479864")
             }
-            cell!.selectionStyle = UITableViewCellSelectionStyle.none
-            cell!.accessoryType = UITableViewCellAccessoryType.none
+            cell!.selectionStyle = UITableViewCell.SelectionStyle.none
+            cell!.accessoryType = UITableViewCell.AccessoryType.none
             switch indexPath.row
             {
             case EditWordFlagsRow.ignoreCase_Row.rawValue :

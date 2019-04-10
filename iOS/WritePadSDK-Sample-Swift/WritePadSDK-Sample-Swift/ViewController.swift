@@ -77,61 +77,61 @@ class ViewController: UIViewController, UITextViewDelegate, LanguageSelectorDele
         suggestions.backgroundColor = UIColor( white: 0.22, alpha:0.92)
         
         self.suggestionsHeight = NSLayoutConstraint( item:suggestions,
-            attribute: NSLayoutAttribute.height,
-            relatedBy: NSLayoutRelation.equal, toItem: nil,
-            attribute: NSLayoutAttribute.height,
+            attribute: NSLayoutConstraint.Attribute.height,
+            relatedBy: NSLayoutConstraint.Relation.equal, toItem: nil,
+            attribute: NSLayoutConstraint.Attribute.height,
             multiplier: 1.0, constant: SuggestionsView.getHeight())
         suggestions.addConstraint( self.suggestionsHeight )
         
         let leftS = NSLayoutConstraint( item:suggestions,
-            attribute: NSLayoutAttribute.left,
-            relatedBy: NSLayoutRelation.equal, toItem:self.view,
-            attribute: NSLayoutAttribute.leftMargin,
+            attribute: NSLayoutConstraint.Attribute.left,
+            relatedBy: NSLayoutConstraint.Relation.equal, toItem:self.view,
+            attribute: NSLayoutConstraint.Attribute.leftMargin,
             multiplier: 1.0, constant:-marginOffset )
         self.view.addConstraint( leftS )
         let topS = NSLayoutConstraint( item:suggestions,
-            attribute: NSLayoutAttribute.top,
-            relatedBy: NSLayoutRelation.equal, toItem:self.navBar,
-            attribute: NSLayoutAttribute.bottom,
+            attribute: NSLayoutConstraint.Attribute.top,
+            relatedBy: NSLayoutConstraint.Relation.equal, toItem:self.navBar,
+            attribute: NSLayoutConstraint.Attribute.bottom,
             multiplier: 1.0, constant: 0.0 )
         self.view.addConstraint( topS )
         let rightS = NSLayoutConstraint( item:suggestions,
-            attribute: NSLayoutAttribute.right,
-            relatedBy: NSLayoutRelation.equal, toItem:self.view,
-            attribute: NSLayoutAttribute.rightMargin,
+            attribute: NSLayoutConstraint.Attribute.right,
+            relatedBy: NSLayoutConstraint.Relation.equal, toItem:self.view,
+            attribute: NSLayoutConstraint.Attribute.rightMargin,
             multiplier: 1.0, constant: marginOffset )
         self.view.addConstraint( rightS )
         
-        let right = NSLayoutConstraint( item: self.textView,
-            attribute: NSLayoutAttribute.right,
-            relatedBy: NSLayoutRelation.equal, toItem:self.view,
-            attribute: NSLayoutAttribute.rightMargin,
+        let right = NSLayoutConstraint( item: self.textView as Any,
+            attribute: NSLayoutConstraint.Attribute.right,
+            relatedBy: NSLayoutConstraint.Relation.equal, toItem:self.view,
+            attribute: NSLayoutConstraint.Attribute.rightMargin,
             multiplier: 1.0, constant: marginOffset )
         self.view.addConstraint( right )
-        let left = NSLayoutConstraint( item: self.textView,
-            attribute: NSLayoutAttribute.left,
-            relatedBy: NSLayoutRelation.equal, toItem:self.view,
-            attribute: NSLayoutAttribute.leftMargin,
+        let left = NSLayoutConstraint( item: self.textView as Any,
+            attribute: NSLayoutConstraint.Attribute.left,
+            relatedBy: NSLayoutConstraint.Relation.equal, toItem:self.view,
+            attribute: NSLayoutConstraint.Attribute.leftMargin,
             multiplier: 1.0, constant: -marginOffset )
         self.view.addConstraint( left )
-        let top = NSLayoutConstraint( item: self.textView,
-            attribute: NSLayoutAttribute.top,
-            relatedBy: NSLayoutRelation.equal, toItem: suggestions,
-            attribute: NSLayoutAttribute.bottom,
+        let top = NSLayoutConstraint( item: self.textView as Any,
+            attribute: NSLayoutConstraint.Attribute.top,
+            relatedBy: NSLayoutConstraint.Relation.equal, toItem: suggestions,
+            attribute: NSLayoutConstraint.Attribute.bottom,
             multiplier: 1.0, constant: 0.0 )
         self.view.addConstraint( top )
         
-        self.keyboardHeight = NSLayoutConstraint( item: self.textView,
-            attribute: NSLayoutAttribute.bottom,
-            relatedBy: NSLayoutRelation.equal, toItem: self.view,
-            attribute: NSLayoutAttribute.bottom,
+        self.keyboardHeight = NSLayoutConstraint( item: self.textView as Any,
+            attribute: NSLayoutConstraint.Attribute.bottom,
+            relatedBy: NSLayoutConstraint.Relation.equal, toItem: self.view,
+            attribute: NSLayoutConstraint.Attribute.bottom,
             multiplier: 1.0, constant: 0.0 )
         self.view.addConstraint( self.keyboardHeight )
         
         let notifications = NotificationCenter.default
-        notifications.addObserver( self, selector:#selector(ViewController.keyboardWillShow(_:)), name: NSNotification.Name.UIKeyboardWillShow, object: nil)
-        notifications.addObserver( self, selector:#selector(ViewController.keyboardWillHide(_:)), name: NSNotification.Name.UIKeyboardWillHide, object: nil)
-        notifications.addObserver( self, selector:#selector(ViewController.keyboardDidShow(_:)), name: NSNotification.Name.UIKeyboardDidShow, object: nil)
+        notifications.addObserver( self, selector:#selector(ViewController.keyboardWillShow(_:)), name: UIResponder.keyboardWillShowNotification, object: nil)
+        notifications.addObserver( self, selector:#selector(ViewController.keyboardWillHide(_:)), name: UIResponder.keyboardWillHideNotification, object: nil)
+        notifications.addObserver( self, selector:#selector(ViewController.keyboardDidShow(_:)), name: UIResponder.keyboardDidShowNotification, object: nil)
         notifications.addObserver( self, selector:#selector(ViewController.reloadOptions(_:)), name: NSNotification.Name(rawValue: EDITCTL_RELOAD_OPTIONS), object: nil)
         
         let defaults = UserDefaults.standard
@@ -157,7 +157,7 @@ class ViewController: UIViewController, UITextViewDelegate, LanguageSelectorDele
     func selectDefaultLanguage()
     {
         let langman = LanguageManager.shared()
-        let viewController = LanguageViewController( style: UITableViewStyle.plain )
+        let viewController = LanguageViewController( style: UITableView.Style.plain )
         viewController.delegate = self
         
         let navigationContoller = UINavigationController(rootViewController: viewController)
@@ -213,7 +213,7 @@ class ViewController: UIViewController, UITextViewDelegate, LanguageSelectorDele
     
     @IBAction func options( _ sender: UIBarButtonItem )
     {
-        let viewController = OptionsViewController( style: UITableViewStyle.grouped )
+        let viewController = OptionsViewController( style: UITableView.Style.grouped )
         
         let navigationContoller = UINavigationController(rootViewController: viewController)
         navigationContoller.modalPresentationStyle = UIModalPresentationStyle.formSheet
@@ -259,8 +259,8 @@ class ViewController: UIViewController, UITextViewDelegate, LanguageSelectorDele
     @objc func keyboardWillShow(_ notification: Notification)
     {
         let info : NSDictionary = notification.userInfo! as NSDictionary
-        let kbFrame : NSValue = info.object( forKey: UIKeyboardFrameEndUserInfoKey ) as! NSValue
-        let animationDuration : NSNumber = info.object( forKey: UIKeyboardAnimationDurationUserInfoKey ) as! NSNumber
+        let kbFrame : NSValue = info.object( forKey: UIResponder.keyboardFrameEndUserInfoKey ) as! NSValue
+        let animationDuration : NSNumber = info.object( forKey: UIResponder.keyboardAnimationDurationUserInfoKey ) as! NSNumber
         let keyboardFrame : CGRect = kbFrame.cgRectValue
         let duration : TimeInterval = animationDuration.doubleValue
         
@@ -278,7 +278,7 @@ class ViewController: UIViewController, UITextViewDelegate, LanguageSelectorDele
     @objc func keyboardWillHide(_ notification: Notification)
     {
         let info : NSDictionary = notification.userInfo! as NSDictionary
-        let animationDuration : NSNumber = info.object( forKey: UIKeyboardAnimationDurationUserInfoKey ) as! NSNumber
+        let animationDuration : NSNumber = info.object( forKey: UIResponder.keyboardAnimationDurationUserInfoKey ) as! NSNumber
         let duration : TimeInterval = animationDuration.doubleValue
         
         self.keyboardHeight.constant = 0;

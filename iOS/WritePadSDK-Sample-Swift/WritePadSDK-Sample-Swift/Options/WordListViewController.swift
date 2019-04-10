@@ -72,7 +72,7 @@ class WordListViewController: UITableViewController, EditWordItemDelegate
         // self.clearsSelectionOnViewWillAppear = false
 
         // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
-        self.navigationItem.rightBarButtonItem = UIBarButtonItem(barButtonSystemItem: UIBarButtonSystemItem.add, target: self, action: #selector(WordListViewController.AddButton(_:)))
+        self.navigationItem.rightBarButtonItem = UIBarButtonItem(barButtonSystemItem: UIBarButtonItem.SystemItem.add, target: self, action: #selector(WordListViewController.AddButton(_:)))
         self.tableView.autoresizesSubviews = true
         self.tableView.separatorInset = UIEdgeInsets.zero
         self.title = "Corrector Word List"
@@ -82,7 +82,7 @@ class WordListViewController: UITableViewController, EditWordItemDelegate
     
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath)
     {
-        let viewController = EditWordItemViewController(style: UITableViewStyle.grouped)
+        let viewController = EditWordItemViewController(style: UITableView.Style.grouped)
         if let item : NSDictionary = wordList![indexPath.row] as? NSDictionary {
         
             viewController.newItem = false
@@ -124,7 +124,7 @@ class WordListViewController: UITableViewController, EditWordItemDelegate
     
     @objc func AddButton( _ sender : UIBarButtonItem )
     {
-        let viewController = EditWordItemViewController(style: UITableViewStyle.grouped)
+        let viewController = EditWordItemViewController(style: UITableView.Style.grouped)
         viewController.newItem = true
         viewController.delegate = self
         viewController.flags = WCF_IGNORECASE | WCF_ALWAYS
@@ -176,10 +176,10 @@ class WordListViewController: UITableViewController, EditWordItemDelegate
         cell = tableView.dequeueReusableCell(withIdentifier: "ID1092479864") as UITableViewCell?
         if cell == nil
         {
-            cell = UITableViewCell(style: UITableViewCellStyle.default, reuseIdentifier: "ID1092479864")
+            cell = UITableViewCell(style: UITableViewCell.CellStyle.default, reuseIdentifier: "ID1092479864")
         }
-        cell!.selectionStyle = UITableViewCellSelectionStyle.none
-        cell!.accessoryType = UITableViewCellAccessoryType.disclosureIndicator
+        cell!.selectionStyle = UITableViewCell.SelectionStyle.none
+        cell!.accessoryType = UITableViewCell.AccessoryType.disclosureIndicator
 
         if indexPath.row < wordList?.count
         {
@@ -192,13 +192,13 @@ class WordListViewController: UITableViewController, EditWordItemDelegate
         return cell!
     }
     
-    override func tableView(_ tableView: UITableView, editingStyleForRowAt indexPath: IndexPath) -> UITableViewCellEditingStyle
+    override func tableView(_ tableView: UITableView, editingStyleForRowAt indexPath: IndexPath) -> UITableViewCell.EditingStyle
     {
         if (indexPath.section == 0 )
         {
-            return UITableViewCellEditingStyle.delete
+            return UITableViewCell.EditingStyle.delete
         }
-        return UITableViewCellEditingStyle.none
+        return UITableViewCell.EditingStyle.none
     }
     
     func textFieldShouldBeginEditing(_ textField: UITextField) -> Bool
@@ -213,7 +213,7 @@ class WordListViewController: UITableViewController, EditWordItemDelegate
     }
     
     // Override to support editing the table view.
-    override func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCellEditingStyle, forRowAt indexPath: IndexPath)
+    override func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath)
     {
         if (editingStyle == .delete && indexPath.section == 0 && indexPath.row < wordList?.count)
         {

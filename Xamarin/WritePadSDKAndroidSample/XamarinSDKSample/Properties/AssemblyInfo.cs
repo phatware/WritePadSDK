@@ -1,6 +1,6 @@
 ﻿/* ************************************************************************************* */
 /* *    PhatWare WritePad SDK                                                          * */
-/* *    Copyright (c) 2008-2014 PhatWare(r) Corp. All rights reserved.                 * */
+/* *    Copyright (c) 2008-2019 PhatWare(r) Corp. All rights reserved.                 * */
 /* ************************************************************************************* */
 
 /* ************************************************************************************* *
@@ -55,7 +55,7 @@ using Android.App;
 [assembly: AssemblyConfiguration("")]
 [assembly: AssemblyCompany("PhatWare Corp.")]
 [assembly: AssemblyProduct("WritePadXamarinSample")]
-[assembly: AssemblyCopyright("Copyright ©  2014 PhatWare Corp.")]
+[assembly: AssemblyCopyright("Copyright ©  2014-2019 PhatWare Corp.")]
 [assembly: AssemblyTrademark("WritePad, PhatWare")]
 [assembly: AssemblyCulture("")]
 [assembly: ComVisible(false)]

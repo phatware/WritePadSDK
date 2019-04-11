@@ -17,9 +17,8 @@
     <MandroidI18n />
     <JavaMaximumHeapSize>
     </JavaMaximumHeapSize>
-    <ReleaseVersion>5.5</ReleaseVersion>
-    <AndroidUseLatestPlatformSdk>True</AndroidUseLatestPlatformSdk>
-    <TargetFrameworkVersion>v6.0</TargetFrameworkVersion>
+    <ReleaseVersion>5.9</ReleaseVersion>
+    <TargetFrameworkVersion>v8.0</TargetFrameworkVersion>
     <Description>WritePad Handwriting Recognition SDK - Android Sample</Description>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
@@ -32,7 +31,7 @@
     <WarningLevel>4</WarningLevel>
     <AndroidLinkMode>None</AndroidLinkMode>
     <EmbedAssembliesIntoApk>True</EmbedAssembliesIntoApk>
-    <AndroidSupportedAbis>armeabi;armeabi-v7a;x86</AndroidSupportedAbis>
+    <AndroidSupportedAbis>armeabi-v7a;x86;arm64-v8a;x86_64</AndroidSupportedAbis>
     <RunCodeAnalysis>false</RunCodeAnalysis>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
@@ -43,10 +42,6 @@
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
     <AndroidUseSharedRuntime>False</AndroidUseSharedRuntime>
-    <AndroidStoreUncompressedFileExtensions>
-    </AndroidStoreUncompressedFileExtensions>
-    <JavaOptions>
-    </JavaOptions>
     <AndroidSupportedAbis>armeabi,armeabi-v7a,x86</AndroidSupportedAbis>
     <RunCodeAnalysis>false</RunCodeAnalysis>
   </PropertyGroup>
@@ -71,12 +66,6 @@
     <None Include="Resources\AboutResources.txt" />
     <None Include="Assets\AboutAssets.txt" />
     <None Include="Properties\AndroidManifest.xml" />
-    <None Include="..\libs\mips\libWritePadReco.so">
-      <Link>libs\mips\libWritePadReco.so</Link>
-    </None>
-    <None Include="..\libs\mips64\libWritePadReco.so">
-      <Link>libs\mips64\libWritePadReco.so</Link>
-    </None>
   </ItemGroup>
   <ItemGroup>
     <AndroidResource Include="Resources\Layout\Main.axml" />
@@ -163,9 +152,6 @@
     <Folder Include="libs\" />
   </ItemGroup>
   <ItemGroup>
-    <AndroidNativeLibrary Include="..\libs\armeabi\libWritePadReco.so">
-      <Link>libs\armeabi\libWritePadReco.so</Link>
-    </AndroidNativeLibrary>
     <AndroidNativeLibrary Include="..\libs\arm64-v8a\libWritePadReco.so">
       <Link>libs\arm64-v8a\libWritePadReco.so</Link>
     </AndroidNativeLibrary>

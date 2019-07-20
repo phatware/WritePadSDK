@@ -246,7 +246,7 @@
     <ImageAsset Include="Resources\Images.xcassets\AppIcons.appiconset\writepad-40.png" />
     <ImageAsset Include="Resources\Images.xcassets\AppIcons.appiconset\writepad-40-1.png" />
     <ImageAsset Include="Resources\Images.xcassets\AppIcons.appiconset\writepad-20.png" />
-    <ImageAsset Include="Resources\Images.xcassets\LaunchImage-1.launchimage\Contents.json" />
+    <ImageAsset Include="Resources\Images.xcassets\AppIcons.appiconset\writepad-60.png" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\BindingLibrary\BindingLibrary.csproj">

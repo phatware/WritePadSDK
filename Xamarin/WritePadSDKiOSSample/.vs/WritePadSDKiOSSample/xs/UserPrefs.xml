@@ -1,20 +1,23 @@
 ﻿<Properties StartupConfiguration="{F432CECB-F1A4-44D7-B21B-B095ECF9B2F4}|Default">
-  <MonoDevelop.Ide.Workbench ActiveDocument="xamarin_sample/LaunchScreen.storyboard">
+  <MonoDevelop.Ide.Workbench>
     <Files>
       <File FileName="xamarin_sample/Info.plist" />
-      <File FileName="xamarin_sample/xamarin_sampleViewController.cs" Line="1" Column="1" />
-      <File FileName="xamarin_sample/xamarin_sampleViewController.designer.cs" Line="1" Column="1" />
+      <File FileName="xamarin_sample/xamarin_sampleViewController.cs" />
+      <File FileName="xamarin_sample/xamarin_sampleViewController.designer.cs" />
       <File FileName="xamarin_sample/xamarin_sampleViewController_iPhone.xib" />
       <File FileName="xamarin_sample/LaunchScreen.storyboard" />
       <File FileName="xamarin_sample/xamarin_sampleViewController_iPad.xib" />
+      <File FileName="xamarin_sample/Main.cs" />
     </Files>
     <Pads>
       <Pad Id="ProjectPad">
         <State name="__root__">
           <Node name="WritePadSDKiOSSample" expanded="True">
             <Node name="BindingLibrary" expanded="True" />
-            <Node name="WritePad SDK Xamarin Sample" expanded="True" selected="True">
-              <Node name="Resources" expanded="True" />
+            <Node name="WritePad SDK Xamarin Sample" expanded="True">
+              <Node name="Resources" expanded="True">
+                <Node name="Images.xcassets" selected="True" />
+              </Node>
               <Node name="xamarin_sampleViewController.cs" expanded="True" />
             </Node>
           </Node>
@@ -23,8 +26,8 @@
     </Pads>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.DebuggingService.PinnedWatches />
-  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug|iPhone" />
-  <MonoDevelop.Ide.ItemProperties.WritePad_220SDK_220Xamarin_220Sample automaticSigning="False" PreferredExecutionTarget="MonoDevelop.IPhone.IPhoneDeviceTarget.eef9ad20408fb53184917a9a12e8ad61c0074bfc" />
+  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug|iPhoneSimulator" />
+  <MonoDevelop.Ide.ItemProperties.WritePad_220SDK_220Xamarin_220Sample automaticSigning="False" PreferredExecutionTarget="MonoDevelop.IPhone.IPhoneSimulatorTarget.CB479623-E5CE-43A8-978B-6828E66F9BF4" />
   <MonoDevelop.Ide.DebuggingService.Breakpoints>
     <BreakpointStore />
   </MonoDevelop.Ide.DebuggingService.Breakpoints>

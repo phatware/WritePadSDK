@@ -181,7 +181,7 @@ static const unsigned short * UTF8ToUnicode(const unsigned char *Src) {
 	return strDest;
 }
 
-static const unsigned char * UnicodeToUTF8(const unsigned short *Src) {
+static const char * UnicodeToUTF8(const unsigned short *Src) {
 	if (Src == NULL || *Src == 0)
 		return NULL;
     
@@ -213,7 +213,7 @@ static const unsigned char * UnicodeToUTF8(const unsigned short *Src) {
 		}
 	}
 	strDest[outputlen] = 0;
-	return (const unsigned char *) strDest;
+	return (const char *) strDest;
 }
 
 static jstring StringAToJstring(JNIEnv* env, const char * string)
@@ -344,7 +344,7 @@ jint Java_com_phatware_android_RecoInterface_WritePadAPI_recognizerInit( JNIEnv*
 	char corrector[MAX_PATH];
 
     jboolean isCopy = JNI_FALSE;
-	const jbyte * path = (*env)->GetStringUTFChars(env, jpath, &isCopy);
+	const char * path = (*env)->GetStringUTFChars(env, jpath, &isCopy);
 
 	userDict[0] = 0;
 	learner[0] = 0;
@@ -568,7 +568,7 @@ jboolean Java_com_phatware_android_RecoInterface_WritePadAPI_setDictionaryData(
 	data = (*env)->GetByteArrayElements(env, buff, &isCopy);
 	if (data != NULL)
     {
-		result = HWR_SetDictionaryData(_recognizer, data, flag );
+		result = HWR_SetDictionaryData(_recognizer, (const char *)data, flag );
         if ( isCopy == JNI_TRUE )
             (*env)->ReleaseByteArrayElements(env, buff, data, JNI_ABORT);
 	}

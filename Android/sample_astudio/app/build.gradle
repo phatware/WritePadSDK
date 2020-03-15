@@ -52,7 +52,7 @@ android {
         }
         // def ndkDir = plugins.getPlugin('com.android.application').sdkHandler.getNdkFolder()
         commandLine "$ndkDir/ndk-build", 'APP_ABI=all', 'APP_OPTIM=release',
-                'NDK_PROJECT_PATH=build',
+                'NDK_PROJECT_PATH=build', 'APP_PLATFORM=android-19',
                 'APP_BUILD_SCRIPT=src/main/jni/Android.mk'
     }
 

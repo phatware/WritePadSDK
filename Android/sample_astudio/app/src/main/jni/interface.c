@@ -1288,5 +1288,8 @@ jint JNI_OnLoad(JavaVM* vm, void* reserved)
 	return JNI_VERSION_1_4;
 }
 
-
-
+// void __attribute__ ((noreturn)) attribute_hidden
+// __stack_chk_fail_local (void)
+// {
+//   __stack_chk_fail ();
+// }

@@ -24,7 +24,7 @@ include $(CLEAR_VARS)
 
 
 LOCAL_MODULE := WritePadReco
-LOCAL_CFLAGS := -I$(LOCAL_PATH)/../../../../../include
+LOCAL_CFLAGS := -I$(LOCAL_PATH)/../../../../../include -lssp
 LOCAL_SRC_FILES := interface.c
 LOCAL_STATIC_LIBRARIES := WritePadRecos
 

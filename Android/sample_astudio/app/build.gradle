@@ -1,15 +1,14 @@
 apply plugin: 'com.android.application'
 
 android {
-    compileSdkVersion 28
-    buildToolsVersion '28.0.3'
-    sourceSets.main.jni.srcDirs = []
+    compileSdkVersion 29
+    buildToolsVersion '32.0.0-rc1'
     sourceSets.main.jniLibs.srcDirs = []
 
     defaultConfig {
         applicationId "com.phatware.android.recotest"
-        minSdkVersion 20
-        targetSdkVersion 28
+        minSdkVersion 29
+        targetSdkVersion 29
 
         ndk {
             moduleName "libWritePadRecos"
@@ -27,6 +26,7 @@ android {
         compileTask -> compileTask.dependsOn ndkLibsToJar
     }
 
+    ndkVersion = "23.1.7779620"
 
     task ndkLibsToJar(type: Zip, dependsOn: 'ndkBuild', description: 'Create a JAR of the native libs') {
         destinationDir new File(buildDir, 'libs')
@@ -48,11 +48,11 @@ android {
                 ndkDir = android.plugin.ndkDirectory.absolutePath
             }
         } else {
-            ndkDir = android.ndkDirectory.absolutePath
+            ndkDir = android.ndkDirectory
         }
         // def ndkDir = plugins.getPlugin('com.android.application').sdkHandler.getNdkFolder()
         commandLine "$ndkDir/ndk-build", 'APP_ABI=all', 'APP_OPTIM=release',
-                'NDK_PROJECT_PATH=build', 'APP_PLATFORM=android-19',
+                'NDK_PROJECT_PATH=build', 'APP_PLATFORM=android-29',
                 'APP_BUILD_SCRIPT=src/main/jni/Android.mk'
     }
 

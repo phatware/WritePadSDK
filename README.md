@@ -3,30 +3,9 @@
 
 **Accurate, fast, compact, easy to use, multilingual, multiplatform handwriting recognition technology for mobile and desktop computers**
 
-#### Copyright © 1997-2019 PhatWare® Corp. All rights reserved.
+#### Copyright © 1997-2020 PhatWare® Corp. All rights reserved.
 
-## License Overview
-
-**You can:**
-
--   Install WritePad SDK on your computer and use it for personal,
-    evaluation, and **not for profit** academic research only
-
-**You cannot:**
-
--   Use WritePad SDK for any commercial purposes without obtaining the
-    commercial license from [PhatWare Corp](http://www.phatware.com).
--   Redistribute your apps and/or any derivative works containing any
-    portion of WritePad SDK without obtaining the commercial license
-    from [PhatWare Corp](http://www.phatware.com).
--   Modify or reverse engineer WritePad SDK binary code (static
-    library) and dictionaries without a written authorization from
-    [PhatWare Corp](http://www.phatware.com).
-
-For additional information, please read the [WritePad SDK developer license agreement](LICENSE.md).
-
-To obtain commercial license, please contact PhatWare Corp. by sending
-your request to [developer@phatware.com](mailto:developer@phatware.com)
+### This SDK is distributed under the GPL v 3.0 license.
 
 If you are working on an Open Source project, you can access the WRITEPAD Handwriting 
 Recognition Engine source code under GPL v.3.0 license here: https://github.com/phatware/WritePad-Handwriting-Recognition-Engine

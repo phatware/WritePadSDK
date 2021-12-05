@@ -1,15 +1,19 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
       package="com.phatware.android.recotest"
-          android:versionName="5.9.0"
+          android:versionName="6.0.0"
           android:installLocation="auto"
-          android:versionCode="36">
+          android:versionCode="37"
+          android:minSdkVersion="android-19">
     <supports-screens
             android:largeScreens="true"
             android:xlargeScreens="true"
             android:normalScreens="true"
             android:anyDensity="false"
             />
+
+    <uses-sdk android:minSdkVersion="20" android:targetSdkVersion="29" />
+   
     
     <application android:icon="@drawable/icon" android:label="@string/app_name" android:allowBackup="false">
 
@@ -27,6 +31,6 @@
 
 		<service android:name="RecognizerService" />
     
-</application>
+    </application>
 
 </manifest> 

@@ -2,14 +2,15 @@
 
 <com.phatware.writepad.widget.CandidateViewContainer
         xmlns:android="http://schemas.android.com/apk/res/android"
-        android:orientation="horizontal"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:orientation="horizontal"
         android:layout_width="fill_parent"
         android:layout_height="wrap_content"
         android:background="@drawable/keyboard_suggest_strip"
-        >
+    tools:ignore="MissingClass"><![CDATA[
 
 
-    <com.phatware.writepad.widget.CandidateView
+    ]]><com.phatware.writepad.widget.CandidateView
             android:id="@+id/candidates"
             android:layout_width="wrap_content"
             android:layout_height="38dp"

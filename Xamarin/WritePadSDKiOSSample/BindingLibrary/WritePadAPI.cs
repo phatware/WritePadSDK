@@ -46,6 +46,7 @@ using System;
 using System.Runtime.InteropServices;
 using System.Collections.Generic;
 using System.IO;
+using CoreGraphics;
 
 namespace BindingLibrary
 {
@@ -55,11 +56,6 @@ namespace BindingLibrary
 		{
 
 		}
-
-		public struct CGPoint {
-			public float x;
-			public float y;
-		};
 
 		public struct CGTracePoint
 		{

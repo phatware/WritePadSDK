@@ -81,10 +81,10 @@ static int _iUnicodes[MAX_XU_CONVERTS] = { 352, 338, 353, 339, 376 };
 
 static int u_strlen(const unsigned short * str)
 {
-	register int i = 0;
-	for (i = 0; str[i] != 0 && i < 2048; i++)
-		;
-	return i;
+    register int i = 0;
+    for (i = 0; str[i] != 0 && i < 2048; i++)
+        ;
+    return i;
 }
 
 /* ************************************************************************** */
@@ -93,12 +93,12 @@ static int u_strlen(const unsigned short * str)
 
 INK_DATA_PTR getInkData()
 {
-	return _inkData;
+    return _inkData;
 }
 
 RECOGNIZER_PTR getRecognizer()
 {
-	return _recognizer;
+    return _recognizer;
 }
 
 
@@ -111,16 +111,16 @@ RECOGNIZER_PTR getRecognizer()
 /* ************************************************************************** */
 
 static int StrToUNICODE(unsigned short * tstr, const char * str, int cMax) {
-	register int i, j;
+    register int i, j;
     
-	for (i = 0; i < cMax && str[i] != 0; i++)
+    for (i = 0; i < cMax && str[i] != 0; i++)
     {
         
-		tstr[i] = (unsigned short) (unsigned char) str[i];
-	}
+        tstr[i] = (unsigned short) (unsigned char) str[i];
+    }
     
-	tstr[i] = 0;
-	return i;
+    tstr[i] = 0;
+    return i;
 }
 
 /* ************************************************************************** */
@@ -129,206 +129,206 @@ static int StrToUNICODE(unsigned short * tstr, const char * str, int cMax) {
 
 static int UNICODEtoStr(char * str, const unsigned short * tstr, int cMax)
 {
-	register int i, j;
+    register int i, j;
     
-	for (i = 0; i < cMax && tstr[i] != 0; i++)
+    for (i = 0; i < cMax && tstr[i] != 0; i++)
     {
-		if (tstr[i] < 0xff)
-			str[i] = ((unsigned char) tstr[i]);
-		else
-			str[i] = '?';
-	}
-	str[i] = 0;
-	return i;
+        if (tstr[i] < 0xff)
+            str[i] = ((unsigned char) tstr[i]);
+        else
+            str[i] = '?';
+    }
+    str[i] = 0;
+    return i;
 }
 
 static const unsigned short * UTF8ToUnicode(const unsigned char *Src) {
-	if (Src == NULL || *Src == 0)
-		return NULL;
+    if (Src == NULL || *Src == 0)
+        return NULL;
     
-	int i = 0;
-	int outputlen = 0;
-	int SrcLen = strlen((const char *) Src);
+    int i = 0;
+    int outputlen = 0;
+    int SrcLen = strlen((const char *) Src);
     
-	// unicode will be the same or shorter
-	int DestLen = SrcLen + 2;
-	unsigned short * strDest = (unsigned short *) malloc(DestLen
+    // unicode will be the same or shorter
+    int DestLen = SrcLen + 2;
+    unsigned short * strDest = (unsigned short *) malloc(DestLen
                                                          * sizeof(unsigned short));
-	if (NULL == strDest)
-		return NULL;
+    if (NULL == strDest)
+        return NULL;
     
-	for (i = 0; i < SrcLen;) {
-		if (outputlen >= DestLen - 1) {
-			//overflow detected
-			break;
-		}
+    for (i = 0; i < SrcLen;) {
+        if (outputlen >= DestLen - 1) {
+            //overflow detected
+            break;
+        }
         
-		else if ((0xe0 & Src[i]) == 0xe0) {
-			strDest[outputlen++] = (unsigned short) ((((int) Src[i] & 0x0f)
+        else if ((0xe0 & Src[i]) == 0xe0) {
+            strDest[outputlen++] = (unsigned short) ((((int) Src[i] & 0x0f)
                                                       << 12) | (((int) Src[i + 1] & 0x3f) << 6) | (Src[i + 2]
                                                                                                    & 0x3f));
-			i += 3;
-		} else if ((0xc0 & Src[i]) == 0xc0) {
-			strDest[outputlen++] = (unsigned short) (((int) Src[i] & 0x1f) << 6
+            i += 3;
+        } else if ((0xc0 & Src[i]) == 0xc0) {
+            strDest[outputlen++] = (unsigned short) (((int) Src[i] & 0x1f) << 6
                                                      | (Src[i + 1] & 0x3f));
-			i += 2;
-		} else {
-			strDest[outputlen++] = (unsigned short) Src[i];
-			++i;
-		}
-	}
-	strDest[outputlen] = '\0';
-	return strDest;
+            i += 2;
+        } else {
+            strDest[outputlen++] = (unsigned short) Src[i];
+            ++i;
+        }
+    }
+    strDest[outputlen] = '\0';
+    return strDest;
 }
 
-static const unsigned char * UnicodeToUTF8(const unsigned short *Src) {
-	if (Src == NULL || *Src == 0)
-		return NULL;
+static const char * UnicodeToUTF8(const unsigned short *Src) {
+    if (Src == NULL || *Src == 0)
+        return NULL;
     
-	int i = 0;
-	int outputlen = 0; /*bytes */
-	int SrcLen = u_strlen(Src);
-	int DstLen = 2 + 3 * SrcLen;
+    int i = 0;
+    int outputlen = 0; /*bytes */
+    int SrcLen = u_strlen(Src);
+    int DstLen = 2 + 3 * SrcLen;
     
-	unsigned char * strDest = (unsigned char *) malloc(DstLen);
-	if (NULL == strDest)
-		return NULL;
+    unsigned char * strDest = (unsigned char *) malloc(DstLen);
+    if (NULL == strDest)
+        return NULL;
     
-	for (i = 0; i < SrcLen; i++) {
-		if (outputlen >= DstLen - 1) {
-			//overflow detected
-			break;
-		}
+    for (i = 0; i < SrcLen; i++) {
+        if (outputlen >= DstLen - 1) {
+            //overflow detected
+            break;
+        }
         
-		if (0x0800 <= Src[i]) {
-			strDest[outputlen++] = (((Src[i] >> 12) & 0x0f) | 0xe0);
-			strDest[outputlen++] = (((Src[i] >> 6) & 0x3f) | 0x80);
-			strDest[outputlen++] = ((Src[i] & 0x3f) | 0x80);
-		} else if (0x800 > Src[i] && 0x80 <= Src[i]) {
-			strDest[outputlen++] = (((Src[i] >> 6) & 0x1f) | 0xc0);
-			strDest[outputlen++] = ((Src[i] & 0x3f) | 0x80);
-		} else if (0x80 > Src[i]) {
-			strDest[outputlen++] = (unsigned char) Src[i];
-		}
-	}
-	strDest[outputlen] = 0;
-	return (const unsigned char *) strDest;
+        if (0x0800 <= Src[i]) {
+            strDest[outputlen++] = (((Src[i] >> 12) & 0x0f) | 0xe0);
+            strDest[outputlen++] = (((Src[i] >> 6) & 0x3f) | 0x80);
+            strDest[outputlen++] = ((Src[i] & 0x3f) | 0x80);
+        } else if (0x800 > Src[i] && 0x80 <= Src[i]) {
+            strDest[outputlen++] = (((Src[i] >> 6) & 0x1f) | 0xc0);
+            strDest[outputlen++] = ((Src[i] & 0x3f) | 0x80);
+        } else if (0x80 > Src[i]) {
+            strDest[outputlen++] = (unsigned char) Src[i];
+        }
+    }
+    strDest[outputlen] = 0;
+    return (const char *) strDest;
 }
 
 static jstring StringAToJstring(JNIEnv* env, const char * string)
 {
-	jstring result = NULL;
-	unsigned short * uResult;
+    jstring result = NULL;
+    unsigned short * uResult;
     
-	int len = strlen(string);
+    int len = strlen(string);
     uResult = (unsigned short *) malloc((len + 2) * sizeof(unsigned short));
-	if (uResult == NULL)
-		return NULL;
-	StrToUNICODE(uResult, string, len);
-	const char * utfResult = UnicodeToUTF8(uResult);
-	free((void *) uResult);
+    if (uResult == NULL)
+        return NULL;
+    StrToUNICODE(uResult, string, len);
+    const char * utfResult = UnicodeToUTF8(uResult);
+    free((void *) uResult);
     
-	if (NULL != utfResult)
+    if (NULL != utfResult)
     {
-		result = (*env)->NewStringUTF(env, utfResult);
-		free((void *) utfResult);
-	}
+        result = (*env)->NewStringUTF(env, utfResult);
+        free((void *) utfResult);
+    }
     else
     {
-		result = (*env)->NewStringUTF( env, string);
-	}
-	return result;
+        result = (*env)->NewStringUTF( env, string);
+    }
+    return result;
 }
 
 
 static jstring StringToJstring(JNIEnv* env, const UCHR * string)
 {
-	jstring result = NULL;
-	unsigned short * uResult;
+    jstring result = NULL;
+    unsigned short * uResult;
     
 #ifdef HW_RECINT_UNICODE
-	const char * utfResult = UnicodeToUTF8(string);
+    const char * utfResult = UnicodeToUTF8(string);
 #else
-	int len = strlen(string);
+    int len = strlen(string);
     uResult = (unsigned short *) malloc((len + 2) * sizeof(unsigned short));
-	if (uResult == NULL)
-		return NULL;
-	StrToUNICODE(uResult, string, len);
-	const char * utfResult = UnicodeToUTF8(uResult);
-	free((void *) uResult);
+    if (uResult == NULL)
+        return NULL;
+    StrToUNICODE(uResult, string, len);
+    const char * utfResult = UnicodeToUTF8(uResult);
+    free((void *) uResult);
 #endif  // HW_RECINT_UNICODE
     
-	if (NULL != utfResult)
+    if (NULL != utfResult)
     {
-		result = (*env)->NewStringUTF(env, utfResult);
-		free((void *) utfResult);
-	}
+        result = (*env)->NewStringUTF(env, utfResult);
+        free((void *) utfResult);
+    }
 #ifndef HW_RECINT_UNICODE
     else
     {
-		result = (*env)->NewStringUTF( env, string);
-	}
+        result = (*env)->NewStringUTF( env, string);
+    }
 #endif // HW_RECINT_UNICODE
-	return result;
+    return result;
 }
 
 static const char * JstringToStringA(JNIEnv* env, jstring jstr)
 {
     jboolean isCopy = JNI_FALSE;
-	const char * string = (*env)->GetStringUTFChars(env, jstr, &isCopy );
-	const char * result = NULL;
+    const char * string = (*env)->GetStringUTFChars(env, jstr, &isCopy );
+    const char * result = NULL;
     
-	const unsigned short * uString = UTF8ToUnicode((const unsigned char *)string);
-	if (uString != NULL)
+    const unsigned short * uString = UTF8ToUnicode((const unsigned char *)string);
+    if (uString != NULL)
     {
-		int len = u_strlen(uString);
-		char * cString = (char *) malloc(len + 1);
-		UNICODEtoStr(cString, uString, len);
-		result = cString;
-		free((void *) uString);
-	}
+        int len = u_strlen(uString);
+        char * cString = (char *) malloc(len + 1);
+        UNICODEtoStr(cString, uString, len);
+        result = cString;
+        free((void *) uString);
+    }
     else
     {
-		result = strdup(string);
-	}
+        result = strdup(string);
+    }
     if ( string && isCopy == JNI_TRUE)
         (*env)->ReleaseStringUTFChars(env, jstr, string);
-	return result;
+    return result;
 }
 
 static const UCHR * JstringToString(JNIEnv* env, jstring jstr)
 {
     jboolean isCopy = JNI_FALSE;
-	const char *string = (*env)->GetStringUTFChars(env, jstr, &isCopy );
-	const UCHR * result = NULL;
+    const char *string = (*env)->GetStringUTFChars(env, jstr, &isCopy );
+    const UCHR * result = NULL;
     
-	const unsigned short * uString = UTF8ToUnicode((const unsigned char *)string);
+    const unsigned short * uString = UTF8ToUnicode((const unsigned char *)string);
 #ifdef HW_RECINT_UNICODE
     result = (const UCHR *)uString;
 #else
-	if (uString != NULL)
+    if (uString != NULL)
     {
-		int len = u_strlen(uString);
-		char * cString = (char *) malloc(len + 1);
-		UNICODEtoStr(cString, uString, len);
-		result = cString;
-		free((void *) uString);
-	}
+        int len = u_strlen(uString);
+        char * cString = (char *) malloc(len + 1);
+        UNICODEtoStr(cString, uString, len);
+        result = cString;
+        free((void *) uString);
+    }
     else
     {
-		result = strdup(string);
-	}
+        result = strdup(string);
+    }
 #endif // HW_RECINT_UNICODE
     if ( string && isCopy == JNI_TRUE)
         (*env)->ReleaseStringUTFChars(env, jstr, string);
-	return result;
+    return result;
 }
 
 static long _getTime(void) {
-	struct timeval now;
+    struct timeval now;
     
-	gettimeofday(&now, NULL);
-	return (long) (now.tv_sec * 1000 + now.tv_usec / 1000);
+    gettimeofday(&now, NULL);
+    return (long) (now.tv_sec * 1000 + now.tv_usec / 1000);
 }
 
 static char userDict[MAX_PATH] = {0};
@@ -337,38 +337,38 @@ static char corrector[MAX_PATH] = {0};
 
 jint Java_com_phatware_android_RecoInterface_WritePadAPI_recognizerInit( JNIEnv* env, jobject thiz, jstring jpath, jint nLanguage ) 
 {
-	char userDict[MAX_PATH];
-	char mainDict[MAX_PATH];
-	char learner[MAX_PATH];
-	char corrector[MAX_PATH];
+    char userDict[MAX_PATH];
+    char mainDict[MAX_PATH];
+    char learner[MAX_PATH];
+    char corrector[MAX_PATH];
 
     jboolean isCopy = JNI_FALSE;
-	const jbyte * path = (*env)->GetStringUTFChars(env, jpath, &isCopy);
+    const char * path = (*env)->GetStringUTFChars(env, jpath, &isCopy);
 
-	userDict[0] = 0;
-	learner[0] = 0;
-	corrector[0] = 0;
-	if (path != NULL) 
+    userDict[0] = 0;
+    learner[0] = 0;
+    corrector[0] = 0;
+    if (path != NULL) 
     {
-		strcpy(_szPath, path);
-		strcat(_szPath, "/");
-		strcpy(userDict, _szPath);
-		strcpy(learner, _szPath);
-		strcpy(corrector, _szPath);
-		// strcpy(mainDict, _szPath);
-	}
-	strcat(userDict, USER_DICTIONARY);
-	strcat(learner, USER_STATISTICS);
-	strcat(corrector, USER_CORRECTOR);
+        strcpy(_szPath, path);
+        strcat(_szPath, "/");
+        strcpy(userDict, _szPath);
+        strcpy(learner, _szPath);
+        strcpy(corrector, _szPath);
+        // strcpy(mainDict, _szPath);
+    }
+    strcat(userDict, USER_DICTIONARY);
+    strcat(learner, USER_STATISTICS);
+    strcat(corrector, USER_CORRECTOR);
 
     
     if ( ! HWR_IsLanguageSupported( nLanguage ) )
         nLanguage = LANGUAGE_ENGLISH;
-	/*
+    /*
     strcpy( mainDict, "assets/" );
     switch ( nLanguage )
     {
-    	default :
+        default :
         case LANGUAGE_ENGLISH :
             strcat( mainDict, "English.dct" );
             break;
@@ -425,217 +425,217 @@ jint Java_com_phatware_android_RecoInterface_WritePadAPI_recognizerInit( JNIEnv*
     if ( isCopy == JNI_TRUE && path )
         (*env)->ReleaseStringUTFChars(env, jpath, path);
 
-	int flags = -1;
+    int flags = -1;
 
-	_recognizer = HWR_InitRecognizer(NULL, userDict, learner, corrector, nLanguage, &flags);
-	if (NULL == _recognizer)
-		return -1;
+    _recognizer = HWR_InitRecognizer(NULL, userDict, learner, corrector, nLanguage, &flags);
+    if (NULL == _recognizer)
+        return -1;
 
-	_inkData = INK_InitData();
-	if (NULL == _inkData)
-		return -1;
-	_currentStroke = -1;
-	return flags;
+    _inkData = INK_InitData();
+    if (NULL == _inkData)
+        return -1;
+    _currentStroke = -1;
+    return flags;
 }
 
 jboolean  Java_com_phatware_android_RecoInterface_WritePadAPI_resetLearner( JNIEnv* env)
 {
-	if (_recognizer != NULL && _szPath[0] != 0 )
+    if (_recognizer != NULL && _szPath[0] != 0 )
     {
-		char learner[MAX_PATH];
-		learner[0] = 0;
-		strcpy(learner, _szPath);
-		strcat(learner, USER_STATISTICS);
-		return HWR_ResetLearner(_recognizer, learner);
-	}
-	return false;
+        char learner[MAX_PATH];
+        learner[0] = 0;
+        strcpy(learner, _szPath);
+        strcat(learner, USER_STATISTICS);
+        return HWR_ResetLearner(_recognizer, learner);
+    }
+    return false;
 }
 
 jboolean  Java_com_phatware_android_RecoInterface_WritePadAPI_reloadLearner( JNIEnv* env)
 {
-	if (_recognizer != NULL  && _szPath[0] != 0 )
+    if (_recognizer != NULL  && _szPath[0] != 0 )
     {
-		char learner[MAX_PATH];
-		learner[0] = 0;
-		strcpy(learner, _szPath);
-		strcat(learner, USER_STATISTICS);
-		return HWR_ReloadLearner(_recognizer, learner);
-	}
-	return false;
+        char learner[MAX_PATH];
+        learner[0] = 0;
+        strcpy(learner, _szPath);
+        strcat(learner, USER_STATISTICS);
+        return HWR_ReloadLearner(_recognizer, learner);
+    }
+    return false;
 }
 
 jboolean Java_com_phatware_android_RecoInterface_WritePadAPI_saveLearner( JNIEnv* env)
 {
-	if (_recognizer != NULL  && _szPath[0] != 0 )
+    if (_recognizer != NULL  && _szPath[0] != 0 )
     {
-		char learner[MAX_PATH];
-		learner[0] = 0;
-		strcpy(learner, _szPath);
-		strcat(learner, USER_STATISTICS);
-		return HWR_SaveLearner(_recognizer, learner);
-	}
-	return false;
+        char learner[MAX_PATH];
+        learner[0] = 0;
+        strcpy(learner, _szPath);
+        strcat(learner, USER_STATISTICS);
+        return HWR_SaveLearner(_recognizer, learner);
+    }
+    return false;
 }
 
 
 jboolean Java_com_phatware_android_RecoInterface_WritePadAPI_resetAutocorrector( JNIEnv* env) 
 {
-	if (_recognizer != NULL  && _szPath[0] != 0 )
+    if (_recognizer != NULL  && _szPath[0] != 0 )
     {
-		char corrector[MAX_PATH];
-		corrector[0] = 0;
-		strcpy(corrector, _szPath);
-		strcat(corrector, USER_CORRECTOR);
-		return HWR_ResetAutoCorrector(_recognizer, corrector);
-	}
-	return false;
+        char corrector[MAX_PATH];
+        corrector[0] = 0;
+        strcpy(corrector, _szPath);
+        strcat(corrector, USER_CORRECTOR);
+        return HWR_ResetAutoCorrector(_recognizer, corrector);
+    }
+    return false;
 }
 
 
 jboolean Java_com_phatware_android_RecoInterface_WritePadAPI_reloadAutocorrector( JNIEnv* env) 
 {
-	if (_recognizer != NULL && _szPath[0] != 0 )
+    if (_recognizer != NULL && _szPath[0] != 0 )
     {
-		char corrector[MAX_PATH];
-		corrector[0] = 0;
-		strcpy(corrector, _szPath);
-		strcat(corrector, USER_CORRECTOR);
-		return HWR_ReloadAutoCorrector(_recognizer, corrector);
-	}
-	return false;
+        char corrector[MAX_PATH];
+        corrector[0] = 0;
+        strcpy(corrector, _szPath);
+        strcat(corrector, USER_CORRECTOR);
+        return HWR_ReloadAutoCorrector(_recognizer, corrector);
+    }
+    return false;
 }
 
 jboolean Java_com_phatware_android_RecoInterface_WritePadAPI_saveWordList( JNIEnv* env)
 {
-	if (_recognizer != NULL && _szPath[0] != 0 )
+    if (_recognizer != NULL && _szPath[0] != 0 )
     {
-		char corrector[MAX_PATH];
-		corrector[0] = 0;
-		strcpy(corrector, _szPath);
-		strcat(corrector, USER_CORRECTOR);
+        char corrector[MAX_PATH];
+        corrector[0] = 0;
+        strcpy(corrector, _szPath);
+        strcat(corrector, USER_CORRECTOR);
 
-		return HWR_SaveWordList(_recognizer, corrector);
-	}
-	return false;
+        return HWR_SaveWordList(_recognizer, corrector);
+    }
+    return false;
 }
 
 jboolean Java_com_phatware_android_RecoInterface_WritePadAPI_resetUserDict( JNIEnv* env) 
 {
-	if (_recognizer != NULL && _szPath[0] != 0 )
+    if (_recognizer != NULL && _szPath[0] != 0 )
     {
-		char userDict[MAX_PATH];
-		userDict[0] = 0;
-		strcpy(userDict, _szPath);
-		strcat(userDict, USER_DICTIONARY);
+        char userDict[MAX_PATH];
+        userDict[0] = 0;
+        strcpy(userDict, _szPath);
+        strcat(userDict, USER_DICTIONARY);
 
-		return HWR_ResetUserDict(_recognizer, userDict);
-	}
-	return false;
+        return HWR_ResetUserDict(_recognizer, userDict);
+    }
+    return false;
 }
 
 
 jboolean Java_com_phatware_android_RecoInterface_WritePadAPI_reloadUserDict( JNIEnv* env)
 {
-	if (_recognizer != NULL && _szPath[0] != 0 )
+    if (_recognizer != NULL && _szPath[0] != 0 )
     {
-		char userDict[MAX_PATH];
-		userDict[0] = 0;
-		strcpy(userDict, _szPath);
-		strcat(userDict, USER_STATISTICS);
-		return HWR_ReloadUserDict(_recognizer, userDict);
-	}
-	return false;
+        char userDict[MAX_PATH];
+        userDict[0] = 0;
+        strcpy(userDict, _szPath);
+        strcat(userDict, USER_STATISTICS);
+        return HWR_ReloadUserDict(_recognizer, userDict);
+    }
+    return false;
 }
 
 jboolean Java_com_phatware_android_RecoInterface_WritePadAPI_isPointStroke( JNIEnv* env, jobject thiz, jint nStroke )
 {
-	if ( _inkData != NULL )
-	{
-		CGRect rect = {0,0,0,0};
-		if ( nStroke < 0 )
-			nStroke = INK_StrokeCount( _inkData, false ) - 1;
-		if ( nStroke < 0 )
-			return false;
-		if ( INK_GetStrokeRect( _inkData, nStroke, &rect, false) )
-		{
-			if ( rect.size.width <= 2.0f && rect.size.height <= 2.0f )
-				return true;
-		}
-	}
-	return false;
+    if ( _inkData != NULL )
+    {
+        CGRect rect = {0,0,0,0};
+        if ( nStroke < 0 )
+            nStroke = INK_StrokeCount( _inkData, false ) - 1;
+        if ( nStroke < 0 )
+            return false;
+        if ( INK_GetStrokeRect( _inkData, nStroke, &rect, false) )
+        {
+            if ( rect.size.width <= 2.0f && rect.size.height <= 2.0f )
+                return true;
+        }
+    }
+    return false;
 }
 
 jint Java_com_phatware_android_RecoInterface_WritePadAPI_checkStrokeNewLine( JNIEnv* env, jobject thiz, jint nStroke )
 {
-	int result = GEST_NONE;
-	if ( _inkData != NULL )
-	{
-		CGRect rect = {0,0,0,0};
-		CGStroke pStroke = NULL;
-		float		width = 2.0f;
+    int result = GEST_NONE;
+    if ( _inkData != NULL )
+    {
+        CGRect rect = {0,0,0,0};
+        CGStroke pStroke = NULL;
+        float		width = 2.0f;
 
-		if ( nStroke < 0 )
-			nStroke = INK_StrokeCount( _inkData, false ) - 1;
-		if ( nStroke < 0 )
-			return -1;
-		if ( ! INK_GetStrokeRect( _inkData, nStroke, &rect , false) )
-			return -1;
-		int len = INK_GetStrokeP( _inkData, nStroke, &pStroke, &width, NULL);
-		if (len > 5)
-		{
-			result = HWR_CheckGesture( GEST_DELETE, pStroke, len, 1, 5 );
-		}
-		if (pStroke != NULL)
-			free((void *) pStroke);
-		if ( result == GEST_DELETE )
-			return 0;
-		if ( rect.size.width < width && rect.size.height < width )
-			return 0;
-		if ( rect.size.width > 2.0f * rect.size.height && rect.size.height <= 2.0f * width )
-			return 0;
-		
-		int xx = (int)rect.origin.x;
-		int yy = (int)rect.origin.y;		
-		return (jint)((xx & 0xffff) | ((yy << 16) &0xffff0000));
-	}
-	return 0;
+        if ( nStroke < 0 )
+            nStroke = INK_StrokeCount( _inkData, false ) - 1;
+        if ( nStroke < 0 )
+            return -1;
+        if ( ! INK_GetStrokeRect( _inkData, nStroke, &rect , false) )
+            return -1;
+        int len = INK_GetStrokeP( _inkData, nStroke, &pStroke, &width, NULL);
+        if (len > 5)
+        {
+            result = HWR_CheckGesture( GEST_DELETE, pStroke, len, 1, 5 );
+        }
+        if (pStroke != NULL)
+            free((void *) pStroke);
+        if ( result == GEST_DELETE )
+            return 0;
+        if ( rect.size.width < width && rect.size.height < width )
+            return 0;
+        if ( rect.size.width > 2.0f * rect.size.height && rect.size.height <= 2.0f * width )
+            return 0;
+        
+        int xx = (int)rect.origin.x;
+        int yy = (int)rect.origin.y;		
+        return (jint)((xx & 0xffff) | ((yy << 16) &0xffff0000));
+    }
+    return 0;
 }
 
 jboolean Java_com_phatware_android_RecoInterface_WritePadAPI_saveUserDict( JNIEnv* env)
 {
-	if (_recognizer != NULL) {
-		char userDict[MAX_PATH];
-		userDict[0] = 0;
-		strcpy(userDict, _szPath);
-		strcat(userDict, USER_DICTIONARY);
-		return HWR_SaveUserDict(_recognizer, userDict);
-	}
-	return false;
+    if (_recognizer != NULL) {
+        char userDict[MAX_PATH];
+        userDict[0] = 0;
+        strcpy(userDict, _szPath);
+        strcat(userDict, USER_DICTIONARY);
+        return HWR_SaveUserDict(_recognizer, userDict);
+    }
+    return false;
 }
 
 
 jboolean Java_com_phatware_android_RecoInterface_WritePadAPI_setDictionaryData(
-		JNIEnv* env, jobject thiz, jbyteArray buff, jint flag ) 
+        JNIEnv* env, jobject thiz, jbyteArray buff, jint flag ) 
 {
-	jbyte * data = NULL;
-	jboolean result = false;
-	if (_recognizer == NULL)
-		return false;
+    jbyte * data = NULL;
+    jboolean result = false;
+    if (_recognizer == NULL)
+        return false;
 
     jboolean isCopy = JNI_FALSE;
-	data = (*env)->GetByteArrayElements(env, buff, &isCopy);
-	if (data != NULL)
+    data = (*env)->GetByteArrayElements(env, buff, &isCopy);
+    if (data != NULL)
     {
-		result = HWR_SetDictionaryData(_recognizer, data, flag );
+        result = HWR_SetDictionaryData(_recognizer, (const char *)data, flag );
         if ( isCopy == JNI_TRUE )
             (*env)->ReleaseByteArrayElements(env, buff, data, JNI_ABORT);
-	}
-	return result;
+    }
+    return result;
 }
 
 void Java_com_phatware_android_RecoInterface_WritePadAPI_freeRecognizer( JNIEnv* env)
 {
-	if (_recognizer != NULL)
+    if (_recognizer != NULL)
     {
         if ( _szPath[0] == 0 )
         {
@@ -659,54 +659,54 @@ void Java_com_phatware_android_RecoInterface_WritePadAPI_freeRecognizer( JNIEnv*
 
             HWR_FreeRecognizer(_recognizer, userDict, learner, corrector);
         }
-		_recognizer = NULL;
-	}
-	if (_inkData != NULL)
+        _recognizer = NULL;
+    }
+    if (_inkData != NULL)
     {
-		INK_FreeData(_inkData);
-		_inkData = NULL;
-	}
-	_currentStroke = -1;
+        INK_FreeData(_inkData);
+        _inkData = NULL;
+    }
+    _currentStroke = -1;
 }
 
 jint  Java_com_phatware_android_RecoInterface_WritePadAPI_getRecognizerFlags( JNIEnv * env)
 {
-	jint result = 0;
-	if (_recognizer != NULL) {
-		result = HWR_GetRecognitionFlags(_recognizer);
-	}
-	return result;
+    jint result = 0;
+    if (_recognizer != NULL) {
+        result = HWR_GetRecognitionFlags(_recognizer);
+    }
+    return result;
 }
 
 void Java_com_phatware_android_RecoInterface_WritePadAPI_setRecognizerFlags( JNIEnv * env, jobject thiz, jint flags)
 {
-	if (_recognizer != NULL) {
+    if (_recognizer != NULL) {
             HWR_SetRecognitionFlags(_recognizer, (unsigned int) flags);
-	}
+    }
 }
 
 
 jint Java_com_phatware_android_RecoInterface_WritePadAPI_getRecognizerMode( JNIEnv * env) 
 {
-	jint result = 0;
-	if (_recognizer != NULL) {
-		result = HWR_GetRecognitionMode(_recognizer);
-	}
-	return result;
+    jint result = 0;
+    if (_recognizer != NULL) {
+        result = HWR_GetRecognitionMode(_recognizer);
+    }
+    return result;
 }
 
 void Java_com_phatware_android_RecoInterface_WritePadAPI_setRecognizerMode( JNIEnv * env, jobject thiz, jint mode)
 {
-	if (_recognizer != NULL) {
-		HWR_SetRecognitionMode(_recognizer, mode);
-	}
+    if (_recognizer != NULL) {
+        HWR_SetRecognitionMode(_recognizer, mode);
+    }
 }
 
 void Java_com_phatware_android_RecoInterface_WritePadAPI_stopRecognizer( JNIEnv* env)
 {
-	if (_recognizer != NULL) {
-		HWR_StopAsyncReco(_recognizer);
-	}
+    if (_recognizer != NULL) {
+        HWR_StopAsyncReco(_recognizer);
+    }
 }
 
 // Detect new line 
@@ -803,7 +803,7 @@ static int AddPixelsX( CGFloat x, CGFloat y, INK_DATA_PTR iData, BOOL bLastPoint
     
     if ( bLastPoint )
     {
-		// add last point
+        // add last point
         if ( x != _lastPoint.x || y != _lastPoint.y )
         {
             INK_AddPixelToStroke( iData, nStroke, x, y, 127 );
@@ -814,55 +814,55 @@ static int AddPixelsX( CGFloat x, CGFloat y, INK_DATA_PTR iData, BOOL bLastPoint
         }
     }
     
-	_previousLocation.x = x;
+    _previousLocation.x = x;
     _previousLocation.y = y;
     return nPoints;
 }
 
-static const char * getNextToken( const char * buffer, int * pOffset, BOOL * endofrow, BOOL * endoffile )
+static const char * getNextToken( const jbyte * buffer, int * pOffset, BOOL * endofrow, BOOL * endoffile )
 {
-	char ch1, ch = 0;
-	BOOL bQuotes = false;
+    char ch1, ch = 0;
+    BOOL bQuotes = false;
     static char strToken[100];
     
     *strToken = 0;
-	*endofrow = false;
-	*endoffile = false;
-	while ( (ch = buffer[(*pOffset)++]) )
-	{
+    *endofrow = false;
+    *endoffile = false;
+    while ( (ch = buffer[(*pOffset)++]) )
+    {
         if ( bQuotes )
         {
             if ( ch == '\r' )
                 continue;
             else if ( ch == '\"' )
             {
-				ch1 = buffer[(*pOffset)++];
+                ch1 = buffer[(*pOffset)++];
                 if ( ch1 == '\"' )
-				{
+                {
                     strcat( strToken, "\"" );
-				}
+                }
                 else
-				{
-					(*pOffset)--;
+                {
+                    (*pOffset)--;
                     bQuotes = false;
-				}
+                }
             }
             else
-			{
+            {
                 char sz[2];
                 sz[0] = ch; sz[1] = 0;
                 strcat( strToken, sz );
-			}
+            }
         }
         else
         {
             if ( ch == '\r' )
-			{
+            {
                 // ignore \r
-			}
+            }
             else if ( ch == '\n' )
             {
-				// end or row
+                // end or row
                 *endofrow = true;
                 break;
             }
@@ -877,13 +877,13 @@ static const char * getNextToken( const char * buffer, int * pOffset, BOOL * end
                 strcat( strToken, sz );
             }
         }
-	}
-	if ( ch == 0 )
-	{
-		*endofrow = true;
-		*endoffile = true;
-	}
-	return strToken;
+    }
+    if ( ch == 0 )
+    {
+        *endofrow = true;
+        *endoffile = true;
+    }
+    return strToken;
 }
 
 static const char * recognizeInkData( INK_DATA_PTR inInkData, int iConfig )
@@ -934,9 +934,9 @@ static const char * recognizeInkData( INK_DATA_PTR inInkData, int iConfig )
     }
     HWR_SetRecognitionFlags( _recognizer, flags );
     
-	recognizedText = HWR_RecognizeInkData( _recognizer, inInkData, 0, -1, true, false, false, false );
-	if (recognizedText == NULL || *recognizedText == 0)
-		return NULL;
+    recognizedText = HWR_RecognizeInkData( _recognizer, inInkData, 0, -1, true, false, false, false );
+    if (recognizedText == NULL || *recognizedText == 0)
+        return NULL;
     
     UNICODEtoStr( &config[strlen(config)-1], recognizedText, 1000 );
     return config;
@@ -961,15 +961,12 @@ jstring Java_com_phatware_android_RecoInterface_WritePadAPI_recognizeTestFile( J
     static char resultstr[12000];
     
 
-	char * buffer = (*env)->GetByteArrayElements(env, buff, &isCopy);
+    jbyte * buffer = (*env)->GetByteArrayElements(env, buff, &isCopy);
     if ( buffer == NULL )
         return NULL;
     
     
     INK_DATA_PTR	iData = INK_InitData();
-    
-    
-    
     COLORREF	coloref = 0;
     nStroke = INK_AddEmptyStroke( iData, 3, coloref );
     strokeLen = 0;
@@ -1060,150 +1057,150 @@ jstring Java_com_phatware_android_RecoInterface_WritePadAPI_recognizeTestFile( J
     
     INK_FreeData( iData );
     
-	result = StringAToJstring(env, resultstr);
-	if ((long) result == (-1))
-		return NULL;
-	return result;
+    result = StringAToJstring(env, resultstr);
+    if ((long) result == (-1))
+        return NULL;
+    return result;
 }
 
 // if bNewLine is true, new line will be automatically recognized in the handwritten text
 
 jstring Java_com_phatware_android_RecoInterface_WritePadAPI_recognizeInkData(
-	JNIEnv* env, jobject thiz, jint nDataLen, jboolean bAsync, jboolean bFlipY, jboolean bSort )
+    JNIEnv* env, jobject thiz, jint nDataLen, jboolean bAsync, jboolean bFlipY, jboolean bSort )
 {
-	jstring result = NULL;
-	const UCHR * recognizedText = NULL;
-	if (_recognizer == NULL || _inkData == NULL || INK_StrokeCount(_inkData, false) < 1)
-		return NULL;
-	INK_DATA_PTR inkCopy = NULL;
-	if (bAsync)
+    jstring result = NULL;
+    const UCHR * recognizedText = NULL;
+    if (_recognizer == NULL || _inkData == NULL || INK_StrokeCount(_inkData, false) < 1)
+        return NULL;
+    INK_DATA_PTR inkCopy = NULL;
+    if (bAsync)
     {
-		// create ink copy before starting recognizer.
-		inkCopy = INK_CreateCopy(_inkData);
-	}
-	recognizedText = HWR_RecognizeInkData(_recognizer,
+        // create ink copy before starting recognizer.
+        inkCopy = INK_CreateCopy(_inkData);
+    }
+    recognizedText = HWR_RecognizeInkData(_recognizer,
                                           (inkCopy == NULL) ? _inkData : inkCopy,
                                           0, nDataLen, bAsync, bFlipY,
                                           bSort, false);
     if (NULL != inkCopy)
     {
-		INK_FreeData(inkCopy);
-		inkCopy = NULL;
-	}
-	if (recognizedText == NULL || *recognizedText == 0)
-		return NULL;
+        INK_FreeData(inkCopy);
+        inkCopy = NULL;
+    }
+    if (recognizedText == NULL || *recognizedText == 0)
+        return NULL;
 
-	result = StringToJstring(env, recognizedText);
-	if ((long) result == (-1))
-		return NULL;
-	return result;
+    result = StringToJstring(env, recognizedText);
+    if ((long) result == (-1))
+        return NULL;
+    return result;
 }
 
 jboolean Java_com_phatware_android_RecoInterface_WritePadAPI_preRecognizeInkData( JNIEnv* env, jobject thiz, jint nDataLen) 
 {
-	const char * recognizedText = NULL;
-	if (_recognizer == NULL || _inkData == NULL || INK_StrokeCount(_inkData,
-			false) < 1)
-		return false;
-	return HWR_PreRecognizeInkData(_recognizer, _inkData, nDataLen, false);
+    const char * recognizedText = NULL;
+    if (_recognizer == NULL || _inkData == NULL || INK_StrokeCount(_inkData,
+            false) < 1)
+        return false;
+    return HWR_PreRecognizeInkData(_recognizer, _inkData, nDataLen, false);
 }
 
 jboolean Java_com_phatware_android_RecoInterface_WritePadAPI_newStroke( JNIEnv * env, jobject thiz, jfloat width, jint color)
 {
-	jint result = -1;
-	if (NULL != _inkData) {
-		result = INK_AddEmptyStroke(_inkData, width, (COLORREF) color);
-	}
-	_currentStroke = (int) result;
-	return result;
+    jint result = -1;
+    if (NULL != _inkData) {
+        result = INK_AddEmptyStroke(_inkData, width, (COLORREF) color);
+    }
+    _currentStroke = (int) result;
+    return result;
 }
 
 
 jint Java_com_phatware_android_RecoInterface_WritePadAPI_getStrokeCount( JNIEnv * env) 
 {
-	jint result = -1;
-	if (NULL != _inkData) {
-		result = INK_StrokeCount(_inkData, false);
-	}
-	return result;
+    jint result = -1;
+    if (NULL != _inkData) {
+        result = INK_StrokeCount(_inkData, false);
+    }
+    return result;
 }
 
 jboolean Java_com_phatware_android_RecoInterface_WritePadAPI_deleteLastStroke( JNIEnv * env) 
 {
-	jboolean result = false;
-	if (NULL != _inkData) {
-		result = INK_DeleteStroke(_inkData, -1);
-	}
-	return result;
+    jboolean result = false;
+    if (NULL != _inkData) {
+        result = INK_DeleteStroke(_inkData, -1);
+    }
+    return result;
 }
 
 
 jboolean Java_com_phatware_android_RecoInterface_WritePadAPI_deleteStroke( JNIEnv * env, jobject thiz, jint nStroke )
 {
-	jboolean result = false;
-	if (NULL != _inkData) {
-		result = INK_DeleteStroke(_inkData, nStroke );
-	}
-	return result;
+    jboolean result = false;
+    if (NULL != _inkData) {
+        result = INK_DeleteStroke(_inkData, nStroke );
+    }
+    return result;
 }
 
 jint Java_com_phatware_android_RecoInterface_WritePadAPI_detectGesture( JNIEnv* env, jobject thiz, jint type) 
 {
-	jint result = GEST_NONE;
+    jint result = GEST_NONE;
 
-	if (NULL != _inkData) {
-		int nCnt = INK_StrokeCount(_inkData, false);
-		if (nCnt > 0) {
-			CGStroke pStroke = NULL;
-			int len = INK_GetStrokeP(_inkData, nCnt - 1, &pStroke, NULL, NULL);
-			if (len > 5) {
-				result = HWR_CheckGesture((GESTURE_TYPE) type, pStroke, len, 1, 160);
-			}
-			if (pStroke != NULL)
-				free((void *) pStroke);
-		}
-	}
-	return result;
+    if (NULL != _inkData) {
+        int nCnt = INK_StrokeCount(_inkData, false);
+        if (nCnt > 0) {
+            CGStroke pStroke = NULL;
+            int len = INK_GetStrokeP(_inkData, nCnt - 1, &pStroke, NULL, NULL);
+            if (len > 5) {
+                result = HWR_CheckGesture((GESTURE_TYPE) type, pStroke, len, 1, 160);
+            }
+            if (pStroke != NULL)
+                free((void *) pStroke);
+        }
+    }
+    return result;
 }
 
 jint Java_com_phatware_android_RecoInterface_WritePadAPI_addPixelToStroke(
                                 JNIEnv * env, jobject thiz, jint stroke, jfloat x, jfloat y)
 {
-	jint result = -1;
-	if (NULL != _inkData) {
+    jint result = -1;
+    if (NULL != _inkData) {
         int pressure = DEFAULT_PRESSURE;
-		result = INK_AddPixelToStroke(_inkData, stroke, x, y, pressure );
-	}
-	return result;
+        result = INK_AddPixelToStroke(_inkData, stroke, x, y, pressure );
+    }
+    return result;
 }
 
 
 jboolean Java_com_phatware_android_RecoInterface_WritePadAPI_resetRecognizer(JNIEnv * env) 
 {
-	if (NULL != _recognizer) {
-		HWR_Reset(_recognizer);
-		return true;
-	}
-	return false;
+    if (NULL != _recognizer) {
+        HWR_Reset(_recognizer);
+        return true;
+    }
+    return false;
 }
 
 jboolean Java_com_phatware_android_RecoInterface_WritePadAPI_resetInkData(JNIEnv * env)
 {
-	if (NULL != _inkData) {
-		INK_Erase(_inkData);
-		_currentStroke = -1;
-		return true;
-	}
-	return false;
+    if (NULL != _inkData) {
+        INK_Erase(_inkData);
+        _currentStroke = -1;
+        return true;
+    }
+    return false;
 }
 
 jstring Java_com_phatware_android_RecoInterface_WritePadAPI_languageName(JNIEnv* env, jobject thiz) 
 {
-	jstring result = NULL;
+    jstring result = NULL;
     if (NULL != _recognizer) {
         result = (*env)->NewStringUTF(env, HWR_GetLanguageName(_recognizer));
     }
-	return result;
+    return result;
 }
 
 jint Java_com_phatware_android_RecoInterface_WritePadAPI_languageID( JNIEnv * env) 
@@ -1217,176 +1214,172 @@ jint Java_com_phatware_android_RecoInterface_WritePadAPI_languageID( JNIEnv * en
                                                           
 jboolean Java_com_phatware_android_RecoInterface_WritePadAPI_newUserDict(JNIEnv * env) 
 {
-	if (NULL != _recognizer) {
-		return HWR_NewUserDict(_recognizer);
-	}
-	return false;
+    if (NULL != _recognizer) {
+        return HWR_NewUserDict(_recognizer);
+    }
+    return false;
 }
 
 
 jboolean Java_com_phatware_android_RecoInterface_WritePadAPI_addWordToUserDict( JNIEnv * env, jobject thiz, jstring jword) 
 {
-	jboolean result = false;
-	if (NULL != _recognizer)
+    jboolean result = false;
+    if (NULL != _recognizer)
     {
-		const UCHR * strWord = JstringToString(env, jword);
-		if (strWord != NULL) {
-			result = HWR_AddUserWordToDict(_recognizer, strWord, true);
-			free((void *) strWord);
-		}
-	}
-	return result;
+        const UCHR * strWord = JstringToString(env, jword);
+        if (strWord != NULL) {
+            result = HWR_AddUserWordToDict(_recognizer, strWord, true);
+            free((void *) strWord);
+        }
+    }
+    return result;
 }
 
 
 jboolean Java_com_phatware_android_RecoInterface_WritePadAPI_resetResult( JNIEnv * env, jobject thiz)
 {
-	jboolean result = false;
-	if (NULL != _recognizer) {
-		result = HWR_EmptyWordList(_recognizer);
-	}
-	return result;
+    jboolean result = false;
+    if (NULL != _recognizer) {
+        result = HWR_EmptyWordList(_recognizer);
+    }
+    return result;
 }
 
 jboolean Java_com_phatware_android_RecoInterface_WritePadAPI_isWordInDict(JNIEnv * env, jobject thiz, jstring jword) 
 {
-	jboolean result = false;
-	if (_recognizer != NULL) {
-		const UCHR * word = JstringToString(env, jword);
-		if (word != NULL) {
-			result = HWR_IsWordInDict(_recognizer, word);
-			free((void *) word);
-		}
-	}
-	return result;
+    jboolean result = false;
+    if (_recognizer != NULL) {
+        const UCHR * word = JstringToString(env, jword);
+        if (word != NULL) {
+            result = HWR_IsWordInDict(_recognizer, word);
+            free((void *) word);
+        }
+    }
+    return result;
 }
 
 jint Java_com_phatware_android_RecoInterface_WritePadAPI_getResultColumnCount(JNIEnv * env, jobject thiz) 
 {
-	jint result = 0;
-	if (NULL != _recognizer) {
-		result = HWR_GetResultWordCount(_recognizer);
-	}
-	return result;
+    jint result = 0;
+    if (NULL != _recognizer) {
+        result = HWR_GetResultWordCount(_recognizer);
+    }
+    return result;
 }
                                                                 
 jint Java_com_phatware_android_RecoInterface_WritePadAPI_getResultRowCount(JNIEnv * env, jobject thiz, jint col) 
 {
-	jint result = 0;
-	if (NULL != _recognizer) {
-		result = HWR_GetResultAlternativeCount(_recognizer, col);
-	}
-	return result;
+    jint result = 0;
+    if (NULL != _recognizer) {
+        result = HWR_GetResultAlternativeCount(_recognizer, col);
+    }
+    return result;
 }
-
 
 jstring Java_com_phatware_android_RecoInterface_WritePadAPI_getRecognizedWord(JNIEnv * env, jobject thiz, jint col, jint row) 
 {
-	jstring result = NULL;
-	if (NULL != _recognizer)
+    jstring result = NULL;
+    if (NULL != _recognizer)
     {
-		const UCHR * word = HWR_GetResultWord(_recognizer, col, row);
-		if (word != NULL)
+        const UCHR * word = HWR_GetResultWord(_recognizer, col, row);
+        if (word != NULL)
         {
-			result = StringToJstring(env, word);
-			if ((long) result == (-1))
-			{
-			    result = NULL;
-			}
-		}
-	}
-	return result;
+            result = StringToJstring(env, word);
+            if ((long) result == (-1))
+            {
+                result = NULL;
+            }
+        }
+    }
+    return result;
 }
-
-
-
 
 jstring Java_com_phatware_android_RecoInterface_WritePadAPI_getAutocorrectorWord( JNIEnv * env, jobject thiz, jstring inWord)
 {
-	jstring result = NULL;
-	if (_recognizer != NULL)
+    jstring result = NULL;
+    if (_recognizer != NULL)
     {
-		const UCHR * word = JstringToString(env, inWord);
-		if (word != NULL)
+        const UCHR * word = JstringToString(env, inWord);
+        if (word != NULL)
         {
-			const UCHR * outWord = HWR_AutocorrectWord(_recognizer, word);
-			if (NULL != outWord)
+            const UCHR * outWord = HWR_AutocorrectWord(_recognizer, word);
+            if (NULL != outWord)
             {
-				result = StringToJstring(env, outWord);
-				if ((long) result == (-1))
-					result = NULL;
-			}
-			free((void *) word);
-		}
-	}
-	return result;
+                result = StringToJstring(env, outWord);
+                if ((long) result == (-1))
+                    result = NULL;
+            }
+            free((void *) word);
+        }
+    }
+    return result;
 }
 
 jint Java_com_phatware_android_RecoInterface_WritePadAPI_getRecognizedWeight( JNIEnv * env, jobject thiz, jint col, jint row)
 {
-	jint result = 0;
-	if (NULL != _recognizer) {
-		result = HWR_GetResultWeight(_recognizer, col, row);
-	}
-	return result;
+    jint result = 0;
+    if (NULL != _recognizer) {
+        result = HWR_GetResultWeight(_recognizer, col, row);
+    }
+    return result;
 }
 
 jint Java_com_phatware_android_RecoInterface_WritePadAPI_getResultStrokesNumber( JNIEnv * env, jobject thiz, jint col, jint row)
 {
-	jint result = 0;
-	if (NULL != _recognizer) {
-		result = HWR_GetResultStrokesNumber(_recognizer, col, row);
-	}
-	return result;
+    jint result = 0;
+    if (NULL != _recognizer) {
+        result = HWR_GetResultStrokesNumber(_recognizer, col, row);
+    }
+    return result;
 }
 
 jboolean Java_com_phatware_android_RecoInterface_WritePadAPI_learnerAddNewWord( JNIEnv * env, jobject thiz, jstring jword, jint weight) 
 {
-	jboolean result = false;
-	if (NULL != _recognizer) {
-		const UCHR * word = JstringToString(env, jword);
-		if (word != NULL) {
-			result = HWR_LearnNewWord(_recognizer, word, weight);
-			free((void *) word);
-		}
-	}
-	return result;
+    jboolean result = false;
+    if (NULL != _recognizer) {
+        const UCHR * word = JstringToString(env, jword);
+        if (word != NULL) {
+            result = HWR_LearnNewWord(_recognizer, word, weight);
+            free((void *) word);
+        }
+    }
+    return result;
 }
 
 
 jboolean Java_com_phatware_android_RecoInterface_WritePadAPI_learnerReplaceWord( 
         JNIEnv * env, jobject thiz, jstring jword1, jint weight1, jstring jword2, jint weight2) 
 {
-	jboolean result = false;
-	if (NULL != _recognizer) {
-		const UCHR * word1 = JstringToString(env, jword1);
-		const UCHR * word2 = JstringToString(env, jword2);
-		if (word1 != NULL && word2 != NULL) {
-			result = HWR_ReplaceWord(_recognizer, word1, weight1, word2,
-					weight2);
-			free((void *) word1);
-			free((void *) word2);
-		}
-	}
-	return result;
+    jboolean result = false;
+    if (NULL != _recognizer) {
+        const UCHR * word1 = JstringToString(env, jword1);
+        const UCHR * word2 = JstringToString(env, jword2);
+        if (word1 != NULL && word2 != NULL) {
+            result = HWR_ReplaceWord(_recognizer, word1, weight1, word2,
+                    weight2);
+            free((void *) word1);
+            free((void *) word2);
+        }
+    }
+    return result;
 }
 
 
 jboolean Java_com_phatware_android_RecoInterface_WritePadAPI_autocorrectorLearnWord(
             JNIEnv * env, jobject thiz, jstring jword1, jstring jword2, jint flags, jboolean bReplace) 
 {
-	jboolean result = false;
-	if (NULL != _recognizer) {
-		const UCHR * word1 = JstringToString(env, jword1);
-		const UCHR * word2 = JstringToString(env, jword2);
-		if (word1 != NULL && word2 != NULL) {
-			result = HWR_AddWordToWordList(_recognizer, word1, word2, flags,
-					bReplace);
-			free((void *) word1); 
-			free((void *) word2);
-		}
-	}
-	return result;
+    jboolean result = false;
+    if (NULL != _recognizer) {
+        const UCHR * word1 = JstringToString(env, jword1);
+        const UCHR * word2 = JstringToString(env, jword2);
+        if (word1 != NULL && word2 != NULL) {
+            result = HWR_AddWordToWordList(_recognizer, word1, word2, flags,
+                    bReplace);
+            free((void *) word1); 
+            free((void *) word2);
+        }
+    }
+    return result;
 }
 
 
@@ -1397,8 +1390,8 @@ jstring Java_com_phatware_writepad_WritePadAPI_spellCheckWord(JNIEnv * env, jobj
     {
         return jword;
     }
-	jstring newWordFrom = NULL;
-	UCHR * pWordList = malloc( MAX_STRING_BUFFER );
+    jstring newWordFrom = NULL;
+    UCHR * pWordList = malloc( MAX_STRING_BUFFER );
     if ( NULL != pWordList )
     {
         memset( pWordList, 0, MAX_STRING_BUFFER );
@@ -1419,57 +1412,57 @@ jstring Java_com_phatware_writepad_WritePadAPI_spellCheckWord(JNIEnv * env, jobj
 jboolean  Java_com_phatware_android_RecoInterface_WritePadAPI_exportWordList(JNIEnv* env, jobject thiz, jstring pExportFile)
 {
     jboolean result = false;
-	if (_recognizer != NULL)
+    if (_recognizer != NULL)
     {
         jboolean isCopy = JNI_FALSE;
-    	const char *fileName = (*env)->GetStringUTFChars(env, pExportFile, &isCopy);
-		result = HWR_ExportWordList(_recognizer, fileName);
+        const char *fileName = (*env)->GetStringUTFChars(env, pExportFile, &isCopy);
+        result = HWR_ExportWordList(_recognizer, fileName);
         if ( fileName && isCopy == JNI_TRUE)
             (*env)->ReleaseStringUTFChars(env, pExportFile, fileName);
-	}
-	return result;
+    }
+    return result;
 }
 
 jboolean Java_com_phatware_android_RecoInterface_WritePadAPI_exportUserDictionary(JNIEnv* env, jobject thiz, jstring pExportFile)
 {
     jboolean result = false;
-	if (_recognizer != NULL)
+    if (_recognizer != NULL)
     {
         jboolean isCopy = JNI_FALSE;
-    	const char *fileName = (*env)->GetStringUTFChars(env, pExportFile, &isCopy );
-		result = HWR_ExportUserDictionary(_recognizer, fileName);
+        const char *fileName = (*env)->GetStringUTFChars(env, pExportFile, &isCopy );
+        result = HWR_ExportUserDictionary(_recognizer, fileName);
         if ( fileName && isCopy == JNI_TRUE)
             (*env)->ReleaseStringUTFChars(env, pExportFile, fileName);
-	}
-	return result;
+    }
+    return result;
 }
 
 jboolean Java_com_phatware_android_RecoInterface_WritePadAPI_importWordList(JNIEnv* env, jobject thiz, jstring pImportFile)
 {
     jboolean result = false;
-	if (_recognizer != NULL)
+    if (_recognizer != NULL)
     {
         jboolean isCopy = JNI_FALSE;
-    	const char *fileName = (*env)->GetStringUTFChars(env, pImportFile, &isCopy);
-		result = HWR_ImportWordList(_recognizer, fileName);
+        const char *fileName = (*env)->GetStringUTFChars(env, pImportFile, &isCopy);
+        result = HWR_ImportWordList(_recognizer, fileName);
         if ( fileName && isCopy == JNI_TRUE)
             (*env)->ReleaseStringUTFChars(env, pImportFile, fileName);
-	}
-	return result;
+    }
+    return result;
 }
 
 jboolean Java_com_phatware_android_RecoInterface_WritePadAPI_importUserDictionary(JNIEnv* env, jobject thiz, jstring pImportFile)
 {
     jboolean result = false;
-	if (_recognizer != NULL)
+    if (_recognizer != NULL)
     {
         jboolean isCopy = JNI_FALSE;
-    	const char *fileName = (*env)->GetStringUTFChars( env, pImportFile, &isCopy);
-		result = HWR_ImportUserDictionary(_recognizer, fileName);
+        const char *fileName = (*env)->GetStringUTFChars( env, pImportFile, &isCopy);
+        result = HWR_ImportUserDictionary(_recognizer, fileName);
         if ( fileName && isCopy == JNI_TRUE)
             (*env)->ReleaseStringUTFChars(env, pImportFile, fileName);
-	}
-	return result;
+    }
+    return result;
 }
 
 /* ************************************************************************** */
@@ -1486,43 +1479,42 @@ static int isAttached = 0;
 static jclass interfaceClass = NULL;
 static jmethodID method = NULL;
 
-int EnumWordListCallback(const UCHR * szWordFrom, const UCHR * szWordTo, unsigned int nFlags, void * pParam)
-{
-	JNIEnv *env;
-	isAttached = 0;
+int EnumWordListCallback(const UCHR * szWordFrom, const UCHR * szWordTo, unsigned int nFlags, void * pParam) {
+    JNIEnv *env;
+    isAttached = 0;
 
-	status = (*gJavaVM)->GetEnv(gJavaVM, (void **) &env, JNI_VERSION_1_4);
-	if (status < 0) {
-		status = (*gJavaVM)->AttachCurrentThread(gJavaVM, &env, NULL);
-		if (status < 0) {
-			return;
-		}
-		isAttached = 1;
-	}
+    status = (*gJavaVM)->GetEnv(gJavaVM, (void **) &env, JNI_VERSION_1_4);
+    if (status < 0) {
+        status = (*gJavaVM)->AttachCurrentThread(gJavaVM, &env, NULL);
+        if (status < 0) {
+            return 0;
+        }
+        isAttached = 1;
+    }
     if (interfaceClass  == NULL){
-	    interfaceClass = (*env)->GetObjectClass(env, gInterfaceObject);
-	}
+        interfaceClass = (*env)->GetObjectClass(env, gInterfaceObject);
+    }
 
-	if (!interfaceClass) {
-		// __android_log_print(ANDROID_LOG_INFO, "callback_handler"," failed to get class reference");
-		if (isAttached == 1)
-			(*gJavaVM)->DetachCurrentThread(gJavaVM);
-		return;
-	}
-	/* Find the callBack method ID */
+    if (!interfaceClass) {
+        // __android_log_print(ANDROID_LOG_INFO, "callback_handler"," failed to get class reference");
+        if (isAttached == 1)
+            (*gJavaVM)->DetachCurrentThread(gJavaVM);
+        return 0;
+    }
+    /* Find the callBack method ID */
 
-	if (method == NULL)
-	{
-	    method = (*env)->GetStaticMethodID(env, interfaceClass, "onEnumWord", "(Ljava/lang/String;Ljava/lang/String;I)V");
-	}
+    if (method == NULL)
+    {
+        method = (*env)->GetStaticMethodID(env, interfaceClass, "onEnumWord", "(Ljava/lang/String;Ljava/lang/String;I)V");
+    }
 
-	if (!method) {
-		// __android_log_print(ANDROID_LOG_INFO, "callback_handler"," failed to get method ID");
-		if (isAttached == 1) {
-			(*gJavaVM)->DetachCurrentThread(gJavaVM);
-		}
-		return;
-	}
+    if (!method) {
+        // __android_log_print(ANDROID_LOG_INFO, "callback_handler"," failed to get method ID");
+        if (isAttached == 1) {
+            (*gJavaVM)->DetachCurrentThread(gJavaVM);
+        }
+        return 0;
+    }
 
     jstring newWordFrom = StringToJstring(env, szWordFrom);
     jstring newWordTo = StringToJstring(env, szWordTo);
@@ -1531,116 +1523,115 @@ int EnumWordListCallback(const UCHR * szWordFrom, const UCHR * szWordTo, unsigne
     (*env)->DeleteLocalRef(env, newWordFrom);
     (*env)->DeleteLocalRef(env, newWordTo);
 
-	if (isAttached == 1) {
-		(*gJavaVM)->DetachCurrentThread(gJavaVM);
-	}
+    if (isAttached == 1) {
+        (*gJavaVM)->DetachCurrentThread(gJavaVM);
+    }
 
-	return 1;
+    return 1;
 }
 
-int EnumUserWordsCallback(const UCHR * szWord, void * pParam)
-{
-	JNIEnv *env;
-	isAttached = 0;
+int EnumUserWordsCallback(const UCHR * szWord, void * pParam) {
+    JNIEnv *env;
+    isAttached = 0;
 
-	status = (*gJavaVM)->GetEnv(gJavaVM, (void **) &env, JNI_VERSION_1_4);
-	if (status < 0) {
-		// __android_log_print(ANDROID_LOG_INFO, "callback_handler: failed to get JNI environment, assuming native thread");
-		status = (*gJavaVM)->AttachCurrentThread(gJavaVM, &env, NULL);
-		if (status < 0) {
-			// __android_log_print(ANDROID_LOG_INFO, "callback_handler: failed to attach ", "current thread");
-			return;
-		}
-		isAttached = 1;
-	}
+    status = (*gJavaVM)->GetEnv(gJavaVM, (void **) &env, JNI_VERSION_1_4);
+    if (status < 0) {
+        //__android_log_print(ANDROID_LOG_INFO, "callback_handler: failed to get JNI environment, assuming native thread");
+        status = (*gJavaVM)->AttachCurrentThread(gJavaVM, &env, NULL);
+        if (status < 0) {
+            //__android_log_print(ANDROID_LOG_INFO, "callback_handler: failed to attach ", "current thread");
+            return 0;
+        }
+        isAttached = 1;
+    }
     if (interfaceClass == NULL){
-	    interfaceClass = (*env)->GetObjectClass(env, gInterfaceObject);
-	}
+        interfaceClass = (*env)->GetObjectClass(env, gInterfaceObject);
+    }
 
-	if (!interfaceClass) {
-		// __android_log_print(ANDROID_LOG_INFO, "callback_handler"," failed to get class reference");
-		if (isAttached == 1)
-			(*gJavaVM)->DetachCurrentThread(gJavaVM);
-		return;
-	}
+    if (!interfaceClass) {
+        //__android_log_print(ANDROID_LOG_INFO, "callback_handler"," failed to get class reference");
+        if (isAttached == 1)
+            (*gJavaVM)->DetachCurrentThread(gJavaVM);
+        return 0;
+    }
 
-	if (method == NULL)
-	{
-	    method = (*env)->GetStaticMethodID(env, interfaceClass, "onEnumUserWords", "(Ljava/lang/String;)V");
-	}
+    if (method == NULL)
+    {
+        method = (*env)->GetStaticMethodID(env, interfaceClass, "onEnumUserWords", "(Ljava/lang/String;)V");
+    }
 
-	if (!method) {
-		// __android_log_print(ANDROID_LOG_INFO, "callback_handler"," failed to get method ID");
-		if (isAttached == 1) {
-			(*gJavaVM)->DetachCurrentThread(gJavaVM);
-		}
-		return;
-	}
+    if (!method) {
+        // __android_log_print(ANDROID_LOG_INFO, "callback_handler"," failed to get method ID");
+        if (isAttached == 1) {
+            (*gJavaVM)->DetachCurrentThread(gJavaVM);
+        }
+        return 0;
+    }
 
     jstring newWord = StringToJstring(env, szWord);
     (*env)->CallStaticVoidMethod(env, interfaceClass, method, newWord);
     (*env)->DeleteLocalRef(env, newWord);
 
-	if (isAttached == 1) {
-		(*gJavaVM)->DetachCurrentThread(gJavaVM);
-	}
+    if (isAttached == 1) {
+        (*gJavaVM)->DetachCurrentThread(gJavaVM);
+    }
 
-	return 1;
+    return 1;
 }
 
 jint Java_com_phatware_android_RecoInterface_WritePadAPI_getEnumUserWordsList( JNIEnv * env, jobject thiz, void * param) 
 {
-	jint result = 0;
-	if (NULL != _recognizer) {
+    jint result = 0;
+    if (NULL != _recognizer) {
         interfaceClass = NULL;
         method = NULL;
-		result = HWR_EnumUserWords(_recognizer, EnumUserWordsCallback, param);
-	}
-	return result;
+        result = HWR_EnumUserWords(_recognizer, EnumUserWordsCallback, param);
+    }
+    return result;
 }
 
 jint Java_com_phatware_android_RecoInterface_WritePadAPI_getEnumWordList( JNIEnv * env, jobject thiz, void * param) 
 {
-	jint result = 0;
-	if (NULL != _recognizer) {
+    jint result = 0;
+    if (NULL != _recognizer) {
         interfaceClass = NULL;
         method = NULL;
-		result = HWR_EnumWordList(_recognizer, EnumWordListCallback, param);
-	}
-	return result;
+        result = HWR_EnumWordList(_recognizer, EnumWordListCallback, param);
+    }
+    return result;
 }
 
 void initClassHelper(JNIEnv *env, const char *path, jobject *objptr) {
-	jclass cls = (*env)->FindClass(env, path);
-	if (!cls) {
-		// __android_log_print(ANDROID_LOG_INFO, "initClassHelper: failed to get %s class reference", path);
-		return;
-	}
-	jmethodID constr = (*env)->GetMethodID(env, cls, "<init>", "()V");
-	if (!constr) {
-		// __android_log_print(ANDROID_LOG_INFO, "initClassHelper: failed to get %s constructor", path);
-		return;
-	}
-	jobject obj = (*env)->NewObject(env, cls, constr);
-	if (!obj) {
-		// __android_log_print(ANDROID_LOG_INFO, "initClassHelper: failed to create a %s object", path);
-		return;
-	}
-	(*objptr) = (*env)->NewGlobalRef(env, obj);
+    jclass cls = (*env)->FindClass(env, path);
+    if (!cls) {
+        // __android_log_print(ANDROID_LOG_INFO, "initClassHelper: failed to get %s class reference", path);
+        return;
+    }
+    jmethodID constr = (*env)->GetMethodID(env, cls, "<init>", "()V");
+    if (!constr) {
+        // __android_log_print(ANDROID_LOG_INFO, "initClassHelper: failed to get %s constructor", path);
+        return;
+    }
+    jobject obj = (*env)->NewObject(env, cls, constr);
+    if (!obj) {
+        // __android_log_print(ANDROID_LOG_INFO, "initClassHelper: failed to create a %s object", path);
+        return;
+    }
+    (*objptr) = (*env)->NewGlobalRef(env, obj);
 }
 
 jint JNI_OnLoad(JavaVM* vm, void* reserved)
 {
-	JNIEnv *env;
-	gJavaVM = vm;
-	if ((*vm)->GetEnv(vm, (void**) &env, JNI_VERSION_1_4) != JNI_OK)
+    JNIEnv *env;
+    gJavaVM = vm;
+    if ((*vm)->GetEnv(vm, (void**) &env, JNI_VERSION_1_4) != JNI_OK)
     {
-		// __android_log_print(ANDROID_LOG_INFO, "(Failed"," to get the environment using GetEnv()");
-		return -1;
-	}
+        // __android_log_print(ANDROID_LOG_INFO, "(Failed"," to get the environment using GetEnv()");
+        return -1;
+    }
 
-	initClassHelper(env, kInterfacePath, &gInterfaceObject);
-	return JNI_VERSION_1_4;
+    initClassHelper(env, kInterfacePath, &gInterfaceObject);
+    return JNI_VERSION_1_4;
 }
 
 

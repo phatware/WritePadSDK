@@ -11,7 +11,7 @@ LOCAL_MODULE := libWritePadRecos
 include $(CLEAR_VARS)
 
 LOCAL_MODULE    := WritePadRecos
-LOCAL_SRC_FILES := ../libs/$(TARGET_ARCH_ABI)/libWritePadRecos.a
+LOCAL_SRC_FILES := ../static/$(TARGET_ARCH_ABI)/libWritePadRecos.a
 LOCAL_EXPORT_C_INCLUDES := $(LOCAL_PATH)/../../include
 
 include $(PREBUILT_STATIC_LIBRARY)
@@ -21,7 +21,6 @@ include $(PREBUILT_STATIC_LIBRARY)
 #########
 
 include $(CLEAR_VARS)
-
 
 LOCAL_MODULE := WritePadReco
 LOCAL_CFLAGS := -I$(LOCAL_PATH)/../../include

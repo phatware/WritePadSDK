@@ -127,7 +127,7 @@ typedef const UNCHAR *	LPCUSTR;
 typedef UInt32			COLORREF;
 
 /// Type to represent a boolean value.
-#if !defined(OBJC_HIDE_64) && TARGET_OS_IPHONE && __LP64__
+#if !defined(OBJC_HIDE_64) && defined(TARGET_OS_IPHONE) && defined(__LP64__)
 typedef bool BOOL;
 #else
 typedef signed char BOOL;

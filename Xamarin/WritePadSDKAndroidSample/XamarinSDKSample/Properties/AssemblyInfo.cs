@@ -55,7 +55,7 @@ using Android.App;
 [assembly: AssemblyConfiguration("")]
 [assembly: AssemblyCompany("PhatWare Corp.")]
 [assembly: AssemblyProduct("WritePadXamarinSample")]
-[assembly: AssemblyCopyright("Copyright ©  2014-2019 PhatWare Corp.")]
+[assembly: AssemblyCopyright("Copyright ©  2014-2021 PhatWare Corp.")]
 [assembly: AssemblyTrademark("WritePad, PhatWare")]
 [assembly: AssemblyCulture("")]
 [assembly: ComVisible(false)]

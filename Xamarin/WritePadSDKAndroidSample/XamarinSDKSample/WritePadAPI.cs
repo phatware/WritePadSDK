@@ -56,8 +56,8 @@ namespace WritePadXamarinSample
     {        
         public struct CGPoint
         {
-            public float x;
-            public float y;
+            public double x;
+            public double y;
         };
 
         public struct CGTracePoint
@@ -235,7 +235,7 @@ namespace WritePadXamarinSample
             if (currentStroke == null || currentStroke.Count == 0)
                 return 0;
 
-            result = HWR_CheckGesture(type, currentStroke.ToArray(), currentStroke.Count, 1, LONG_STROKE_MINLENGTH);
+            result = HWR_CheckGesture(type, currentStroke.ToArray(), currentStroke.Count, 4, LONG_STROKE_MINLENGTH);
             return result;
         }
 

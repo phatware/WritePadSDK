@@ -32,7 +32,7 @@
 #ifndef __RecognizerWrapper_h__
 #define __RecognizerWrapper_h__
 
-#include "RecognizerApi.h"
+#include "RecognizerAPI.h"
 #include "InkWrapper.h"
 
 

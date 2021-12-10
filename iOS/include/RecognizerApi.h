@@ -33,7 +33,7 @@
 #define __RecognizerAPI_h__
 
 #include "gestures.h"
-#include "recotypes.h"
+#include "RecoTypes.h"
 
 #ifndef WIN32
 #define GetRValue(rgb)      ((float)((rgb)&0xFF)/255.0)

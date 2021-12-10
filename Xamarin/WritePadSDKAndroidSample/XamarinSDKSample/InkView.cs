@@ -82,9 +82,9 @@ namespace WritePadXamarinSample
 		private const float GRID_GAP = 65;
 		private const int SEGMENT4 = 4;
 
-		private const float  SEGMENT_DIST_1   = 3;
-		private const float  SEGMENT_DIST_2   = 6;
-		private const float  SEGMENT_DIST_3   = 12;
+		private const float SEGMENT_DIST_1   = 3;
+		private const float SEGMENT_DIST_2   = 6;
+        private const float SEGMENT_DIST_3 = 12;
         private int AddPixelsXY( float X, float Y, bool bLastPoint )
 		// this method called from inkCollectorThread
 		{
@@ -185,6 +185,7 @@ namespace WritePadXamarinSample
             }
             canvas.DrawPath(mPath, mPaint);
         }
+
         private void AddCurrentPoint(float mX, float mY)
         {
             var point = new WritePadAPI.CGTracePoint();
@@ -226,7 +227,7 @@ namespace WritePadXamarinSample
 
 		private void touch_up(float x, float y)
 		{
-			var gesture = WritePadAPI.detectGesture(WritePadAPI.GEST_RETURN | WritePadAPI.GEST_CUT | WritePadAPI.GEST_BACK, currentStroke);
+			var gesture = WritePadAPI.detectGesture(WritePadAPI.GEST_ALL, currentStroke);
             
 			AddPixelsXY(x, y, true);
             AddCurrentPoint(mX, mY);			
@@ -237,7 +238,7 @@ namespace WritePadXamarinSample
 				mX++;
 			mPath.LineTo(mX, mY);
 			mPathList.AddLast(mPath);
-			mPath = new Path();
+            mPath = new Path ();
 			Invalidate();
 
 			switch (gesture)
@@ -252,6 +253,7 @@ namespace WritePadXamarinSample
 						return;
                     }
                     break;
+
                 case WritePadAPI.GEST_CUT:
                     if (OnCutGesture != null)
                     {
@@ -263,19 +265,18 @@ namespace WritePadXamarinSample
                     }
                     break;
 
-				case WritePadAPI.GEST_BACK_LONG :
-					mPathList.RemoveLast();
-					WritePadAPI.recoDeleteLastStroke();
-					if ( WritePadAPI.recoStrokeCount() > 0 )
-					{
-						mPathList.RemoveLast();
-						WritePadAPI.recoDeleteLastStroke();
-					}
-					Invalidate(); 
-					return;
+                case WritePadAPI.GEST_BACK:
+                    mPathList.RemoveLast ();
+                    WritePadAPI.recoDeleteLastStroke ();
+                    if (WritePadAPI.recoStrokeCount () > 0) {
+                        mPathList.RemoveLast ();
+                        WritePadAPI.recoDeleteLastStroke ();
+                    }
+                    Invalidate ();
+                    break;
             }
 
-		}
+        }
 
 		public struct WordAlternative
         {

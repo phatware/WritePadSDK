@@ -33,7 +33,7 @@
 #define __ink_wrapper_h__
 
 #include <stdio.h>
-#include "RecognizerApi.h"
+#include "RecognizerAPI.h"
 
 #define LF_FONT_BOLD		0x00000001
 #define LF_FONT_ITALIC		0x00000002

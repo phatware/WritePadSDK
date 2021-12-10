@@ -197,9 +197,7 @@ namespace xamarin_sample
 		{
 			var point = new WritePadAPI.CGTracePoint ();
 			point.pressure = WritePadAPI.DEFAULT_INK_PRESSURE;
-			point.pt = new WritePadAPI.CGPoint ();
-			point.pt.x = mX;
-			point.pt.y = mY;
+			point.pt = new CGPoint (mX, mY);
 			currentStroke.Add (point);
 		}
 
@@ -247,7 +245,7 @@ namespace xamarin_sample
 		public override void TouchesEnded (Foundation.NSSet touches, UIEvent evt)
 		{
 			base.TouchesEnded (touches, evt);
-			var gesture = WritePadAPI.detectGesture (WritePadAPI.GEST_CUT | WritePadAPI.GEST_RETURN, currentStroke);
+			var gesture = WritePadAPI.detectGesture (WritePadAPI.GEST_ALL, currentStroke);
 			if (!mMoved)
 				mX++;
 			AddPixelsXY( mX, mY, true );

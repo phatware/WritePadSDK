@@ -53,11 +53,10 @@ public class WritePadFlagManager {
     public static void initialize(Context context) {
         int flags = WritePadManager.recoGetFlags();
         flags = setRecoFlag(flags, false, WritePadAPI.FLAG_CORRECTOR);
-        Context _context = context;
 
-        flags = setRecoFlag(flags, MainSettings.isSeparateLetterModeEnabled(_context), WritePadAPI.FLAG_SEPLET);
+        flags = setRecoFlag(flags, MainSettings.isSeparateLetterModeEnabled(context), WritePadAPI.FLAG_SEPLET);
         flags = setRecoFlag(flags, false, WritePadAPI.FLAG_ONLYDICT);
-        flags = setRecoFlag(flags, MainSettings.isSingleWordEnabled(_context), WritePadAPI.FLAG_SINGLEWORDONLY);
+        flags = setRecoFlag(flags, MainSettings.isSingleWordEnabled(context), WritePadAPI.FLAG_SINGLEWORDONLY);
         flags = setRecoFlag(flags, true, WritePadAPI.HW_SPELL_USERDICT);
         flags = setRecoFlag(flags, false, WritePadAPI.FLAG_NOSPACE);
         WritePadManager.recoSetFlags(flags);

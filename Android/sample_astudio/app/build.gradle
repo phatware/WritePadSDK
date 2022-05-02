@@ -1,14 +1,14 @@
 apply plugin: 'com.android.application'
 
 android {
-    compileSdkVersion 29
-    buildToolsVersion '32.0.0-rc1'
+    compileSdkVersion 30
+    buildToolsVersion buildToolsVersion
     sourceSets.main.jniLibs.srcDirs = []
 
     defaultConfig {
         applicationId "com.phatware.android.recotest"
-        minSdkVersion 29
-        targetSdkVersion 29
+        minSdkVersion 30
+        targetSdkVersion 30
 
         ndk {
             moduleName "libWritePadRecos"

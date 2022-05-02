@@ -41,7 +41,6 @@
 		369191FA19F0B27C002A09E3 /* LanguageSelectorController.m in Sources */ = {isa = PBXBuildFile; fileRef = 369191E919F0B27C002A09E3 /* LanguageSelectorController.m */; };
 		369191FB19F0B27C002A09E3 /* SourceCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 369191EB19F0B27C002A09E3 /* SourceCell.m */; };
 		369191FC19F0B27C002A09E3 /* WordListEditViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 369191ED19F0B27C002A09E3 /* WordListEditViewController.m */; };
-		3691920619F0BFC0002A09E3 /* libWritePadRecoUniversal.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 3691920519F0BFC0002A09E3 /* libWritePadRecoUniversal.a */; };
 		36BBBCEC19E32FD700E63C5C /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 36BBBCEB19E32FD700E63C5C /* main.m */; };
 		36BBBCEF19E32FD700E63C5C /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 36BBBCEE19E32FD700E63C5C /* AppDelegate.m */; };
 		36BBBCF219E32FD700E63C5C /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 36BBBCF119E32FD700E63C5C /* ViewController.m */; };
@@ -59,6 +58,7 @@
 		36BBBD6C19E3B5FC00E63C5C /* Spanish.dct in Resources */ = {isa = PBXBuildFile; fileRef = 36BBBD5E19E3B5FC00E63C5C /* Spanish.dct */; };
 		36BBBD6D19E3B5FC00E63C5C /* Swedish.dct in Resources */ = {isa = PBXBuildFile; fileRef = 36BBBD5F19E3B5FC00E63C5C /* Swedish.dct */; };
 		36EEA1251AA43EB40033E8C0 /* Indonesian.dct in Resources */ = {isa = PBXBuildFile; fileRef = 36EEA1241AA43EB40033E8C0 /* Indonesian.dct */; };
+		F68827F6281FABE20071014B /* libWritePadReco.a in Frameworks */ = {isa = PBXBuildFile; fileRef = F68827F5281FABE20071014B /* libWritePadReco.a */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -161,6 +161,7 @@
 		36BBBD5E19E3B5FC00E63C5C /* Spanish.dct */ = {isa = PBXFileReference; lastKnownFileType = file; name = Spanish.dct; path = ../../Dictionaries/Spanish.dct; sourceTree = "<group>"; };
 		36BBBD5F19E3B5FC00E63C5C /* Swedish.dct */ = {isa = PBXFileReference; lastKnownFileType = file; name = Swedish.dct; path = ../../Dictionaries/Swedish.dct; sourceTree = "<group>"; };
 		36EEA1241AA43EB40033E8C0 /* Indonesian.dct */ = {isa = PBXFileReference; lastKnownFileType = file; name = Indonesian.dct; path = ../../Dictionaries/Indonesian.dct; sourceTree = "<group>"; };
+		F68827F5281FABE20071014B /* libWritePadReco.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = libWritePadReco.a; path = ../../Library/libWritePadReco.a; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -168,7 +169,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				3691920619F0BFC0002A09E3 /* libWritePadRecoUniversal.a in Frameworks */,
+				F68827F6281FABE20071014B /* libWritePadReco.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -343,6 +344,7 @@
 			isa = PBXGroup;
 			children = (
 				3691920519F0BFC0002A09E3 /* libWritePadRecoUniversal.a */,
+				F68827F5281FABE20071014B /* libWritePadReco.a */,
 				3691917C19F0AFFF002A09E3 /* Resource */,
 				36BBBD5119E3B5EF00E63C5C /* Dictionaries */,
 				36BBBCEA19E32FD700E63C5C /* Info.plist */,

@@ -32,7 +32,7 @@
 #ifndef __RecoTypes_h__
 #define __RecoTypes_h__
 
-#include "recodefs.h"
+#include "RecoDefs.h"
 #include "langid.h"
 
 #ifndef __MACTYPES__

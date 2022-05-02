@@ -45,7 +45,7 @@
 #ifndef __LETIMG_H
 #define __LETIMG_H
 
-#include "recotypes.h"
+#include "RecoTypes.h"
 #include "ligstate.h"
 
 #define LIError		(-1)
